@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: Romberg integration is a powerful numerical integration technique which ises k refinaments of the extened trapezoidal rule to remove errors.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1650
-permalink: p=1650
+permalink: /p=1650
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:7427:"
@@ -67,7 +67,7 @@ wp-syntax-cache-content:
 categories:
   - Scala Notes
 ---
-In numerical analysis, Romberg&#8217;s method (Romberg 1955) is a numerical approach used to estimate the definite integral \(\int_a^b f(x) dx\).
+In numerical analysis, Romberg&#8217;s method (Romberg 1955) is a numerical approach used to estimate the definite integral $$\int_a^b f(x) dx$$.
 
 <pre lang="scala">import math.pow
 

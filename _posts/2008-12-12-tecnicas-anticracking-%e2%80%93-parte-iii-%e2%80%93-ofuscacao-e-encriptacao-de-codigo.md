@@ -7,7 +7,7 @@ excerpt: |
   Também conhecidas como Code Obfuscation and Encryption (COE), são técnicas utilizadas para prevenir a Análise Estática de Código. Diferente da Eliminação Simbólica (Eliminating Symbolic Information – ESI), a COE é aplicada após a compilação do programa, modificando o binário original antes de ser entregue ao cliente.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=201
-permalink: p=201
+permalink: /p=201
 categories:
   - Programming Internals
 tags:

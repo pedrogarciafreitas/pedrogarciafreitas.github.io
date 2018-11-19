@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: Como instalar o htop (serve para outras aplicações compiladas e instaladas manualmente também)
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1784
-permalink: p=1784
+permalink: /p=1784
 categories:
   - Rocks Cluster for Nubis
 ---

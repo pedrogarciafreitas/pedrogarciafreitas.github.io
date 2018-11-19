@@ -9,7 +9,7 @@ excerpt: |
   As técnicas que se aplicam à categoria das CFTs são: Inlining, Intervalar Código, Estruturas Opacas, GoTo Hell’s Code e Exceção Proposital.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=219
-permalink: p=219
+permalink: /p=219
 wp-syntax-cache-content:
   - |
     a:13:{i:1;s:899:"

@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: Code to generate Huffman tables from the list of symbols frequencies.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1469
-permalink: p=1469
+permalink: /p=1469
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:23097:"

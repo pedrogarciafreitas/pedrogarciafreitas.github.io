@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Fixing pth.h when compiling Cython on FreeBSD.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=700
-permalink: p=700
+permalink: /p=700
 categories:
   - FreeBSD
 ---

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Neste post veremos o algoritmo para resolução de sistemas com matrizes tri-diagonais (TDMA - Tridiagonal Matrix Algorithm), conhecido como "Algoritmo de Thomas", que é uma forma simplificada da Eliminação de Gauss. Este algoritmo é um dos mais eficientes métodos para resolução de problemas reduzidos à sistemas lineares e também possui grande simplicidade, o que favorece a implementação.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=711
-permalink: p=711
+permalink: /p=711
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:8125:"
@@ -105,22 +105,22 @@ categories:
 ---
 ## 1. O algoritmo de Thomas 
 
-Seja um sistema tri-diagonal de \(n \) incógnitas que pode ser escrito como
+Seja um sistema tri-diagonal de $$n $$ incógnitas que pode ser escrito como
     
 
 
 <center>
-  <br /> \( a_i x_{i-1} + b_i x_i + c_i x_{i+1} = d_i \)<br />
+  <br /> $$ a_i x_{i-1} + b_i x_i + c_i x_{i+1} = d_i $$<br />
 </center>
 
 
     
-onde \(a\_1 = 0 \) e \(c\_n = 0 \) . Na forma matricial, este sistema é escrito como
+onde $$a\_1 = 0 $$ e $$c\_n = 0 $$ . Na forma matricial, este sistema é escrito como
     
 
 
 <center>
-  <br /> \( \left[<br /> \begin{array}{cccccc}<br /> b_1 & c_1 & 0 & 0 & \cdots & 0 \\<br /> a_2 & b_2 & c_2 & 0 & \cdots & 0 \\<br /> 0 & a_3 & b_3 & \ddots & ~ & ~ \\<br /> \vdots & ~ & \ddots & ~ & \ddots & c_{n-1} \\<br /> 0 & ~ & ~ & ~ & a_n & b_n<br /> \end{array}<br /> \right] \)<br />
+  <br /> $$ \left[<br /> \begin{array}{cccccc}<br /> b_1 & c_1 & 0 & 0 & \cdots & 0 \\<br /> a_2 & b_2 & c_2 & 0 & \cdots & 0 \\<br /> 0 & a_3 & b_3 & \ddots & ~ & ~ \\<br /> \vdots & ~ & \ddots & ~ & \ddots & c_{n-1} \\<br /> 0 & ~ & ~ & ~ & a_n & b_n<br /> \end{array}<br /> \right] $$<br />
 </center>
 
 Para a resolução de tal sistema, definimos
@@ -128,7 +128,7 @@ Para a resolução de tal sistema, definimos
 
 
 <center>
-  <br /> \( c_i&#8217; = \left\{ \begin{array}{ll}<br /> \dfrac{c_1}{b_1} & \textrm{para i = 1 }\\<br /> ~ \\<br /> \dfrac{c_i}{b_i &#8211; c_{i-1}&#8217; a_i} & \textrm{para i = 2, 3, &#8230; , n-1}\\<br /> \end{array} \right. \)<br />
+  <br /> $$ c_i&#8217; = \left\{ \begin{array}{ll}<br /> \dfrac{c_1}{b_1} & \textrm{para i = 1 }\\<br /> ~ \\<br /> \dfrac{c_i}{b_i &#8211; c_{i-1}&#8217; a_i} & \textrm{para i = 2, 3, &#8230; , n-1}\\<br /> \end{array} \right. $$<br />
 </center>
 
 
@@ -138,17 +138,17 @@ e
 
 
 <center>
-  <br /> \( d_i&#8217; = \left\{ \begin{array}{ll}<br /> \dfrac{d_1}{b_1} & \textrm{para i = 1 }\\<br /> ~ \\<br /> \dfrac{d_i &#8211; d_{i-1}&#8217; a_i}{b_i &#8211; c_{i-1}&#8217; a_i} & \textrm{para i = 2, 3, &#8230; , n-1 }\\<br /> \end{array} \right. \)<br />
+  <br /> $$ d_i&#8217; = \left\{ \begin{array}{ll}<br /> \dfrac{d_1}{b_1} & \textrm{para i = 1 }\\<br /> ~ \\<br /> \dfrac{d_i &#8211; d_{i-1}&#8217; a_i}{b_i &#8211; c_{i-1}&#8217; a_i} & \textrm{para i = 2, 3, &#8230; , n-1 }\\<br /> \end{array} \right. $$<br />
 </center>
 
 
     
-a solução \(x \) deste sistema será
+a solução $$x $$ deste sistema será
     
 
 
 <center>
-  <br /> \( x_i = \left\{ \begin{array}{ll}<br /> d_n&#8217; & \textrm{para i = n }\\<br /> ~ \\<br /> d_i&#8217; &#8211; c_i&#8217; x_{i+1} & \textrm{para i = n-1, n-2, &#8230; , 1 }\\<br /> \end{array} \right. \)<br />
+  <br /> $$ x_i = \left\{ \begin{array}{ll}<br /> d_n&#8217; & \textrm{para i = n }\\<br /> ~ \\<br /> d_i&#8217; &#8211; c_i&#8217; x_{i+1} & \textrm{para i = n-1, n-2, &#8230; , 1 }\\<br /> \end{array} \right. $$<br />
 </center>
 
 ## 2. Implementação 

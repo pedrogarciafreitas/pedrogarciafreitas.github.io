@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Nest post é apresentado o método de Fehlberg, que é uma abordagem que permite calcular o RK de quarta e quinta ordens sem necessitar repetir todos os passos em cada uma delas, o que economiza recursos computacionais. Esse tipo de abordagem favorece, por exemplo, a seleção inteligente do tamanho do passo usado pelos métodos de Runge-Kutta. Essa "escolha inteligente" do tamanho do passo é conhecida como "adaptativa".
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1930
-permalink: p=1930
+permalink: /p=1930
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:9800:"
@@ -271,22 +271,22 @@ Há duas abordagens para calcular o tamanho do passo de forma adaptativa. A prim
 
 ## 1. Runge-Kutta Adaptativo 
 
-O método de RK adaptativo consiste em fazer cada passo duas vezes, uma com um passo completo e outra com dois meio-passos. A diferença dos dois resultados fornece uma estimativa do erro local. Assim, sendo \(y\_1 \) a previsão de passo único e \(y\_2 \) a previsão a partir de dois meio-passos, o erro \(\Delta\) é obtido como a diferença simples entre essas previsões,
+O método de RK adaptativo consiste em fazer cada passo duas vezes, uma com um passo completo e outra com dois meio-passos. A diferença dos dois resultados fornece uma estimativa do erro local. Assim, sendo $$y\_1 $$ a previsão de passo único e $$y\_2 $$ a previsão a partir de dois meio-passos, o erro $$\Delta$$ é obtido como a diferença simples entre essas previsões,
   
 
 
 <center>
-  <br /> \(\Delta = y_2 &#8211; y_1\) .<br />
+  <br /> $$\Delta = y_2 &#8211; y_1$$ .<br />
 </center>
 
 
   
-Além de fornecer um critério para o controle do tamanho do passo, a equação acima também é usada para correção na previsão de \(y\_2 \) . Em outras palavras, para métodos de Runge-Kutta de até quinta ordem, \(y\_2 \) pode ser corrigida por
+Além de fornecer um critério para o controle do tamanho do passo, a equação acima também é usada para correção na previsão de $$y\_2 $$ . Em outras palavras, para métodos de Runge-Kutta de até quinta ordem, $$y\_2 $$ pode ser corrigida por
   
 
 
 <center>
-  <br /> \(y2 = y2 + \dfrac{\Delta}{15} \) .<br />
+  <br /> $$y2 = y2 + \dfrac{\Delta}{15} $$ .<br />
 </center>
 
 &nbsp;
@@ -299,12 +299,12 @@ Como em cada passo deve-se utilizar um método de RK duas vezes (duas ordens dif
 
 O método de Fehlberg contorna esse problema, uma vez que os coeficientes calculados na interpolação da função de ajuste desse método podem ser aproveitados tanto na versão de quinta ordem quanto na versão de quarta ordem. Assim, a abordagem de Fehlberg fornece uma estimativa do erro de truncamento com apenas seis cálculos de função. 
 
-Dessa forma, o método de Fehlberg estima \(y \) a partir da seguinte RK de quarta ordem
+Dessa forma, o método de Fehlberg estima $$y $$ a partir da seguinte RK de quarta ordem
   
 
 
 <center>
-  <br /> \(y_{i+1} = y_i + \left(\frac{37}{378} k_1 + \frac{250}{621} k_3 + \frac{125}{594} k_4 + \frac{512}{1771} k_6 \right) h \) ,<br />
+  <br /> $$y_{i+1} = y_i + \left(\frac{37}{378} k_1 + \frac{250}{621} k_3 + \frac{125}{594} k_4 + \frac{512}{1771} k_6 \right) h $$ ,<br />
 </center>
 
 
@@ -314,7 +314,7 @@ junto com a RK de quinta ordem
 
 
 <center>
-  <br /> \(y_{i+1} = y_i + \left( \frac{2825}{27648} k_1 + \frac{18575}{48384} k_3 + \frac{13525}{55296} k_4 + \frac{255}{14336} k_5 + \frac{1}{4} k_6 \right) h \) ,<br />
+  <br /> $$y_{i+1} = y_i + \left( \frac{2825}{27648} k_1 + \frac{18575}{48384} k_3 + \frac{13525}{55296} k_4 + \frac{255}{14336} k_5 + \frac{1}{4} k_6 \right) h $$ ,<br />
 </center>
 
 
@@ -324,32 +324,32 @@ onde,
 
 
 <center>
-  <br /> \(k_1 = f(x_i, y_i) \)<br />
+  <br /> $$k_1 = f(x_i, y_i) $$<br />
 </center>
 
 <center>
-  <br /> \(k_2 = f\left(x_i + \frac{1}{5} h, y_i + \frac{1}{5} k_1 h \right) \)<br />
+  <br /> $$k_2 = f\left(x_i + \frac{1}{5} h, y_i + \frac{1}{5} k_1 h \right) $$<br />
 </center>
 
 <center>
-  <br /> \(k_3 = f\left( x_i + \frac{3}{10} h, y_i + \frac{3}{40} k_1 h + \frac{9}{40} k_2 h \right) \)<br />
+  <br /> $$k_3 = f\left( x_i + \frac{3}{10} h, y_i + \frac{3}{40} k_1 h + \frac{9}{40} k_2 h \right) $$<br />
 </center>
 
 <center>
-  <br /> \(k_4 = f\left( x_i + \frac{3}{5} h, y_i + \frac{3}{10} k_1 h &#8211; \frac{9}{10} k_2 h + \frac{6}{5} k_3 h \right) \)<br />
+  <br /> $$k_4 = f\left( x_i + \frac{3}{5} h, y_i + \frac{3}{10} k_1 h &#8211; \frac{9}{10} k_2 h + \frac{6}{5} k_3 h \right) $$<br />
 </center>
 
 <center>
-  <br /> \(k_5 = f\left( x_i + h, y_i &#8211; \frac{11}{54} k_1 h + \frac{5}{2} k_2 h &#8211; \frac{70}{27} k_3 h + \frac{35}{27} k_4 h \right) \)<br />
+  <br /> $$k_5 = f\left( x_i + h, y_i &#8211; \frac{11}{54} k_1 h + \frac{5}{2} k_2 h &#8211; \frac{70}{27} k_3 h + \frac{35}{27} k_4 h \right) $$<br />
 </center>
 
 <center>
-  <br /> \(k_6 = f\left( x_i + \frac{7}{8} h, y_i + \frac{1631}{55296} k1 h + \frac{175}{512} k2 h + \frac{575}{13824} k3 h + \frac{44275}{110592} k4 h + \frac{253}{4096} k5 h \right) \) .<br />
+  <br /> $$k_6 = f\left( x_i + \frac{7}{8} h, y_i + \frac{1631}{55296} k1 h + \frac{175}{512} k2 h + \frac{575}{13824} k3 h + \frac{44275}{110592} k4 h + \frac{253}{4096} k5 h \right) $$ .<br />
 </center>
 
 
   
-Assim, a estimativa de erro pode ser obtida a partir da diferença das equações de quarta e quinta ordens. Além disso, esses coeficientes \(k_i \) foram obtidos por Cash e Karp, o que faz com que esse método seja também conhecido como Runge-Kutta de Cash-Karp. 
+Assim, a estimativa de erro pode ser obtida a partir da diferença das equações de quarta e quinta ordens. Além disso, esses coeficientes $$k_i $$ foram obtidos por Cash e Karp, o que faz com que esse método seja também conhecido como Runge-Kutta de Cash-Karp. 
 
 &nbsp;
 
@@ -360,38 +360,38 @@ Após determinado o erro de truncamento local, ele pode ser utilizado no ajuste 
 
 
 <center>
-  <br /> \(h_{i+1} = h_i \left| \dfrac{\Delta_{i+1}}{\Delta_i} \right|^\alpha \) ,<br />
+  <br /> $$h_{i+1} = h_i \left| \dfrac{\Delta_{i+1}}{\Delta_i} \right|^\alpha $$ ,<br />
 </center>
 
 
   
-onde \(h\_{i+1} \) e \(h\_i \) são o tamanho dos passos na iteração atual e ajustado, respectivamente, \(\Delta\_{i} \) é a acurácia atual e \(\Delta\_{i+1}\) é a acurácia
+onde $$h\_{i+1} $$ e $$h\_i $$ são o tamanho dos passos na iteração atual e ajustado, respectivamente, $$\Delta\_{i} $$ é a acurácia atual e $$\Delta\_{i+1}$$ é a acurácia
   
-desejada, e \(\alpha \) é uma potência constante que é igual a \(0.2 \) quando o tamanho do passo aumenta ( \(\Delta\_{i} \leq \Delta\_{i+1} \) ) e igual a \(0.25 \) quando o tamanho do passo diminui ( \(\Delta\_{i} > \Delta\_{i+1}\)). 
+desejada, e $$\alpha $$ é uma potência constante que é igual a $$0.2 $$ quando o tamanho do passo aumenta ( $$\Delta\_{i} \leq \Delta\_{i+1} $$ ) e igual a $$0.25 $$ quando o tamanho do passo diminui ( $$\Delta\_{i} > \Delta\_{i+1}$$). 
 
-Assim, o parâmetro-chave na estimativa do tamanho do novo passo é \(\Delta\_{i+1} \) . Para isso, relaciona-se \(\Delta\_{i+1} \) a um erro relativo. Isso irá funcionar bem para valores positivos, embora cause alguns problemas em soluções que passem pelo valor zero, o que requer que um pequeno ajuste de segurança seja tomado nessa situação. Assim, a forma proposta por Press _et al._ para determinar \(\Delta_{i+1}\) é
+Assim, o parâmetro-chave na estimativa do tamanho do novo passo é $$\Delta\_{i+1} $$ . Para isso, relaciona-se $$\Delta\_{i+1} $$ a um erro relativo. Isso irá funcionar bem para valores positivos, embora cause alguns problemas em soluções que passem pelo valor zero, o que requer que um pequeno ajuste de segurança seja tomado nessa situação. Assim, a forma proposta por Press _et al._ para determinar $$\Delta_{i+1}$$ é
   
 
 
 <center>
-  <br /> \(\Delta_{i+1} = \epsilon y_{c} \) ,<br />
+  <br /> $$\Delta_{i+1} = \epsilon y_{c} $$ ,<br />
 </center>
 
 
   
-onde \(\epsilon \) é um erro tolerável, \(y_c \) é definido como
+onde $$\epsilon $$ é um erro tolerável, $$y_c $$ é definido como
   
 
 
 <center>
-  <br /> \(y_c = \left| y \right| + \left| h \dfrac{dy}{dx} \right| \) .<br />
+  <br /> $$y_c = \left| y \right| + \left| h \dfrac{dy}{dx} \right| $$ .<br />
 </center>
 
 &nbsp;
 
 ## 3. Implementação 
 
-Os códigos abaixo implementam o método de Runge-Kutta-Fehlberg utilizando os coeficientes propostos por Cash-Karp. A primeira função (<tt>fehlberg</tt>) computa a solução local utilizando o método de Runge-Kutta de quarta e quinta ordem pela abordagem de Fehlberg. O retorno dessa função é justamente a solução numérica na EDO no instante \(x \) , aproximada conforme essas duas ordens. 
+Os códigos abaixo implementam o método de Runge-Kutta-Fehlberg utilizando os coeficientes propostos por Cash-Karp. A primeira função (<tt>fehlberg</tt>) computa a solução local utilizando o método de Runge-Kutta de quarta e quinta ordem pela abordagem de Fehlberg. O retorno dessa função é justamente a solução numérica na EDO no instante $$x $$ , aproximada conforme essas duas ordens. 
 
 A função <tt>integral_adapt</tt> delineia a função principal que resolve o problema, utilizando a adaptação do tamanho dos passos calculadas pela função <tt>adapt_folberg</tt>. 
 

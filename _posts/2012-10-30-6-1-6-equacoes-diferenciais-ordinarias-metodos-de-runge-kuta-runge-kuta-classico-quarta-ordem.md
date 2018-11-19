@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Os métodos de Runge-Kuta mais utilizados são variantes do método de quarta ordem. Como nos casos apresentados nos posts sobre RK de segunda e terceira ordem, há um número infinito de métodos para  n=4 . Por isso é conhecido como "método de RK clássico".'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1913
-permalink: p=1913
+permalink: /p=1913
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:2265:"
@@ -29,12 +29,12 @@ wp-syntax-cache-content:
 categories:
   - Computational Methods
 ---
-Os métodos de Runge-Kuta mais utilizados são variantes do método de quarta ordem. Como nos casos apresentados nos posts sobre RK de segunda e terceira ordem, há um número infinito de métodos para \(n=4 \) . Uma fórmula muito encontrada e, por isso, conhecida como &#8220;método de Runge-Kuta clássico&#8221;, é:
+Os métodos de Runge-Kuta mais utilizados são variantes do método de quarta ordem. Como nos casos apresentados nos posts sobre RK de segunda e terceira ordem, há um número infinito de métodos para $$n=4 $$ . Uma fórmula muito encontrada e, por isso, conhecida como &#8220;método de Runge-Kuta clássico&#8221;, é:
   
 
 
 <center>
-  \( y_{i+1} = y_i + \frac{1}{6} (k_1 + 2 k_2 + 2 k_3 + k_4) h \)
+  $$ y_{i+1} = y_i + \frac{1}{6} (k_1 + 2 k_2 + 2 k_3 + k_4) h $$
 </center>
 
 
@@ -42,15 +42,15 @@ Os métodos de Runge-Kuta mais utilizados são variantes do método de quarta or
 onde
 
 <center>
-  <br /> \( k_1 = f(x_1, y_1) \)<br />
+  <br /> $$ k_1 = f(x_1, y_1) $$<br />
 </center>
 
 <center>
-  <br /> \(k_2 = f(x_i + \frac{1}{2} h, y_i + \frac{1}{2} k_1 h) \)<br />
+  <br /> $$k_2 = f(x_i + \frac{1}{2} h, y_i + \frac{1}{2} k_1 h) $$<br />
 </center>
 
 <center>
-  <br /> \(k_3 = f(x_i + \frac{1}{2} h, y_i + \frac{1}{2} k_2 h) \)<br />
+  <br /> $$k_3 = f(x_i + \frac{1}{2} h, y_i + \frac{1}{2} k_2 h) $$<br />
 </center>
 
 
@@ -60,13 +60,13 @@ e
 
 
 <center>
-  <br /> \(k_4 = f(x_i + h, y_i + k_3 h) \)<br />
+  <br /> $$k_4 = f(x_i + h, y_i + k_3 h) $$<br />
 </center>
 
-Dessas equações, notamos que o método de Runge-Kuta de quarta ordem clássico usa a regra de Simpson, sendo uma abordagem semelhante à de Heun, uma vez que são desenvolvidas múltiplas estimativas da inclinação para se chegar a uma inclinação melhorada do intervalo. Isso é, conforme comentado no post sobre o RK de segunda ordem, cada um dos \(k \) &#8216;s representa uma inclinação, o que faz com que
+Dessas equações, notamos que o método de Runge-Kuta de quarta ordem clássico usa a regra de Simpson, sendo uma abordagem semelhante à de Heun, uma vez que são desenvolvidas múltiplas estimativas da inclinação para se chegar a uma inclinação melhorada do intervalo. Isso é, conforme comentado no post sobre o RK de segunda ordem, cada um dos $$k $$ &#8216;s representa uma inclinação, o que faz com que
 
 <center>
-  \( \phi = (k_1 + 2 k_2 + 2 k_3 + k_4) \)
+  $$ \phi = (k_1 + 2 k_2 + 2 k_3 + k_4) $$
 </center>
 
 

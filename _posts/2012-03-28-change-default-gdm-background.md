@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: The simplest way to change the default GDM background.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1501
-permalink: p=1501
+permalink: /p=1501
 categories:
   - FreeBSD
 ---

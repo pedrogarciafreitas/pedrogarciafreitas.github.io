@@ -9,7 +9,7 @@ excerpt: |
   Provavelmente é o método numérico mais aplicado computacionalmente para a aproximação de raízes, graças à sua capacidade de rápida convergência, associada à simplicidade de sua formulação.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=439
-permalink: p=439
+permalink: /p=439
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3818:"
@@ -92,16 +92,16 @@ Provavelmente é o método numérico mais aplicado computacionalmente para a apr
   <br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig16.png"><img class="aligncenter size-full wp-image-446" title="Visualização gráfica da aproximação numérica de uma raiz" src="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig16.png" alt="" width="400" height="400" srcset="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig16.png 400w, http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig16-300x300.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></a><br />
 </center>
 
-Na Figura [metodo](#figmetodo), observamos que a partir da aproximação inicial da raiz \(x\_{i} \) é possível estender uma reta tangente do ponto \(\left( x\_{i}, f(x\_{i}) \right) \) . O ponto onde esta tangente intercepta o eixo das abcissas é a segunda estimativa, \(x\_{i+1} \) . Desta figura, é visível que a inclinação é equivalente à 
+Na Figura [metodo](#figmetodo), observamos que a partir da aproximação inicial da raiz $$x\_{i} $$ é possível estender uma reta tangente do ponto $$\left( x\_{i}, f(x\_{i}) \right) $$ . O ponto onde esta tangente intercepta o eixo das abcissas é a segunda estimativa, $$x\_{i+1} $$ . Desta figura, é visível que a inclinação é equivalente à 
 
 <center>
-  <br /> <a name="eq1"></a><br /> \( \dfrac{ d }{ d x } f(x_{i}) = \dfrac{ f(x_{i}) }{ \left( x_{i} &#8211; x_{i+1} \right) } \)<br />
+  <br /> <a name="eq1"></a><br /> $$ \dfrac{ d }{ d x } f(x_{i}) = \dfrac{ f(x_{i}) }{ \left( x_{i} &#8211; x_{i+1} \right) } $$<br />
 </center>
 
-isolando \(x_{i+1} \) , aparece naturalmente a iteração conhecida como o Método de Newton:
+isolando $$x_{i+1} $$ , aparece naturalmente a iteração conhecida como o Método de Newton:
 
 <center>
-  <br /> <a name="eq2"></a><br /> \( x_{i+1} = x_{i} &#8211; \dfrac{f(x_{i})}{\dfrac{ d }{ d x } f(x_{i})} \)<br />
+  <br /> <a name="eq2"></a><br /> $$ x_{i+1} = x_{i} &#8211; \dfrac{f(x_{i})}{\dfrac{ d }{ d x } f(x_{i})} $$<br />
 </center>
 
 Como no Método do Ponto Fixo, basta executar sucessivas aproximações para convergir à raiz, tendo como critério de parada um erro pré-definido.
@@ -110,7 +110,7 @@ Como no Método do Ponto Fixo, basta executar sucessivas aproximações para con
 
 ## 3. Implementação <a name="sec3"></a>
 
-A implementação deste método consiste em basicamente alterar o código do Ponto Fixo de forma utilizar a chamada da expressão deduzida ao invés da própria função \(G \):
+A implementação deste método consiste em basicamente alterar o código do Ponto Fixo de forma utilizar a chamada da expressão deduzida ao invés da própria função $$G $$:
 
 <div>
   <pre lang="python">def newtonRaphson(G, diffG, x0, errto, imax):

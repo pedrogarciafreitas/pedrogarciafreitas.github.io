@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: An activity-selection is the problem of scheduling a resource among several competing activity.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1466
-permalink: p=1466
+permalink: /p=1466
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:8360:"

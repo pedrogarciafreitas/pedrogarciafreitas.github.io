@@ -11,7 +11,7 @@ excerpt: |
   Este artigo apresenta uma breve explanação sobre os métodos abertos --  cuja maioria dos métodos numéricos derivam -- e uma implementação do Método do Ponto Fixo.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=435
-permalink: p=435
+permalink: /p=435
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3132:"
@@ -74,7 +74,7 @@ categories:
 
 Diferente dos Métodos da Bissecção e Regula Falsi, que são métodos onde a busca à raiz deve ser realizada dentro de um intervalo, os Métodos Abertos utilizam-se de estratégias para encontrar zeros de funções que não dependam de uma delimitação do local onde se encontra a raiz. 
 
-Sendo assim, os métodos abertos não necessitam de um conhecimento prévio da localização da raiz, o que permite a construção de algoritmos que exijam apenas um único valor inicial de \(x \) para convergir à resposta. 
+Sendo assim, os métodos abertos não necessitam de um conhecimento prévio da localização da raiz, o que permite a construção de algoritmos que exijam apenas um único valor inicial de $$x $$ para convergir à resposta. 
 
 Diferente dos métodos intervalares, os métodos abertos podem divergir da raiz verdadeira ao longo da execução do programa. Contudo, quando há convergência, os métodos abertos o fazem com velocidade muito superior aos intervalares. </p> 
 
@@ -82,42 +82,42 @@ Diferente dos métodos intervalares, os métodos abertos podem divergir da raiz 
 
 Embora hajam formas mais eficientes para implementação em um programa de computador, todos os métodos abertos são variantes do Método do Ponto Fixo. Por isso, é interessante conhecê-lo para o entendimento das suas variações. 
 
-Ele consiste em aplicar sucessivas aproximações de uma função no ponto em que ela se anula, ou seja, quando \(x \) for uma raiz. 
+Ele consiste em aplicar sucessivas aproximações de uma função no ponto em que ela se anula, ou seja, quando $$x $$ for uma raiz. 
 
-Sabemos que qualquer \(x \) onde \(f(x) = 0 \) será uma raiz de \(f \) . Sendo assim, a idéia por trás do Método do Ponto Fixo consiste em isolar uma variável \(x \) de forma que \(x \) fica em função de \(x \) e utiliza-se a função anterior. 
+Sabemos que qualquer $$x $$ onde $$f(x) = 0 $$ será uma raiz de $$f $$ . Sendo assim, a idéia por trás do Método do Ponto Fixo consiste em isolar uma variável $$x $$ de forma que $$x $$ fica em função de $$x $$ e utiliza-se a função anterior. 
 
-Por exemplo, vamos supor que a função \(f(x) \) seja composta por:
+Por exemplo, vamos supor que a função $$f(x) $$ seja composta por:
     
 <a name="eq1">(eq1)</a> 
 
 <center>
-  \( f(x) = g(x) + x \)
+  $$ f(x) = g(x) + x $$
 </center>
 
-como \(f(x) = 0 \) , então
+como $$f(x) = 0 $$ , então
     
 <a name="eq2">(eq2)</a>
 
 <center>
-  \( g(x) + x = 0 \)
+  $$ g(x) + x = 0 $$
 </center>
 
-o que faz com que \(x \) fique em função de \(x \) , onde esta função é \(g \) :
+o que faz com que $$x $$ fique em função de $$x $$ , onde esta função é $$g $$ :
     
 <a name="eq3">(eq3)</a>
 
 <center>
-  \( x = g(x) \)
+  $$ x = g(x) $$
 </center>
 
-A equação acima fornece uma fórmula para prever um novo valor de \(x \) em função de um valor prévio de \(x \) . Portanto, o algoritmo só necessita de uma estimativa inicial \(x\_{i} \) para aproximar à raiz em \(x\_{i+1} \) . Repetindo-se este processo sucessivas vezes, é possível convergir às raízes de uma função. 
+A equação acima fornece uma fórmula para prever um novo valor de $$x $$ em função de um valor prévio de $$x $$ . Portanto, o algoritmo só necessita de uma estimativa inicial $$x\_{i} $$ para aproximar à raiz em $$x\_{i+1} $$ . Repetindo-se este processo sucessivas vezes, é possível convergir às raízes de uma função. 
 
 Logo, na forma iterativa, temos:
     
 <a name="eq4">(eq4)</a> 
 
 <center>
-  \( x_{i+1} = g(x_{i}) \)
+  $$ x_{i+1} = g(x_{i}) $$
 </center></p> 
 
 ### 2.1. Critério de Parada 
@@ -127,7 +127,7 @@ Como nos métodos intervalares, no Ponto Fixo as sucessivas substituições são
 <a name="eq5">(eq5)</a> 
 
 <center>
-  \( errno = \dfrac{ x_{new} &#8211; x_{old} }{ x_{old} } \)
+  $$ errno = \dfrac{ x_{new} &#8211; x_{old} }{ x_{old} } $$
 </center>
 
 
@@ -136,16 +136,16 @@ Como nos métodos intervalares, no Ponto Fixo as sucessivas substituições são
 
 
 
-Seja encontrar a raíz da função não-linear \( f(x) = \dfrac{1}{e^x} &#8211; x^2 \). Como isto significa \(f(x) = 0 \) , isolando \(x \) , temos:
+Seja encontrar a raíz da função não-linear $$ f(x) = \dfrac{1}{e^x} &#8211; x^2 $$. Como isto significa $$f(x) = 0 $$ , isolando $$x $$ , temos:
     
 <a name="eq6">(eq6)</a> 
 
 <center>
-  \( x^2 = \dfrac{1}{e^x} \)
+  $$ x^2 = \dfrac{1}{e^x} $$
 </center>
 
 <center>
-  <br /> \(\Downarrow \)<br />
+  <br /> $$\Downarrow $$<br />
 </center>
 
 
@@ -153,11 +153,11 @@ Seja encontrar a raíz da função não-linear \( f(x) = \dfrac{1}{e^x} &#8211; 
 <a name="eq7">(eq7)</a>
 
 <center>
-  \( \sqrt{x^2} = \sqrt{ \dfrac{1}{e^x} } \)
+  $$ \sqrt{x^2} = \sqrt{ \dfrac{1}{e^x} } $$
 </center>
 
 <center>
-  <br /> \(\Downarrow \)<br />
+  <br /> $$\Downarrow $$<br />
 </center>
 
 
@@ -165,7 +165,7 @@ Seja encontrar a raíz da função não-linear \( f(x) = \dfrac{1}{e^x} &#8211; 
 <a name="eq8">(eq8)</a>
 
 <center>
-  \( x = \sqrt{ \dfrac{1}{e^x} }\)
+  $$ x = \sqrt{ \dfrac{1}{e^x} }$$
 </center>
 
 ou seja,
@@ -173,7 +173,7 @@ ou seja,
 <a name="eq9">(eq9)</a>
 
 <center>
-  \( x = \sqrt{e^{-x}} = e^{ &#8211; \frac{1}{2} x }\)
+  $$ x = \sqrt{e^{-x} = e^{ &#8211; \frac{1}{2} x }$$
 </center>
 
 Substituindo sucessivas vezes a Equação [9](#eq9), temos que o seguinte processo iterativo pode ser encontrado:
@@ -181,90 +181,90 @@ Substituindo sucessivas vezes a Equação [9](#eq9), temos que o seguinte proces
 <a name="eq10">(eq10)</a> 
 
 <center>
-  \( x_{i+1} = e^{ &#8211; \frac{1}{2} x_{i} }\)
+  $$ x_{i+1} = e^{ &#8211; \frac{1}{2} x_{i} }$$
 </center></p> 
 
 ## 3. Convergência do Método do Ponto Fixo 
 
 A convergência de uma aproximação numérica está intimamente relacionada com o comportamento do erro. Um método que busca uma raiz está convergindo para ela se o erro relativo diminui ao longo das iterações. Portanto, para saber se a solução será encontrada, deve-se ver como o erro está diminuindo com o aumento do número de iterações. 
 
-No caso do Método do Ponto Fixo, a _i-ésima_ iteração é dada por \(x\_{i+1} = g(x\_{i}) \) e supondo que a solução seja dada por \(x\_{sol} = g(x\_{sol}) \) , podemos tomar a diferença destas duas equações tal que
+No caso do Método do Ponto Fixo, a _i-ésima_ iteração é dada por $$x\_{i+1} = g(x\_{i}) $$ e supondo que a solução seja dada por $$x\_{sol} = g(x\_{sol}) $$ , podemos tomar a diferença destas duas equações tal que
     
 <a name="eq11">(eq11)</a> 
 
 <center>
-  \( x_{sol} &#8211; x_{i+1} = g(x_{sol}) &#8211; g(x_{i})\)
+  $$ x_{sol} &#8211; x_{i+1} = g(x_{sol}) &#8211; g(x_{i})$$
 </center>
 
-Pelo Teorema do Valor Médio, se a função \(g(x) \) e sua primeira derivada forem contínuas em \( \left[ x\_l,x\_r \right] \) , então existe ao menos um valor de e \(x \) tal que \(x = M \) , onde
+Pelo Teorema do Valor Médio, se a função $$g(x) $$ e sua primeira derivada forem contínuas em $$ \left[ x\_l,x\_r \right] $$ , então existe ao menos um valor de e $$x $$ tal que $$x = M $$ , onde
     
 <a name="eq12">(eq12)</a> 
 
 <center>
-  \( \dfrac{d}{dx} g(M) = \dfrac{ g(x_{r}) &#8211; g(x_{l}) }{ x_{r} &#8211; x_{l} }\)
+  $$ \dfrac{d}{dx} g(M) = \dfrac{ g(x_{r}) &#8211; g(x_{l}) }{ x_{r} &#8211; x_{l} }$$
 </center>
 
-Assim, para \(x\_{l} = x\_{i} \) e \(x\_{r} = x\_{sol} \) , a Equação [12](#eq12) pode ser reescrita como
+Assim, para $$x\_{l} = x\_{i} $$ e $$x\_{r} = x\_{sol} $$ , a Equação [12](#eq12) pode ser reescrita como
     
 <a name="eq13">(eq13)</a>
 
 <center>
-  \( \dfrac{d}{dx} g(M) = \dfrac{ g(x_{sol}) &#8211; g(x_{i}) }{ x_{sol} &#8211; x_{i} }\)
+  $$ \dfrac{d}{dx} g(M) = \dfrac{ g(x_{sol}) &#8211; g(x_{i}) }{ x_{sol} &#8211; x_{i} }$$
 </center>
 
-Isolando \(\Delta g(x) = g(x\_{sol}) &#8211; g(x\_{i}) \) no caso acima,
+Isolando $$\Delta g(x) = g(x\_{sol}) &#8211; g(x\_{i}) $$ no caso acima,
     
 <a name="eq14">(eq14)</a>
 
 <center>
-  \( \left( \dfrac{d}{dx} g(M) \right) \left( x_{sol} &#8211; x_{i} \right)<br /> = g(x_{sol}) &#8211; g(x_{i})\)
+  $$ \left( \dfrac{d}{dx} g(M) \right) \left( x_{sol} &#8211; x_{i} \right)<br /> = g(x_{sol}) &#8211; g(x_{i})$$
 </center>
 
-onde \(M \) pertence ao intervalo \(\left[ x\_i, x\_{sol} \right] \) . Substituindo a Equação [14](#eq14) na Equação [11](#eq11), podemos obter a relação entre \(x\_{sol} \) , \(x\_{i+1} \) e \(x_{i} \):
+onde $$M $$ pertence ao intervalo $$\left[ x\_i, x\_{sol} \right] $$ . Substituindo a Equação [14](#eq14) na Equação [11](#eq11), podemos obter a relação entre $$x\_{sol} $$ , $$x\_{i+1} $$ e $$x_{i} $$:
     
 <a name="eq15">(eq15)</a>
 
 <center>
-  \( x_{sol} &#8211; x_{i+1} = \left( \dfrac{d}{dx} g(M) \right)<br /> \left( x_{sol} &#8211; x_{i} \right)\)
+  $$ x_{sol} &#8211; x_{i+1} = \left( \dfrac{d}{dx} g(M) \right)<br /> \left( x_{sol} &#8211; x_{i} \right)$$
 </center>
 
-O erro absoluto é dado pela diferença entre a _i-ésima_ aproximação e a solução real \(x\_{sol} \) , então o erro \(E\_{i} \) é dado por
+O erro absoluto é dado pela diferença entre a _i-ésima_ aproximação e a solução real $$x\_{sol} $$ , então o erro $$E\_{i} $$ é dado por
     
 <a name="eq16">(eq16)</a> 
 
 <center>
-  \( E_{i} = x_{sol} &#8211; x{i}\)
+  $$ E_{i} = x_{sol} &#8211; x{i}$$
 </center>
 
-da mesma forma o erro da próxima iteração \((i+1) \) é:
+da mesma forma o erro da próxima iteração $$(i+1) $$ é:
     
 <a name="eq17">(eq17)</a>
 
 <center>
-  \( E_{i+1} = x_{sol} &#8211; x_{i+1}\)
+  $$ E_{i+1} = x_{sol} &#8211; x_{i+1}$$
 </center>
 
-Portanto, a relação entre os erros da iteração \(i \) e \((i+1) \) será:
+Portanto, a relação entre os erros da iteração $$i $$ e $$(i+1) $$ será:
     
 <a name="eq18">(eq18)</a>
 
 <center>
-  \( E_{i+1} = \left( \dfrac{d}{dx} g(M) \right) E_{i}\)
+  $$ E_{i+1} = \left( \dfrac{d}{dx} g(M) \right) E_{i}$$
 </center>
 
-Os erros de uma iteração em relação à sua anterior é uma proporção fixa, \(g'(x) \) por isso o Método do Ponto Fixo é dito &#8220;Linearmente Convergente&#8221;, ou seja, o erro em \((i+1) \) é uma equação linear em função da iteração anterior, \(i \) . Logo, se o coeficiente angular \(g'(x) \) for menor que um, o erro \((i+1) \) será menor que \(i \) , diminuindo ao longo das iterações. Com \(g'(x) \) maior que um, têm-se que o erro de \((i+1) \) é crescente em relação ao erro em \(i \) , o que caracteriza a divergência. </p> 
+Os erros de uma iteração em relação à sua anterior é uma proporção fixa, $$g'(x) $$ por isso o Método do Ponto Fixo é dito &#8220;Linearmente Convergente&#8221;, ou seja, o erro em $$(i+1) $$ é uma equação linear em função da iteração anterior, $$i $$ . Logo, se o coeficiente angular $$g'(x) $$ for menor que um, o erro $$(i+1) $$ será menor que $$i $$ , diminuindo ao longo das iterações. Com $$g'(x) $$ maior que um, têm-se que o erro de $$(i+1) $$ é crescente em relação ao erro em $$i $$ , o que caracteriza a divergência. </p> 
 
 ## 4. Considerações sobre o Método do Ponto Fixo 
 
-Dada a possibilidade de divergência, devemos ter cuidado ao implementar o Método do Ponto Fixo. Diferente dos Métodos Intervalares &#8212; que dependem apenas do intervalo dado e da função que deseja se buscar a raiz &#8212; o Método do Ponto Fixo é menos generalizável, pois depende da implementação de quem desenvolve o código na escolha de cada função \(g(x) \) . 
+Dada a possibilidade de divergência, devemos ter cuidado ao implementar o Método do Ponto Fixo. Diferente dos Métodos Intervalares &#8212; que dependem apenas do intervalo dado e da função que deseja se buscar a raiz &#8212; o Método do Ponto Fixo é menos generalizável, pois depende da implementação de quem desenvolve o código na escolha de cada função $$g(x) $$ . 
 
-Ao selecionar a função de iteração \(g(x) \) , o programador deve procurar isolar \(x \) na forma que minimize \(g'(x) \) , pois quão menor for esta taxa, maior será a velocidade de convergência da função. 
+Ao selecionar a função de iteração $$g(x) $$ , o programador deve procurar isolar $$x $$ na forma que minimize $$g'(x) $$ , pois quão menor for esta taxa, maior será a velocidade de convergência da função. 
 
 Por fim, a escolha dos Métodos Abertos deve ser feita quando aplicados à problemas onde as funções que se deseja buscar os zeros tenham propriedades conhecidas. </p> 
 
 ## 5. Implementação <a name="sec3"></a> 
 
-Embora o código abaixo tenha como parâmetro de entrada um ponteiro para função, a implementação não é geral. A função que deve ser passada deve ser a de iteração \(g \) &#8212; obtida a partir do isolamento de uma variável \(x \) &#8212; e não a função \(f \) , cuja raiz queremos encontrar.
+Embora o código abaixo tenha como parâmetro de entrada um ponteiro para função, a implementação não é geral. A função que deve ser passada deve ser a de iteração $$g $$ &#8212; obtida a partir do isolamento de uma variável $$x $$ &#8212; e não a função $$f $$ , cuja raiz queremos encontrar.
 
 <div>
   <pre lang="python">def fixedPoint(G, x0, errto, imax):

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: "O método apresentado nesse post é o método de Butcher de quinta ordem, que consiste em um método de Runge-Kutta para aproximação da solução de y'(x) = f(x,y);  y(x0) = y0, onde f(x,y) é avaliado seis vezes por passo."
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1918
-permalink: p=1918
+permalink: /p=1918
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:4256:"
@@ -40,7 +40,7 @@ categories:
 Assim como nas ordens menores, o método de Butcher consiste em utilizar ordens superiores para resolver a EDO numericamente. Uma fórmula a ser utilizada é:
 
 <center>
-  \( y_{i+1} = y_i + \frac{1}{90} (7 k_1 + 32 k_3 + 12 k_4 + 32 k_5 + 7 k_6) h \)
+  $$ y_{i+1} = y_i + \frac{1}{90} (7 k_1 + 32 k_3 + 12 k_4 + 32 k_5 + 7 k_6) h $$
 </center>
 
 onde
@@ -48,23 +48,23 @@ onde
 
 
 <center>
-  <br /> \(k_1 = f(x_i, y_i) \)<br />
+  <br /> $$k_1 = f(x_i, y_i) $$<br />
 </center>
 
 <center>
-  <br /> \(k_2 = f(x_i + \frac{1}{4} h, y_i + \frac{1}{4} k_1 h) \)<br />
+  <br /> $$k_2 = f(x_i + \frac{1}{4} h, y_i + \frac{1}{4} k_1 h) $$<br />
 </center>
 
 <center>
-  <br /> \(k_3 = f(x_i + \frac{1}{4} h, y_i + \frac{1}{8} k_1 h + \frac{1}{8} k_2 h) \)<br />
+  <br /> $$k_3 = f(x_i + \frac{1}{4} h, y_i + \frac{1}{8} k_1 h + \frac{1}{8} k_2 h) $$<br />
 </center>
 
 <center>
-  <br /> \(k_4 = f(x_i + \frac{1}{2} h, y_i &#8211; \frac{1}{2} k_2 h + k_3 h) \)<br />
+  <br /> $$k_4 = f(x_i + \frac{1}{2} h, y_i &#8211; \frac{1}{2} k_2 h + k_3 h) $$<br />
 </center>
 
 <center>
-  <br /> \(k_5 = f(x_i + \frac{3}{4} h, y_i + \frac{3}{16} k_1 h + \frac{9}{16} k_4 h) \)<br />
+  <br /> $$k_5 = f(x_i + \frac{3}{4} h, y_i + \frac{3}{16} k_1 h + \frac{9}{16} k_4 h) $$<br />
 </center>
 
 
@@ -72,10 +72,10 @@ onde
 e
 
 <center>
-  <br /> \(k_6 = f(x_i + h, y_i &#8211; \frac{3}{7} k_1 h + \frac{2}{7} k_2 h + \frac{12}{7} k_3 h &#8211; \frac{12}{7} k_4 h + \frac{8}{7} k_5 h)\)<br />
+  <br /> $$k_6 = f(x_i + h, y_i &#8211; \frac{3}{7} k_1 h + \frac{2}{7} k_2 h + \frac{12}{7} k_3 h &#8211; \frac{12}{7} k_4 h + \frac{8}{7} k_5 h)$$<br />
 </center>
 
-Se voltarmos ao post onde discutimos sobre a Regra de Boole, notaremos a similaridade daquela fórmula com o método de Butcher. Fórmulas como essa, que utilizam \(n \ge 4\) são menos comuns porque o ganho de acurácia começa a ser mínimo, enquanto o custo computacional tende a aumentar. 
+Se voltarmos ao post onde discutimos sobre a Regra de Boole, notaremos a similaridade daquela fórmula com o método de Butcher. Fórmulas como essa, que utilizam $$n \ge 4$$ são menos comuns porque o ganho de acurácia começa a ser mínimo, enquanto o custo computacional tende a aumentar. 
 
 &nbsp;
 

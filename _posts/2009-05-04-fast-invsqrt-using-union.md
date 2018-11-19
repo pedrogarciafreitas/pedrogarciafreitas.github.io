@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Veja aqui algumas alternativas à implementação da Fast InvSqrt.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=305
-permalink: p=305
+permalink: /p=305
 wp-syntax-cache-content:
   - |
     a:5:{i:1;s:2327:"

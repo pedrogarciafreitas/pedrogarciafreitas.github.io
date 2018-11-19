@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Nos posts anteriores, apresentamos a interpolação baseada em aproximações baseadas em funções polinomiais. Agora, neste post, apresentamos uma nova classe de funções de aproximação que têm enorme importância em problemas que utilizam métodos computacionais: as funções trigonométricas.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1137
-permalink: p=1137
+permalink: /p=1137
 categories:
   - Computational Methods
 ---
@@ -18,85 +18,85 @@ Cientistas de diversas áreas trabalham com modelos de sistemas oscilatórios. N
 
 ## 2. Ajuste de Curvas por Funções Trigonométricas 
 
-Uma função periódica \(f(t) \) é descrita como
+Uma função periódica $$f(t) $$ é descrita como
     
 
 
 <center>
-  <br /> \(f(t) = f(t + T) \)<br />
+  <br /> $$f(t) = f(t + T) $$<br />
 </center>
 
 
     
-onde \(T \) é uma constante chamada _período_, que é o menor valor para o qual a Equação acima vale. Em geral, uma função periódica tem a seguinte forma trigonométrica:
+onde $$T $$ é uma constante chamada _período_, que é o menor valor para o qual a Equação acima vale. Em geral, uma função periódica tem a seguinte forma trigonométrica:
     
 
 
 <center>
-  <br /> \(f(t) = A_0 + C_1 cos(\omega_0 t + \theta) \)<br />
+  <br /> $$f(t) = A_0 + C_1 cos(\omega_0 t + \theta) $$<br />
 </center>
 
 Logo, existem quatro parâmetros que caracterizam a senoide:
 
-  * O **valor médio \(A_0 \)** , que determina a altura da abscissa; 
-  * A **amplitude \(C_1 \)** , que especifica a altura da oscilação; 
-  * A **frequência angular \(\omega_0 \)** , que caracteriza a frequência do ciclo do fenômeno periódico; 
-  * O **ângulo de fase \(\theta \)** , que parametriza a extensão da curva horizontalmente. 
+  * O **valor médio $$A_0 $$** , que determina a altura da abscissa; 
+  * A **amplitude $$C_1 $$** , que especifica a altura da oscilação; 
+  * A **frequência angular $$\omega_0 $$** , que caracteriza a frequência do ciclo do fenômeno periódico; 
+  * O **ângulo de fase $$\theta $$** , que parametriza a extensão da curva horizontalmente. 
 
-A frequência angular, em radianos/tempo, está relacionada com a frequência \(f \), em ciclos/tempo, pela seguinte proporção:
+A frequência angular, em radianos/tempo, está relacionada com a frequência $$f $$, em ciclos/tempo, pela seguinte proporção:
     
 
 
 <center>
-  <br /> \(\omega_0 = 2 \pi f \)<br />
+  <br /> $$\omega_0 = 2 \pi f $$<br />
 </center>
 
 
     
-e a frequência está relacionada com o período \(T \) por
+e a frequência está relacionada com o período $$T $$ por
     
 
 
 <center>
-  <br /> \(f = \dfrac{1}{T} \)<br />
+  <br /> $$f = \dfrac{1}{T} $$<br />
 </center>
 
-Embora a equação \(f(t) = A\_0 + C\_1 cos(\omega_0 t + \theta) \) seja uma caracterização adequada para um movimento oscilatório, trabalhar com esta forma pode ser difícil devido ao deslocamento angular \(\theta \) . Para simplificar esta forma, utilizamos a seguinte identidade trigonométrica:
+Embora a equação $$f(t) = A\_0 + C\_1 cos(\omega_0 t + \theta) $$ seja uma caracterização adequada para um movimento oscilatório, trabalhar com esta forma pode ser difícil devido ao deslocamento angular $$\theta $$ . Para simplificar esta forma, utilizamos a seguinte identidade trigonométrica:
     
 
 
 <center>
-  <br /> \(C_1 cos(\omega_0 t + \theta) = C_1 [cos(\omega_0 t) cos(\theta) &#8211; sin(\omega_0 t) sin(\theta)] \)<br />
-</center>
-
-
-    
-Ou seja, \(f(t) \) é aproximada por
-    
-
-
-<center>
-  <br /> \(f(t) = A_0 + A_1 cos(\omega_0 t) + B_1 sin(\omega_0 t) \)<br />
+  <br /> $$C_1 cos(\omega_0 t + \theta) = C_1 [cos(\omega_0 t) cos(\theta) &#8211; sin(\omega_0 t) sin(\theta)] $$<br />
 </center>
 
 
     
-onde \(A\_1 = C\_1 cos(\theta) \) e \(B\_1 = -C\_1 sin(\theta) \) . Portanto,
+Ou seja, $$f(t) $$ é aproximada por
     
 
 
 <center>
-  <br /> \(\theta = arctg\left( &#8211; \frac{B_1}{A_1} \right) \)<br />
+  <br /> $$f(t) = A_0 + A_1 cos(\omega_0 t) + B_1 sin(\omega_0 t) $$<br />
 </center>
 
 
     
-Elevando ao quadrado e somando a relação entre \(A\_1 \) e \(B\_1 \) , temos que
+onde $$A\_1 = C\_1 cos(\theta) $$ e $$B\_1 = -C\_1 sin(\theta) $$ . Portanto,
     
 
 
 <center>
-  <br /> \(C_1 = \sqrt{A_1^2 + B_1^2} \)<br />
+  <br /> $$\theta = arctg\left( &#8211; \frac{B_1}{A_1} \right) $$<br />
+</center>
+
+
+    
+Elevando ao quadrado e somando a relação entre $$A\_1 $$ e $$B\_1 $$ , temos que
+    
+
+
+<center>
+  <br /> $$C_1 = \sqrt{A_1^2 + B_1^2} $$<br />
 </center>
 
 Assim, a Equação
@@ -104,7 +104,7 @@ Assim, a Equação
 
 
 <center>
-  <br /> \(C_1 cos(\omega_0 t + \theta) = C_1 [cos(\omega_0 t) cos(\theta) &#8211; sin(\omega_0 t) sin(\theta)] \)<br />
+  <br /> $$C_1 cos(\omega_0 t + \theta) = C_1 [cos(\omega_0 t) cos(\theta) &#8211; sin(\omega_0 t) sin(\theta)] $$<br />
 </center>
 
 

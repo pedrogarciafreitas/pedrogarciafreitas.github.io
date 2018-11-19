@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Neste post veremos como utilizar operações de conjuntos e lógicas para reconhecimento de padrões simples.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1092
-permalink: p=1092
+permalink: /p=1092
 wp-syntax-cache-content:
   - |
     a:9:{i:1;s:1598:"

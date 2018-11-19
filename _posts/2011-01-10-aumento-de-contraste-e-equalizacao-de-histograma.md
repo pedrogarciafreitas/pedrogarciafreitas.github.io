@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Funções de transformações em intensidades (na escala de cinza ou espaços de cores) que utilizam informações extraídas do histograma estão presentes em diversas áreas de processamento de imagens, tais como reconstrução, compressão e segmentação. Neste artigo comentaremos sobre o processamento e equalização de histogramas e os seus efeitos visuais na imagem.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=978
-permalink: p=978
+permalink: /p=978
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3277:"
@@ -61,41 +61,41 @@ wp-syntax-cache-content:
 categories:
   - Digital Image Processing Using Python
 ---
-O histograma de uma imagem digital com \(L \) possíveis níveis de intensidades em um intervalo \([0,G] \) é definido como a seguinte função discreta
+O histograma de uma imagem digital com $$L $$ possíveis níveis de intensidades em um intervalo $$[0,G] $$ é definido como a seguinte função discreta
 
 <center>
-  \( h(r_k) = n_k \)
+  $$ h(r_k) = n_k $$
 </center>
 
-onde \(r\_k \) é o \(k-esimo \) nível dentro do intervalo \([0,G] \) e \(n\_k \) é o número de pixels na imagem cuja intensidade é \(r_k \). Geralmente o valor \(G \) é \(255 \), pois quase sempre trabalhamos com imagens em escalas de 8 bits. Contudo, esse valor pode ser \(65535 \) para imagens de 16 bits, \(1.0 \) para alguma representação de imagens que utiliza ponto flutuante, etc.
+onde $$r\_k $$ é o $$k-esimo $$ nível dentro do intervalo $$[0,G] $$ e $$n\_k $$ é o número de pixels na imagem cuja intensidade é $$r_k $$. Geralmente o valor $$G $$ é $$255 $$, pois quase sempre trabalhamos com imagens em escalas de 8 bits. Contudo, esse valor pode ser $$65535 $$ para imagens de 16 bits, $$1.0 $$ para alguma representação de imagens que utiliza ponto flutuante, etc.
 
-Muitas vezes precisamos trabalhar com histogramas normalizados, que são obtidos simplesmente dividindo-se todos elementos de \(h(r_k) \) pelo número total de pixels na imagem. Denotaremos essa transformação da seguinte maneira:
+Muitas vezes precisamos trabalhar com histogramas normalizados, que são obtidos simplesmente dividindo-se todos elementos de $$h(r_k) $$ pelo número total de pixels na imagem. Denotaremos essa transformação da seguinte maneira:
 
 <center>
-  \( p(r_k) = \dfrac{h(r_k)}{n} = \dfrac{n_k}{n} \)
+  $$ p(r_k) = \dfrac{h(r_k)}{n} = \dfrac{n_k}{n} $$
 </center>
 
-onde, \(k=0,1,2,\ldots, L-1 \). Dessa formulação é fácil reconhecer que \(p(r\_k) \) é uma estimativa probabilística da ocorrência do nível de intensidade $r\_k$.
+onde, $$k=0,1,2,\ldots, L-1 $$. Dessa formulação é fácil reconhecer que $$p(r\_k) $$ é uma estimativa probabilística da ocorrência do nível de intensidade $r\_k$.
 
-Assumindo que os níveis de intensidades sejam quantidades contínuas e normalizadas no intervalo \([0,1] \), e chamando de \(p_r(r) \) a função densidade de probabilidade dos níveis. Supondo que realizamos a seguinte transformação dos níveis da imagem original para obter os níveis processados:
+Assumindo que os níveis de intensidades sejam quantidades contínuas e normalizadas no intervalo $$[0,1] $$, e chamando de $$p_r(r) $$ a função densidade de probabilidade dos níveis. Supondo que realizamos a seguinte transformação dos níveis da imagem original para obter os níveis processados:
 
 <center>
-  \( s = T(r) = \int_0^r p_r(w) dw \)
+  $$ s = T(r) = \int_0^r p_r(w) dw $$
 </center>
 
-onde \(w \) é uma variável de integração qualquer. A função densidade de probabilidade dos níveis processados serão uniformes, isto é,
+onde $$w $$ é uma variável de integração qualquer. A função densidade de probabilidade dos níveis processados serão uniformes, isto é,
 
 <center>
-  \(<br /> p_s(s) = \left\{<br /> \begin{array}{lcl}<br /> 1 & ~ & 0 \leq s \\<br /> 0 & ~ & otherwise<br /> \end{array}<br /> \right.<br /> \)
+  $$<br /> p_s(s) = \left\{<br /> \begin{array}{lcl}<br /> 1 & ~ & 0 \leq s \\<br /> 0 & ~ & otherwise<br /> \end{array}<br /> \right.<br /> $$
 </center>
 
 Como imagens são quantidades discretas, nós trabalhamos com histogramas e realizamos a operação de equalização. Ou seja, realizamos o processo acima, mas sem considerarmos uma distribuição contínua. Assim, ao invés de utilizarmos a função densidade de probabilidade, trabalhamos com as probabilidades extraídas das ocorrências contadas no histograma:
 
 <center>
-  <br /> \( s_k = T(r_k) = \sum_{j=0}^{k} p_r(r_j) = \sum_{j=0}^{k} \frac{n_j}{n} \)<br />
+  <br /> $$ s_k = T(r_k) = \sum_{j=0}^{k} p_r(r_j) = \sum_{j=0}^{k} \frac{n_j}{n} $$<br />
 </center>
 
-para \(k = 0, 1, 2, \ldots, L-1 \), onde \(s\_k \) é o valor de intensidade na saída, correspondendo ao valor da imagem original \(r\_k \). Este processo é implementado na seguinte função:
+para $$k = 0, 1, 2, \ldots, L-1 $$, onde $$s\_k $$ é o valor de intensidade na saída, correspondendo ao valor da imagem original $$r\_k $$. Este processo é implementado na seguinte função:
 
 <pre lang="python">def histeq(arr):
     """ Enhance contrast using histogram equalization
@@ -122,7 +122,7 @@ LICENSE:
     y = y.reshape(arr.shape)
     return y</pre>
 
-Como resultado, a transformação gera uma imagem em que os níveis de intensidade são igualmente distribuídos dentro do intervalo \([0,1] \). O resultado visual desta operação é uma imagem com maior contraste, conforme podemos visualizar nas figuras abaixo.
+Como resultado, a transformação gera uma imagem em que os níveis de intensidade são igualmente distribuídos dentro do intervalo $$[0,1] $$. O resultado visual desta operação é uma imagem com maior contraste, conforme podemos visualizar nas figuras abaixo.
 
 <center>
   </p> 

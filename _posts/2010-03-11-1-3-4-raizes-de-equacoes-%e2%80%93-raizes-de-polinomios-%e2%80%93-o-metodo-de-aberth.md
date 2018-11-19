@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'O Método de Aberth é uma algoritmo usado para encontrar todas as raízes de um polinômio de grau qualquer. '
 layout: post
 guid: http://www.sawp.com.br/blog/?p=518
-permalink: p=518
+permalink: /p=518
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:15277:"
@@ -167,14 +167,14 @@ Sendo derivado do método de Newton, possui convergência quadrática e pode oco
 
 ## 2. Desenvolvimento do Método <a name="sec2"></a> </p> 
 
-Seja o polinômio de grau \(n \) formado por uma composição de coeficientes reais:
+Seja o polinômio de grau $$n $$ formado por uma composição de coeficientes reais:
     
 <a name="eq1">(eq1)</a>
       
 
 
 <center>
-  <br /> \( p \left( x \right) = p_{n}{x}^{n}+p_{n-1}{x}^{n-1} + \cdots + p_{1}x+p_{0} \)<br />
+  <br /> $$ p \left( x \right) = p_{n}{x}^{n}+p_{n-1}{x}^{n-1} + \cdots + p_{1}x+p_{0} $$<br />
 </center>
 
 Supondo que este polinômio possui todas raízes complexas, ele pode ser descrito na forma fatorizada:
@@ -184,41 +184,41 @@ Supondo que este polinômio possui todas raízes complexas, ele pode ser descrit
 
 
 <center>
-  <br /> \( p \left( x \right) =p_{n}\prod _{i=1}^{n}(x-z_{i}) \)<br />
+  <br /> $$ p \left( x \right) =p_{n}\prod _{i=1}^{n}(x-z_{i}) $$<br />
 </center>
 
 
     
-onde \(z_{i} \) são as raízes complexas de p(x). 
+onde $$z_{i} $$ são as raízes complexas de p(x). 
 
-Podemos adicionar um termo neste produtório tal que \({C}{(x &#8211; z_{i})} = 1 \) , que implica um termo a mais no produtório da Equação [2](#eq2). Contudo, ao invés de notarmos este produtório pelos índices \(i=1 \ldots n \) , vamos tomar \(i=0 \ldots n \).
+Podemos adicionar um termo neste produtório tal que $${C}{(x &#8211; z_{i})} = 1 $$ , que implica um termo a mais no produtório da Equação [2](#eq2). Contudo, ao invés de notarmos este produtório pelos índices $$i=1 \ldots n $$ , vamos tomar $$i=0 \ldots n $$.
     
 <a name="eq3">(eq3)</a>
       
 
 
 <center>
-  <br /> \( p \left( x \right) =C\prod _{i=0}^{n}(z-x_{i}) \)<br />
+  <br /> $$ p \left( x \right) =C\prod _{i=0}^{n}(z-x_{i}) $$<br />
 </center>
 
-Comparando as Fórmulas [2](#eq2) e [3](#eq3), observamos que a segunda é um polinômio que recebe um termo a mais em \(i=0 \) . Para que \(p(x) \) continue sendo o mesmo, o novo termo deve ser nulo ou então a seguinte relação válida:
+Comparando as Fórmulas [2](#eq2) e [3](#eq3), observamos que a segunda é um polinômio que recebe um termo a mais em $$i=0 $$ . Para que $$p(x) $$ continue sendo o mesmo, o novo termo deve ser nulo ou então a seguinte relação válida:
     
 <a name="eq4">(eq4)</a>
       
 
 
 <center>
-  <br /> \( C=p_{n} \left( z_{k} \right) \)<br />
+  <br /> $$ C=p_{n} \left( z_{k} \right) $$<br />
 </center>
 
-Isolando \(p_{n} \) na Equação [2](#eq2) e levando na Equação [4](#eq4), temos que:
+Isolando $$p_{n} $$ na Equação [2](#eq2) e levando na Equação [4](#eq4), temos que:
     
 <a name="eq5">(eq5)</a>
       
 
 
 <center>
-  <br /> \( C \left( x_{i} \right) ={\dfrac {p \left( x_{i} \right) }{\prod _{k=0}^{n}(x_{i}-z_{k})} \)<br />
+  <br /> $$ C \left( x_{i} \right) ={\dfrac {p \left( x_{i} \right) }{\prod _{k=0}^{n}(x_{i}-z_{k})} $$<br />
 </center>
 
 Pelo método de Newton-Raphson, sabemos que uma raiz pode ser encontrada através da seguinte função de iteração:
@@ -228,7 +228,7 @@ Pelo método de Newton-Raphson, sabemos que uma raiz pode ser encontrada atravé
 
 
 <center>
-  <br /> \( x_{i+1}=x_{i}-{\dfrac {f \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) } \)<br />
+  <br /> $$ x_{i+1}=x_{i}-{\dfrac {f \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) } $$<br />
 </center>
 
 
@@ -240,7 +240,7 @@ Usando a relação [5](#eq5) como sendo a fórmula a ser aplicada Equação [6](
 
 
 <center>
-  <br /> \( f \left( x \right) =C \left( x \right) \)<br />
+  <br /> $$ f \left( x \right) =C \left( x \right) $$<br />
 </center>
 
 
@@ -252,7 +252,7 @@ Resultando em:
 
 
 <center>
-  <br /> \( z_{i+1}=z_{i}-{\dfrac {C \left( z_{i} \right) }{\dfrac {d}{dx}C \left( z_{i} \right) } \)<br />
+  <br /> $$ z_{i+1}=z_{i}-{\dfrac {C \left( z_{i} \right) }{\dfrac {d}{dx}C \left( z_{i} \right) } $$<br />
 </center>
 
 Uma propriedade interessante da função de iteração usada no Método de Newton é que ela equivale ao inverso da derivada do logaritmo da função. Ou seja, uma fórmula facilmente obtida usando-se a Regra da Cadeia[[1]](#bibitem1) é:
@@ -262,7 +262,7 @@ Uma propriedade interessante da função de iteração usada no Método de Newto
 
 
 <center>
-  <br /> \( {\dfrac {\dfrac {d}{dx}C \left( x \right) }{C \left( x \right) }={\dfrac {d}{dx}\ln \left( C \left( x \right) \right)\)<br />
+  <br /> $$ {\dfrac {\dfrac {d}{dx}C \left( x \right) }{C \left( x \right) }={\dfrac {d}{dx}\ln \left( C \left( x \right) \right)$$<br />
 </center>
 
 Tomando o logaritmo da Equação [5](#eq5),
@@ -272,7 +272,7 @@ Tomando o logaritmo da Equação [5](#eq5),
 
 
 <center>
-  <br /> \( \ln \left( C \left( x \right) \right) =\ln \left( {\dfrac {p \left( x_{i} \right) }{\prod _{k=0}^{n}(x_{i}-z_{k})} \right)\)<br />
+  <br /> $$ \ln \left( C \left( x \right) \right) =\ln \left( {\dfrac {p \left( x_{i} \right) }{\prod _{k=0}^{n}(x_{i}-z_{k})} \right)$$<br />
 </center>
 
 
@@ -284,7 +284,7 @@ onde
 
 
 <center>
-  <br /> \( \ln \left( C \left( x \right) \right) =\ln \left( p \left( x_{i} \right) \right) -\ln \left( \prod _{k=0}^{n}(x_{i}-z_{k})\right)\)<br />
+  <br /> $$ \ln \left( C \left( x \right) \right) =\ln \left( p \left( x_{i} \right) \right) -\ln \left( \prod _{k=0}^{n}(x_{i}-z_{k})\right)$$<br />
 </center>
 
 
@@ -296,7 +296,7 @@ como
 
 
 <center>
-  <br /> \( \ln \left( \prod _{k=0}^{n}x_{i}-z_{k} \right) =\sum _{k=0}^{n} \ln \left( \left| x-z_{k} \right| \right) \)<br />
+  <br /> $$ \ln \left( \prod _{k=0}^{n}x_{i}-z_{k} \right) =\sum _{k=0}^{n} \ln \left( \left| x-z_{k} \right| \right) $$<br />
 </center>
 
 
@@ -308,7 +308,7 @@ Substituindo a equação [12](#eq12) em [11](#eq11),
 
 
 <center>
-  <br /> \( \ln \left( C \left( x \right) \right) =\ln \left( p \left( x_{i} \right) \right) -\sum _{k=0}^{n}\ln \left( \left| x-z_{k}\right| \right)\)<br />
+  <br /> $$ \ln \left( C \left( x \right) \right) =\ln \left( p \left( x_{i} \right) \right) -\sum _{k=0}^{n}\ln \left( \left| x-z_{k}\right| \right)$$<br />
 </center>
 
 
@@ -320,7 +320,7 @@ Levando a Equação [13](#eq13) na Equação [9](#eq9), temos que:
 
 
 <center>
-  <br /> \( {\dfrac {\dfrac {d}{dx}C \left( x \right) }{C \left( x \right) }={\dfrac {\partial }{\partial x} \left( \ln \left( p \left( x \right) \right) -\sum _{j=0}^{n}\ln \left( \left| x-z_{j} \right| \right) \right) \)<br />
+  <br /> $$ {\dfrac {\dfrac {d}{dx}C \left( x \right) }{C \left( x \right) }={\dfrac {\partial }{\partial x} \left( \ln \left( p \left( x \right) \right) -\sum _{j=0}^{n}\ln \left( \left| x-z_{j} \right| \right) \right) $$<br />
 </center>
 
 Aplicando novamente a relação mencionada para a expressão [9](#eq9), conseguimos eliminar o logaritmo do polinômio, onde deixamos a relação apenas com a própria função polinomial e sua derivada:
@@ -330,7 +330,7 @@ Aplicando novamente a relação mencionada para a expressão [9](#eq9), consegui
 
 
 <center>
-  <br /> \( {\dfrac {\dfrac {d}{dx}C \left( x \right) }{C \left( x \right) }={\dfrac {\dfrac {d}{dx}p \left( x \right) }{p \left( x \right) }-\sum _{j=0}^{n} \left( x-z_{j} \right) ^{-1}\)<br />
+  <br /> $$ {\dfrac {\dfrac {d}{dx}C \left( x \right) }{C \left( x \right) }={\dfrac {\dfrac {d}{dx}p \left( x \right) }{p \left( x \right) }-\sum _{j=0}^{n} \left( x-z_{j} \right) ^{-1}$$<br />
 </center>
 
 
@@ -342,7 +342,7 @@ como o inverso da Equação [15](#eq15) é exatamente a função de iteração d
 
 
 <center>
-  <br /> \( {\dfrac {C \left( z_{i} \right) }{\dfrac {d}{dx}C \left( z_{i} \right) }= \left( {\dfrac {\dfrac {d}{dx}p \left( x \right) }{p \left( x \right) }-\sum _{j=0}^{n} \left( x-z_{j} \right) ^{-1} \right) ^{-1} \)<br />
+  <br /> $$ {\dfrac {C \left( z_{i} \right) }{\dfrac {d}{dx}C \left( z_{i} \right) }= \left( {\dfrac {\dfrac {d}{dx}p \left( x \right) }{p \left( x \right) }-\sum _{j=0}^{n} \left( x-z_{j} \right) ^{-1} \right) ^{-1} $$<br />
 </center>
 
 
@@ -354,7 +354,7 @@ ou seja, do Método de Newton
 
 
 <center>
-  <br /> \( z_{i+1}=z_{i}-{\dfrac {C \left( z_{i} \right) }{\dfrac {d}{dx}C \left( z_{i} \right) } \)<br />
+  <br /> $$ z_{i+1}=z_{i}-{\dfrac {C \left( z_{i} \right) }{\dfrac {d}{dx}C \left( z_{i} \right) } $$<br />
 </center>
 
 
@@ -366,7 +366,7 @@ obtemos a expressão do Método de Aberth:
 
 
 <center>
-  <br /> \( z_{i+1}=z_{i}- \left( {\dfrac {\dfrac {d}{dx}p \left( x \right) }{ p \left( x \right) }-\sum _{j=0}{j \neq i}^{n} \left( z_{i}-z_{j} \right) ^{-1} \right) ^{-1} \)<br />
+  <br /> $$ z_{i+1}=z_{i}- \left( {\dfrac {\dfrac {d}{dx}p \left( x \right) }{ p \left( x \right) }-\sum _{j=0}{j \neq i}^{n} \left( z_{i}-z_{j} \right) ^{-1} \right) ^{-1} $$<br />
 </center>
 
 <!--  IMPLEMENTACAO -->
@@ -450,7 +450,7 @@ obtemos a expressão do Método de Aberth:
 
 
 
-Como todas raízes são desconhecidas, lista cujas raízes serão armazenadas é iniciada com valores aleatórios distribuídos sobre o plano complexo. Esta construção toma como base o valor passado no parâmetro \(x\_{0} \) . Caso a estimativa inicial \(x\_{0} \) seja uma lista, o algoritmo as utiliza e completa os outros elementos com um valor nulo. Contudo, é recomendável que todas as \(n \) raízes recebam uma estimativa inicial. Além disso, a função _filt_ filtra os resultados cujo valor deu abaixo do erro estimado, servindo apenas para melhorar a visualização do resultado. Além disso, sob algumas restrições, esta implementação também permite que funções não-polinomiais sejam aproximadas com sucesso, como pode ser visto neste exemplo de utilização: <a href="http://www.sawp.com.br/code/rootfind/aberth.py" target="_blank">http://www.sawp.com.br/code/rootfind/aberth.py</a> 
+Como todas raízes são desconhecidas, lista cujas raízes serão armazenadas é iniciada com valores aleatórios distribuídos sobre o plano complexo. Esta construção toma como base o valor passado no parâmetro $$x\_{0} $$ . Caso a estimativa inicial $$x\_{0} $$ seja uma lista, o algoritmo as utiliza e completa os outros elementos com um valor nulo. Contudo, é recomendável que todas as $$n $$ raízes recebam uma estimativa inicial. Além disso, a função _filt_ filtra os resultados cujo valor deu abaixo do erro estimado, servindo apenas para melhorar a visualização do resultado. Além disso, sob algumas restrições, esta implementação também permite que funções não-polinomiais sejam aproximadas com sucesso, como pode ser visto neste exemplo de utilização: <a href="http://www.sawp.com.br/code/rootfind/aberth.py" target="_blank">http://www.sawp.com.br/code/rootfind/aberth.py</a> 
 
 <!--  COMENTÁRIOS  --></p> 
 

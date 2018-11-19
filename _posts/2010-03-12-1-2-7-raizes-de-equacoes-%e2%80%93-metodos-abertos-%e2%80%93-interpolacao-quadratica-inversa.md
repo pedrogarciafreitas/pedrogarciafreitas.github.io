@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Interpolação Quadrática Inversa é uma técnica usada para obtermos zeros de equações não-lineares na forma f(x) = 0. Ele é raramente implementado em aplicações como único método de busca de raízes, sendo usado como fator acelerador da convergência.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=528
-permalink: p=528
+permalink: /p=528
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:11716:"
@@ -305,7 +305,7 @@ categories:
 ---
 ## 1. Introdução <a name="sec1"></a> 
 
-Interpolação Quadrática Inversa é uma técnica usada para obtermos zeros de equações não-lineares na forma \(f(x) = 0 \) . Ele é raramente implementado em aplicações como único método de busca de raízes, sendo usado como fator acelerador da convergência. 
+Interpolação Quadrática Inversa é uma técnica usada para obtermos zeros de equações não-lineares na forma $$f(x) = 0 $$ . Ele é raramente implementado em aplicações como único método de busca de raízes, sendo usado como fator acelerador da convergência. 
 
 ## 2. Desenvolvimento do Método 
 
@@ -316,17 +316,17 @@ Seja a fórmula obtida a partir do Teorema de Expansão de Lagrange:
 
 
 <center>
-  <br /> \( x=y+\sum _{k=1}^{\infty }{\dfrac {a}^{k}{\dfrac {d^{d-1}{d{x}^{d-1}} \left( \left( g \left( x \right) \right) ^{k}\right) }{k!} \)<br />
+  <br /> $$ x=y+\sum _{k=1}^{\infty }{\dfrac {a}^{k}{\dfrac {d^{d-1}{d{x}^{d-1}} \left( \left( g \left( x \right) \right) ^{k}\right) }{k!} $$<br />
 </center>
 
-Onde \(x = x(y) \) . A partir desta expressão, podemos obter uma fórmula iterativa se tomarmos \(y=f \left( x \right) \) . Por questão de conveniência, expressamos na Equação [1](#eq1) \(y\_{i} = f\_{i} = f \left( x_{i} \right) \), \(a = -1 \) e alteramos o índice \(k\) para um intervalo finito tal que \( k = 1 \ldots m+1 \) . Desta forma, a Equação [1](#eq1) fica na forma: 
+Onde $$x = x(y) $$ . A partir desta expressão, podemos obter uma fórmula iterativa se tomarmos $$y=f \left( x \right) $$ . Por questão de conveniência, expressamos na Equação [1](#eq1) $$y\_{i} = f\_{i} = f \left( x_{i} \right) $$, $$a = -1 $$ e alteramos o índice $$k$$ para um intervalo finito tal que $$ k = 1 \ldots m+1 $$ . Desta forma, a Equação [1](#eq1) fica na forma: 
 
 <a name="eq2">(eq2)</a>
       
 
 
 <center>
-  <br /> \( x_{i+1}=x_{i}+\sum _{j=1}^{m+1}{\dfrac { \left( -1 \right) ^{j}{\dfrac {\partial ^{j-1}{\partial {x}^{j-1}} \left( \left( g \left( x_{i}\right) \right) ^{j} \right) }{j!} \)<br />
+  <br /> $$ x_{i+1}=x_{i}+\sum _{j=1}^{m+1}{\dfrac { \left( -1 \right) ^{j}{\dfrac {\partial ^{j-1}{\partial {x}^{j-1}} \left( \left( g \left( x_{i}\right) \right) ^{j} \right) }{j!} $$<br />
 </center>
 
 
@@ -338,27 +338,27 @@ onde
 
 
 <center>
-  <br /> \( {\dfrac {\partial ^{j-1}{\partial {x^{j-1}}g \left( x_{j} \right)} = {\dfrac {\partial ^{j-1}{\partial {x^{j-1}} {\dfrac {1}{f(x_{i})}} \)<br />
+  <br /> $$ {\dfrac {\partial ^{j-1}{\partial {x^{j-1}}g \left( x_{j} \right)} = {\dfrac {\partial ^{j-1}{\partial {x^{j-1}} {\dfrac {1}{f(x_{i})}} $$<br />
 </center>
 
-Desenvolvendo o somatório até \(m = 1 \) , obtemos:
+Desenvolvendo o somatório até $$m = 1 $$ , obtemos:
     
 <a name="eq4">(eq4)</a>
       
 
 
 <center>
-  <br /> \( x_{i+1}=x_{i}-{\dfrac {f \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) } &#8211; \dfrac {1}{2}\,{\dfrac { \left( f \left( x_{i}\right) \right) ^{2}{\dfrac {d^{2}{d{x}^{2}}f \left( x_{i}\right) }{ \left( {\dfrac {d}{dx}f \left( x_{i} \right) \right) ^{3}} \)<br />
+  <br /> $$ x_{i+1}=x_{i}-{\dfrac {f \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) } &#8211; \dfrac {1}{2}\,{\dfrac { \left( f \left( x_{i}\right) \right) ^{2}{\dfrac {d^{2}{d{x}^{2}}f \left( x_{i}\right) }{ \left( {\dfrac {d}{dx}f \left( x_{i} \right) \right) ^{3}} $$<br />
 </center>
 
-Aproximando a função por ela mesmo através da Interpolação de Lagrange por dois pontos \(x\_{i} \) e \(x\_{i-1} \), temos:
+Aproximando a função por ela mesmo através da Interpolação de Lagrange por dois pontos $$x\_{i} $$ e $$x\_{i-1} $$, temos:
       
 <a name="eq5">(eq5)</a>
       
 
 
 <center>
-  <br /> \( f \left( x \right) ={\frac { \left( x-x_{i} \right) f \left( x_{i-1} \right) }{x_{i-1}-x_{i}}+{\frac { \left( x-x_{i-1} \right) f \left( x_{i} \right) }{x_{i}-x_{i-1}} \)<br />
+  <br /> $$ f \left( x \right) ={\frac { \left( x-x_{i} \right) f \left( x_{i-1} \right) }{x_{i-1}-x_{i}}+{\frac { \left( x-x_{i-1} \right) f \left( x_{i} \right) }{x_{i}-x_{i-1}} $$<br />
 </center>
 
 
@@ -370,7 +370,7 @@ Igualmente para a primeira derivada e segunda derivada:
 
 
 <center>
-  <br /> \( {\dfrac {d}{dx}f \left( x_{i} \right) ={\dfrac {f \left( x_{i-1} \right) -f \left( x_{i} \right) }{x_{i-1}-x_{i}} \)<br />
+  <br /> $$ {\dfrac {d}{dx}f \left( x_{i} \right) ={\dfrac {f \left( x_{i-1} \right) -f \left( x_{i} \right) }{x_{i-1}-x_{i}} $$<br />
 </center>
 
 <a name="eq7">(eq7)</a>
@@ -378,7 +378,7 @@ Igualmente para a primeira derivada e segunda derivada:
 
 
 <center>
-  <br /> \( {\dfrac {d^{2}{d{x}^{2}}f \left( x_{i} \right) =-6\,{\dfrac {f \left( x_{i} \right) -f \left( x_{i-1} \right) }{ \left( x_{i} &#8211; x_{i-1} \right) ^{2}}+2\,{\dfrac {2\,{\dfrac {d}{dx}f \left( x_{i} \right) +{\dfrac {d}{dx}f \left( x_{i-1} \right) }{x_{i}-x_{i-1} }} \)<br />
+  <br /> $$ {\dfrac {d^{2}{d{x}^{2}}f \left( x_{i} \right) =-6\,{\dfrac {f \left( x_{i} \right) -f \left( x_{i-1} \right) }{ \left( x_{i} &#8211; x_{i-1} \right) ^{2}}+2\,{\dfrac {2\,{\dfrac {d}{dx}f \left( x_{i} \right) +{\dfrac {d}{dx}f \left( x_{i-1} \right) }{x_{i}-x_{i-1} }} $$<br />
 </center>
 
 Levando as Expressões [5](#eq5), [6](#eq6) e [7](#eq7) na Equação [2](#eq2), obteremos:
@@ -388,17 +388,17 @@ Levando as Expressões [5](#eq5), [6](#eq6) e [7](#eq7) na Equação [2](#eq2), 
 
 
 <center>
-  <br /> \( x_{i+1}={\frac {f \left( x_{i-1} \right) f \left( x_{i} \right) x_{i-2}}{ \left( f \left( x_{i-2} \right) -f \left( x_{i-1} \right) \right) \left( f \left( x_{i-2} \right) -f \left( x_{i} \right) \right) }+{\frac {f \left( x_{i-2} \right) f \left( x_{i} \right) x_{i-1}}{ \left( f \left( x_{i-1} \right) -f \left( x_{i-2} \right) \right) \left( f \left( x_{i-1} \right) -f \left( x _{i} \right) \right) }+{\frac {f \left( x_{i-2} \right) f \left( x_{i-1} \right) x_{i}}{ \left( f \left( x_{i} \right) -f \left( x_{i-2} \right) \right) \left( f \left( x_{i} \right) -f \left( x_{i-1} \right) \right) } \)<br />
+  <br /> $$ x_{i+1}={\frac {f \left( x_{i-1} \right) f \left( x_{i} \right) x_{i-2}}{ \left( f \left( x_{i-2} \right) -f \left( x_{i-1} \right) \right) \left( f \left( x_{i-2} \right) -f \left( x_{i} \right) \right) }+{\frac {f \left( x_{i-2} \right) f \left( x_{i} \right) x_{i-1}}{ \left( f \left( x_{i-1} \right) -f \left( x_{i-2} \right) \right) \left( f \left( x_{i-1} \right) -f \left( x _{i} \right) \right) }+{\frac {f \left( x_{i-2} \right) f \left( x_{i-1} \right) x_{i}}{ \left( f \left( x_{i} \right) -f \left( x_{i-2} \right) \right) \left( f \left( x_{i} \right) -f \left( x_{i-1} \right) \right) } $$<br />
 </center>
 
-Para melhor melhorar a notação, tomemos \(y\_{k} = f(x\_{k}) \) . Desta forma, a fórmula [8](#eq8) fica expressa como:
+Para melhor melhorar a notação, tomemos $$y\_{k} = f(x\_{k}) $$ . Desta forma, a fórmula [8](#eq8) fica expressa como:
 
 <a name="eq9">(eq9)</a>
       
 
 
 <center>
-  <br /> \( x_{i+1}={\frac {y_{i-1}y_{i}x_{i-2}}{ \left( y_{i-2}-y_{i-1} \right) \left( y_{i-2}-y_{i} \right) }+{\frac {y_{i-2}y_{i}x_{i-1}}{ \left( y_{i-1}-y_{i-2} \right) \left( y_{i-1}-y_{i} \right) }+{\frac {y_{i-2}y_{i-1}x_{i}}{ \left( y_{i}-y_{i-2} \right) \left( y_{i}-y_{i-1} \right) }\)<br />
+  <br /> $$ x_{i+1}={\frac {y_{i-1}y_{i}x_{i-2}}{ \left( y_{i-2}-y_{i-1} \right) \left( y_{i-2}-y_{i} \right) }+{\frac {y_{i-2}y_{i}x_{i-1}}{ \left( y_{i-1}-y_{i-2} \right) \left( y_{i-1}-y_{i} \right) }+{\frac {y_{i-2}y_{i-1}x_{i}}{ \left( y_{i}-y_{i-2} \right) \left( y_{i}-y_{i-1} \right) }$$<br />
 </center>
 
 ## 3. Critérios usados na implementação 
@@ -412,19 +412,19 @@ Desta forma, na derivada:
 
 
 <center>
-  <br /> \( {\frac {d}{dx}f \left( x \right) ={\frac {f \left( x+h \right) -f \left( x \right) }{h}\)<br />
+  <br /> $$ {\frac {d}{dx}f \left( x \right) ={\frac {f \left( x+h \right) -f \left( x \right) }{h}$$<br />
 </center>
 
 
     
-aplicamos o critério de Steffensen &#8212; \(h=f \left( x \right) \) &#8212; na primeira aproximação. Ou seja,
+aplicamos o critério de Steffensen &#8212; $$h=f \left( x \right) $$ &#8212; na primeira aproximação. Ou seja,
     
 <a name="eq11">(eq11)</a>
       
 
 
 <center>
-  <br /> \( h=f \left( x_{i-2} \right) \)<br />
+  <br /> $$ h=f \left( x_{i-2} \right) $$<br />
 </center>
 
 
@@ -434,7 +434,7 @@ o que nos permite obter a aproximação seguinte:
 
 
 <center>
-  <br /> \( x_{i-1}=x_{i-2}-{\frac {h}^{2}{f \left( x_{i-2}+h \right) -h} \)<br />
+  <br /> $$ x_{i-1}=x_{i-2}-{\frac {h}^{2}{f \left( x_{i-2}+h \right) -h} $$<br />
 </center>
 
 Para próxima aproximação, aplicamos o Método da Secante:
@@ -444,7 +444,7 @@ Para próxima aproximação, aplicamos o Método da Secante:
 
 
 <center>
-  <br /> \(x_{i}=x_{i-1}-{\frac {f \left( x_{i-1} \right) \left( x_{i-2} -x_{i-1} \right) }{f \left( x_{i-2} \right) -f \left( x_{i-1}\right) }\)<br />
+  <br /> $$x_{i}=x_{i-1}-{\frac {f \left( x_{i-1} \right) \left( x_{i-2} -x_{i-1} \right) }{f \left( x_{i-2} \right) -f \left( x_{i-1}\right) }$$<br />
 </center>
 
 Por questão de conveniência, renomeamos as variáveis,
@@ -452,7 +452,7 @@ Por questão de conveniência, renomeamos as variáveis,
 
 
 <center>
-  <br /> \(x_{0}=x_{i-2} \)<br /> <br /> \(x_{1}=x_{i-1} \)<br /> <br /> \(x_{2}=x_{i} \)<br /> <br /> \(x_{3}=x_{i+1} \)<br /> <br /> \(y_{0}=y_{i-2} \)<br /> <br /> \(y_{1}=y_{i-1} \)<br /> <br /> \(y_{2}=y_{i} \)<br />
+  <br /> $$x_{0}=x_{i-2} $$<br /> <br /> $$x_{1}=x_{i-1} $$<br /> <br /> $$x_{2}=x_{i} $$<br /> <br /> $$x_{3}=x_{i+1} $$<br /> <br /> $$y_{0}=y_{i-2} $$<br /> <br /> $$y_{1}=y_{i-1} $$<br /> <br /> $$y_{2}=y_{i} $$<br />
 </center>
 
 
@@ -464,7 +464,7 @@ o que gera o conjunto de expressões utilizados no programa:
 
 
 <center>
-  <br /> \( x_{1}=x_{0}-{\frac {y_{0}}^{2}{f \left( x_{0}+y_{0}\right) -y_{0}} \)<br />
+  <br /> $$ x_{1}=x_{0}-{\frac {y_{0}}^{2}{f \left( x_{0}+y_{0}\right) -y_{0}} $$<br />
 </center>
 
 <a name="eq14">(eq14)</a>
@@ -472,7 +472,7 @@ o que gera o conjunto de expressões utilizados no programa:
 
 
 <center>
-  <br /> \( x_{2}=x_{1}-{\frac {y_{1} \left( x_{0}-x_{1} \right) }{y_{0}-y_{1}} \)<br />
+  <br /> $$ x_{2}=x_{1}-{\frac {y_{1} \left( x_{0}-x_{1} \right) }{y_{0}-y_{1}} $$<br />
 </center>
 
 <a name="eq15">(eq15)</a>
@@ -480,7 +480,7 @@ o que gera o conjunto de expressões utilizados no programa:
 
 
 <center>
-  <br /> \( x_{3}={\frac {y_{1}y_{2}x_{0}}{ \left( y_{0}-y_{1} \right) \left( y_{0}-y_{2} \right) }+{\frac {y_{0}y_{2}x_{1}}{ \left( y_{1}-y_{0} \right) \left( y_{1}-y_{2} \right) }+{\frac {y_{0}y_{1}x_{2}}{ \left( y_{2}-y_{0} \right) \left( y_{2}-y_{1} \right) } \)<br />
+  <br /> $$ x_{3}={\frac {y_{1}y_{2}x_{0}}{ \left( y_{0}-y_{1} \right) \left( y_{0}-y_{2} \right) }+{\frac {y_{0}y_{2}x_{1}}{ \left( y_{1}-y_{0} \right) \left( y_{1}-y_{2} \right) }+{\frac {y_{0}y_{1}x_{2}}{ \left( y_{2}-y_{0} \right) \left( y_{2}-y_{1} \right) } $$<br />
 </center>
 
 <!--  IMPLEMENTACAO  --></p> 

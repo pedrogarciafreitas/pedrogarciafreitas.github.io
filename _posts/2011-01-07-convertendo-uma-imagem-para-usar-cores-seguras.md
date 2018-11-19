@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: 'Um sistema de representação de cores em imagens -- RGB, HSI, CMY, CMYK -- pode conter diversos valores, permitindo gerar escalas com tonalidades mais ou menos variadas, dependendo da quantidade de informação utilizada na representação (8, 16, 32 ou 24 bits). Todavia, existem 216 cores padronizadas utilizadas para algumas aplicações. Este post apresenta uma função que converte imagens coloridas em suas versões com cores seguras.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=924
-permalink: p=924
+permalink: /p=924
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:11731:"
@@ -113,7 +113,7 @@ Um sistema de representação de cores em imagens &#8212; RGB, HSI, CMY, CMYK &#
 
 Estas 216 cores seguras tem como principal utilização a Web e são usadas pelos navegadores, independentemente a plataforma. O navegador alterará todas as cores da imagem para essas cores seguras para a Web ao visualizar uma cor a imagem na tela de 8 bits. As 216 cores formam um subconjunto das paletas de cores de 8 bits do MacOS. Ao trabalhar apenas com essas cores, é possível ter certeza de que a arte preparada para a Web não ficará pontilhada em um sistema definido com exibição em 256 cores.
 
-Cada uma das 216 cores seguras é formada pelos três valores RGB da paleta de 256, mas estes valores são re-escalonados apenas para os valores 0, 51, 102, 153 ou 255. Assim, a tripla é formada pela combinação desses seis valores &#8212; \((6)^3 = 216\) possíveis valores. Portanto, a conversão consiste apenas em transformar os valores intermediários da maior escala \((0-255) \) nos valores da menor escala para cada pixel (note que no espaço RGB cada pixel possui 3 componentes). A função abaixo ilustra este processo:
+Cada uma das 216 cores seguras é formada pelos três valores RGB da paleta de 256, mas estes valores são re-escalonados apenas para os valores 0, 51, 102, 153 ou 255. Assim, a tripla é formada pela combinação desses seis valores &#8212; $$(6)^3 = 216$$ possíveis valores. Portanto, a conversão consiste apenas em transformar os valores intermediários da maior escala $$(0-255) $$ nos valores da menor escala para cada pixel (note que no espaço RGB cada pixel possui 3 componentes). A função abaixo ilustra este processo:
 
 <pre lang="python">def safecolors(Im):
     """

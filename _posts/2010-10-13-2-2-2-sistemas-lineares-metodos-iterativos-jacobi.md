@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O Método de Jacobi é um algoritmo iterativo para resolução de sistemas lineares, muito semelhante ao método de Gauss-Siedel. Neste post, apresentamos características deste método e uma implementação em python do mesmo.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=787
-permalink: p=787
+permalink: /p=787
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:12923:"
@@ -157,34 +157,34 @@ categories:
 ---
 ## 1. O método de Jacobi 
 
-Seja o sistema linear \(Ax = b \) tal que a matriz dos coeficientes \(A \) possa ser decomposta na seguinte forma:
+Seja o sistema linear $$Ax = b $$ tal que a matriz dos coeficientes $$A $$ possa ser decomposta na seguinte forma:
     
 
 
 <center>
-  \(A = D + R \)
+  $$A = D + R $$
 </center>
 
 
     
-onde \(D \) é uma matriz diagonal e \(R \) é a matriz que possui diagonal nula. Desta forma, o sistema é decomposto como
+onde $$D $$ é uma matriz diagonal e $$R $$ é a matriz que possui diagonal nula. Desta forma, o sistema é decomposto como
     
 
 
 <center>
-  <br /> \(<br /> Dx + Rx = b<br /> \)<br />
+  <br /> $$<br /> Dx + Rx = b<br /> $$<br />
 </center>
 
 
     
-onde podemos isolar o vetor formado pela diagonal \(Dx = b &#8211; Rx \) . 
+onde podemos isolar o vetor formado pela diagonal $$Dx = b &#8211; Rx $$ . 
 
 O passo iterativo do método consiste em sucessivas iterações para aproximar a solução através da fórmula:
     
 
 
 <center>
-  <br /> \(x^{(k+1)} = D^{-1} (b &#8211; Rx^{(k)}) \)<br />
+  <br /> $$x^{(k+1)} = D^{-1} (b &#8211; Rx^{(k)}) $$<br />
 </center>
 
 
@@ -194,7 +194,7 @@ ou em uma forma mais simples
 
 
 <center>
-  <br /> \( x_{i}^{(k+1)} = \dfrac{\left( b_i &#8211; \sum_{j \neq i} a_{ij}x_{j}^{(k)} \right)}{a_{ii}} \)<br />
+  <br /> $$ x_{i}^{(k+1)} = \dfrac{\left( b_i &#8211; \sum_{j \neq i} a_{ij}x_{j}^{(k)} \right)}{a_{ii} $$<br />
 </center>
 
 &nbsp;
@@ -203,7 +203,7 @@ ou em uma forma mais simples
 
 Como apresentamos no post sobre o método de Gauss-Siedel, podemos inserir uma variável na formula iterativa para controlar o comportamento da convergência. Tal recurso é chamado de **SOR** (_Sucessive OverRelaxation_). 
 
-Uma propriedade interessante da variável de relaxação é que ela permite transformar um processo não-convergente em outro convergente ou acelerar a taxa de convergência. Quando escolhemos um valor entre \(]0,1[ \) , observamos o primeiro caso, enquanto que valores entre \(]1,2[ \) favorecem o segundo. Assim, podemos dizer que, respeitando estes intervalos, quanto maior o valor para variável de relaxação, maior será a velocidade de convergência, caso o sistema seja predominantemente diagonal. 
+Uma propriedade interessante da variável de relaxação é que ela permite transformar um processo não-convergente em outro convergente ou acelerar a taxa de convergência. Quando escolhemos um valor entre $$]0,1[ $$ , observamos o primeiro caso, enquanto que valores entre $$]1,2[ $$ favorecem o segundo. Assim, podemos dizer que, respeitando estes intervalos, quanto maior o valor para variável de relaxação, maior será a velocidade de convergência, caso o sistema seja predominantemente diagonal. 
 
 Na nossa implementação, utilizamos um valor dinâmico para variável de relaxação. Utilizamos um valor inicial que favorece a convergência (entre 0 e 1). Caso o sistema se mantenha com uma taxa de convergência constante entre duas iterações consecutivas, aumentamos o valor da variável com o objetivo de aumentar esta taxa. Se nesta configuração detectarmos divergência, diminuímos a variável de relaxação para forçar o solução do sistema.
 

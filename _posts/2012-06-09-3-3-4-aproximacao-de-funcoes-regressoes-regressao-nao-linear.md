@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Neste post apresentamos o método para regressão não-linear ea formulação geral do método de mínimos quadrados, o que nos permite ajustar pontos para funções lineares e não-lineares.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1582
-permalink: p=1582
+permalink: /p=1582
 wp-syntax-cache-content:
   - |
     a:5:{i:1;s:1727:"
@@ -102,57 +102,57 @@ Nos posts anteriores, vimos como ajustar algumas funções simples pelo método 
 Todos os métodos de regressão apresentados nos posts anteriores &#8212; linear simples, linear múltiplo e polinomial &#8212; pertencem à um mesmo modelo geral de mínimos quadrados, descrito por
 
 <center>
-  \( y = a_0 z_0 + a_1 z_1 + \cdots + a_m z_m + \epsilon\) <a name="eq1"></a>
+  $$ y = a_0 z_0 + a_1 z_1 + \cdots + a_m z_m + \epsilon$$ <a name="eq1"></a>
 </center>
 
-onde cada \(z_i \) é uma _função-base_. Como ilustração, temos o caso em que \(Z\_0=1 \) , \(z\_1=x\_1 \) , \(z\_2=x\_2 \) , \(\cdots \) , \(z\_m=x\_m \) é exatamente a função usada no método de regressão linear. Além disso, temos o caso em que cada função-base é um monômio, tal como \(z\_0=x^0=1 \) , \(z\_1=x \) , \(z\_2=x^2 \) , \(z\_3=x^3 \) , \(\cdots \) , \(z\_m=x^m \) , que constitui o caso de regressão polinomial. 
+onde cada $$z_i $$ é uma _função-base_. Como ilustração, temos o caso em que $$Z\_0=1 $$ , $$z\_1=x\_1 $$ , $$z\_2=x\_2 $$ , $$\cdots $$ , $$z\_m=x\_m $$ é exatamente a função usada no método de regressão linear. Além disso, temos o caso em que cada função-base é um monômio, tal como $$z\_0=x^0=1 $$ , $$z\_1=x $$ , $$z\_2=x^2 $$ , $$z\_3=x^3 $$ , $$\cdots $$ , $$z\_m=x^m $$ , que constitui o caso de regressão polinomial. 
 
 Matricialmente, a equação [1](#eq1) pode ser expressa como
     
 
 
 <center>
-  <br /> \( Y = ZA + E \) <a name="eq2"></a><br />
+  <br /> $$ Y = ZA + E $$ <a name="eq2"></a><br />
 </center>
 
 
   
-onde \(Z \) é a matriz dos valores calculados das funções-base nos valores medidos de cada variável independente. Isto é, cada variável corresponde à uma linha dessa matriz e cada coluna é uma amostragem. Assim,
+onde $$Z $$ é a matriz dos valores calculados das funções-base nos valores medidos de cada variável independente. Isto é, cada variável corresponde à uma linha dessa matriz e cada coluna é uma amostragem. Assim,
   
 
 
 <center>
-  <br /> \(<br /> Z =<br /> \left[ \begin{array}{cccc}<br /> z_{01} & z_{11} & \cdots & z_{m1} \\<br /> z_{02} & z_{12} & \cdots & z_{m2} \\<br /> \vdots & \vdots & \ddots & \vdots \\<br /> z_{0n} & z_{1n} & \cdots & z_{mn}<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> Z =<br /> \left[ \begin{array}{cccc}<br /> z_{01} & z_{11} & \cdots & z_{m1} \\<br /> z_{02} & z_{12} & \cdots & z_{m2} \\<br /> \vdots & \vdots & \ddots & \vdots \\<br /> z_{0n} & z_{1n} & \cdots & z_{mn}<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 
   
-onde \(m \) é o número de variáveis do modelo e \(n \) é o número de pontos amostrados. O vetor \(Y \) contém os valores os valores observados das variáveis independentes
+onde $$m $$ é o número de variáveis do modelo e $$n $$ é o número de pontos amostrados. O vetor $$Y $$ contém os valores os valores observados das variáveis independentes
   
 
 
 <center>
-  <br /> \(<br /> Y =<br /> \left[ \begin{array}{c}<br /> y_{1} \\<br /> y_{2} \\<br /> \vdots \\<br /> y_{n}<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> Y =<br /> \left[ \begin{array}{c}<br /> y_{1} \\<br /> y_{2} \\<br /> \vdots \\<br /> y_{n}<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 
   
-O vetor \(A \) contém os coeficientes que desejamos ajustar no modelo
+O vetor $$A $$ contém os coeficientes que desejamos ajustar no modelo
   
 
 
 <center>
-  <br /> \(<br /> A =<br /> \left[ \begin{array}{c}<br /> a_{0} \\<br /> a_{1} \\<br /> \vdots \\<br /> a_{m}<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> A =<br /> \left[ \begin{array}{c}<br /> a_{0} \\<br /> a_{1} \\<br /> \vdots \\<br /> a_{m}<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 
   
-e \(E \) é o vetor de resíduos (erros)
+e $$E $$ é o vetor de resíduos (erros)
   
 
 
 <center>
-  <br /> \(<br /> E =<br /> \left[ \begin{array}{c}<br /> \epsilon_{1} \\<br /> \epsilon_{2} \\<br /> \vdots \\<br /> \epsilon_{n}<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> E =<br /> \left[ \begin{array}{c}<br /> \epsilon_{1} \\<br /> \epsilon_{2} \\<br /> \vdots \\<br /> \epsilon_{n}<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 Assim, como demonstrado nos posts anteriores, o objetivo da regressão é minimizar o erro, que fazemos através da minimização da seguinte soma dos quadrados dos resíduos:
@@ -160,7 +160,7 @@ Assim, como demonstrado nos posts anteriores, o objetivo da regressão é minimi
 
 
 <center>
-  <br /> \( S_r = \sum_{i=1}^{n} \left(y_i &#8211; \sum_{j=0}^{m} a_j z_{ji} \right)^2 \)<br />
+  <br /> $$ S_r = \sum_{i=1}^{n} \left(y_i &#8211; \sum_{j=0}^{m} a_j z_{ji} \right)^2 $$<br />
 </center>
 
 Essa soma pode ser minimizada tomando-se suas derivadas parciais em relação a cada um dos coeficientes a serem ajustados e igualando-se a equação resultante a zero. Desta maneira, temos que os coeficientes são obtidos ao resolver o sistema
@@ -168,7 +168,7 @@ Essa soma pode ser minimizada tomando-se suas derivadas parciais em relação a 
 
 
 <center>
-  <br /> \( Z^T Z A = Z^T Y \) <a name="eqnormal"></a>
+  <br /> $$ Z^T Z A = Z^T Y $$ <a name="eqnormal"></a>
 </center>
 
 
@@ -182,37 +182,37 @@ Para ilustrar esse método, a relação entre a equação não-linear e os dados
 
 
 <center>
-  <br /> \( y_i = f(x_i; a_0, a_1, a_2, \ldots, a_m) + \epsilon_i \) <a name="eq3"></a><br />
+  <br /> $$ y_i = f(x_i; a_0, a_1, a_2, \ldots, a_m) + \epsilon_i $$ <a name="eq3"></a><br />
 </center>
 
 
   
-onde \(y\_i \) é uma amostra da variável dependente; \(f(x\_i; a\_0, a\_1, a\_2, \ldots, a\_m) \) é a função independente da variável \(x\_i \) e dependente dos parâmetros \(a\_0, a\_1, a\_2, \ldots, a\_m \); e \(\epsilon\_i\) é um resíduo qualquer. Por conveniência, omitimos os parâmetros,
+onde $$y\_i $$ é uma amostra da variável dependente; $$f(x\_i; a\_0, a\_1, a\_2, \ldots, a\_m) $$ é a função independente da variável $$x\_i $$ e dependente dos parâmetros $$a\_0, a\_1, a\_2, \ldots, a\_m $$; e $$\epsilon\_i$$ é um resíduo qualquer. Por conveniência, omitimos os parâmetros,
   
 
 
 <center>
-  <br /> \( y_i = f(x_i) + \epsilon_i \) <a name="eq4"></a>
+  <br /> $$ y_i = f(x_i) + \epsilon_i $$ <a name="eq4"></a>
 </center>
 
-Expandimos esse modelo por uma série de Taylor em torno dos parâmetros e truncamos após a primeira derivada. Isto é, para um modelo com \(m \) parâmetros, temos
+Expandimos esse modelo por uma série de Taylor em torno dos parâmetros e truncamos após a primeira derivada. Isto é, para um modelo com $$m $$ parâmetros, temos
   
 
 
 <center>
-  <br /> \(<br /> f(x_i)_{j+1} = f(x_i)_j +<br /> \frac{\partial f(x_i)_j}{\partial a_0} \Delta a_0 +<br /> \frac{\partial f(x_i)_j}{\partial a_1} \Delta a_1 +<br /> \cdots +<br /> \frac{\partial f(x_i)_j}{\partial a_m} \Delta a_m<br /> \) <a name="eq5"></a><br />
+  <br /> $$<br /> f(x_i)_{j+1} = f(x_i)_j +<br /> \frac{\partial f(x_i)_j}{\partial a_0} \Delta a_0 +<br /> \frac{\partial f(x_i)_j}{\partial a_1} \Delta a_1 +<br /> \cdots +<br /> \frac{\partial f(x_i)_j}{\partial a_m} \Delta a_m<br /> $$ <a name="eq5"></a><br />
 </center>
 
 
   
-onde \(j \) é a aproximação inicial, \(j+1 \) é a previsão, \(\Delta a\_0 = a\_{0,j+1} &#8211; a\_{0, j} \) e \(\Delta a\_1 = a\_{1,j+1} &#8211; a\_{1, j}\). Com isso, linearizamos o
+onde $$j $$ é a aproximação inicial, $$j+1 $$ é a previsão, $$\Delta a\_0 = a\_{0,j+1} &#8211; a\_{0, j} $$ e $$\Delta a\_1 = a\_{1,j+1} &#8211; a\_{1, j}$$. Com isso, linearizamos o
   
 modelo inicial com relação aos parâmetros. Levando a Equação [4](#eq4) na Equação [5](#eq5), temos
   
 
 
 <center>
-  <br /> \(<br /> y_i &#8211; f(x_i)_j =<br /> \frac{\partial f(x_i)_j}{\partial a_0} \Delta a_0 +<br /> \frac{\partial f(x_i)_j}{\partial a_1} \Delta a_1 +<br /> \cdots +<br /> \frac{\partial f(x_i)_j}{\partial a_m} \Delta a_m +<br /> \epsilon_i<br /> \) <a name="eq6"></a><br />
+  <br /> $$<br /> y_i &#8211; f(x_i)_j =<br /> \frac{\partial f(x_i)_j}{\partial a_0} \Delta a_0 +<br /> \frac{\partial f(x_i)_j}{\partial a_1} \Delta a_1 +<br /> \cdots +<br /> \frac{\partial f(x_i)_j}{\partial a_m} \Delta a_m +<br /> \epsilon_i<br /> $$ <a name="eq6"></a><br />
 </center>
 
 
@@ -222,37 +222,37 @@ ou, na forma matricial, temos um sistema igual da Equação [2](#eq2),
 
 
 <center>
-  <br /> \( D = Z A + E \) <a name="eq7"></a><br />
+  <br /> $$ D = Z A + E $$ <a name="eq7"></a><br />
 </center>
 
 
   
-onde \(Z \) é a matriz das derivadas parciais da função calculada na aproximação inicial,
+onde $$Z $$ é a matriz das derivadas parciais da função calculada na aproximação inicial,
   
 
 
 <center>
-  <br /> \(<br /> Z =<br /> \left[ \begin{array}{cccc}<br /> \frac{\partial f_1}{\partial a_0} &<br /> \frac{\partial f_1}{\partial a_1} &<br /> \cdots &<br /> \frac{\partial f_1}{\partial a_m} \\<br /> \frac{\partial f_2}{\partial a_0} &<br /> \frac{\partial f_2}{\partial a_1} &<br /> \cdots &<br /> \frac{\partial f_2}{\partial a_m} \\<br /> \vdots & \vdots & \ddots & \vdots \\<br /> \frac{\partial f_n}{\partial a_0} &<br /> \frac{\partial f_n}{\partial a_1} &<br /> \cdots &<br /> \frac{\partial f_n}{\partial a_m} \\<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> Z =<br /> \left[ \begin{array}{cccc}<br /> \frac{\partial f_1}{\partial a_0} &<br /> \frac{\partial f_1}{\partial a_1} &<br /> \cdots &<br /> \frac{\partial f_1}{\partial a_m} \\<br /> \frac{\partial f_2}{\partial a_0} &<br /> \frac{\partial f_2}{\partial a_1} &<br /> \cdots &<br /> \frac{\partial f_2}{\partial a_m} \\<br /> \vdots & \vdots & \ddots & \vdots \\<br /> \frac{\partial f_n}{\partial a_0} &<br /> \frac{\partial f_n}{\partial a_1} &<br /> \cdots &<br /> \frac{\partial f_n}{\partial a_m} \\<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 
   
-onde \(n \) é o número de amostrars e \(\frac{\partial f\_i}{\partial a\_k} \) é a derivada parcial da função com relação ao k-ésimo parâmetro calculada no i-ésimo ponto dado. O vetor \(D \) contém as diferenças entre as medidas e os valores da função ajustada,
+onde $$n $$ é o número de amostrars e $$\frac{\partial f\_i}{\partial a\_k} $$ é a derivada parcial da função com relação ao k-ésimo parâmetro calculada no i-ésimo ponto dado. O vetor $$D $$ contém as diferenças entre as medidas e os valores da função ajustada,
   
 
 
 <center>
-  <br /> \(<br /> D =<br /> \left[ \begin{array}{c}<br /> y_1 &#8211; f(x_1) \\<br /> y_2 &#8211; f(x_2) \\<br /> \vdots \\<br /> y_n &#8211; f(x_n)<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> D =<br /> \left[ \begin{array}{c}<br /> y_1 &#8211; f(x_1) \\<br /> y_2 &#8211; f(x_2) \\<br /> \vdots \\<br /> y_n &#8211; f(x_n)<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 
   
-e o vetor \(\Delta A \) contém a variação nos valores dos parâmetros que estão sendo ajustados,
+e o vetor $$\Delta A $$ contém a variação nos valores dos parâmetros que estão sendo ajustados,
   
 
 
 <center>
-  <br /> \(<br /> A =<br /> \left[ \begin{array}{c}<br /> \Delta a_0 \\<br /> \Delta a_1 \\<br /> \vdots \\<br /> \Delta a_n \\<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> A =<br /> \left[ \begin{array}{c}<br /> \Delta a_0 \\<br /> \Delta a_1 \\<br /> \vdots \\<br /> \Delta a_n \\<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 Assim, a Equação [7](#eq7) pode ser reescrita como a seguinte equação normal (conforme apresentado na Equação [normal](#eqnormal):
@@ -260,14 +260,14 @@ Assim, a Equação [7](#eq7) pode ser reescrita como a seguinte equação normal
 
 
 <center>
-  <br /> \( Z^T Z A = Z^T D \) <a name="eqsys"></a><br />
+  <br /> $$ Z^T Z A = Z^T D $$ <a name="eqsys"></a><br />
 </center>
 
 
   
 A resolução deste sistema ajusta o conjunto de coeficientes da função não-linear. 
 
-Devemos notar que o vetor dos coeficientes ( \(A \) ) resolve uma variação dos coeficientes e não os valores dos coeficientes em si. Isso descreve um processo iterativo, ou seja, esse conjunto de equações pode ser resolvidas sucessivas vezes, substituindo os valores de \(A\) pelos novos valores melhorados como em
+Devemos notar que o vetor dos coeficientes ( $$A $$ ) resolve uma variação dos coeficientes e não os valores dos coeficientes em si. Isso descreve um processo iterativo, ou seja, esse conjunto de equações pode ser resolvidas sucessivas vezes, substituindo os valores de $$A$$ pelos novos valores melhorados como em
   
 
 
@@ -277,25 +277,25 @@ Devemos notar que o vetor dos coeficientes ( \(A \) ) resolve uma variação dos
   <table border="0" cellpadding="1">
     <tr>
       <td>
-        \( a_{0,j+1} = a_{0,j} + \Delta a_0 \)
+        $$ a_{0,j+1} = a_{0,j} + \Delta a_0 $$
       </td>
     </tr>
     
     <tr>
       <td>
-        \( a_{0,j+1} = a_{1,j} + \Delta a_1 \)
+        $$ a_{0,j+1} = a_{1,j} + \Delta a_1 $$
       </td>
     </tr>
     
     <tr>
       <td align="center">
-        \( \vdots \)
+        $$ \vdots $$
       </td>
     </tr>
     
     <tr>
       <td>
-        \( a_{m,j+1} = a_{m,j} + \Delta a_m \)
+        $$ a_{m,j+1} = a_{m,j} + \Delta a_m $$
       </td>
     </tr>
   </table>
@@ -304,7 +304,7 @@ Devemos notar que o vetor dos coeficientes ( \(A \) ) resolve uma variação dos
     </center><br /> Este processo iterativo é repetido até que a solução convirja à um valor de erro tolerado, que pode ser calculado utilizando a seguinte equação<br /> 
     
     <center>
-      <br /> \( \left|\epsilon_a\right|_k = \left|\frac{a_{k,j+1} &#8211; a_{k,j}}{a_{k,j+1}}\right| \)<br />
+      <br /> $$ \left|\epsilon_a\right|_k = \left|\frac{a_{k,j+1} &#8211; a_{k,j}{a_{k,j+1}\right| $$<br />
     </center>
   </p>
   
@@ -321,20 +321,20 @@ Devemos notar que o vetor dos coeficientes ( \(A \) ) resolve uma variação dos
     Para ilustrarmos a utilização da regressão linear, implementaremos a seguinte função<br /> 
     
     <center>
-      <br /> \( f(x) = \alpha_0(1 &#8211; e^{-\alpha_1 x}) \)<br />
+      <br /> $$ f(x) = \alpha_0(1 &#8211; e^{-\alpha_1 x}) $$<br />
     </center>
     
-    <br /> ilustrando cada passo e o respectivo código, seguindo a ordem do algoritmo descrito na seção anterior. O primeiro passo é definir uma aproximação inicial para \(\alpha_0 \) e \(\alpha_1 \) e selecionar um erro de tolerância \(\epsilon \) . Como a função possui dos coeficientes a serem ajustados, o vetor dos coeficientes terá apenas dois elementos, ou seja \(A = [\alpha_0, \alpha_1]^T \) . Além disso, escolhemos \(\epsilon=0.1 \) .
+    <br /> ilustrando cada passo e o respectivo código, seguindo a ordem do algoritmo descrito na seção anterior. O primeiro passo é definir uma aproximação inicial para $$\alpha_0 $$ e $$\alpha_1 $$ e selecionar um erro de tolerância $$\epsilon $$ . Como a função possui dos coeficientes a serem ajustados, o vetor dos coeficientes terá apenas dois elementos, ou seja $$A = [\alpha_0, \alpha_1]^T $$ . Além disso, escolhemos $$\epsilon=0.1 $$ .
   </p>
   
   <p>
-    O próximo passo é obter as derivadas parciais da função com relação aos parâmetros \(\alpha_0 \) e \(\alpha_1 \) . Isto é,<br /> 
+    O próximo passo é obter as derivadas parciais da função com relação aos parâmetros $$\alpha_0 $$ e $$\alpha_1 $$ . Isto é,<br /> 
     
     <center>
-      <br /> \( \frac{\partial f}{\partial \alpha_0} = 1 &#8211; e^{-\alpha_1 x} \) e \( \frac{\partial f}{\partial \alpha_1} = \alpha_0 x e^{-\alpha_1 x} \)<br />
+      <br /> $$ \frac{\partial f}{\partial \alpha_0} = 1 &#8211; e^{-\alpha_1 x} $$ e $$ \frac{\partial f}{\partial \alpha_1} = \alpha_0 x e^{-\alpha_1 x} $$<br />
     </center>
     
-    <br /> Na implementação temos que as funções necessárias \(f \) , \(\frac{\partial f}{\partial \alpha_0}\) e \(\frac{\partial f}{\partial \alpha_1}\) são, respectivamente,
+    <br /> Na implementação temos que as funções necessárias $$f $$ , $$\frac{\partial f}{\partial \alpha_0}$$ e $$\frac{\partial f}{\partial \alpha_1}$$ são, respectivamente,
   </p>
   
   <div>
@@ -352,10 +352,10 @@ def diff_a1(x, a0, a1):
     </p>
     
     <p>
-      As equações acima são usadas para calcular a matriz \(Z \) , conforme mostrado na seção anterior<br /> 
+      As equações acima são usadas para calcular a matriz $$Z $$ , conforme mostrado na seção anterior<br /> 
       
       <center>
-        <br /> \(<br /> Z =<br /> \left[ \begin{array}{cc}<br /> \frac{\partial f_1}{\partial a_0} &<br /> \frac{\partial f_1}{\partial a_1} \\<br /> \frac{\partial f_2}{\partial a_0} &<br /> \frac{\partial f_2}{\partial a_1} \\<br /> \vdots & \vdots \\<br /> \frac{\partial f_n}{\partial a_0} &<br /> \frac{\partial f_n}{\partial a_1} \\<br /> \end{array} \right]<br /> \)<br />
+        <br /> $$<br /> Z =<br /> \left[ \begin{array}{cc}<br /> \frac{\partial f_1}{\partial a_0} &<br /> \frac{\partial f_1}{\partial a_1} \\<br /> \frac{\partial f_2}{\partial a_0} &<br /> \frac{\partial f_2}{\partial a_1} \\<br /> \vdots & \vdots \\<br /> \frac{\partial f_n}{\partial a_0} &<br /> \frac{\partial f_n}{\partial a_1} \\<br /> \end{array} \right]<br /> $$<br />
       </center>
       
       <br /> Essa matriz é construída com a seguinte implementação
@@ -375,7 +375,7 @@ def diff_a1(x, a0, a1):
       </p>
       
       <p>
-        O passo seguinte consiste em obter o vetor \(D \) que, conforme demonstrado, será a diferença entre a função ajustada e o valor amostrado
+        O passo seguinte consiste em obter o vetor $$D $$ que, conforme demonstrado, será a diferença entre a função ajustada e o valor amostrado
       </p>
       
       <div>
@@ -391,7 +391,7 @@ def diff_a1(x, a0, a1):
         </p>
         
         <p>
-          Agora, de posse de \(Z \) e \(D \) , podemos obter o vetor \(A \) resolvendo o sistema da Equação <a href="#eqsys">sys</a>. Os passos para resolução desse sistema são listados nos comandos abaixo
+          Agora, de posse de $$Z $$ e $$D $$ , podemos obter o vetor $$A $$ resolvendo o sistema da Equação <a href="#eqsys">sys</a>. Os passos para resolução desse sistema são listados nos comandos abaixo
         </p>
         
         <div>
@@ -409,7 +409,7 @@ def diff_a1(x, a0, a1):
           </p>
           
           <p>
-            Logo, os coeficientes já estão mais ajustados em relação à aproximação inicial. Contudo, esse procedimento pode ser repetido para melhorar ainda mais os parâmetros \(\alpha \) . Logo, definimos uma nova função que ajusta tais parâmetros através de sucessivas substituições de \(\alpha \):
+            Logo, os coeficientes já estão mais ajustados em relação à aproximação inicial. Contudo, esse procedimento pode ser repetido para melhorar ainda mais os parâmetros $$\alpha $$ . Logo, definimos uma nova função que ajusta tais parâmetros através de sucessivas substituições de $$\alpha $$:
           </p>
           
           <div>
@@ -428,7 +428,7 @@ def diff_a1(x, a0, a1):
               </div> 
               
               <p>
-                Onde a variável <i>memalpha</i> armazena o \(\alpha \) da iteração anterior para o calculo do erro; <i>itercount</i> é um contador usado para limitar o número máximo de repetições, caso haja uma convergência muito lenta do algoritmo.
+                Onde a variável <i>memalpha</i> armazena o $$\alpha $$ da iteração anterior para o calculo do erro; <i>itercount</i> é um contador usado para limitar o número máximo de repetições, caso haja uma convergência muito lenta do algoritmo.
               </p>
               
               <p>

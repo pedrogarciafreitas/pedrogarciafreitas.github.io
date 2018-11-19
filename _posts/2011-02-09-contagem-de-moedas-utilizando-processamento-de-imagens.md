@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Como utilizar morfologia matemática em processamento de imagens para contagem automática de dinheiro? Neste post veremos um exemplo de reconhecimento simples de padrões.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1101
-permalink: p=1101
+permalink: /p=1101
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:5497:"

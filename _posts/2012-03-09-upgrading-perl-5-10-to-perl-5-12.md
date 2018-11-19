@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: 'How to Upgrading Perl from 5.10 to Perl 5.12 with all dependences. '
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1496
-permalink: p=1496
+permalink: /p=1496
 categories:
   - FreeBSD
 ---

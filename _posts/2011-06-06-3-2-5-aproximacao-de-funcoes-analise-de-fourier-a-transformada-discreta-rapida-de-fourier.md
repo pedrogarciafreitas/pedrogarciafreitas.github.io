@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Embora o algoritmo implementado no post anterior calcule adequadamente a transformada discreta de Fourier (TDF), ele é computacionalmente custoso, uma vez que possui ordem de complexidade quadrática. Por isso, para uma amostra de dados considerável, pode ser inviável a utilização daquela função. Neste post veremos a transformada de rápida de Fourier, algoritmo eficiente que é muito utilizado em diversas áreas que utilizam recursos eletrônicos e computacionais, tais como processamento de sinais.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1186
-permalink: p=1186
+permalink: /p=1186
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:8148:"
@@ -225,7 +225,7 @@ categories:
 
 A transformada rápida de Fourier é um algoritmo desenvolvido para calcular a transformada discreta de Fourier utilizando menos recursos computacionais. Conhecida por FFT (_Fast Fourier Transform_), Sua eficiência se deve ao fato dela reaproveitar resultados computados anteriormente, reduzindo o número total de operações aritméticas. 
 
-Algoritmos que implementam FFTs exploram a simetria e a periodicidade das funções trigonométricas para calcular a transformada. Este tipo de abordagem reduz a quantidade de \(N^2 \) operações, necessárias para computar a TDF, para \(N log_2 N \) operações. Em problemas reais, isto significa um ganho de eficiência considerável, conforme podemos comparar no gráfico abaixo: 
+Algoritmos que implementam FFTs exploram a simetria e a periodicidade das funções trigonométricas para calcular a transformada. Este tipo de abordagem reduz a quantidade de $$N^2 $$ operações, necessárias para computar a TDF, para $$N log_2 N $$ operações. Em problemas reais, isto significa um ganho de eficiência considerável, conforme podemos comparar no gráfico abaixo: 
 
 <center>
   <br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2011/06/g1.png"><img src="http://www.sawp.com.br/blog/wp-content/uploads/2011/06/g1.png" alt="" title="g1" width="570" height="388" class="aligncenter size-full wp-image-1189" srcset="http://www.sawp.com.br/blog/wp-content/uploads/2011/06/g1.png 570w, http://www.sawp.com.br/blog/wp-content/uploads/2011/06/g1-300x204.png 300w" sizes="(max-width: 570px) 100vw, 570px" /></a><br />
@@ -242,7 +242,7 @@ Outras abordagens permitem o cálculo da FFT, mas sem melhoria na complexidade d
 Para que seja possível calcular a FFT por este algoritmo, devemos ter como entrada uma quantidade par de valores. Ou seja,
 
 <center>
-  \(N = 2 ^ M\)
+  $$N = 2 ^ M$$
 </center>
 
 
@@ -252,29 +252,29 @@ Como apresentado em outro post, a transformada discreta de Fourier é definida c
 
 
 <center>
-  \(F_k = \sum_{j=0}^{N} f_j e^{-i \frac{2 \pi}{N} j k} \)
+  $$F_k = \sum_{j=0}^{N} f_j e^{-i \frac{2 \pi}{N} j k} $$
 </center>
 
 
     
-para \(k = 0, 1, \ldots, N \) . 
+para $$k = 0, 1, \ldots, N $$ . 
 
-Supondo que dividimos cada amostra na metade, e decompondo a equação acima em termos de \(\frac{N}{2} \) pontos, temos que:
+Supondo que dividimos cada amostra na metade, e decompondo a equação acima em termos de $$\frac{N}{2} $$ pontos, temos que:
 
 <center>
-  \(F_k = \sum_{j=0}^{(N/2) &#8211; 1} f_j e^{\frac{-i 2 \pi k j}{N}} + \sum_{j=N/2}^{N} f_j e^{\frac{-i 2 \pi k j}{N}}\)
+  $$F_k = \sum_{j=0}^{(N/2) &#8211; 1} f_j e^{\frac{-i 2 \pi k j}{N} + \sum_{j=N/2}^{N} f_j e^{\frac{-i 2 \pi k j}{N}$$
 </center>
 
-Se criarmos uma nova variável \(m = j &#8211; \frac{N}{2} \) , observamos que a segunda somatória possui o mesmo número de elementos da primeira:
+Se criarmos uma nova variável $$m = j &#8211; \frac{N}{2} $$ , observamos que a segunda somatória possui o mesmo número de elementos da primeira:
 
 <center>
-  \(F_k = \sum_{j=0}^{(N/2) &#8211; 1} f_j e^{\frac{-i 2 \pi k j}{N}} + \sum_{m=0}^{(N/2) &#8211; 2} f_{m+N} e^{-i (2 \pi / N) k (m + N/2)}\)
+  $$F_k = \sum_{j=0}^{(N/2) &#8211; 1} f_j e^{\frac{-i 2 \pi k j}{N} + \sum_{m=0}^{(N/2) &#8211; 2} f_{m+N} e^{-i (2 \pi / N) k (m + N/2)}$$
 </center>
 
 com isso, podemos agrupar novamente os termos em um único somatório
 
 <center>
-  \(F_k = \sum_{j=0}^{(N/2) &#8211; 1} (f_j + e^{-i \pi k} f_{n+N/2}) e^{\frac{-i 2 \pi k j}{N}}\)
+  $$F_k = \sum_{j=0}^{(N/2) &#8211; 1} (f_j + e^{-i \pi k} f_{n+N/2}) e^{\frac{-i 2 \pi k j}{N}$$
 </center>
 
 Ao utilizarmos a propriedade
@@ -282,41 +282,41 @@ Ao utilizarmos a propriedade
 
 
 <center>
-  \(e^{-i \pi k} = (-1) ^ k\)
+  $$e^{-i \pi k} = (-1) ^ k$$
 </center>
 
-notamos que os pontos são sempre projetados. Isto é, para \(k \) par, esse fator é igual à \(1 \) , para \(k \) ímpar é \(-1 \) . Com isso, decompomos a transformada em duas, uma relativa às pares
+notamos que os pontos são sempre projetados. Isto é, para $$k $$ par, esse fator é igual à $$1 $$ , para $$k $$ ímpar é $$-1 $$ . Com isso, decompomos a transformada em duas, uma relativa às pares
 
 <center>
-  \(F_{2k} = \sum_{j=0}^{(N/2)-1} (f_j + f_{j+N/2}) e^{\frac{-i 2 \pi k j}{N/2}}\)
+  $$F_{2k} = \sum_{j=0}^{(N/2)-1} (f_j + f_{j+N/2}) e^{\frac{-i 2 \pi k j}{N/2}$$
 </center>
 
 e outra relativa às ímpares
 
 <center>
-  \(F_{2k+1} = \sum_{j=0}^{(N/2)-1} (f_j &#8211; f_{j+N/2}) e^{\frac{-i 2 \pi k j}{N/2}} e^{\frac{-i2 \pi j}{N}}\)
+  $$F_{2k+1} = \sum_{j=0}^{(N/2)-1} (f_j &#8211; f_{j+N/2}) e^{\frac{-i 2 \pi k j}{N/2} e^{\frac{-i2 \pi j}{N}$$
 </center>
 
-para \(k = 0, 1, \ldots, N \). 
+para $$k = 0, 1, \ldots, N $$. 
 
 Se definirmos
     
 
 
 <center>
-  \(W = e ^{-i \frac{2 \pi}{N}}\)
+  $$W = e ^{-i \frac{2 \pi}{N}$$
 </center>
 
 podemos reescrever a TDF como
 
 <center>
-  \(F_k = \sum_{j=0}^{N} f_n W^{jk}\)
+  $$F_k = \sum_{j=0}^{N} f_n W^{jk}$$
 </center>
 
 e as equações decompostas como
 
 <center>
-  \(F_{2k} = \sum_{j=0}^{(N/2)-1} (f_j + f_{j+N/2}) W^{2jk}\)
+  $$F_{2k} = \sum_{j=0}^{(N/2)-1} (f_j + f_{j+N/2}) W^{2jk}$$
 </center>
 
 
@@ -326,38 +326,38 @@ e
 
 
 <center>
-  \(F_{2K+1} = \sum_{j=0}^{(N/2)-1} (f_j &#8211; f_{j+N/2}) W^j W^{2jk}\)
+  $$F_{2K+1} = \sum_{j=0}^{(N/2)-1} (f_j &#8211; f_{j+N/2}) W^j W^{2jk}$$
 </center>
 
 Dessas expressões, podemos notar que elas se relacionam por
 
 <center>
-  \(g_j = f_j + f_{j+N/2}\)
+  $$g_j = f_j + f_{j+N/2}$$
 </center>
 
 e
 
 <center>
-  \(h_j = (f_j + f_{j+N/2}) W^j\)
+  $$h_j = (f_j + f_{j+N/2}) W^j$$
 </center>
 
 portanto,
 
 <center>
-  \(F_{2k} = G_k \) e \(F_{2k+1} = H_k \)
+  $$F_{2k} = G_k $$ e $$F_{2k+1} = H_k $$
 </center>
 
-Ou seja, em vez de um utilizarmos \(N \) pontos, utilizamos dois cálculos para \(N/2\) pontos. 
+Ou seja, em vez de um utilizarmos $$N $$ pontos, utilizamos dois cálculos para $$N/2$$ pontos. 
 
-A TDF é calculada formando-se inicialmente as sequências \(g\_n\) e \(h\_n\) e então calculando-se as TDFs para \(\frac{N}{2} \) pontos para obtermos as transformadas ímpares e pares, independentemente. Os pesos \(W^j\) são frequentemente chamados de _twiddle factors_ na literatura. 
+A TDF é calculada formando-se inicialmente as sequências $$g\_n$$ e $$h\_n$$ e então calculando-se as TDFs para $$\frac{N}{2} $$ pontos para obtermos as transformadas ímpares e pares, independentemente. Os pesos $$W^j$$ são frequentemente chamados de _twiddle factors_ na literatura. 
 
-O processo de dividir a transformada em duas transformadas independentes, tratando apenas \(\frac{N}{2} \) pontos, é repetida novamente para cada novo intervalo seccionado. Ou seja, calculamos as TDFs para \(\frac{N}{4}\) pontos das quatro sequências de comprimento \(\frac{N}{4} \) compostas dos primeiros e últimos pontos. Assim, repetindo-se esta estratégia até a solução, teremos aproximadamente \(N \log_2 N \) operações. 
+O processo de dividir a transformada em duas transformadas independentes, tratando apenas $$\frac{N}{2} $$ pontos, é repetida novamente para cada novo intervalo seccionado. Ou seja, calculamos as TDFs para $$\frac{N}{4}$$ pontos das quatro sequências de comprimento $$\frac{N}{4} $$ compostas dos primeiros e últimos pontos. Assim, repetindo-se esta estratégia até a solução, teremos aproximadamente $$N \log_2 N $$ operações. 
 
 &nbsp;
 
 ### 1.2. Algoritmo de Cooley-Tukey 
 
-A abordagem que utiliza decimação no tempo, utiliza-se do inverso do que faz o algoritmo de Sande-Tukey. Embora os dois métodos sejam diferentes na ordem de processamento dos dados, ambos possuem complexidade equivalente, de \(N \log_2 N\) operações. Neste algoritmo, a amostra original é dividida inicialmente em pontos rotulados com numeração par e ímpar, e as diversas TDFs são aplicadas sobre essas divisões. 
+A abordagem que utiliza decimação no tempo, utiliza-se do inverso do que faz o algoritmo de Sande-Tukey. Embora os dois métodos sejam diferentes na ordem de processamento dos dados, ambos possuem complexidade equivalente, de $$N \log_2 N$$ operações. Neste algoritmo, a amostra original é dividida inicialmente em pontos rotulados com numeração par e ímpar, e as diversas TDFs são aplicadas sobre essas divisões. 
 
 &nbsp;
 

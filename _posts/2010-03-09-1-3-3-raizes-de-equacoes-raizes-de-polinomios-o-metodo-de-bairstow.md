@@ -9,7 +9,7 @@ excerpt: |
   Este artigo faz uma breve exposição matemática do método, seguida de duas implementações reais nas linguagens Python e Fortran 90.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=473
-permalink: p=473
+permalink: /p=473
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:19823:"
@@ -284,163 +284,163 @@ categories:
 <p>  Seja a função um polinômio geral:<br />
   <a name="eq1">(eq1)</a><br />
     <center><br />
-    \( f_{n} = a_{0} + a_{1}x + a_{2}x^2 + \cdots + a_{n}x^n \)<br />
+    $$ f_{n} = a_{0} + a_{1}x + a_{2}x^2 + \cdots + a_{n}x^n $$<br />
     </center><br />
-  Se dividirmos o polinômio <a href="#eq1">1</a> pelo fator  \(x-t \) , obtemos outro polinômio de um grau a menos:<br />
+  Se dividirmos o polinômio <a href="#eq1">1</a> pelo fator  $$x-t $$ , obtemos outro polinômio de um grau a menos:<br />
   <a name="eq2">(eq2)</a><br />
     <center><br />
-    \( f_{n-1} = b_{1} + b_{2}x + b_{3}x^2 + \cdots + b_{n}x^{n-1} \)<br />
+    $$ f_{n-1} = b_{1} + b_{2}x + b_{3}x^2 + \cdots + b_{n}x^{n-1} $$<br />
     </center><br />
-  Caso esta divisão não gere resto, então  \(t \)  é uma raiz do polinômio  \(f \). Mas, tomando o pior caso, onde há um resto  \(R \) . Nesse caso  \(R = b_0 \) e os coeficientes poderão ser calculados pela relação:<br />
+  Caso esta divisão não gere resto, então  $$t $$  é uma raiz do polinômio  $$f $$. Mas, tomando o pior caso, onde há um resto  $$R $$ . Nesse caso  $$R = b_0 $$ e os coeficientes poderão ser calculados pela relação:<br />
   <a name="eq3">(eq3)</a><br />
     <center><br />
-    \( b_{n} = a_{n} \)<br />
+    $$ b_{n} = a_{n} $$<br />
     </center><br />
    e<br />
   <a name="eq4">(eq4)</a><br />
     <center><br />
-    \( b_{i} = a_{i} + b_{i+1}t \)<br />
+    $$ b_{i} = a_{i} + b_{i+1}t $$<br />
     </center><br />
-  onde  \(i=n-1, n-2, \ldots, 0 \) .
+  onde  $$i=n-1, n-2, \ldots, 0 $$ .
 </p>
 <p>
-  O Método de Bairstow segue um procedimento semelhante ao descrito acima, contudo, ao invés de dividir  \(f \)  por um fator  \(x-t \) , ele divide o polinômio pelo fator  \(x*x &#8211; r*x &#8211; s \) . A introdução deste fator quadrático serve para permitir a determinação de raízes complexas, enquanto que o fator linear permitiria apenas aproximações reais.
+  O Método de Bairstow segue um procedimento semelhante ao descrito acima, contudo, ao invés de dividir  $$f $$  por um fator  $$x-t $$ , ele divide o polinômio pelo fator  $$x*x &#8211; r*x &#8211; s $$ . A introdução deste fator quadrático serve para permitir a determinação de raízes complexas, enquanto que o fator linear permitiria apenas aproximações reais.
 </p>
 <p>
   Ao dividirmos o polinômio pelo fator de segunda ordem, obtemos:<br />
   <a name="eq5">(eq5)</a><br />
     <center><br />
-        \(f_{n-2} = b_{2} + b_{3} x + b_{4} x^2 + \cdots + b_{n-1} x^{n-3} + b_{n} x^{n-2}\)<br />
+        $$f_{n-2} = b_{2} + b_{3} x + b_{4} x^2 + \cdots + b_{n-1} x^{n-3} + b_{n} x^{n-2}$$<br />
     </center><br />
   isso gera uma expressão para o resto que é:<br />
   <a name="eq6">(eq6)</a><br />
     <center><br />
-    \( R = b_{1} \left(x -r \right) + b_{0} \)<br />
+    $$ R = b_{1} \left(x -r \right) + b_{0} $$<br />
     </center>
 </p>
 <p>
-  Aplicando o algoritmo de Briot-Ruffine com   \(x*x &#8211; r*x &#8211; s \)  como divisor, obtemos a seguinte relação de recorrência:<br />
+  Aplicando o algoritmo de Briot-Ruffine com   $$x*x &#8211; r*x &#8211; s $$  como divisor, obtemos a seguinte relação de recorrência:<br />
   <a name="eq7">(eq7)</a><br />
     <center><br />
-        \( b_{n} = a_{n} \)<br />
+        $$ b_{n} = a_{n} $$<br />
     </center></p>
 <p>  <center><br />
-    \(\Downarrow \)<br />
+    $$\Downarrow $$<br />
   </center><br />
   <a name="eq8">(eq8)</a><br />
     <center><br />
-        \( b_{n-1} = a_{n-1} + r b_{n} \)<br />
+        $$ b_{n-1} = a_{n-1} + r b_{n} $$<br />
     </center></p>
 <p>  <center><br />
-    \(\Downarrow \)<br />
+    $$\Downarrow $$<br />
   </center><br />
   <a name="eq9">(eq9)</a></p>
 <p>    <center><br />
-        \( b_j = a_{j} + r b_{j+1} + s b_{j+2} \)<br />
+        $$ b_j = a_{j} + r b_{j+1} + s b_{j+2} $$<br />
     </center><br />
-  onde  \(j = n-2, n-1, \ldots, 0 \) .
+  onde  $$j = n-2, n-1, \ldots, 0 $$ .
 </p>
 <p>
-  Com isso, o Método de Bairstow se resume a determinar os valores de  \(r \)  e \(s \)  que tornam o fator quadrático  \((x*x &#8211; r*x &#8211; s) \)   exato. Ou seja, ele utiliza uma estratégia para encontrar os valores de  \(r \)  e  \(s \)  para qual \(R \)  é zero. Quando  \(R=0 \) ,  \(r \)  será uma raiz do polinômio.
+  Com isso, o Método de Bairstow se resume a determinar os valores de  $$r $$  e $$s $$  que tornam o fator quadrático  $$(x*x &#8211; r*x &#8211; s) $$   exato. Ou seja, ele utiliza uma estratégia para encontrar os valores de  $$r $$  e  $$s $$  para qual $$R $$  é zero. Quando  $$R=0 $$ ,  $$r $$  será uma raiz do polinômio.
 </p>
 <p>
-  Da equação do resto (Equação <a href="#eq6">6</a>) é possível notar que quando  \(R \)  é nulo,  \(b_{0} \)  e  \(b_{1} \)  são nulos. A técnica usada por Bairstow segue o desenvolvimento do Método de Newton, expandindo  \(b_{0} \)  e  \(b_{1} \)  em expressões que os aproximem de zero. Como  \(b_{0} \)  e  \(b_{1} \)  são funções de \(r \)  e  \(s \) , é possível expandir  \(R \)  por Série de Taylor para duas variáveis. Bairstow utiliza uma expansão de até a primeira ordem, gerando:</p>
+  Da equação do resto (Equação <a href="#eq6">6</a>) é possível notar que quando  $$R $$  é nulo,  $$b_{0} $$  e  $$b_{1} $$  são nulos. A técnica usada por Bairstow segue o desenvolvimento do Método de Newton, expandindo  $$b_{0} $$  e  $$b_{1} $$  em expressões que os aproximem de zero. Como  $$b_{0} $$  e  $$b_{1} $$  são funções de $$r $$  e  $$s $$ , é possível expandir  $$R $$  por Série de Taylor para duas variáveis. Bairstow utiliza uma expansão de até a primeira ordem, gerando:</p>
 <p>  <a name="eq10">(eq10)</a></p>
 <p>   <center><br />
-    \( b_{1}(r+\Delta r, s+\Delta s) = b_{1} + \left( \dfrac{\partial}{\partial r} b_{1} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{1} \right) \Delta s \)<br />
+    $$ b_{1}(r+\Delta r, s+\Delta s) = b_{1} + \left( \dfrac{\partial}{\partial r} b_{1} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{1} \right) \Delta s $$<br />
     </center></p>
 <p>
   <a name="eq11">(eq11)</a></p>
 <p>    <center><br />
-        \( b_{0}(r+\Delta r, s+\Delta s) = b_{0} + \left( \dfrac{\partial}{\partial r} b_{0} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{0} \right) \Delta s \)<br />
+        $$ b_{0}(r+\Delta r, s+\Delta s) = b_{0} + \left( \dfrac{\partial}{\partial r} b_{0} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{0} \right) \Delta s $$<br />
     </center></p>
-<p>  Como  \(b_{0} \)  e  \(b_{1} \)  serão nulos quando  \(R=0 \) , então é possível reescrever as equações acimas como:<br />
+<p>  Como  $$b_{0} $$  e  $$b_{1} $$  serão nulos quando  $$R=0 $$ , então é possível reescrever as equações acimas como:<br />
   <a name="eq12">(eq12)</a><br />
     <center><br />
-        \( -b_{1} = \left( \dfrac{\partial}{\partial r} b_{1} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{1} \right) \Delta s \)<br />
+        $$ -b_{1} = \left( \dfrac{\partial}{\partial r} b_{1} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{1} \right) \Delta s $$<br />
     </center>
 </p>
 <p>
   <a name="eq13">(eq13)</a><br />
     <center><br />
-        \( -b_{0} =  \left( \dfrac{\partial}{\partial r} b_{0} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{0} \right) \Delta s \)<br />
+        $$ -b_{0} =  \left( \dfrac{\partial}{\partial r} b_{0} \right) \Delta r + \left( \dfrac{\partial}{\partial s} b_{0} \right) \Delta s $$<br />
     </center>
 </p>
 <p>
-  A partir das duas últimas equações, podemos obter os  valores de  \(b_{0} \)  e \(b_{1} \) . O problema agora está nas derivadas parciais de  \(b \)  em relação a \(r \)  e  \(s \) . Se elas forem determinadas o problema é reduzido à um sistema de duas equações lineares com apenas duas incógnitas:  \(\Delta r\)  e  \(\Delta s \).
+  A partir das duas últimas equações, podemos obter os  valores de  $$b_{0} $$  e $$b_{1} $$ . O problema agora está nas derivadas parciais de  $$b $$  em relação a $$r $$  e  $$s $$ . Se elas forem determinadas o problema é reduzido à um sistema de duas equações lineares com apenas duas incógnitas:  $$\Delta r$$  e  $$\Delta s $$.
 </p>
 <p>
-  Tomando as derivadas como constantes, renomeamos elas em termos de um vetor \(c \) , tal que:<br />
+  Tomando as derivadas como constantes, renomeamos elas em termos de um vetor $$c $$ , tal que:<br />
   <a name="eq14">(eq14)</a><br />
     <center><br />
-        \( \dfrac{\partial}{\partial r} b_{0} = c_{1} \)<br />
+        $$ \dfrac{\partial}{\partial r} b_{0} = c_{1} $$<br />
     </center>
 </p>
 <p>
   <a name="eq15">(eq15)</a><br />
     <center><br />
-    \( \dfrac{\partial}{\partial s} b_{0} = c_{2} \)<br />
+    $$ \dfrac{\partial}{\partial s} b_{0} = c_{2} $$<br />
     </center>
 </p>
 <p>
   <a name="eq16">(eq16)</a><br />
     <center><br />
-    \( \dfrac{\partial}{\partial r} b_{1} = c_{2} \)<br />
+    $$ \dfrac{\partial}{\partial r} b_{1} = c_{2} $$<br />
     </center>
 </p>
 <p>
   <a name="eq17">(eq17)</a><br />
     <center><br />
-    \( \dfrac{\partial}{\partial s} b_{1} = c_{3} \)<br />
+    $$ \dfrac{\partial}{\partial s} b_{1} = c_{3} $$<br />
     </center>
 </p>
 <p>
-  A partir das suposições acimas, o sistema de equações pode ser reescrito com suas derivadas parciais substituídas pela variável  \(c \) , tal que<br />
+  A partir das suposições acimas, o sistema de equações pode ser reescrito com suas derivadas parciais substituídas pela variável  $$c $$ , tal que<br />
   <a name="eq18">(eq18)</a><br />
     <center><br />
-        \( c_{2} \Delta r + c_{3} \Delta s = -b_{1} \)<br />
+        $$ c_{2} \Delta r + c_{3} \Delta s = -b_{1} $$<br />
     </center>
 </p>
 <p>
   <a name="eq19">(eq19)</a><br />
-    <center> \( c_{1} \Delta r + c_{2} \Delta s = -b_{0} \) </center>
+    <center> $$ c_{1} \Delta r + c_{2} \Delta s = -b_{0} $$ </center>
 </p>
 <p>
-  O Método de Bairstow utiliza este sistema de equações lineares para ajustar variáveis complexas da mesma forma que as reais. As derivadas parciais, obtidas pela divisão sintética de \(b \), são:<br />
+  O Método de Bairstow utiliza este sistema de equações lineares para ajustar variáveis complexas da mesma forma que as reais. As derivadas parciais, obtidas pela divisão sintética de $$b $$, são:<br />
   <a name="eq20">(eq20)</a><br />
-    <center> \( c_{n} = b_{n} \) </center>
+    <center> $$ c_{n} = b_{n} $$ </center>
 </p>
 <p>
   <a name="eq21">(eq21)</a><br />
-    <center> \( c_{n-1} = b_{n-1} + r c_{n} \) </center><br />
+    <center> $$ c_{n-1} = b_{n-1} + r c_{n} $$ </center><br />
   portanto, generalizando para todos termos,<br />
   <a name="eq22">(eq22)</a><br />
-    <center> \( c_{i} = b_{i} + r~c_{i+1} + s~c_{i+2} \) </center><br />
-  onde  \(i = n-1, n-2, \ldots, 1 \) .
+    <center> $$ c_{i} = b_{i} + r~c_{i+1} + s~c_{i+2} $$ </center><br />
+  onde  $$i = n-1, n-2, \ldots, 1 $$ .
 </p>
 <p>
-  Com este conjunto de equações é possível determinar  \(\Delta r \)  e  \(\Delta s \), necessários para as aproximações de  \(r \)  e  \(s \) , sendo o processo de cálculo do erro relativo de cada iteração é obtido pelas expressões:<br />
+  Com este conjunto de equações é possível determinar  $$\Delta r $$  e  $$\Delta s $$, necessários para as aproximações de  $$r $$  e  $$s $$ , sendo o processo de cálculo do erro relativo de cada iteração é obtido pelas expressões:<br />
   <a name="eq23">(eq23)</a><br />
-    <center> \( \left| err(r)  \right| = \left| \dfrac{\Delta r}{r} \right| \)</center><br />
+    <center> $$ \left| err(r)  \right| = \left| \dfrac{\Delta r}{r} \right| $$</center><br />
    e<br />
   <a name="eq24">(eq24)</a><br />
-    <center> \( \left| err(s)  \right| = \left| \dfrac{\Delta s}{s} \right| \) </center>
+    <center> $$ \left| err(s)  \right| = \left| \dfrac{\Delta s}{s} \right| $$ </center>
 </p>
 <p>
-  Quando ambos erros estiverem abaixo do máximo tolerado,  \(r \)  e  \(s \)  estarão aproximados de forma que as raízes  \(x \)  serão determinadas por
+  Quando ambos erros estiverem abaixo do máximo tolerado,  $$r $$  e  $$s $$  estarão aproximados de forma que as raízes  $$x $$  serão determinadas por
 </p>
 <ol>
 <li> Pela expressão abaixo, caso o polinômio que deseja-se encontrar a raiz seja quadrático:<br />
           <a name="eq25">(eq25)</a><br />
             <center><br />
-                \( x = \dfrac{1}{2}r + \dfrac{1}{2} \sqrt{r^2 + 4s} \)<br />
+                $$ x = \dfrac{1}{2}r + \dfrac{1}{2} \sqrt{r^2 + 4s} $$<br />
             </center></p>
 <p><li> Pela expressão abaixo, caso o polinômio seja de grau um:<br />
           <a name="eq26">(eq26)</a><br />
             <center><br />
-                \( x = &#8211; \dfrac{s}{r} \)<br />
+                $$ x = &#8211; \dfrac{s}{r} $$<br />
             </center></p>
-<li> Caso o polinômio seja de grau maior ou igual a três, o Método de Bairstow será aplicado ao quociente para o cálculo de novos valores \(r \)  e  \(s \) usando a função abaixo. Os valores de  \(r \)  e  \(s \)  calculados anteriormente servem como parâmetro inicial para a próxima iteração.
+<li> Caso o polinômio seja de grau maior ou igual a três, o Método de Bairstow será aplicado ao quociente para o cálculo de novos valores $$r $$  e  $$s $$ usando a função abaixo. Os valores de  $$r $$  e  $$s $$  calculados anteriormente servem como parâmetro inicial para a próxima iteração.
 </p>
 </li>
 </li>
@@ -588,7 +588,7 @@ categories:
     return (r1, i1, r2, i2) </pre>
 </div>
 <p>
-  Observe que o programa altera os valores de  \(r \)  e  \(s \)  com algum incremento aleatório e repete o procedimento da resolução das equações quando a determinante é nula, forçando o programa a convergir à uma aproximação melhor.
+  Observe que o programa altera os valores de  $$r $$  e  $$s $$  com algum incremento aleatório e repete o procedimento da resolução das equações quando a determinante é nula, forçando o programa a convergir à uma aproximação melhor.
 </p>
 <p>
   Um exemplo da utilização desta sub-rotina pode ser encontrado em: <a href="http://www.sawp.com.br/code/rootfind/bairstow.py" target="_blank">http://www.sawp.com.br/code/rootfind/bairstow.py</a>

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Uma das mais importantes fatorações de matrizes é a Singular Value Decomposition (SVD). Ela é utilizada em diversos problemas práticos, tais como processamento de sinais, ajuste de funções multivariadas, soluções de problemas de otimização, etc. Sua principal aplicação nestes problemas está em permitir a aproximação da pseudo-inversa da matriz decomposta. Neste artigo vamos apresentar a decomposição SVD e mostrar como ela pode ser utilizada para solução de sistemas lineares.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=657
-permalink: p=657
+permalink: /p=657
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:74229:"
@@ -685,28 +685,28 @@ categories:
 ---
 ## 1. Fatoração em Valores Singulares 
 
-Toda matriz pode ser decomposta como sendo um produto de três matrizes de propriedades específicas. Quando a matriz a ser decomposta \(A \in \mathbf{R}^{m \times n} \) com \(m \leq n \) (ou seja, mais linhas que colunas), a decomposição em valores singulares possui a forma
+Toda matriz pode ser decomposta como sendo um produto de três matrizes de propriedades específicas. Quando a matriz a ser decomposta $$A \in \mathbf{R}^{m \times n} $$ com $$m \leq n $$ (ou seja, mais linhas que colunas), a decomposição em valores singulares possui a forma
   
 
     
 
 
 <center>
-  <br /> \( A = U ~<br /> \left[ \begin{array}{c}<br /> S \\<br /> 0<br /> \end{array} \right]<br /> ~ V^{T} \)<br />
+  <br /> $$ A = U ~<br /> \left[ \begin{array}{c}<br /> S \\<br /> 0<br /> \end{array} \right]<br /> ~ V^{T} $$<br />
 </center>
 
 
   
 
     
-onde \(U \) e \(V \) são matrizes ortogonais de dimensão \(m \times m \) e \(n \times n \) , respectivamente, e \(S \) é uma matriz diagonal de ordem \(n \times n \) com elementos \(\sigma_i \) , \(i = 1, 2, \ldots, n \) , que satisfaz
+onde $$U $$ e $$V $$ são matrizes ortogonais de dimensão $$m \times m $$ e $$n \times n $$ , respectivamente, e $$S $$ é uma matriz diagonal de ordem $$n \times n $$ com elementos $$\sigma_i $$ , $$i = 1, 2, \ldots, n $$ , que satisfaz
   
 
     
 
 
 <center>
-  <br /> \(<br /> \sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_n \geq 0<br /> \)<br />
+  <br /> $$<br /> \sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_n \geq 0<br /> $$<br />
 </center>
 
 
@@ -714,44 +714,44 @@ onde \(U \) e \(V \) são matrizes ortogonais de dimensão \(m \times m \) e \(n
   
 
 
-Os valores \(\sigma_i \in diag(S) \) são chamados de _valores singulares_ da matriz \(A \) . Podemos definir a seguinte condição para a matriz não-singular \(A \)
+Os valores $$\sigma_i \in diag(S) $$ são chamados de _valores singulares_ da matriz $$A $$ . Podemos definir a seguinte condição para a matriz não-singular $$A $$
   
 
     
 
 
 <center>
-  <br /> \( \kappa(A) = \|A\|~\|A^{-1}\| \)<br />
+  <br /> $$ \kappa(A) = \|A\|~\|A^{-1}\| $$<br />
 </center>
 
 
     
-como sendo \(\frac{\sigma\_1}{\sigma\_n} \).
+como sendo $$\frac{\sigma\_1}{\sigma\_n} $$.
 
-Quando \(m \leq n \) , isto é, quando o número de colunas é menor ou igual ao número de colunas, a decomposição terá a forma
+Quando $$m \leq n $$ , isto é, quando o número de colunas é menor ou igual ao número de colunas, a decomposição terá a forma
     
 
 
 <center>
-  <br /> \(<br /> A = U ~ \left[ ~ S ~ ~ ~ 0 ~\right] ~ V^{T}<br /> \)<br />
+  <br /> $$<br /> A = U ~ \left[ ~ S ~ ~ ~ 0 ~\right] ~ V^{T}<br /> $$<br />
 </center>
 
 
     
-onde, novamente, \(U \) e \(V \) são ortogonais e terão dimensões \(m \ times m \) e \(n \times n \) , respectivamente. \(S \) agora será uma matriz singular \(m \times m \) com a diagonal não-negativa, com elementos
+onde, novamente, $$U $$ e $$V $$ são ortogonais e terão dimensões $$m \ times m $$ e $$n \times n $$ , respectivamente. $$S $$ agora será uma matriz singular $$m \times m $$ com a diagonal não-negativa, com elementos
     
 
 
 <center>
-  <br /> \(<br /> \sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_m \geq 0<br /> \)<br />
+  <br /> $$<br /> \sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_m \geq 0<br /> $$<br />
 </center>
 
-Para \(A \) simétrica, com \(n \) autovalores reais \(\lambda\_1, \lambda\_2, \ldots, \lambda\_n \) , e seus autovetores associados \(q\_1, q\_2, \ldots, q\_n \) , podemos usar a _decomposição espectral_ de \(A \) :
+Para $$A $$ simétrica, com $$n $$ autovalores reais $$\lambda\_1, \lambda\_2, \ldots, \lambda\_n $$ , e seus autovetores associados $$q\_1, q\_2, \ldots, q\_n $$ , podemos usar a _decomposição espectral_ de $$A $$ :
     
 
 
 <center>
-  <br /> \(<br /> A = \sum_{i = 1}^{n} \lambda_i q_i q_i^T<br /> \)<br />
+  <br /> $$<br /> A = \sum_{i = 1}^{n} \lambda_i q_i q_i^T<br /> $$<br />
 </center>
 
 
@@ -761,7 +761,7 @@ Assim, a decomposição pode ser reescrita, definindo-se
 
 
 <center>
-  <br /> \(<br /> \Lambda = diag(\lambda_1, \lambda_2, \ldots, \lambda_n)<br /> \)<br />
+  <br /> $$<br /> \Lambda = diag(\lambda_1, \lambda_2, \ldots, \lambda_n)<br /> $$<br />
 </center>
 
 
@@ -771,27 +771,27 @@ Assim, a decomposição pode ser reescrita, definindo-se
 
 
 <center>
-  <br /> \(<br /> Q = \left[ \begin{array}{c}<br /> q_1 \\<br /> q_2 \\<br /> \cdots \\<br /> q_n<br /> \end{array} \right]<br /> \)<br />
+  <br /> $$<br /> Q = \left[ \begin{array}{c}<br /> q_1 \\<br /> q_2 \\<br /> \cdots \\<br /> q_n<br /> \end{array} \right]<br /> $$<br />
 </center>
 
 
     
-e reescrevendo \(A \) como
+e reescrevendo $$A $$ como
     
 
 
 <center>
-  <br /> \(<br /> A = Q ~ \Lambda ~ Q^T<br /> \)<br />
+  <br /> $$<br /> A = Q ~ \Lambda ~ Q^T<br /> $$<br />
 </center>
 
-Esta decomposição é idêntica à SVD quando definimos \(U = V = Q \) e \(S = \Lambda \) . Note que os valores singulares \(\sigma\_i \) e os autovalores \(\lambda\_i \) coincidem neste caso. 
+Esta decomposição é idêntica à SVD quando definimos $$U = V = Q $$ e $$S = \Lambda $$ . Note que os valores singulares $$\sigma\_i $$ e os autovalores $$\lambda\_i $$ coincidem neste caso. 
 
 No caso da norma euclidiana para matrizes
     
 
 
 <center>
-  <br /> \(<br /> \|A\|_2 = ~\text{maior autovalor de } \sqrt{\left( A^T ~ A \right)}<br /> \)<br />
+  <br /> $$<br /> \|A\|_2 = ~\text{maior autovalor de } \sqrt{\left( A^T ~ A \right)}<br /> $$<br />
 </center>
 
 
@@ -801,7 +801,7 @@ temos que
 
 
 <center>
-  <br /> \(<br /> \|A\| = \sigma_1(A) = \text{ maior autovalor de } A<br /> \)<br />
+  <br /> $$<br /> \|A\| = \sigma_1(A) = \text{ maior autovalor de } A<br /> $$<br />
 </center>
 
 
@@ -809,25 +809,25 @@ temos que
 
 
 <center>
-  <br /> \(<br /> \|A^{-1}\| = \sigma_n(A) = \text{ inverso do menor autovalor de } A<br /> \)<br />
+  <br /> $$<br /> \|A^{-1}\| = \sigma_n(A) = \text{ inverso do menor autovalor de } A<br /> $$<br />
 </center>
 
 
     
-desta forma, temos que para todo \(x \in \mathbf{R}^n \),
+desta forma, temos que para todo $$x \in \mathbf{R}^n $$,
     
 
 
 <center>
-  <br /> \(<br /> \sigma_n(A)~\|x\|^2 = \dfrac{\|x\|^2}{A^{-1}} \leq x^T ~ Ax \leq<br /> \|A\| ~ \|x\|^2 = \sigma_1(A) ~ \|x\|^2<br /> \)<br />
+  <br /> $$<br /> \sigma_n(A)~\|x\|^2 = \dfrac{\|x\|^2}{A^{-1} \leq x^T ~ Ax \leq<br /> \|A\| ~ \|x\|^2 = \sigma_1(A) ~ \|x\|^2<br /> $$<br />
 </center>
 
-Para a matriz ortogonal \(Q \) , temos que a norma euclidiana
+Para a matriz ortogonal $$Q $$ , temos que a norma euclidiana
     
 
 
 <center>
-  <br /> \(<br /> \|Qx\| = \|x\|<br /> \)<br />
+  <br /> $$<br /> \|Qx\| = \|x\|<br /> $$<br />
 </center>
 
 
@@ -838,27 +838,27 @@ e que todos os valores singulares desta matriz será igual à 1.
 
 ### 1.1. Matriz pseudo-inversa de Moore </p> 
 
-Decompondo a matriz A em três matrizes \(U \) , \(S \) e \(V \)
+Decompondo a matriz A em três matrizes $$U $$ , $$S $$ e $$V $$
     
 
 
 <center>
-  <br /> \(<br /> A = U \times S \times V<br /> \)<br />
+  <br /> $$<br /> A = U \times S \times V<br /> $$<br />
 </center>
 
 
     
-podemos encontrar a inversa de \(A \) com SVD através da seguinte formula
+podemos encontrar a inversa de $$A $$ com SVD através da seguinte formula
     
 
 
 <center>
-  <br /> \(<br /> A^{-1} = (U ~ S ~ V)^{-1} = V^{-1} ~ S^{-1} ~ U^{-1} = V^T ~ S^{-1} ~ U^T<br /> \)<br />
+  <br /> $$<br /> A^{-1} = (U ~ S ~ V)^{-1} = V^{-1} ~ S^{-1} ~ U^{-1} = V^T ~ S^{-1} ~ U^T<br /> $$<br />
 </center>
 
 
     
-onde \(L = \frac{1}{S} \rightarrow L\_i = \frac{1}{S\_i} \) , \(U^{-1} = U^T \) e \(V^{-1} = V^T \) . Desta forma, podemos obter facilmente a matriz inversa de \(A \) via SVD.
+onde $$L = \frac{1}{S} \rightarrow L\_i = \frac{1}{S\_i} $$ , $$U^{-1} = U^T $$ e $$V^{-1} = V^T $$ . Desta forma, podemos obter facilmente a matriz inversa de $$A $$ via SVD.
 
 &nbsp; 
 
@@ -869,7 +869,7 @@ Para resolver um sistema linear, basta multiplicarmos a matriz inversa com o vet
 
 
 <center>
-  <br /> \(<br /> AX = B<br /> \)<br />
+  <br /> $$<br /> AX = B<br /> $$<br />
 </center>
 
 
@@ -879,17 +879,17 @@ temos que
 
 
 <center>
-  <br /> \(<br /> X = A^{-1} B<br /> \)<br />
+  <br /> $$<br /> X = A^{-1} B<br /> $$<br />
 </center>
 
 
     
-onde \(A^{-1} \) obtemos via SVD. Assim, o vetor das soluções é
+onde $$A^{-1} $$ obtemos via SVD. Assim, o vetor das soluções é
     
 
 
 <center>
-  <br /> \(<br /> X = V L U^T B<br /> \)<br />
+  <br /> $$<br /> X = V L U^T B<br /> $$<br />
 </center></p> 
 
 &nbsp; 

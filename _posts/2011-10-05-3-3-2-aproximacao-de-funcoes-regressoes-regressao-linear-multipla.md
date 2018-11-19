@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Estendendo o post sobre regressão linear simples, temos o caso em que o vetor y é gerado por uma função com duas ou mais variáveis.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1343
-permalink: p=1343
+permalink: /p=1343
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:10908:"
@@ -107,12 +107,12 @@ categories:
 ---
 ## 1. Introdução 
 
-Estendendo o post sobre regressão linear simples, temos o caso em que o vetor y é gerado por uma função com duas ou mais variáveis. Isto é, ao invés de ajustarmos uma função dependendo de uma variável \(x \) , utilizamos uma função na forma
+Estendendo o post sobre regressão linear simples, temos o caso em que o vetor y é gerado por uma função com duas ou mais variáveis. Isto é, ao invés de ajustarmos uma função dependendo de uma variável $$x $$ , utilizamos uma função na forma
     
 
 
 <center>
-  <br /> \(y = \alpha_0 + \alpha_1 x_1 + \alpha_2 x_2 + \epsilon \)<br />
+  <br /> $$y = \alpha_0 + \alpha_1 x_1 + \alpha_2 x_2 + \epsilon $$<br />
 </center>
 
 Para esse caso, ao invés de ajustarmos os valores experimentais para uma reta, o ajuste é feito para um plano. 
@@ -122,13 +122,13 @@ Assim como é feito na regressão linear simples, os valores dos coeficientes s�
 
 
 <center>
-  <br /> \( S_r = \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right)^2 \)<br />
+  <br /> $$ S_r = \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right)^2 $$<br />
 </center>
 
 e derivamos essa equação em termos de cada coeficiente a ser determinado. Portanto 
 
 <center>
-  <br /> \(\frac{dS_r}{d \alpha_0} = -2 \sum \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right) \)<br /> \(\frac{dS_r}{d \alpha_1} = -2 \sum x_{1i} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right) \)<br /> \(\frac{dS_r}{d \alpha_2} = -2 \sum x_{2i} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right) \)<br />
+  <br /> $$\frac{dS_r}{d \alpha_0} = -2 \sum \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right) $$<br /> $$\frac{dS_r}{d \alpha_1} = -2 \sum x_{1i} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right) $$<br /> $$\frac{dS_r}{d \alpha_2} = -2 \sum x_{2i} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_{1i} &#8211; \alpha_2 x_{2i} \right) $$<br />
 </center>
 
 Os coeficientes fornecendo a soma mínima dos quadrados dos resíduos são obtidos igualando-se as derivadas parciais a zero. Podemos expressar esse sistema na forma matricial como
@@ -136,19 +136,19 @@ Os coeficientes fornecendo a soma mínima dos quadrados dos resíduos são obtid
 
 
 <center>
-  <br /> \( \left[ \begin{array}{ccc}<br /> n & \sum x_{1i} & \sum x_{2i} \\<br /> \sum x_{1i} & \sum x_{1i}^2 & \sum x_{1i} x_{2i} \\<br /> \sum x_{2i} & \sum x_{1i} x_{2i} & \sum x_{2i}^2<br /> \end{array} \right]<br /> \left[ \begin{array}{c}<br /> \alpha_0 \\ \alpha_1 \\ \alpha_2<br /> \end{array} \right] =<br /> \left[ \begin{array}{c}<br /> \sum y_i \\ \sum x_{1i} y_i \\ \sum x_{2i} y_i<br /> \end{array} \right] \)<br />
+  <br /> $$ \left[ \begin{array}{ccc}<br /> n & \sum x_{1i} & \sum x_{2i} \\<br /> \sum x_{1i} & \sum x_{1i}^2 & \sum x_{1i} x_{2i} \\<br /> \sum x_{2i} & \sum x_{1i} x_{2i} & \sum x_{2i}^2<br /> \end{array} \right]<br /> \left[ \begin{array}{c}<br /> \alpha_0 \\ \alpha_1 \\ \alpha_2<br /> \end{array} \right] =<br /> \left[ \begin{array}{c}<br /> \sum y_i \\ \sum x_{1i} y_i \\ \sum x_{2i} y_i<br /> \end{array} \right] $$<br />
 </center>
 
 &nbsp;
 
 ## 2. Caso Geral 
 
-O caso geral estende o desenvolvimento bidimensional mostrado acima para \(m \) dimensões. Isto é, a função linear tem a forma
+O caso geral estende o desenvolvimento bidimensional mostrado acima para $$m $$ dimensões. Isto é, a função linear tem a forma
     
 
 
 <center>
-  <br /> \(y = \alpha_0 + \alpha_1 x_1 + \alpha_2 x_2 + \cdots + \alpha_m x_m + \epsilon \)<br />
+  <br /> $$y = \alpha_0 + \alpha_1 x_1 + \alpha_2 x_2 + \cdots + \alpha_m x_m + \epsilon $$<br />
 </center>
 
 e erro padrão possui a forma
@@ -156,7 +156,7 @@ e erro padrão possui a forma
 
 
 <center>
-  <br /> \(s = \sqrt{\dfrac{S_r}{n &#8211; (m + 1)}} \)<br />
+  <br /> $$s = \sqrt{\dfrac{S_r}{n &#8211; (m + 1)} $$<br />
 </center>
 
 ## 3. Implementação 

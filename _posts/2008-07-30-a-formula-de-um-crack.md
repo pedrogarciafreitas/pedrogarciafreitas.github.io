@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Crackear qualquer sistema é impossível sem as ferramentas certas. Abaixo iremos discutir as diferenças entre as existentes. E de posse do conhecimento destas, iremos desenvolver um exemplo suficientemente completo para se entender como crackear um executável.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=105
-permalink: p=105
+permalink: /p=105
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:3928:"

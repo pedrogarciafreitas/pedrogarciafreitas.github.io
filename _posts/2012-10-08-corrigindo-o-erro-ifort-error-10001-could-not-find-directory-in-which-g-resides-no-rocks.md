@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Correção dos erros de compilação do ifort e outros problemas causados pela falta de espaço no /var
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1841
-permalink: p=1841
+permalink: /p=1841
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:1685:"

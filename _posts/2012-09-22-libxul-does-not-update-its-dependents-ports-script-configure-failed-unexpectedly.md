@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Problem when recompile libxul and its dependences.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1773
-permalink: p=1773
+permalink: /p=1773
 categories:
   - FreeBSD
 ---

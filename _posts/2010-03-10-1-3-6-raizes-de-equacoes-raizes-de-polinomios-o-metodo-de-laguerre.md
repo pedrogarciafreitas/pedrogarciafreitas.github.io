@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O Método de Laguerre é um algoritmo numérico modificado a partir do Método de Newton para encontrar raízes complexas de polinômios. Sendo um método muito eficiente na busca de um zero de função, pois sempre converge à alguma raiz, independente da aproximação inicial dada (propriedade nem sempre presente em outros métodos computacionais). A principal desvantagem do Método de Laguerre é que ele não encontra todas raízes do polinômio, aproximando satisfatoriamente bem apenas à uma delas. Neste artigo, apresento uma pequena demonstração das relações matemáticas usadas na implementação, também presente.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=507
-permalink: p=507
+permalink: /p=507
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:5927:"
@@ -97,7 +97,7 @@ categories:
 ---
 ## 1. Introdução <a name="sec1"></a> 
 
-O método nomeado em homenagem ao matemático francês Edmond Laguerre, consiste em aproximar raízes de um polinômio \(p(x) \) . 
+O método nomeado em homenagem ao matemático francês Edmond Laguerre, consiste em aproximar raízes de um polinômio $$p(x) $$ . 
 
 Ele possui a vantagem sobre o Método de Bairstow de possuir uma taxa de convergência superior em uma ordem &#8212; ou seja, converge cubicamente &#8211;, não importando a aproximação inicial dada. 
 
@@ -112,7 +112,7 @@ Seja o polinômio:
 
 
 <center>
-  <br /> \( p \left( x \right) =C\prod _{i=1}^{n}x-x_{i} \)<br />
+  <br /> $$ p \left( x \right) =C\prod _{i=1}^{n}x-x_{i} $$<br />
 </center>
 
 
@@ -124,41 +124,41 @@ Tomando seu logaritmo,
 
 
 <center>
-  <br /> \( \ln \left( p \left( x \right) \right) =\ln \left( C \right) +\sum _ {i=1}^{n}\ln \left( x-x_{i} \right) \)<br />
+  <br /> $$ \ln \left( p \left( x \right) \right) =\ln \left( C \right) +\sum _ {i=1}^{n}\ln \left( x-x_{i} \right) $$<br />
 </center>
 
 
     
-Chamaremos de \(S_{1} \) a derivada da função acima,
+Chamaremos de $$S_{1} $$ a derivada da função acima,
     
 <a name="eq3">(eq3)</a>
       
 
 
 <center>
-  <br /> \( S_{1}={\dfrac {d}{dx}\ln \left( p \left( x \right) \right) = \sum _{i=1}^{n} \left( \ln \left( x-x_{i} \right) \right)^{-1} \)<br />
+  <br /> $$ S_{1}={\dfrac {d}{dx}\ln \left( p \left( x \right) \right) = \sum _{i=1}^{n} \left( \ln \left( x-x_{i} \right) \right)^{-1} $$<br />
 </center>
 
 
     
-Tomando \(S_{2} \) como a derivada segunda da mesma função:
+Tomando $$S_{2} $$ como a derivada segunda da mesma função:
     
 <a name="eq4">(eq4)</a>
       
 
 
 <center>
-  <br /> \( S_{2}={\dfrac {d^{2}{d{x}^{2}}\ln \left( p \left( x \right)\right) = \sum _{i=1}^{n} \left( \ln \left( x-x_{i} \right) \right) ^{-2} \)<br />
+  <br /> $$ S_{2}={\dfrac {d^{2}{d{x}^{2}}\ln \left( p \left( x \right)\right) = \sum _{i=1}^{n} \left( \ln \left( x-x_{i} \right) \right) ^{-2} $$<br />
 </center>
 
-Podemos assumir que a raiz \(x_1 \) está a uma certa distância \(a \) de um valor \(x \) qualquer e que todas as outras estão à uma distância \(b \) deste mesmo ponto. Ou seja:
+Podemos assumir que a raiz $$x_1 $$ está a uma certa distância $$a $$ de um valor $$x $$ qualquer e que todas as outras estão à uma distância $$b $$ deste mesmo ponto. Ou seja:
     
 <a name="eq5">(eq5)</a>
       
 
 
 <center>
-  <br /> \( a=x-x_{1}\)<br />
+  <br /> $$ a=x-x_{1}$$<br />
 </center>
 
 <a name="eq6">(eq6)</a>
@@ -166,21 +166,21 @@ Podemos assumir que a raiz \(x_1 \) está a uma certa distância \(a \) de um va
 
 
 <center>
-  <br /> \( b=x-x_{i} \)<br />
+  <br /> $$ b=x-x_{i} $$<br />
 </center>
 
 
     
-onde \(i = 2,3,\ldots,n \) . 
+onde $$i = 2,3,\ldots,n $$ . 
 
-Com estas expressões, podemos escrever \(S\_{1} \) e \(S\_{2} \) em termos de \(a \) e \(b \) :
+Com estas expressões, podemos escrever $$S\_{1} $$ e $$S\_{2} $$ em termos de $$a $$ e $$b $$ :
     
 <a name="eq7">(eq7)</a>
       
 
 
 <center>
-  <br /> \( S_{1}={a}^{-1}+{\dfrac {n-1}{b} \)<br />
+  <br /> $$ S_{1}={a}^{-1}+{\dfrac {n-1}{b} $$<br />
 </center>
 
 <a name="eq8">(eq8)</a>
@@ -188,63 +188,63 @@ Com estas expressões, podemos escrever \(S\_{1} \) e \(S\_{2} \) em termos de \
 
 
 <center>
-  <br /> \( S_{2}={a}^{-2}+{\dfrac {n-1}{b}^{2}} \)<br />
+  <br /> $$ S_{2}={a}^{-2}+{\dfrac {n-1}{b}^{2}} $$<br />
 </center>
 
 
     
-Isolando \(b \) , podemos escrever \(a \) em termos de \(S\_{1} \) e \(S\_{2}\) :
+Isolando $$b $$ , podemos escrever $$a $$ em termos de $$S\_{1} $$ e $$S\_{2}$$ :
     
 <a name="eq9">(eq9)</a>
       
 
 
 <center>
-  <br /> \( a={\dfrac {n}{S_{1}+\sqrt { \left( n-1 \right) \left( nS_{2}-{S_{1}}^{2} \right) }} \)<br />
+  <br /> $$ a={\dfrac {n}{S_{1}+\sqrt { \left( n-1 \right) \left( nS_{2}-{S_{1}}^{2} \right) }} $$<br />
 </center>
 
 
     
-tomando \(S\_{1}={\dfrac {\dfrac {d}{dx}p \left( x \right) }{p \left( x \right) } \) em \(S\_{2} \) , uma vez que \(S\_{2}={S\_{1}}^{2}-{\dfrac {\dfrac {d^{2}{d{x}^{2}}p \left( x \right) }{p \left( x \right) }\), teremos:
+tomando $$S\_{1}={\dfrac {\dfrac {d}{dx}p \left( x \right) }{p \left( x \right) } $$ em $$S\_{2} $$ , uma vez que $$S\_{2}={S\_{1}}^{2}-{\dfrac {\dfrac {d^{2}{d{x}^{2}}p \left( x \right) }{p \left( x \right) }$$, teremos:
       
 
 
 <center>
-  <br /> \( S_{2}={\dfrac { \left( {\dfrac {d}{dx}p \left( x \right) \right) ^{2}-p \left( x \right) {\dfrac {d^{2}{d{x}^{2}}p \left( x \right) }{\left( p \left( x \right) \right) ^{2}} \)<br />
+  <br /> $$ S_{2}={\dfrac { \left( {\dfrac {d}{dx}p \left( x \right) \right) ^{2}-p \left( x \right) {\dfrac {d^{2}{d{x}^{2}}p \left( x \right) }{\left( p \left( x \right) \right) ^{2}} $$<br />
 </center>
 
-Desta forma, podemos obter \(a \) em termos da função \(f(x) \) e suas derivadas:
+Desta forma, podemos obter $$a $$ em termos da função $$f(x) $$ e suas derivadas:
     
 <a name="eq10">(eq10)</a>
       
 
 
 <center>
-  <br /> \( a={\dfrac {nf \left( x \right) }{\dfrac {d}{dx}f \left( x \right) + \sqrt {H \left( x \right) }} \)<br />
+  <br /> $$ a={\dfrac {nf \left( x \right) }{\dfrac {d}{dx}f \left( x \right) + \sqrt {H \left( x \right) }} $$<br />
 </center>
 
 
     
-onde \(H \left( x \right) = \left( n-1 \right) \left( nS\_{2}-{S\_{1}}^{2}\right) \) , portanto \(H(x)\) pode ser expresso como:
+onde $$H \left( x \right) = \left( n-1 \right) \left( nS\_{2}-{S\_{1}}^{2}\right) $$ , portanto $$H(x)$$ pode ser expresso como:
     
 <a name="eq11">(eq11)</a>
       
 
 
 <center>
-  <br /> \( H \left( x \right) = \left( n-1 \right) \left( \left( n-1 \right) \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{2}-nf \left( x \right) {\dfrac {d^{2}{d{x}^{2}}f \left( x \right) \right) \)<br />
+  <br /> $$ H \left( x \right) = \left( n-1 \right) \left( \left( n-1 \right) \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{2}-nf \left( x \right) {\dfrac {d^{2}{d{x}^{2}}f \left( x \right) \right) $$<br />
 </center>
 
 
     
-como \(x\_{i+1}=x\_{i}-a \) , então
+como $$x\_{i+1}=x\_{i}-a $$ , então
     
 <a name="eq12">(eq12)</a>
       
 
 
 <center>
-  <br /> \( x_{i+1}=x_{i}-{\dfrac {nf \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) +\sqrt {H \left( x_{i} \right) }} \)<br />
+  <br /> $$ x_{i+1}=x_{i}-{\dfrac {nf \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) +\sqrt {H \left( x_{i} \right) }} $$<br />
 </center>
 
 A Equação [12](#eq12) é a usada pelo Método de Laguerre. </p> 

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Neste post veremos como aproximar a área sob um gráfico (integral) com uma sequência de trapézios.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1626
-permalink: p=1626
+permalink: /p=1626
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3455:"
@@ -67,46 +67,46 @@ categories:
 ---
 ## 1. Introdução 
 
-Da mesma forma como apresentamos nos posts sobre derivação numérica, a integração numérica consiste em uma espécie de interpolação. A ideia é substituir uma função complicada \(f(x) \) por outra composta por operações mais simples e fácil de se integrar. Além disso, como mostramos em diversos posts relacionados aos métodos de interpolação, as fórmulas mais simples que podemos obter são polinômios. Assim, podemos obter esses polinômios através da fórmula de Taylor ou outra estratégia. 
+Da mesma forma como apresentamos nos posts sobre derivação numérica, a integração numérica consiste em uma espécie de interpolação. A ideia é substituir uma função complicada $$f(x) $$ por outra composta por operações mais simples e fácil de se integrar. Além disso, como mostramos em diversos posts relacionados aos métodos de interpolação, as fórmulas mais simples que podemos obter são polinômios. Assim, podemos obter esses polinômios através da fórmula de Taylor ou outra estratégia. 
 
 Tais polinômios gerados para integração numérica são chamados de _fórmulas de Newton-Cotes_, que possuem a seguinte forma de aproximação
   
 
 
 <center>
-  \( I = \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_n(x) dx \)
+  $$ I = \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_n(x) dx $$
 </center>
 
 
   
-onde \(f_n(x) \) é um polinômio na forma
+onde $$f_n(x) $$ é um polinômio na forma
   
 
 
 <center>
-  \( f_n(x) = a_0 + a_1 x + a_x x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \)
+  $$ f_n(x) = a_0 + a_1 x + a_x x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n $$
 </center>
 
 
   
-onde \(n \) é o grau do polinômio. Por exemplo, na figura abaixo os gráficos mostram a função original \(f(x) \) em vermelho e duas aproximações distintas em azul. No gráfico da esquerda, um polinômio de primeiro grau (reta) é usado para aproximar a função em duas divisões. O gráfico da direita utiliza um polinômio de grau maior para aproximar a função em cada intervalo. 
+onde $$n $$ é o grau do polinômio. Por exemplo, na figura abaixo os gráficos mostram a função original $$f(x) $$ em vermelho e duas aproximações distintas em azul. No gráfico da esquerda, um polinômio de primeiro grau (reta) é usado para aproximar a função em duas divisões. O gráfico da direita utiliza um polinômio de grau maior para aproximar a função em cada intervalo. 
 
 <center>
   <br /> <a name="#fig1"></a><br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2012/07/numerical.png"><img class="aligncenter size-full wp-image-416" title="Aproximação da raiz por uma reta." src="http://www.sawp.com.br/blog/wp-content/uploads/2012/07/numerical.png" alt="numerical" width="850" height="400" /></a><br />
 </center>
 
-Da figura acima também podemos notar que a integral é melhor aproximada se usarmos uma série de polinômios aplicados por partes à função \(f(x) \), dividindo-se o intervalo de integração em sub-intervalos menores. 
+Da figura acima também podemos notar que a integral é melhor aproximada se usarmos uma série de polinômios aplicados por partes à função $$f(x) $$, dividindo-se o intervalo de integração em sub-intervalos menores. 
 
 &nbsp;
 
 ## 2. A Regra do Trapézio 
 
-A regra do trapézio consiste na utilização de \(f_n(x) \) com \(n=1 \) . Portanto, ela corresponde à primeira fórmula de Newton-Cotes:
+A regra do trapézio consiste na utilização de $$f_n(x) $$ com $$n=1 $$ . Portanto, ela corresponde à primeira fórmula de Newton-Cotes:
   
 
 
 <center>
-  \( I = \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_1(x) dx \)
+  $$ I = \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_1(x) dx $$
 </center>
 
 
@@ -116,15 +116,15 @@ onde
 
 
 <center>
-  \( f_1(x) = f(a) + \frac{f(b) &#8211; f(a)}{b &#8211; a} (x &#8211; a) \)
+  $$ f_1(x) = f(a) + \frac{f(b) &#8211; f(a)}{b &#8211; a} (x &#8211; a) $$
 </center>
 
-A área sob \(f_1(x) \) é uma estimativa da integral de \(f(x) \) entre os extremos \(a \) e \(b \) . Para obtermos essa estimativa, expressamos a equação acima como
+A área sob $$f_1(x) $$ é uma estimativa da integral de $$f(x) $$ entre os extremos $$a $$ e $$b $$ . Para obtermos essa estimativa, expressamos a equação acima como
   
 
 
 <center>
-  \( f_1(x) = \frac{f(b)-f(a)}{b-a}x + f(a) &#8211; \frac{af(b) &#8211; af(a)}{b-a} \)
+  $$ f_1(x) = \frac{f(b)-f(a)}{b-a}x + f(a) &#8211; \frac{af(b) &#8211; af(a)}{b-a} $$
 </center>
 
 
@@ -134,7 +134,7 @@ Agrupando os dois últimos termos, obtemos
 
 
 <center>
-  \( f_1(x) = \frac{f(b)-f(a)}{b-a}x + \frac{bf(a) &#8211; af(a) &#8211; af(b) + af(a)}{b-a} \)
+  $$ f_1(x) = \frac{f(b)-f(a)}{b-a}x + \frac{bf(a) &#8211; af(a) &#8211; af(b) + af(a)}{b-a} $$
 </center>
 
 
@@ -144,7 +144,7 @@ ou
 
 
 <center>
-  \( f_1(x) = \frac{f(b)-f(a)}{b-a}x + \frac{bf(a) &#8211; af(b)}{b-a} \)
+  $$ f_1(x) = \frac{f(b)-f(a)}{b-a}x + \frac{bf(a) &#8211; af(b)}{b-a} $$
 </center>
 
 
@@ -154,27 +154,27 @@ que é então integrada, fornecendo
 
 
 <center>
-  \( I = \frac{f(b)-f(a)}{b-a} \frac{x^2}{2} + x \frac{bf(a)-af(b)}{b-a} \)
+  $$ I = \frac{f(b)-f(a)}{b-a} \frac{x^2}{2} + x \frac{bf(a)-af(b)}{b-a} $$
 </center>
 
 
   
-Na expressão integrada que vemos acima, usamos o intervalo delimitado por \(x=a \) e \(x=b \) . Esse resultado pode ser calculado por
+Na expressão integrada que vemos acima, usamos o intervalo delimitado por $$x=a $$ e $$x=b $$ . Esse resultado pode ser calculado por
   
 
 
 <center>
-  \( I = \frac{f(b)-f(a)}{b-a}\frac{b^2-a^2}{2} + \frac{bf(a)-af(b)}{b-a}(b-a) \)
+  $$ I = \frac{f(b)-f(a)}{b-a}\frac{b^2-a^2}{2} + \frac{bf(a)-af(b)}{b-a}(b-a) $$
 </center>
 
 
   
-Agora, como \(b^2-a^2 = (b-a)(b+a) \) , temos
+Agora, como $$b^2-a^2 = (b-a)(b+a) $$ , temos
   
 
 
 <center>
-  \( I = [f(b)-f(a)] \frac{b+a}{2} + bf(a) &#8211; af(b) \)
+  $$ I = [f(b)-f(a)] \frac{b+a}{2} + bf(a) &#8211; af(b) $$
 </center>
 
 
@@ -184,7 +184,7 @@ que ao fazermos a multiplicação e agruparmos os termos, temos
 
 
 <center>
-  \( I = (b-a) \frac{f(a)+f(b)}{2} \)
+  $$ I = (b-a) \frac{f(a)+f(b)}{2} $$
 </center>
 
 
@@ -195,28 +195,28 @@ que é a fórmula da regra dos trapézios.
 
 ### 2.1. Divisão de intervalos 
 
-Para melhorar a acurácia da integração, devemos dividir o intervalo de integração de \(a \) e \(b \) em diversos segmentos e aplicar o método a cada asegmento. Cada área correspondente aos segmentos individuais podem então ser somadas para fornecer a integral para o intervalo inteiro. A figura abaixo mostra como um conjunto de trapézios formados em cada subintervalo dividido se aproxima da integral. 
+Para melhorar a acurácia da integração, devemos dividir o intervalo de integração de $$a $$ e $$b $$ em diversos segmentos e aplicar o método a cada asegmento. Cada área correspondente aos segmentos individuais podem então ser somadas para fornecer a integral para o intervalo inteiro. A figura abaixo mostra como um conjunto de trapézios formados em cada subintervalo dividido se aproxima da integral. 
 
 <center>
   <br /> <a name="#fig2"></a><br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2012/07/integration1.gif"><img class="aligncenter size-full wp-image-416" title="Aproximação da raiz por uma reta." src="http://www.sawp.com.br/blog/wp-content/uploads/2012/07/integration1.gif" alt="numerical" width="400" height="400" /></a><br />
 </center>
 
-Dividindo o intervalo de integração \([a,b] \) em \(n \) partes, temos \(n \) segmentos de mesma largura tal que
+Dividindo o intervalo de integração $$[a,b] $$ em $$n $$ partes, temos $$n $$ segmentos de mesma largura tal que
   
 
 
 <center>
-  \( h = \frac{b &#8211; a}{n} \)
+  $$ h = \frac{b &#8211; a}{n} $$
 </center>
 
 
   
-Se \(a \) e \(b \) forem respectivamente renomeados por \(x\_0 \) e \(x\_n \) , a integral total pode ser obtida por
+Se $$a $$ e $$b $$ forem respectivamente renomeados por $$x\_0 $$ e $$x\_n $$ , a integral total pode ser obtida por
   
 
 
 <center>
-  \( I = \int_{x_0}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx + \cdots + \int_{x_{n-1}}^{x_n} f(x) dx \)
+  $$ I = \int_{x_0}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx + \cdots + \int_{x_{n-1}^{x_n} f(x) dx $$
 </center>
 
 
@@ -226,7 +226,7 @@ Substituindo cada integral pela regra do trapézio, obtemos
 
 
 <center>
-  \( I = h \frac{f(x_0)+f(x_1)}{2} + h \frac{f(x_1)+f(x_2)}{2} + \cdots + h \frac{f(x_{n-1})+f(x_n)}{2} \)
+  $$ I = h \frac{f(x_0)+f(x_1)}{2} + h \frac{f(x_1)+f(x_2)}{2} + \cdots + h \frac{f(x_{n-1})+f(x_n)}{2} $$
 </center>
 
 
@@ -236,7 +236,7 @@ Agrupando os termos da equação acima, temos
 
 
 <center>
-  \( I = \frac{h}{2} \left[ f(x_0) + 2 \sum_{i=1}^{n-1} f(x_i) + f(x_n) \right] \)
+  $$ I = \frac{h}{2} \left[ f(x_0) + 2 \sum_{i=1}^{n-1} f(x_i) + f(x_n) \right] $$
 </center>
 
 
@@ -247,37 +247,37 @@ que é a expressão usada na implementação da regra dos trapézios.
 
 ## 3. Estimativa do Erro 
 
-Como a soma dos coeficientes de \(f(x) \) no numerador dividido por \(2n \) é igual a 1, a altura média representa uma média ponderada dos valores da função. De acordo com a última equação apresentada na seção anterior, os pontos interiores tem um peso duas vezes maior do que as extremidades. Assim, um erro para a aplicação múltipla da regra dos trapézios pode ser obtido pela soma dos erros individuais em cada segmento, o que dá
+Como a soma dos coeficientes de $$f(x) $$ no numerador dividido por $$2n $$ é igual a 1, a altura média representa uma média ponderada dos valores da função. De acordo com a última equação apresentada na seção anterior, os pontos interiores tem um peso duas vezes maior do que as extremidades. Assim, um erro para a aplicação múltipla da regra dos trapézios pode ser obtido pela soma dos erros individuais em cada segmento, o que dá
   
 
 
 <center>
-  \( E = &#8211; \frac{(b-a)^3}{12n^3} \sum_{i=1}^{n} f&#8221;(\varepsilon_i) \)
+  $$ E = &#8211; \frac{(b-a)^3}{12n^3} \sum_{i=1}^{n} f&#8221;(\varepsilon_i) $$
 </center>
 
 
   
-em que \(f&#8221;(\varepsilon\_i) \) é a segunda derivada em um ponto \(\varepsilon\_i \) localizado no segmento \(i \) . Esse resultado pode ser simplificado por uma estimativa do valor médio da segunda derivada no intervalo todo como
+em que $$f&#8221;(\varepsilon\_i) $$ é a segunda derivada em um ponto $$\varepsilon\_i $$ localizado no segmento $$i $$ . Esse resultado pode ser simplificado por uma estimativa do valor médio da segunda derivada no intervalo todo como
   
 
 
 <center>
-  \( g&#8221; \approx \frac{\sum_{i=1}^{n}f&#8221;(\varepsilon_i)}{n} \)
+  $$ g&#8221; \approx \frac{\sum_{i=1}^{n}f&#8221;(\varepsilon_i)}{n} $$
 </center>
 
 
   
-Portanto, \(\sum f&#8221;(\varepsilon_i) \approx ng&#8221; \) e a expressão do erro em função do número de intervalos pode ser escrita como
+Portanto, $$\sum f&#8221;(\varepsilon_i) \approx ng&#8221; $$ e a expressão do erro em função do número de intervalos pode ser escrita como
   
 
 
 <center>
-  \( E(n) = &#8211; \frac{(b-a)^3}{12n^2} g&#8221; \)
+  $$ E(n) = &#8211; \frac{(b-a)^3}{12n^2} g&#8221; $$
 </center>
 
 
   
-Onde \(g&#8221;\) é a média das derivadas de segunda ordem. 
+Onde $$g&#8221;$$ é a média das derivadas de segunda ordem. 
 
 &nbsp;
 

@@ -11,7 +11,7 @@ excerpt: |
   Este artigo faz uma apresentação do método e segue com uma discussão sobre a implementação e as possíveis melhorias computacionais que podem ser aplicadas à ele.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=403
-permalink: p=403
+permalink: /p=403
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:4982:"
@@ -194,15 +194,15 @@ categories:
 ---
 ## 1. Introdução <a name="sec1"></a>
 
-Semelhante ao Método da Bissecção, a técnica Regula Falsi é um Método Intervalar usado para buscar raízes de funções, aproximando um intervalo \(\left[ x\_{l}, x\_{r} \right] \) e \( \left[ F(x\_{l}), F(x\_{r}) \right] \) por uma reta. A interseção da reta com o eixo das abcissas consiste em uma aproximação da raiz.
+Semelhante ao Método da Bissecção, a técnica Regula Falsi é um Método Intervalar usado para buscar raízes de funções, aproximando um intervalo $$\left[ x\_{l}, x\_{r} \right] $$ e $$ \left[ F(x\_{l}), F(x\_{r}) \right] $$ por uma reta. A interseção da reta com o eixo das abcissas consiste em uma aproximação da raiz.
 
 Esta técnica apresenta, em alguns casos, alguma melhoria na eficiência da busca pela raiz, pois é um método inteligente na seleção dos limites dos subintervalos, diferentemente do Método da Bissecção, que utiliza de uma abordagem de força bruta para convergir ao resultado.
 
-A deficiência no Método da Bissecção, contornada pelo Regula Falsi, está na divisão do intervalo em dois subintervalos iguais, sem levar em conta os valores de \(F(x\_{l}) \) e \(F(x\_{r}) \) . Sendo assim, o algoritmo da Bissecção não considera a probabilidade de que se uma imagem \(F(x\_{r}) \) está mais próxima de zero do que outra imagem \(F(x\_{l}) \) , provavelmente \(x\_{r} \) está mais próxima da raiz que \(x\_{l} \) , e vice-versa. Para esse método, a distância da raiz \(x \) até \(x\_{r} \) e \(x\_{l} \) têm a mesma probabilidade de ocorrer, o que em muitos casos não é verdade.
+A deficiência no Método da Bissecção, contornada pelo Regula Falsi, está na divisão do intervalo em dois subintervalos iguais, sem levar em conta os valores de $$F(x\_{l}) $$ e $$F(x\_{r}) $$ . Sendo assim, o algoritmo da Bissecção não considera a probabilidade de que se uma imagem $$F(x\_{r}) $$ está mais próxima de zero do que outra imagem $$F(x\_{l}) $$ , provavelmente $$x\_{r} $$ está mais próxima da raiz que $$x\_{l} $$ , e vice-versa. Para esse método, a distância da raiz $$x $$ até $$x\_{r} $$ e $$x\_{l} $$ têm a mesma probabilidade de ocorrer, o que em muitos casos não é verdade.
 
 ## 2. Desenvolvimento do Método <a name="sec2"></a>
 
-O método consiste em aproximar uma curva por uma reta até que esta intercepte o eixo \(x \) , permitindo estimar o valor da raiz. O valor tomado como sendo a aproximação da raiz vêm da interceptação por esta reta, que não pertence a curva. Daí o nome &#8220;Regula Falsi&#8221;, ou &#8220;Falsa Posição&#8221;. Este processo pode ser visualizado na Figura [1](#fig1).
+O método consiste em aproximar uma curva por uma reta até que esta intercepte o eixo $$x $$ , permitindo estimar o valor da raiz. O valor tomado como sendo a aproximação da raiz vêm da interceptação por esta reta, que não pertence a curva. Daí o nome &#8220;Regula Falsi&#8221;, ou &#8220;Falsa Posição&#8221;. Este processo pode ser visualizado na Figura [1](#fig1).
 
 <center>
   <br /> <a name="#fig1"></a><br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig141.png"><img class="aligncenter size-full wp-image-416" title="Aproximação da raiz por uma reta." src="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig141.png" alt="fig141" width="400" height="400" srcset="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig141.png 400w, http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig141-300x300.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></a><br />
@@ -221,17 +221,17 @@ Usando as propriedades de semelhança de triângulos para este caso, podemos obt
 
 
 <center>
-  \( \dfrac{f(x_{l})}{x &#8211; x_{l}} = \dfrac{f(x_{r})}{x-x_{r}}\)
+  $$ \dfrac{f(x_{l})}{x &#8211; x_{l} = \dfrac{f(x_{r})}{x-x_{r}$$
 </center>
 
 
   
-multiplicando a Equação [1](#eq1) por \((x-x\_{l})(x-x\_{r}) \) , <a name="eq2"></a>
+multiplicando a Equação [1](#eq1) por $$(x-x\_{l})(x-x\_{r}) $$ , <a name="eq2"></a>
   
 
 
 <center>
-  \( f(x_{l}) \left( x &#8211; x_{r} \right) = f(x_{r}) \left( x &#8211; x_{l} \right) \)
+  $$ f(x_{l}) \left( x &#8211; x_{r} \right) = f(x_{r}) \left( x &#8211; x_{l} \right) $$
 </center>
 
 
@@ -243,24 +243,24 @@ agrupando termos, esta equação fica melhor escrita como
 
 
 <center>
-  \( x \left( f(x_{l}) &#8211; f(x_{r}) \right) = x_{r} f(x_{l}) &#8211; x_{l} f(x_{r}) \)
+  $$ x \left( f(x_{l}) &#8211; f(x_{r}) \right) = x_{r} f(x_{l}) &#8211; x_{l} f(x_{r}) $$
 </center>
 
 
   
-Dividindo ambos lados da equação por \(f(xl) &#8211; f(xr) \) ,
+Dividindo ambos lados da equação por $$f(xl) &#8211; f(xr) $$ ,
   
 <a name="eq4"></a>
   
 
 
 <center>
-  \( x = \dfrac{ x_{r} f(x_{l}) &#8211; x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) }\)
+  $$ x = \dfrac{ x_{r} f(x_{l}) &#8211; x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) }$$
 </center>
 
 
   
-esta é uma forma de expressar a função de iteração para o Regula Falsi. Ela permite o cálculo da raiz \(x \) em função dos limites \(x\_{l} \) e \(x\_{r}\).
+esta é uma forma de expressar a função de iteração para o Regula Falsi. Ela permite o cálculo da raiz $$x $$ em função dos limites $$x\_{l} $$ e $$x\_{r}$$.
 
 Utilizar a Equação [4](#eq4) para aproximar raízes funciona perfeitamente. Contudo, é possível melhorá-la para que ela utilize menos operações de cálculo. Para isso, vamos separar a subtração dos numeradores em duas frações:
   
@@ -269,43 +269,43 @@ Utilizar a Equação [4](#eq4) para aproximar raízes funciona perfeitamente. Co
 
 
 <center>
-  \( x = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } \)
+  $$ x = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } $$
 </center>
 
 
   
-somando e subtraindo \(x_{r} \) na Fórmula [5](#eq5),
+somando e subtraindo $$x_{r} $$ na Fórmula [5](#eq5),
   
 <a name="eq6"></a>
   
 
 
 <center>
-  \( x = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } + (x_{r} &#8211; x_{r}) = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } + x_{r} &#8211; \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; x_{r} \)
+  $$ x = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } + (x_{r} &#8211; x_{r}) = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } + x_{r} &#8211; \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; x_{r} $$
 </center>
 
 
   
-ajustando o termo independente \(x_{r}\),
+ajustando o termo independente $$x_{r}$$,
   
 <a name="eq7"></a>
   
 
 
 <center>
-  \( x = \left(\dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; x_{r} \right) + \left( \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } + x_{r}\right) \)
+  $$ x = \left(\dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; x_{r} \right) + \left( \dfrac{ x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } + x_{r}\right) $$
 </center>
 
 
   
-substituindo \(x \) pela Equação [4](#eq4) na Equação [7](#eq7),
+substituindo $$x $$ pela Equação [4](#eq4) na Equação [7](#eq7),
   
 <a name="eq8"></a>
   
 
 
 <center>
-  \( x &#8211; x_{r} = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{ x_{r} f(x_{l}) &#8211; x_{r} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } \)
+  $$ x &#8211; x_{r} = \dfrac{ x_{r} f(x_{l}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{ x_{r} f(x_{l}) &#8211; x_{r} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } $$
 </center>
 
 
@@ -313,7 +313,7 @@ substituindo \(x \) pela Equação [4](#eq4) na Equação [7](#eq7),
 
 
 <center>
-  \(\Downarrow \)
+  $$\Downarrow $$
 </center>
 
 
@@ -323,7 +323,7 @@ substituindo \(x \) pela Equação [4](#eq4) na Equação [7](#eq7),
 
 
 <center>
-  \( x = x_{r} + \dfrac{ x_{r} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } \)
+  $$ x = x_{r} + \dfrac{ x_{r} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } &#8211; \dfrac{x_{l} f(x_{r}) }{ f(x_{l}) &#8211; f(x_{r}) } $$
 </center>
 
 
@@ -335,23 +335,23 @@ finalmente,
 
 
 <center>
-  \( x = x_{r} &#8211; \dfrac{ f(x_{r}) \left( x_{l} &#8211; x_{r} \right) }{ f(x_{l}) &#8211; f(x_{r}) } \)
+  $$ x = x_{r} &#8211; \dfrac{ f(x_{r}) \left( x_{l} &#8211; x_{r} \right) }{ f(x_{l}) &#8211; f(x_{r}) } $$
 </center>
 
 
   
-A função acima utiliza uma chamada a menos de função &#8212; não chama \(f(x_{l}) \) &#8212; e possui uma multiplicação a menos. Isto significa uma pequena diminuição no _overhead_, ao ser implementada computacionalmente.
+A função acima utiliza uma chamada a menos de função &#8212; não chama $$f(x_{l}) $$ &#8212; e possui uma multiplicação a menos. Isto significa uma pequena diminuição no _overhead_, ao ser implementada computacionalmente.
 
 O método da falsa posição possui um algoritmo semelhante ao do Método da Bissecção, com a diferença que, ao invés de dividir o intervalo sempre pela metade, a fim de se obter a aproximação da raiz a partir do ponto médio, utiliza-se a expressão acima para aproximar a raiz.
 
 Os passos seguidos pelo Regulsa Falsi podem ser sumarizados da seguinte forma:
 
-  1. Escolhemos os limites do intervalo que deve incorporar a raiz, chamando os limites de \(x\_{l} \) e \(x\_{r} \) . Como uma raiz significa um ponto onde a função muda de sinal, o intervalo contém a raiz se \(F(x\_{r})F(x\_{l}) < 0 \).
-  2. Uma estimativa da raiz pode ser aproximada como \(x = x\_{r} &#8211; \dfrac{F(x\_{r})~(x\_{l} &#8211; x\_{r})}{F(x\_{l}) &#8211; F(x\_{r})} \), sendo a única expressão que difere do Método da Bissecção.
+  1. Escolhemos os limites do intervalo que deve incorporar a raiz, chamando os limites de $$x\_{l} $$ e $$x\_{r} $$ . Como uma raiz significa um ponto onde a função muda de sinal, o intervalo contém a raiz se $$F(x\_{r})F(x\_{l}) < 0 $$.
+  2. Uma estimativa da raiz pode ser aproximada como $$x = x\_{r} &#8211; \dfrac{F(x\_{r})~(x\_{l} &#8211; x\_{r})}{F(x\_{l}) &#8211; F(x\_{r})} $$, sendo a única expressão que difere do Método da Bissecção.
   3. Verificamos para saber em qual subintervalo a raiz está 
-      1. se \(F(x)F(x\_{l}) < 0 \) , a raiz está no intervalo da esquerda. Faça \(x\_{r} = x \) e volte ao passo \(2\).
-      2. se \(F(x)F(x\_{l}) > 0 \) , a raiz não esta no intervalo da esquerda, logo, está no da direita, então faça \(x\_{l} = x \) e volte ao passo \(2 \) .
-      3. se \(F(x)F(x_{l}) = 0 \) , a raiz foi encontrada e é \(x \) .
+      1. se $$F(x)F(x\_{l}) < 0 $$ , a raiz está no intervalo da esquerda. Faça $$x\_{r} = x $$ e volte ao passo $$2$$.
+      2. se $$F(x)F(x\_{l}) > 0 $$ , a raiz não esta no intervalo da esquerda, logo, está no da direita, então faça $$x\_{l} = x $$ e volte ao passo $$2 $$ .
+      3. se $$F(x)F(x_{l}) = 0 $$ , a raiz foi encontrada e é $$x $$ .
 
 ## 3. Implementação <a name="sec3"></a>
 

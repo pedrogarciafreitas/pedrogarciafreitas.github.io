@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Neste post apresentaremos um método para decomposição de matrizes conhecido como Fatoração QR. Esta técnica consiste em decompor  uma matriz A como sendo um produto de uma matriz ortogonal com outra matriz  triangular. Em problemas práticos, este método é consideravelmente mais útil que outras técnicas (tais como LU ou Cholesky).'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=689
-permalink: p=689
+permalink: /p=689
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:15763:"
@@ -299,64 +299,64 @@ categories:
 ---
 ## 1. Decomposição QR 
 
-Se assumirmos que é possível decompor uma matriz real \(A \) em um produto de matrizes \(QR \) , onde \(Q \) seja ortogonal e \(R \) é uma matriz triangular-superior de diagonal não-nula, então quando \(A \) for uma matriz não-singular, esta decomposição é única e sempre existe. 
+Se assumirmos que é possível decompor uma matriz real $$A $$ em um produto de matrizes $$QR $$ , onde $$Q $$ seja ortogonal e $$R $$ é uma matriz triangular-superior de diagonal não-nula, então quando $$A $$ for uma matriz não-singular, esta decomposição é única e sempre existe. 
 
-Para obter esta decomposição, aplicamos em \(A \) a sequência \(P_k \) de transformações de Holseholder, garantindo que os elementos da diagonal de cada estágio (_Rdiag_) sejam não-negativos. Isto é possível, uma vez que cada transformação é determinada pela mudança de sinal. Assim, teremos que
+Para obter esta decomposição, aplicamos em $$A $$ a sequência $$P_k $$ de transformações de Holseholder, garantindo que os elementos da diagonal de cada estágio (_Rdiag_) sejam não-negativos. Isto é possível, uma vez que cada transformação é determinada pela mudança de sinal. Assim, teremos que
     
 
 
 <center>
-  <br /> \( P_{n-1} P_{n-2} \cdots P_{1} A = R \)<br />
+  <br /> $$ P_{n-1} P_{n-2} \cdots P_{1} A = R $$<br />
 </center>
 
 
     
-Como cada \(P_j \) é ortogonal, temos que \(A = Q R \) , onde
+Como cada $$P_j $$ é ortogonal, temos que $$A = Q R $$ , onde
     
 
 
 <center>
-  <br /> \( Q = \left[ ~ P_{n-1} ~ P_{n-2} ~ \ldots ~ P_1 ~ \right]^T \)<br />
+  <br /> $$ Q = \left[ ~ P_{n-1} ~ P_{n-2} ~ \ldots ~ P_1 ~ \right]^T $$<br />
 </center>
 
 
     
-Como cada \(P\_j \) é unicamente determinado pela condição de não-negatividade, se o elemento da diagonal \(a\_{jj}^{(j)} \) é não-nulo quando \(P_j \) é aplicado, então a decomposição é única para \(A \) não-singular. 
+Como cada $$P\_j $$ é unicamente determinado pela condição de não-negatividade, se o elemento da diagonal $$a\_{jj}^{(j)} $$ é não-nulo quando $$P_j $$ é aplicado, então a decomposição é única para $$A $$ não-singular. 
 
-Como o produto de matrizes triangulares é triangular, assim como o produto de matrizes ortogonais é ortogonal, quando temos que \(E\_k \) é triangular-inferior ou é um fator ortogonal da \(k-esima \) transformação da original \(A\_1 \) . Disso, a convergência do processo \(QR \) é determinado pelo comportamento da sequência \(E\_k \) , desde que \(A\_{k+1} = E\_{k}^{-1} A\_1 E_k \) . </p> 
+Como o produto de matrizes triangulares é triangular, assim como o produto de matrizes ortogonais é ortogonal, quando temos que $$E\_k $$ é triangular-inferior ou é um fator ortogonal da $$k-esima $$ transformação da original $$A\_1 $$ . Disso, a convergência do processo $$QR $$ é determinado pelo comportamento da sequência $$E\_k $$ , desde que $$A\_{k+1} = E\_{k}^{-1} A\_1 E_k $$ . </p> 
 
 &nbsp;
 
 ### 1.1. Resolvendo sistemas lineares com decomposição QR </p> 
 
-A matriz \(A \) de dimensões \((m,n) \) pode ser decomposta em termos de duas matrizes \(Q \) e \(R \) como
+A matriz $$A $$ de dimensões $$(m,n) $$ pode ser decomposta em termos de duas matrizes $$Q $$ e $$R $$ como
     
 
 
 <center>
-  \( A = Q \left[ \begin{array}{c}<br /> R \\<br /> 0<br /> \end{array} \right] \)<br />
+  $$ A = Q \left[ \begin{array}{c}<br /> R \\<br /> 0<br /> \end{array} \right] $$<br />
 </center>
 
 
     
-com a matriz \(R \) sendo quadrada e triangular-superior \(R \) de dimensão \((n,n) \) . 
+com a matriz $$R $$ sendo quadrada e triangular-superior $$R $$ de dimensão $$(n,n) $$ . 
 
-Para o problema que tem \(A \) como matriz de coeficientes na forma
+Para o problema que tem $$A $$ como matriz de coeficientes na forma
     
 
 
 <center>
-  \( A x = b \)
+  $$ A x = b $$
 </center>
 
 
     
-podemos utilizar a decomposição QR para resolvê-lo com o sistema triangular \(R \) na forma
+podemos utilizar a decomposição QR para resolvê-lo com o sistema triangular $$R $$ na forma
     
 
 
 <center>
-  \( R x = Q^T b \)
+  $$ R x = Q^T b $$
 </center>
 
 
@@ -366,7 +366,7 @@ Isto é, a solução
 
 
 <center>
-  \( x = \left( A^T A \right)^{-1} A^T b \)
+  $$ x = \left( A^T A \right)^{-1} A^T b $$
 </center>
 
 
@@ -376,7 +376,7 @@ vêm de
 
 
 <center>
-  \( x = \left( R^T Q^T Q R \right)^{-1} R^T Q^T b =<br /> (R^T R)^{-1} R^T Q^T b = = R^{-1} Q^T b \)
+  $$ x = \left( R^T Q^T Q R \right)^{-1} R^T Q^T b =<br /> (R^T R)^{-1} R^T Q^T b = = R^{-1} Q^T b $$
 </center>
 
 
@@ -386,15 +386,15 @@ portanto
 
 
 <center>
-  \( R x = Q^T b \)
+  $$ R x = Q^T b $$
 </center>
 
 
     
-Separando este problemas, podemos solucionar \(x \) em dois passos:
+Separando este problemas, podemos solucionar $$x $$ em dois passos:
 
->   1. **Passo 1:** Calcular \(y = Q^T b \) 
->   2. **Passo 2:** Resolver o sistema \(R x = y \) 
+>   1. **Passo 1:** Calcular $$y = Q^T b $$ 
+>   2. **Passo 2:** Resolver o sistema $$R x = y $$ 
 
 &nbsp;
 

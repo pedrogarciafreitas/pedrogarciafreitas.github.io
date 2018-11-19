@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Simple HTTP Server.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1700
-permalink: p=1700
+permalink: /p=1700
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:4581:"

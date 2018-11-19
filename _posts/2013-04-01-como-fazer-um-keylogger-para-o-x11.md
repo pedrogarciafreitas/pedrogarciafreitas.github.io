@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: Nesse post aprendemos como fazer um keylogger em python para guardar as teclas digitadas no X11.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1982
-permalink: p=1982
+permalink: /p=1982
 wp-syntax-cache-content:
   - |
     a:9:{i:1;s:1510:"

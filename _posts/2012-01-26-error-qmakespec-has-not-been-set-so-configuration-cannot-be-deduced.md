@@ -10,7 +10,7 @@ excerpt: |
   Then it means you forgot to set environment variable QMAKESPE
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1486
-permalink: p=1486
+permalink: /p=1486
 categories:
   - FreeBSD
 ---

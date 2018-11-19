@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O polinômio de Legendre aparece com solução da equação diferencial de Legendre, comum em alguns problemas físicos. Além disso, os polinômios de Legendre podem ser úteis para algumas aplicações em métodos computacionais, tais como quadraturas e integração. Neste post veremos como gerar os polinômios de Legendre de qualquer ordem.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1711
-permalink: p=1711
+permalink: /p=1711
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3044:"
@@ -77,7 +77,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(P_n(x)\,\)
+        $$P_n(x)\,$$
       </td>
     </tr>
     
@@ -86,7 +86,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(1\,\)
+        $$1\,$$
       </td>
     </tr>
     
@@ -96,7 +96,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(x\,\)
+        $$x\,$$
       </td>
     </tr>
     
@@ -106,7 +106,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac12\end{matrix} (3x^2-1) \,\)
+        $$\begin{matrix}\frac12\end{matrix} (3x^2-1) \,$$
       </td>
     </tr>
     
@@ -116,7 +116,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac12\end{matrix} (5x^3-3x) \,\)
+        $$\begin{matrix}\frac12\end{matrix} (5x^3-3x) \,$$
       </td>
     </tr>
     
@@ -126,7 +126,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac18\end{matrix} (35x^4-30x^2+3)\,\)
+        $$\begin{matrix}\frac18\end{matrix} (35x^4-30x^2+3)\,$$
       </td>
     </tr>
     
@@ -136,7 +136,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac18\end{matrix} (63x^5-70x^3+15x)\,\)
+        $$\begin{matrix}\frac18\end{matrix} (63x^5-70x^3+15x)\,$$
       </td>
     </tr>
     
@@ -146,7 +146,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac1{16}\end{matrix} (231x^6-315x^4+105x^2-5)\,\)
+        $$\begin{matrix}\frac1{16}\end{matrix} (231x^6-315x^4+105x^2-5)\,$$
       </td>
     </tr>
     
@@ -156,7 +156,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac1{16}\end{matrix} (429x^7-693x^5+315x^3-35x)\,\)
+        $$\begin{matrix}\frac1{16}\end{matrix} (429x^7-693x^5+315x^3-35x)\,$$
       </td>
     </tr>
     
@@ -166,7 +166,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac1{128}\end{matrix} (6435x^8-12012x^6+6930x^4-1260x^2+35)\,\)
+        $$\begin{matrix}\frac1{128}\end{matrix} (6435x^8-12012x^6+6930x^4-1260x^2+35)\,$$
       </td>
     </tr>
     
@@ -176,7 +176,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac1{128}\end{matrix} (12155x^9-25740x^7+18018x^5-4620x^3+315x)\,\)
+        $$\begin{matrix}\frac1{128}\end{matrix} (12155x^9-25740x^7+18018x^5-4620x^3+315x)\,$$
       </td>
     </tr>
     
@@ -186,7 +186,7 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       </td>
       
       <td align="center">
-        \(\begin{matrix}\frac1{256}\end{matrix} (46189x^{10}-109395x^8+90090x^6-30030x^4+3465x^2-63)\,\)
+        $$\begin{matrix}\frac1{256}\end{matrix} (46189x^{10}-109395x^8+90090x^6-30030x^4+3465x^2-63)\,$$
       </td>
     </tr>
   </table>
@@ -204,19 +204,19 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
       <table>
         <tr>
           <td align="left">
-            \(P_0(x) = 1\)
+            $$P_0(x) = 1$$
           </td>
         </tr>
         
         <tr>
           <td align="left">
-            \(P_1(x) = x\)
+            $$P_1(x) = x$$
           </td>
         </tr>
         
         <tr>
           <td align="left">
-            \((n+1) P_{n+1}(x) = (2n+1) x P_n(x) &#8211; n P_{n-1}(x)\)
+            $$(n+1) P_{n+1}(x) = (2n+1) x P_n(x) &#8211; n P_{n-1}(x)$$
           </td>
         </tr>
       </table>
@@ -225,13 +225,13 @@ Os Polinômios de Legendre, também conhecidos como coeficientes de Legendre, s�
         </center><br /> ou pela seguinte definição explícita:<br /> 
         
         <center>
-          \(P_n(x) = \sum_{k=0}^n a_k \cdot x^k\)
+          $$P_n(x) = \sum_{k=0}^n a_k \cdot x^k$$
         </center>
         
-        <br /> onde o coeficiente do polinômio \(a_n\) é<br /> 
+        <br /> onde o coeficiente do polinômio $$a_n$$ é<br /> 
         
         <center>
-          \(a_k = 2^n \cdot \binom{n}{k} \cdot \binom{\frac{n+k-1}2}{n}\)
+          $$a_k = 2^n \cdot \binom{n}{k} \cdot \binom{\frac{n+k-1}2}{n}$$
         </center>
         
         <br /> Os primeiros polinômios de Legendre são ilustrados no gráfico abaixo

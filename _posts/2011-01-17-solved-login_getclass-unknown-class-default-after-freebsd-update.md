@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Fixing login error after freebsd-update
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1076
-permalink: p=1076
+permalink: /p=1076
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:782:"

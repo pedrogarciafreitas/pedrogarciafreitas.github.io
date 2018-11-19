@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: How to updating all ports with portmaster without prompt.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1571
-permalink: p=1571
+permalink: /p=1571
 categories:
   - FreeBSD
 ---

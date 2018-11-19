@@ -6,7 +6,7 @@ author: SAWP
 excerpt: ' O método inventado pelo físico Edmond Halley, é um algoritmo que consiste em aplicar o Método de Newton-Raphson duas vezes, gerando uma fórmula de aproximação com dependência da função, da primeira e da segunda derivada, possuindo a vantagem de convergir cubicamente à raiz.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=485
-permalink: p=485
+permalink: /p=485
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:4450:"
@@ -102,35 +102,35 @@ Considere a função iteração abaixo:
 
 
 <center>
-  <br /> \( x_{i+1}=x_{i}-{\dfrac {u_{i}{Q \left( u_{i} \right) } \)<br />
+  <br /> $$ x_{i+1}=x_{i}-{\dfrac {u_{i}}{Q \left( u_{i} \right) } $$<br />
 </center>
 
 
     
-onde \(u\_{i}={\dfrac {f\_{i} \left( x \right) }{\dfrac {d}{dx}f_{i} \left( x \right) } \) e \(Q\) é um polinômio. 
+onde $$u\_{i}={\dfrac {f\_{i} \left( x \right) }{\dfrac {d}{dx}f_{i} \left( x \right) } $$ e $$Q$$ é um polinômio. 
 
-O Método de Halley diz que se \(Q \) for uma função linear, então é possível obter uma função iteração de terceira ordem, obedecendo a forma do método de Newton-Raphson[[1]](#bibitem1). 
+O Método de Halley diz que se $$Q $$ for uma função linear, então é possível obter uma função iteração de terceira ordem, obedecendo a forma do método de Newton-Raphson[[1]](#bibitem1). 
 
-Supondo uma função \(g \) tal que
+Supondo uma função $$g $$ tal que
     
 <a name="eq2">(eq2)</a>
       
 
 
 <center>
-  <br /> \( g={\dfrac {f \left( x \right) }{\sqrt {\dfrac {d}{dx}f \left( x\right) } \)<br />
+  <br /> $$ g={\dfrac {f \left( x \right) }{\sqrt {\dfrac {d}{dx}f \left( x\right) }} $$<br />
 </center>
 
 
     
-A função \(f \) é aquela cuja raiz tal que \(f(x) = 0 \) queremos encontrar. Agora derivamos a função g definida acima, gerando a expressão
+A função $$f $$ é aquela cuja raiz tal que $$f(x) = 0 $$ queremos encontrar. Agora derivamos a função g definida acima, gerando a expressão
     
 <a name="eq3">(eq3)</a>
       
 
 
 <center>
-  <br /> \( {\dfrac {d}{dx}g \left( x \right) =\sqrt {\dfrac {d}{dx}f \left( x \right) }-\dfrac{1}{2}\,{\dfrac {f \left( x \right) {\dfrac {d^{2}{d{x}^{2}f \left( x \right)}{ \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{3/2} \)<br />
+  <br /> $$ {\dfrac {d}{dx}g \left( x \right) =\sqrt {\dfrac {d}{dx}f \left( x \right) }-\dfrac{1}{2}\,{\dfrac {f \left( x \right) {\dfrac {d^{2}{d{x}^{2}}f \left( x \right)}{ \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{3/2}} $$<br />
 </center>
 
 
@@ -138,7 +138,7 @@ A função \(f \) é aquela cuja raiz tal que \(f(x) = 0 \) queremos encontrar. 
 
 
 <center>
-  <br /> \(\Downarrow \)<br />
+  <br /> $$\Downarrow $$<br />
 </center>
 
 
@@ -148,17 +148,17 @@ A função \(f \) é aquela cuja raiz tal que \(f(x) = 0 \) queremos encontrar. 
 
 
 <center>
-  <br /> \( {\dfrac {d}{dx}g \left( x \right) =\dfrac{1}{2}\,{\dfrac {2\, \left( {\dfrac {d}{ dx}f \left( x \right) \right) ^{2}-f \left( x \right) {\dfrac {d^{2} {d{x}^{2}f \left( x \right) }{ \left( {\dfrac {d}{dx}f \left( x\right) \right) ^{3/2} \)<br />
+  <br /> $$ {\dfrac {d}{dx}g \left( x \right) =\dfrac{1}{2}\,{\dfrac {2\, \left( {\dfrac {d}{ dx}f \left( x \right) \right) ^{2}-f \left( x \right) {\dfrac {d^{2} {d{x}^{2}}f \left( x \right) }{ \left( {\dfrac {d}{dx}f \left( x\right) \right) ^{3/2}} $$<br />
 </center>
 
-Agora usaremos a função de iteração do Método de Newton-Raphson. Contudo, ao invés de utilizarmos a função \(f \) e sua derivada na busca da raiz, usaremos as expressões derivadas de \(g \) , ou seja
+Agora usaremos a função de iteração do Método de Newton-Raphson. Contudo, ao invés de utilizarmos a função $$f $$ e sua derivada na busca da raiz, usaremos as expressões derivadas de $$g $$ , ou seja
       
 <a name="eq5">(eq5)</a>
       
 
 
 <center>
-  <br /> \( x_{n+1}=x_{n}-{\dfrac {g \left( x_{n} \right) }{\dfrac {d}{dx}g \left( x_{n} \right) }\)<br />
+  <br /> $$ x_{n+1}=x_{n}-{\dfrac {g \left( x_{n} \right) }{\dfrac {d}{dx}g \left( x_{n} \right) }$$<br />
 </center>
 
 
@@ -170,7 +170,7 @@ onde
 
 
 <center>
-  <br /> \( {\dfrac {g \left( x_{n} \right) }{\dfrac {d}{dx}g \left( x_{n} \right) }=f \left( x \right) {\dfrac {1}{\sqrt {\dfrac {d}{dx}f\left( x \right) }\left( \sqrt {\dfrac {d}{dx}f \left( x \right) }-1/2\,{\dfrac {f \left( x \right) {\dfrac {d^{2}{d{x}^{2}f \left( x\right) }{ \left( {\dfrac {d}{dx}f \left( x\right) \right) ^{3/2} \right) ^{-1}\)<br />
+  <br /> $$ {\dfrac {g \left( x_{n} \right) }{\dfrac {d}{dx}g \left( x_{n} \right) }=f \left( x \right) {\dfrac {1}{\sqrt {\dfrac {d}{dx}f\left( x \right) }}\left( \sqrt {\dfrac {d}{dx}f \left( x \right) }-1/2\,{\dfrac {f \left( x \right) {\dfrac {d^{2}{d{x}^{2}}f \left( x\right) }{ \left( {\dfrac {d}{dx}f \left( x\right) \right) ^{3/2}} \right) ^{-1}$$<br />
 </center>
 
 A Equação [6](#eq6) pode ser reescrita de uma forma mais simples,
@@ -180,7 +180,7 @@ A Equação [6](#eq6) pode ser reescrita de uma forma mais simples,
 
 
 <center>
-  <br /> \( {\dfrac {g \left( x_{n} \right) }{\dfrac {d}{dx}g \left( x_{n} \right) }=2\,{\dfrac {f \left( x \right) {\dfrac {d}{dx}f \left( x \right) }{2\, \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{2} &#8211; f \left( x \right) {\dfrac {d^{2}{d{x}^{2}f \left( x \right) } \)<br />
+  <br /> $$ {\dfrac {g \left( x_{n} \right) }{\dfrac {d}{dx}g \left( x_{n} \right) }=2\,{\dfrac {f \left( x \right) {\dfrac {d}{dx}f \left( x \right) }{2\, \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{2} &#8211; f \left( x \right) {\dfrac {d^{2}{d{x}^{2}}f \left( x \right) } $$<br />
 </center>
 
 Aplicando a Equação [7](#eq7) na iteração da Equação [5](#eq5) geramos a expressão usada pelo Método de Halley:
@@ -190,7 +190,7 @@ Aplicando a Equação [7](#eq7) na iteração da Equação [5](#eq5) geramos a e
 
 
 <center>
-  <br /> \( x_{n+1}=x_{n}-2\,{\dfrac {f \left( x \right) {\dfrac {d}{dx}f \left( x \right) }{2\, \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{2}-f \left( x \right) {\dfrac {d^{2}{d{x}^{2}f \left( x \right) } \)<br />
+  <br /> $$ x_{n+1}=x_{n}-2\,{\dfrac {f \left( x \right) {\dfrac {d}{dx}f \left( x \right) }{2\, \left( {\dfrac {d}{dx}f \left( x \right) \right) ^{2}-f \left( x \right) {\dfrac {d^{2}{d{x}^{2}}f \left( x \right) } $$<br />
 </center>
 
 <!-- IMPLEMENTAÇÃO -->
@@ -242,7 +242,7 @@ Um exemplo de utilização desta função pode ser encontrado em: <a href="http:
 
 ## 4. Conclusões <a name="sec4"></a> 
 
-O Método de Halley utiliza uma transformação \(g(f(x)) \) para aplicação do método de Newton-Raphson. Este tipo de abordagem é muito comum quando queremos criar uma função de iteração que acelere a convergência à raiz. 
+O Método de Halley utiliza uma transformação $$g(f(x)) $$ para aplicação do método de Newton-Raphson. Este tipo de abordagem é muito comum quando queremos criar uma função de iteração que acelere a convergência à raiz. 
 
 Existe uma generalização da abordagem utilizada por Halley para quando deseja-se construir um algoritmo de busca de raízes com taxa de convergência com ordem superior à três, conhecido como &#8220;Transformada de Householder&#8221;. </p> </p> 
 

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'O Método de Ridder consiste em avaliar a aproximação parcial -- obtida em cada iteração pelo Método da Falsa Posição -- em uma função de ajuste exponencial, a fim de otimizar a busca pela raiz.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=563
-permalink: p=563
+permalink: /p=563
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:9067:"
@@ -149,24 +149,24 @@ A ideia é semelhante àquela usada pelo Método de Brent, cuja busca intervalar
 
 ## 2. Desenvolvimento do Método <a name="sec2"></a> 
 
-Como queremos encontrar \(f \left( x \right) =0 \) , vamos tomar
+Como queremos encontrar $$f \left( x \right) =0 $$ , vamos tomar
     
 <a name="eq1">(eq1)</a>
       
 
 
 <center>
-  <br /> \(f \left( x \right) = A+B{e^{Cx}}\)<br />
+  <br /> $$f \left( x \right) = A+B{e^{Cx}$$<br />
 </center>
 
-Sejam três valores de x que estejam delimitando de alguma forma um intervalo que contenha a raiz tal que \(\{x\_{left}, x\_{predictor}, x\_{right}\} \) , cuja amplitude seja \(d\_{{0}}= \left| x\_{{left}}-x\_{{right}} \right| \) .Podemos utilizar o Método da Falsa posição para obter uma aproximação da raiz a partir desses pontos neste intervalo: 
+Sejam três valores de x que estejam delimitando de alguma forma um intervalo que contenha a raiz tal que $$\{x\_{left}, x\_{predictor}, x\_{right}\} $$ , cuja amplitude seja $$d\_{0}= \left| x\_{left}-x\_{right} \right| $$ .Podemos utilizar o Método da Falsa posição para obter uma aproximação da raiz a partir desses pontos neste intervalo: 
 
 <a name="eq2">(eq2)</a>
       
 
 
 <center>
-  <br /> \( x_{{predictor}}=FalsaPosicao \left( x_{{left}},x_{{{\it right}}} \right) \)<br />
+  <br /> $$ x_{predictor}=FalsaPosicao \left( x_{left},x_{{\it right}} \right) $$<br />
 </center>
 
 A proposição feita por Ridder é de realizar uma segunda aproximação a partir da fórmula: 
@@ -176,7 +176,7 @@ A proposição feita por Ridder é de realizar uma segunda aproximação a parti
 
 
 <center>
-  <br /> \( x_{{corrector}}=x_{{left}}+d_{{0}} \left\{ {\frac {\ln \left( \beta \right) }{\ln \left( \alpha \right) }} \right\} \)<br />
+  <br /> $$ x_{corrector}=x_{left}+d_{0} \left\{ {\frac {\ln \left( \beta \right) }{\ln \left( \alpha \right) } \right\} $$<br />
 </center>
 
 
@@ -188,7 +188,7 @@ onde:
 
 
 <center>
-  <br /> \( \alpha={\frac {f_{{left}}-f_{{predictor}}}{f_{{predictor}}-f_{{right}}}} \)<br />
+  <br /> $$ \alpha={\frac {f_{left}-f_{predictor}}{f_{predictor}-f_{right}} $$<br />
 </center>
 
 <a name="eq5">(eq5)</a>
@@ -196,7 +196,7 @@ onde:
 
 
 <center>
-  <br /> \(\beta={\frac {f_{{left}}-f_{{predictor}}}{f_{{predictor}}-\alpha\,f_{{right}}}} \)<br />
+  <br /> $$\beta={\frac {f_{left}-f_{predictor}}{f_{predictor}-\alpha\,f_{right}} $$<br />
 </center>
 
 <a name="eq6">(eq6)</a>
@@ -204,7 +204,7 @@ onde:
 
 
 <center>
-  <br /> \( f_{{predictor}}=f \left( x_{{predictor}} \right) \)<br />
+  <br /> $$ f_{predictor}=f \left( x_{predictor} \right) $$<br />
 </center>
 
 <a name="eq7">(eq7)</a>
@@ -212,7 +212,7 @@ onde:
 
 
 <center>
-  <br /> \( f_{{left}}=f \left( x_{{left}} \right) \)<br />
+  <br /> $$ f_{left}=f \left( x_{left} \right) $$<br />
 </center>
 
 <a name="eq8">(eq8)</a>
@@ -220,7 +220,7 @@ onde:
 
 
 <center>
-  <br /> \( f_{{right}}=f \left( x_{{right}} \right) \)<br />
+  <br /> $$ f_{right}=f \left( x_{right} \right) $$<br />
 </center>
 
 Da série logarítmica[[afken]](#bibitemafken), temos:
@@ -230,17 +230,17 @@ Da série logarítmica[[afken]](#bibitemafken), temos:
 
 
 <center>
-  <br /> \( \ln \left( 1+x \right) =\sum _{n=1}^{\infty }{\frac { \left( -1\right) ^{n-1}{x}^{n}}{n}} = x-\dfrac{1}{2}\,{x}^{2}+\dfrac{1}{3}\,{x}^{3} \)<br />
+  <br /> $$ \ln \left( 1+x \right) =\sum _{n=1}^{\infty }{\frac { \left( -1\right) ^{n-1}{x}^{n}{n} = x-\dfrac{1}{2}\,{x}^{2}+\dfrac{1}{3}\,{x}^{3} $$<br />
 </center>
 
-Uma aproximação satisfatória para o caso pode ser obtida usando-se até o terceiro termo. Desta forma, para \( x=\beta-1 \) temos: 
+Uma aproximação satisfatória para o caso pode ser obtida usando-se até o terceiro termo. Desta forma, para $$ x=\beta-1 $$ temos: 
 
 <a name="eq10">(eq10)</a>
       
 
 
 <center>
-  <br /> \( \ln \left( 1+ \left\{ \beta-1 \right\} \right) =\beta-1-\dfrac{1}{2}\, \left( \beta-1 \right) ^{2}+\dfrac{1}{3}\, \left( \beta-1 \right) ^{3} \)<br />
+  <br /> $$ \ln \left( 1+ \left\{ \beta-1 \right\} \right) =\beta-1-\dfrac{1}{2}\, \left( \beta-1 \right) ^{2}+\dfrac{1}{3}\, \left( \beta-1 \right) ^{3} $$<br />
 </center>
 
 
@@ -252,19 +252,19 @@ portanto,
 
 
 <center>
-  <br /> \( \ln \left( \beta \right) =\beta-1-\dfrac{1}{2}\, \left( \beta-1 \right) ^{2}+\dfrac{1}{3}\, \left( \beta-1 \right) ^{3} \)<br />
+  <br /> $$ \ln \left( \beta \right) =\beta-1-\dfrac{1}{2}\, \left( \beta-1 \right) ^{2}+\dfrac{1}{3}\, \left( \beta-1 \right) ^{3} $$<br />
 </center>
 
 
     
-Para simplificarmos a notação, adotaremos \(\phi\_{{\beta}}=\beta-1 \) e \(\phi\_{{\alpha}}=\alpha-1 \) . Desta forma, obtemos facilmente as expressões necessárias para aplicarmos ao método: 
+Para simplificarmos a notação, adotaremos $$\phi\_{\beta}=\beta-1 $$ e $$\phi\_{\alpha}=\alpha-1 $$ . Desta forma, obtemos facilmente as expressões necessárias para aplicarmos ao método: 
 
 <a name="eq12">(eq12)</a>
       
 
 
 <center>
-  <br /> \( \ln \left( \beta \right) =\phi_{{\beta}}-\dfrac{1}{2}\,{\phi_{{\beta}}}^{2}+\dfrac{1}{3}\,{\phi_{{\beta}}}^{3} \)<br />
+  <br /> $$ \ln \left( \beta \right) =\phi_{\beta}-\dfrac{1}{2}\,{\phi_{\beta}}^{2}+\dfrac{1}{3}\,{\phi_{\beta}}^{3} $$<br />
 </center>
 
 e
@@ -274,7 +274,7 @@ e
 
 
 <center>
-  <br /> \( \ln \left( \alpha \right) =\phi_{{\alpha}}-\dfrac{1}{2}\, {\phi_{{\alpha}}}^{2} +\dfrac{1}{3}\,{\phi_{{\alpha}}}^{3} \)<br />
+  <br /> $$ \ln \left( \alpha \right) =\phi_{\alpha}-\dfrac{1}{2}\, {\phi_{\alpha}}^{2} +\dfrac{1}{3}\,{\phi_{\alpha}}^{3} $$<br />
 </center>
 
 <!--  IMPLEMENTACAO  --></p> 

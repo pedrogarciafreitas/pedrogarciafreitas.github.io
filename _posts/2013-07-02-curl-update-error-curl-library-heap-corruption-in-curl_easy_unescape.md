@@ -6,7 +6,7 @@ author: SAWP
 excerpt: How to force the build/upgrade cURL on FreeBSD.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2057
-permalink: p=2057
+permalink: /p=2057
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:1439:"

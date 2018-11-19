@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Halftone (meio-tom) é uma técnica de processamento de imagens que objetiva gerar uma ilusão ótica na imagem para que ela aparente ter mais tons do que realmente possui. '
 layout: post
 guid: http://www.sawp.com.br/blog/?p=940
-permalink: p=940
+permalink: /p=940
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:22793:"
@@ -197,13 +197,13 @@ Neste exemplo, implementamos um algoritmo de halftoning típico para impressão,
   <br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/padroesdepontos1.jpg"><img src="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/padroesdepontos1.jpg" alt="" title="padroesdepontos" width="707" height="320" class="aligncenter size-full wp-image-999" srcset="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/padroesdepontos1.jpg 707w, http://www.sawp.com.br/blog/wp-content/uploads/2011/01/padroesdepontos1-300x135.jpg 300w" sizes="(max-width: 707px) 100vw, 707px" /></a><br />
 </center>
 
-Cada conjunto de níveis de cinza é representado por um padrão \(3 \times 3\) de pontos brancos ou pretos. Uma área de \(3 \times 3\) pixels cheia de pontos pretos é uma aproximação de um nível de cinza preto (ou 0). De forma análoga, uma área \(3 \times 3\) de pontos totalmente brancos será uma aproximação do branco em uma escala de nível de cinza (ou 9). Os demais padrões intermediários entre \(]0, 255[ \) serão re-escalados para o intervalo \([0, 9]\), conforme ilustrado na imagem abaixo.
+Cada conjunto de níveis de cinza é representado por um padrão $$3 \times 3$$ de pontos brancos ou pretos. Uma área de $$3 \times 3$$ pixels cheia de pontos pretos é uma aproximação de um nível de cinza preto (ou 0). De forma análoga, uma área $$3 \times 3$$ de pontos totalmente brancos será uma aproximação do branco em uma escala de nível de cinza (ou 9). Os demais padrões intermediários entre $$]0, 255[ $$ serão re-escalados para o intervalo $$[0, 9]$$, conforme ilustrado na imagem abaixo.
 
 <center>
   <br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/escalas.jpg"><img src="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/escalas.jpg" alt="" title="escalas" width="500" height="400" class="aligncenter size-full wp-image-947" srcset="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/escalas.jpg 500w, http://www.sawp.com.br/blog/wp-content/uploads/2011/01/escalas-300x240.jpg 300w" sizes="(max-width: 500px) 100vw, 500px" /></a><br />
 </center>
 
-É possível notar que utilizamos nove limiares (_threshold_) para a sub-codificação: o intervalo \([0, 25.5[ \) é truncado para \(0 \), \([25.5, 51[ \) é truncado para \(1 \), \([51, 76.5[\) para \(2 \), e assim por diante. Assim, cada pixel na imagem de entrada irá corresponder a um padrão de \(3 \times 3 \) pixels na imagem gerada. Desta forma, a resolução espacial será reduzida a \(33\% \) da resolução espacial original. Isto é, antes da substituição de cada pixel pela máscara devemos reduzir em \(\frac{1}{3} \) as dimensões da imagem para que o resultado tenha o mesmo tamanho da original.
+É possível notar que utilizamos nove limiares (_threshold_) para a sub-codificação: o intervalo $$[0, 25.5[ $$ é truncado para $$0 $$, $$[25.5, 51[ $$ é truncado para $$1 $$, $$[51, 76.5[$$ para $$2 $$, e assim por diante. Assim, cada pixel na imagem de entrada irá corresponder a um padrão de $$3 \times 3 $$ pixels na imagem gerada. Desta forma, a resolução espacial será reduzida a $$33\% $$ da resolução espacial original. Isto é, antes da substituição de cada pixel pela máscara devemos reduzir em $$\frac{1}{3} $$ as dimensões da imagem para que o resultado tenha o mesmo tamanho da original.
 
 Todo o processo descrito é implementado na seguinte função;
 

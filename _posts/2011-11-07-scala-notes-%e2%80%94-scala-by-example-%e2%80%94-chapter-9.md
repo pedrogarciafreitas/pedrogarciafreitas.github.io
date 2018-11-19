@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: "Exercises solutions of the book 'Scala by Example'."
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1446
-permalink: p=1446
+permalink: /p=1446
 wp-syntax-cache-content:
   - |
     a:5:{i:1;s:4552:"

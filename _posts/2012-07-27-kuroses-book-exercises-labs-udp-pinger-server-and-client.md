@@ -6,7 +6,7 @@ author: SAWP
 excerpt: "Kurose's computer network book exercise: implement a pseudo-ICMP (Internet Control Message Protocol) ."
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1681
-permalink: p=1681
+permalink: /p=1681
 wp-syntax-cache-content:
   - |
     a:7:{i:1;s:1101:"

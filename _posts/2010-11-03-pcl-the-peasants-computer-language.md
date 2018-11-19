@@ -6,7 +6,7 @@ author: SAWP
 excerpt: "Veja aqui as especificações da PCL: The Peasant's Computer Language"
 layout: post
 guid: http://www.sawp.com.br/blog/?p=828
-permalink: p=828
+permalink: /p=828
 categories:
   - Miscellaneous
 ---

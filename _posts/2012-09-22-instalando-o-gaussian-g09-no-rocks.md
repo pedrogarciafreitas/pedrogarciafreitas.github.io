@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Instruções para a Instalação do Gaussian.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1813
-permalink: p=1813
+permalink: /p=1813
 wp-syntax-cache-content:
   - |
     a:8:{i:1;s:703:"

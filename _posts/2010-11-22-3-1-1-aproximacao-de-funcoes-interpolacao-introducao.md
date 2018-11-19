@@ -8,7 +8,7 @@ excerpt: |
   diversas abordagens numéricas utilizadas para transformar dados obtidos do mundo real (finitos) em funcionais (abstrações contínuas).
 layout: post
 guid: http://www.sawp.com.br/blog/?p=850
-permalink: p=850
+permalink: /p=850
 categories:
   - Computational Methods
 ---
@@ -22,33 +22,33 @@ Assim como o ajuste de curvas é o principal tema em Métodos Computacionais, t�
 
 ## 2. Interpolação 
 
-Supondo que um problema é modelado por função contínua conhecida \(f(x) \) e pudemos obter um conjunto de pontos discretos a partir de um experimento. Chamaremos estes valores amostrados de _pontos tabulares_. O objetivo da interpolação é estimar valores da função \(f(x) \) que não pertençam aos valores tabulares, mas que os utilizem para ajustar os parâmetros da função. 
+Supondo que um problema é modelado por função contínua conhecida $$f(x) $$ e pudemos obter um conjunto de pontos discretos a partir de um experimento. Chamaremos estes valores amostrados de _pontos tabulares_. O objetivo da interpolação é estimar valores da função $$f(x) $$ que não pertençam aos valores tabulares, mas que os utilizem para ajustar os parâmetros da função. 
 
-Nossa abordagem nos próximos artigos será de aproximar esta função \(f(x) \) por outra \(y(x) \) que, com a utilização dos pontos tabulares, retornará os mesmos valores do modelo teórico &#8212; \(f(x) \) &#8212; adicionados de um erro numérico associado \(E(x) \) . Isto é,
+Nossa abordagem nos próximos artigos será de aproximar esta função $$f(x) $$ por outra $$y(x) $$ que, com a utilização dos pontos tabulares, retornará os mesmos valores do modelo teórico &#8212; $$f(x) $$ &#8212; adicionados de um erro numérico associado $$E(x) $$ . Isto é,
 
 
 
 <center>
-  \( f(x) = \sum_{j=1}^{n} l_j(x)f(a_j) + E(x) = y(x) + E(x) \)
+  $$ f(x) = \sum_{j=1}^{n} l_j(x)f(a_j) + E(x) = y(x) + E(x) $$
 </center>
 
 ou, em notação geral
 
 <center>
-  \( f(x) = \sum_{j=1}^{n}\sum_{i=0}^{m_j}A_{ij}(x) f^{(i)}(a_j) + E(x) \)
+  $$ f(x) = \sum_{j=1}^{n}\sum_{i=0}^{m_j}A_{ij}(x) f^{(i)}(a_j) + E(x) $$
 </center>
 
-Então, nosso objetivo é encontrar funções \(y(x) \) que aproximem \(f(x) \) , minimizando o erro associado: 
+Então, nosso objetivo é encontrar funções $$y(x) $$ que aproximem $$f(x) $$ , minimizando o erro associado: 
 
 <center>
-  \( E(a_j) = 0 \)
+  $$ E(a_j) = 0 $$
 </center>
 
 
    
-onde \(a_j \) são os _pontos tabulares_, ou _valores conhecidos_. 
+onde $$a_j $$ são os _pontos tabulares_, ou _valores conhecidos_. 
 
-Além disso, os métodos de interpolação devem determinar \(l\_j(x) \) para que satisfaça \(E(x) \neq 0 \) com o menor erro associado para os valores não-tabulares \(x \neq a\_j, j=1,2,\ldots, n \) . 
+Além disso, os métodos de interpolação devem determinar $$l\_j(x) $$ para que satisfaça $$E(x) \neq 0 $$ com o menor erro associado para os valores não-tabulares $$x \neq a\_j, j=1,2,\ldots, n $$ . 
 
 &nbsp;
 

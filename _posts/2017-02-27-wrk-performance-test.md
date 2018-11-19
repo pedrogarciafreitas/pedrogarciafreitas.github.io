@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Straightfoward server benchmark test
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2110
-permalink: p=2110
+permalink: /p=2110
 categories:
   - Quick Tips For Networking
 ---
@@ -18,18 +18,18 @@ categories:
 
 First, create the pipeline.lua script
 
-<pre>init = function(args)
+<pre>init = function(args$$
    request_uri = args[1]
-   depth = tonumber(args[2]) or 1
+   depth = tonumber(args[2]$$ or 1
 
    local r = {}
    for i=1,depth do
-     r[i] = wrk.format(nil, request_uri)
+     r[i] = wrk.format(nil, request_uri$$
    end
-   req = table.concat(r)
+   req = table.concat(r$$
 end
 
-request = function()
+request = function($$
    return req
 end
 </pre>

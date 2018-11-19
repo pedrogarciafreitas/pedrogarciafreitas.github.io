@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: Files transfer using python.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1511
-permalink: p=1511
+permalink: /p=1511
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:336:"

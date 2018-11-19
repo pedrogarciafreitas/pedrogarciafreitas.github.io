@@ -7,7 +7,7 @@ excerpt: |
   CMake support is broken due to a missing dependency on libssl.so.1.0.0 and libcrypto.so.1.0.0 of the bundled cmake binary.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2117
-permalink: p=2117
+permalink: /p=2117
 categories:
   - Programming Internals
 ---

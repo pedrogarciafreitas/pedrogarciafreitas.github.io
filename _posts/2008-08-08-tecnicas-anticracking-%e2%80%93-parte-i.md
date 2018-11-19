@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Quando disassemblamos um binário para crackearmos, muitas vezes nos deparamos com um código que parece não fazer sentido. Isso ocorre por que o programa possivelmente foi implantado com alguma proteção contra engenharia reversa. '
 layout: post
 guid: http://www.sawp.com.br/blog/?p=131
-permalink: p=131
+permalink: /p=131
 categories:
   - Programming Internals
 tags:

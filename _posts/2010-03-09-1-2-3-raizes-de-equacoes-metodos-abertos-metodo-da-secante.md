@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Este artigo demonstra matematicamente a função de iteração do Método da Secante e disponibiliza um algoritmo implementado na linguagem Python.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=450
-permalink: p=450
+permalink: /p=450
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:4517:"
@@ -105,14 +105,14 @@ Contudo, é possível aproximar a derivada &#8212; que fornece uma tangente &#82
   <br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig17.png"><img class="aligncenter size-full wp-image-452" title="Visualização gráfica da aproximação numérica de uma raiz qualquer usando os métodos da Secante e de Newton-Raphson" src="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig17.png" alt="" width="400" height="400" srcset="http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig17.png 400w, http://www.sawp.com.br/blog/wp-content/uploads/2010/03/fig17-300x300.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></a><br />
 </center>
 
-A Figura [metodo](#figmetodo) ilustra a descrição gráfica do Método da Secante (verde) e o de Newton-Raphson (em azul), sendo possível observar que ambas técnicas são muito semelhantes entre si, uma vez que as duas estimam a raiz extrapolando-se uma tangente da função no ponto \(\left( xi, f(xi) \right) \) até o eixo abscisso. Logo, no caso de Newton-Raphson a inclinação da tangente é dada pela própria derivada, enquanto no da Secante usa-se uma diferença dividida para estimar a inclinação.
+A Figura [metodo](#figmetodo) ilustra a descrição gráfica do Método da Secante (verde) e o de Newton-Raphson (em azul), sendo possível observar que ambas técnicas são muito semelhantes entre si, uma vez que as duas estimam a raiz extrapolando-se uma tangente da função no ponto $$\left( xi, f(xi) \right) $$ até o eixo abscisso. Logo, no caso de Newton-Raphson a inclinação da tangente é dada pela própria derivada, enquanto no da Secante usa-se uma diferença dividida para estimar a inclinação.
 
 A aproximação da secante é dada pela seguinte relação:
   
 
 
 <center>
-  <br /> <a name="eq1"></a><br /> \( \dfrac{d}{dx} f(x_{i}) = \dfrac{ f(x_{i-1}) &#8211; f(x_{i}) }{ x_{i-1} &#8211; x_{i} } \)<br />
+  <br /> <a name="eq1"></a><br /> $$ \dfrac{d}{dx} f(x_{i}) = \dfrac{ f(x_{i-1}) &#8211; f(x_{i}) }{ x_{i-1} &#8211; x_{i} } $$<br />
 </center>
 
 A aproximação desta derivada é substituída na equação do Método de Newton-Raphson:
@@ -120,7 +120,7 @@ A aproximação desta derivada é substituída na equação do Método de Newton
 
 
 <center>
-  <br /> <a name="eq2"></a><br /> \( x_{i+1} = x_{i} &#8211; \dfrac{ f(x_{i}) }{ \dfrac{d}{d x} f(x_{i}) } \)<br />
+  <br /> <a name="eq2"></a><br /> $$ x_{i+1} = x_{i} &#8211; \dfrac{ f(x_{i}) }{ \dfrac{d}{d x} f(x_{i}) } $$<br />
 </center>
 
 
@@ -128,16 +128,16 @@ A aproximação desta derivada é substituída na equação do Método de Newton
 
 
 <center>
-  <br /> \(\Downarrow \)<br />
+  <br /> $$\Downarrow $$<br />
 </center>
 
 <center>
-  <br /> <a name="eq3"></a><br /> \( x_{i+1} = x_{i} &#8211; \dfrac{ f(x_{i}) ~ \left( x_{i-1} &#8211; x_{i} \right) }{f(x_{i-1}) &#8211; f(x_{i}) } \)<br />
+  <br /> <a name="eq3"></a><br /> $$ x_{i+1} = x_{i} &#8211; \dfrac{ f(x_{i}) ~ \left( x_{i-1} &#8211; x_{i} \right) }{f(x_{i-1}) &#8211; f(x_{i}) } $$<br />
 </center>
 
 A Equação [3](#eq3) acima é a fórmula do Método da Secante, sendo intimamente relacionado com o Método de Newton, pois o primeiro é uma modificação do segundo. Contudo, a abordagem da secante tem a vantagem de não necessitar da derivada da função, exigindo apenas uma estimativa inicial de x.
 
-Ainda pelo gráfico, visualizamos que a aproximação da secante está mais distante que a de Newton para um mesmo \(x_{i} \) . Isso ocorre porque o método de Newton-Raphson converge muito mais rapidamente. Sendo assim, concluimos que o Método da Secante deva ser preferido apenas quando não for possível obter a derivada da função.
+Ainda pelo gráfico, visualizamos que a aproximação da secante está mais distante que a de Newton para um mesmo $$x_{i} $$ . Isso ocorre porque o método de Newton-Raphson converge muito mais rapidamente. Sendo assim, concluimos que o Método da Secante deva ser preferido apenas quando não for possível obter a derivada da função.
 
 ## 3. Implementação <a name="sec3"></a>
 

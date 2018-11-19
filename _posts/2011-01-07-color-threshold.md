@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: A idéia é colorir partes de uma imagem em tons de cinza com o objetivo de destacar regiões específicas.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=904
-permalink: p=904
+permalink: /p=904
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:5449:"

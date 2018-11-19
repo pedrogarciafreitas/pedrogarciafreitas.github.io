@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Como fazer o Rocks reconhecer novas interfaces de rede instaladas.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1959
-permalink: p=1959
+permalink: /p=1959
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:404:"

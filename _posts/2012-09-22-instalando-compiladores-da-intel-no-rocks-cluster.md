@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Passo a passo para instalar o ifort no Rocks Cluster.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1801
-permalink: p=1801
+permalink: /p=1801
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:763:"

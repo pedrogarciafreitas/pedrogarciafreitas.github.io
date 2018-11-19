@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    O Método de Durand-Kerner, também chamado de Método de Weierstrass, é uma técnica numérica usada para obter todas as raízes de um polinômio, que atua de forma semelhante ao Método do Ponto Fixo, mas é generalizado para buscar todos os zeros da função polinomial.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=524
-permalink: p=524
+permalink: /p=524
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:13172:"
@@ -163,14 +163,14 @@ O Método de Durand-Kerner, também chamado de Método de Weierstrass, é uma t�
 
 ## 2. Desenvolvimento do Método <a name="sec2"></a> 
 
-Seja \(p(x) \) a função polinomial cujas raízes queremos encontrar. Sabemos que podemos escrever este polinômio como um produtório da função linear dependente de \(x \) e das suas raízes \(z_{k} \) :
+Seja $$p(x) $$ a função polinomial cujas raízes queremos encontrar. Sabemos que podemos escrever este polinômio como um produtório da função linear dependente de $$x $$ e das suas raízes $$z_{k} $$ :
     
 <a name="eq1">(eq1)</a>
       
 
 
 <center>
-  <br /> \( p \left( x \right) = \left( x-z_{1} \right) \left( x-z_{2} \right) \ldots \left( x &#8211; z_{n} \right) =\prod _{i=1}^{n} (x-z_{i}) \)<br />
+  <br /> $$ p \left( x \right) = \left( x-z_{1} \right) \left( x-z_{2} \right) \ldots \left( x &#8211; z_{n} \right) =\prod _{i=1}^{n} (x-z_{i}) $$<br />
 </center>
 
 Para encontrarmos a i-ésima raiz deste polinômio, podemos simplesmente isolá-la, gerando a seguinte expressão:
@@ -180,7 +180,7 @@ Para encontrarmos a i-ésima raiz deste polinômio, podemos simplesmente isolá-
 
 
 <center>
-  <br /> \( z_{i}=x-{\frac {p \left( x \right) }{\prod_{j=1}{j\neq i}^{n} ~(x-z_{j})} \)<br />
+  <br /> $$ z_{i}=x-{\frac {p \left( x \right) }{\prod_{j=1}{j\neq i}^{n} ~(x-z_{j})} $$<br />
 </center>
 
 
@@ -192,7 +192,7 @@ Note que podemos encontrar a i-ésima raiz, utilizando uma iteração que leva e
 
 
 <center>
-  <br /> \( z_{i}=x-{\frac {p \left( x \right) }{\prod _{j=1}^{i-1} ~(x-z_{j})} \prod _{j=i+1}^{n} ~(x-z_{j})} \)<br />
+  <br /> $$ z_{i}=x-{\frac {p \left( x \right) }{\prod _{j=1}^{i-1} ~(x-z_{j})} \prod _{j=i+1}^{n} ~(x-z_{j})} $$<br />
 </center>
 
 
@@ -204,10 +204,10 @@ Permitindo-nos obter as raízes através da seguinte função de iteração:
 
 
 <center>
-  <br /> \( z_{i+1}=z_{i}-{\frac {p \left( z_{i} \right) }{\prod _{j=1}^{i-1}(z_{i}-z_{j}) ~ \prod _{j=i+1}^{n} ~(z_{i}-z_{j})}\)<br />
+  <br /> $$ z_{i+1}=z_{i}-{\frac {p \left( z_{i} \right) }{\prod _{j=1}^{i-1}(z_{i}-z_{j}) ~ \prod _{j=i+1}^{n} ~(z_{i}-z_{j})}$$<br />
 </center>
 
-Note que esta função não possui uma derivação baseada na fórmula de iteração do Método de Newton-Raphson, possuindo uma forma muito semelhante ao do Método do Ponto Fixo. Essa característica indica que o método nem sempre converge, sendo problemático para raízes múltiplas, uma vez é exigido que \(z\_{i} \neq z\_{j} \) . 
+Note que esta função não possui uma derivação baseada na fórmula de iteração do Método de Newton-Raphson, possuindo uma forma muito semelhante ao do Método do Ponto Fixo. Essa característica indica que o método nem sempre converge, sendo problemático para raízes múltiplas, uma vez é exigido que $$z\_{i} \neq z\_{j} $$ . 
 
 A convergência do Método de Durand-Kerner também não possui taxa constante. Como não utiliza o critério de Newton, nem sempre converge quadraticamente, sendo que pode possuir esta taxa sob algumas circunstâncias, enquanto converge linearmente para outras. Um estudo sobre a convergência deste método pode ser encontrado no artigo _&#8220;A convergence theorem for a method for simultaneous determination of all zeros of a polynomial&#8221;_[[1]](#bibitem1). 
 

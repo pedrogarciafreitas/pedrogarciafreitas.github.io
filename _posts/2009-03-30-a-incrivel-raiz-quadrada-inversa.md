@@ -8,7 +8,7 @@ excerpt: |
   Este artigo discute e analisa um código encontrado nas fontes de vários bibliotecas de C: O InvSqrt é uma função que chama a atenção por sua beleza que vai além da aplicação de um método numérico e utiliza uma manipulação de recursos computacionais para gerar uma função mais veloz.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=264
-permalink: p=264
+permalink: /p=264
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:545:"
@@ -346,7 +346,7 @@ O inverso da raiz quadrada é uma função presente em diversos problemas matem�
                                       </p>
                                       
                                       <p>
-                                        observe que o expoente é exatamente a metade inteira do valor antes do deslocamento dos bits. Da segunda linha das tabelas, no valor decimal, \((int) 102.5 == 102 == (int)205/2 \). Portanto, o motivo do autor do código de converter os bits de uma variável float para uma inteira e deslocar o bits é justamente para dividir o expoente por 2, que obviamente equivale à tirar a raiz. Em seguida, quando o autor reconverte o valor para ponto flutuante,
+                                        observe que o expoente é exatamente a metade inteira do valor antes do deslocamento dos bits. Da segunda linha das tabelas, no valor decimal, $$(int) 102.5 == 102 == (int)205/2 $$. Portanto, o motivo do autor do código de converter os bits de uma variável float para uma inteira e deslocar o bits é justamente para dividir o expoente por 2, que obviamente equivale à tirar a raiz. Em seguida, quando o autor reconverte o valor para ponto flutuante,
                                       </p>
                                       
                                       <pre lang="c">x = *(float*)&i;</pre>

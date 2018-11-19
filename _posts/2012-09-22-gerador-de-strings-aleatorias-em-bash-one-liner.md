@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: One liner password generator em Bash para propósitos gerais...
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1829
-permalink: p=1829
+permalink: /p=1829
 categories:
   - Quick Tips For Networking
 ---

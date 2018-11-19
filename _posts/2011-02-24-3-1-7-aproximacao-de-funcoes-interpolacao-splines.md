@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Neste post, usamos funções lineares simples para introduzir alguns conceitos básicos e problemas relacionados à splines. Então, desenvolvemos um algoritmo para ajuste de valores aos dados. Finalmente, discutimos sobre splines cúbicos, que possuem maior aplicabilidade em problemas reais.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1130
-permalink: p=1130
+permalink: /p=1130
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:16876:"
@@ -218,20 +218,20 @@ O ajuste mais simples que podemos fazer com dois pontos é uni-los por uma reta.
 
 
 <center>
-  <br /> \(f(x) = f(x_0) + m_0 (x &#8211; x_0) \) , para \(x_0 \leq x \leq x_1 \) <br /> \(f(x) = f(x_1) + m_1 (x &#8211; x_1) \) , para \(x_1 \leq x \leq x_2 \) <br /> \(\vdots \) <br /> \(f(x) = f(x_{n-1}) + m_{n-1}(x &#8211; x_{m-1}) \) , para \(x_{n-1} \leq x \leq x_n \)<br />
+  <br /> $$f(x) = f(x_0) + m_0 (x &#8211; x_0) $$ , para $$x_0 \leq x \leq x_1 $$ <br /> $$f(x) = f(x_1) + m_1 (x &#8211; x_1) $$ , para $$x_1 \leq x \leq x_2 $$ <br /> $$\vdots $$ <br /> $$f(x) = f(x_{n-1}) + m_{n-1}(x &#8211; x_{m-1}) $$ , para $$x_{n-1} \leq x \leq x_n $$<br />
 </center>
 
 
     
-onde \(m_i \) é o coeficiente angular da reta que liga os pontos:
+onde $$m_i $$ é o coeficiente angular da reta que liga os pontos:
     
 
 
 <center>
-  <br /> \(m_i = \frac{f(x_{i+1}) &#8211; f(x_i)}{x_{i+1} &#8211; x_i} \)<br />
+  <br /> $$m_i = \frac{f(x_{i+1}) &#8211; f(x_i)}{x_{i+1} &#8211; x_i} $$<br />
 </center>
 
-Essas equações podem ser utilizadas para calcular a função em qualquer ponto entre \(x\_0 \) e \(x\_n \) . Notamos que este método é idêntico à interpolação linear. 
+Essas equações podem ser utilizadas para calcular a função em qualquer ponto entre $$x\_0 $$ e $$x\_n $$ . Notamos que este método é idêntico à interpolação linear. 
 
 &nbsp;
 
@@ -242,32 +242,32 @@ Este método é obviamente idêntico à interpolação por splines lineares. A �
 
 
 <center>
-  <br /> \(f_i(x) = a_i x ^ 2 + b_i x + c_i \)<br />
+  <br /> $$f_i(x) = a_i x ^ 2 + b_i x + c_i $$<br />
 </center>
 
 
     
-Para \(n+1 \) pontos dados \((i=0,1,2,3,\ldots,n) \) , existem \(n \) intervalos e, portanto, \(3n \) constantes indeterminadas para calcularmos: \(a\_i \) , \(b\_i \) e \(c_i \) . Portanto, criamos \(3n \) equações para calcular estas incógnitas. São elas:
+Para $$n+1 $$ pontos dados $$(i=0,1,2,3,\ldots,n) $$ , existem $$n $$ intervalos e, portanto, $$3n $$ constantes indeterminadas para calcularmos: $$a\_i $$ , $$b\_i $$ e $$c_i $$ . Portanto, criamos $$3n $$ equações para calcular estas incógnitas. São elas:
 
   1. Dos valores da função e dos polinômios adjacentes que devem ser iguais aos pontos interiores. Estas equações são:
            
     <center>
-      <br /> \(a_{i-1} x_{i-1}^2 + b_{i-1} x_{i-1} + c_{i-1} = f(x_{i-1}) \) <br /> \(a_i x_{i-1}^2 + b_i x_{i-1} + c_i = f(x_{i-1}) \)<br />
+      <br /> $$a_{i-1} x_{i-1}^2 + b_{i-1} x_{i-1} + c_{i-1} = f(x_{i-1}) $$ <br /> $$a_i x_{i-1}^2 + b_i x_{i-1} + c_i = f(x_{i-1}) $$<br />
     </center>
     
     
           
-    para \(i = 2 \cdots n \) . Como apenas os pontos internos amostrados foram usados, as equações acima fornecem cada uma \(n-1 \) equações para um total de \(2n &#8211; 2 \) equações.</p> 
+    para $$i = 2 \cdots n $$ . Como apenas os pontos internos amostrados foram usados, as equações acima fornecem cada uma $$n-1 $$ equações para um total de $$2n &#8211; 2 $$ equações.</p> 
   2. A primeira e a última função deve passar pelos pontos extremos. Com isso, temos duas equações adicionais:
            
     <center>
-      <br /> \(a_i x_0 ^ 2 + b_1 x_0 + c_1 = f(x_0) \) <br /> \(a_n x_n ^ 2 + b_n x_n + c_n = f(x_n) \)<br />
+      <br /> $$a_i x_0 ^ 2 + b_1 x_0 + c_1 = f(x_0) $$ <br /> $$a_n x_n ^ 2 + b_n x_n + c_n = f(x_n) $$<br />
     </center></p> 
 
   3. As primeiras derivadas nos pontos interiores devem sempre ser iguais. Isto é, como a função de ajuste é de segundo grau, sua derivada terá a forma
            
     <center>
-      <br /> \(f'(x) = 2 a x + b \)<br />
+      <br /> $$f'(x) = 2 a x + b $$<br />
     </center>
     
     
@@ -275,16 +275,16 @@ Para \(n+1 \) pontos dados \((i=0,1,2,3,\ldots,n) \) , existem \(n \) intervalos
     Portanto, a condição geral será
            
     <center>
-      <br /> \(2 a_{i-1} x_{i-1} + b_{i-1} = 2 a_i x_{i-1} + b_i \)<br />
+      <br /> $$2 a_{i-1} x_{i-1} + b_{i-1} = 2 a_i x_{i-1} + b_i $$<br />
     </center>
     
     
            
-    para \(i = 2, \cdots , n \) . Isso fornece outras \(n-1 \) equações para um total de \(3 n &#8211; 1 \).</p> 
+    para $$i = 2, \cdots , n $$ . Isso fornece outras $$n-1 $$ equações para um total de $$3 n &#8211; 1 $$.</p> 
   4. A última condição supõe que a segunda derivada seja nula no primeiro ponto. Isto é
            
     <center>
-      <br /> \(a_1 = 0 \)<br />
+      <br /> $$a_1 = 0 $$<br />
     </center>
 
 &nbsp;
@@ -296,52 +296,52 @@ O objetivo nos splines cúbicos é determinar um polinômio de terceiro grau par
 
 
 <center>
-  <br /> \(f_i(x) = a_i x ^ 3 + b_i x + c_i x + d_i \)<br />
+  <br /> $$f_i(x) = a_i x ^ 3 + b_i x + c_i x + d_i $$<br />
 </center>
 
 
     
-Logo, para \(n+1 \) pontos dados \((i=0,1,2,\ldots,n) \) , existem \(n \) intervalos e, consequentemente, \(4n \) constantes indeterminadas. 
+Logo, para $$n+1 $$ pontos dados $$(i=0,1,2,\ldots,n) $$ , existem $$n $$ intervalos e, consequentemente, $$4n $$ constantes indeterminadas. 
 
 Para dedução dos splines cúbicos, nos baseamos na observação de que, como cada par de pontos amostrados é ligado por um polinômio cúbico, a segunda derivada no interior de cada intervalo é uma reta. A equação acima pode ser derivada duas vezes para verificar esta observação. Com base nisso, as segundas derivadas podem ser representadas por um polinômio interpolador de Lagrange de primeiro grau:
     
 
 
 <center>
-  <br /> \(f_i&#8221;(x) = f_i&#8221;(x_{i-1}) \frac{x &#8211; x_i}{x_{i-1} &#8211; x_i} + f_i&#8221;(x_i) \frac{x &#8211; x_{i-1}}{x_i &#8211; x_{i-1}} \)<br />
+  <br /> $$f_i&#8221;(x) = f_i&#8221;(x_{i-1}) \frac{x &#8211; x_i}{x_{i-1} &#8211; x_i} + f_i&#8221;(x_i) \frac{x &#8211; x_{i-1}{x_i &#8211; x_{i-1} $$<br />
 </center>
 
 
     
-onde \(f\_i&#8221;(x) \) é o valor da segunda derivada em um ponto qualquer \(x \) no \(i-esimo \) intervalo. Portanto, essa equação é uma reta ligando a segunda derivada no primeiro ponto \(f&#8221;(x\_{i-1}) \) com a segunda derivada no segundo ponto \(f&#8221;(x_i) \) . 
+onde $$f\_i&#8221;(x) $$ é o valor da segunda derivada em um ponto qualquer $$x $$ no $$i-esimo $$ intervalo. Portanto, essa equação é uma reta ligando a segunda derivada no primeiro ponto $$f&#8221;(x\_{i-1}) $$ com a segunda derivada no segundo ponto $$f&#8221;(x_i) $$ . 
 
-Integrando a última equação acima duas vezes, obtemos uma expressão para \(f\_i(x) \) . Entretanto, essa expressão irá conter duas constantes de integração indeterminadas. Tais constantes podem ser determinadas invocando-se a condição de igualdade das funções. Isto é, \(f\_i(x) = f(x\_{i-1}) \) em \(x\_{i-1} \) e \(f\_i(x) \) deve ser igual a \(f\_i(x\_i) \) em \(x\_i \) . A partir desses cálculos, obteremos a seguinte equação cúbica
+Integrando a última equação acima duas vezes, obtemos uma expressão para $$f\_i(x) $$ . Entretanto, essa expressão irá conter duas constantes de integração indeterminadas. Tais constantes podem ser determinadas invocando-se a condição de igualdade das funções. Isto é, $$f\_i(x) = f(x\_{i-1}) $$ em $$x\_{i-1} $$ e $$f\_i(x) $$ deve ser igual a $$f\_i(x\_i) $$ em $$x\_i $$ . A partir desses cálculos, obteremos a seguinte equação cúbica
     
 
 
 <center>
-  <br /> \( f_i(x) = \frac{f_i&#8221;(x_{i-1})}{6 (x_i &#8211; x_{i-1})}(x_i &#8211; x)^3 +<br /> \frac{f_i&#8221;(x_i)}{6 (x_i &#8211; x_{i-1})} (x &#8211; x_{i-1})^3 +<br /> \left[ \frac{f(x_{i-1})}{x_i &#8211; x_{i-1}} &#8211; \frac{f&#8221;(x_{i-1})(x_i &#8211; x_{i-1})}{6} \right] (x_i &#8211; x) +<br /> \left[ \frac{f(x_i)}{x_i &#8211; x_{i-1}} &#8211; \frac{f&#8221;(x_i) (x_i &#8211; x_{i-1})}{6} \right] (x &#8211; x_{i-1})\)<br />
+  <br /> $$ f_i(x) = \frac{f_i&#8221;(x_{i-1})}{6 (x_i &#8211; x_{i-1})}(x_i &#8211; x)^3 +<br /> \frac{f_i&#8221;(x_i)}{6 (x_i &#8211; x_{i-1})} (x &#8211; x_{i-1})^3 +<br /> \left[ \frac{f(x_{i-1})}{x_i &#8211; x_{i-1} &#8211; \frac{f&#8221;(x_{i-1})(x_i &#8211; x_{i-1})}{6} \right] (x_i &#8211; x) +<br /> \left[ \frac{f(x_i)}{x_i &#8211; x_{i-1} &#8211; \frac{f&#8221;(x_i) (x_i &#8211; x_{i-1})}{6} \right] (x &#8211; x_{i-1})$$<br />
 </center>
 
 
     
-Observe que esta equação possui apenas dois coeficientes indeterminados: as segundas derivadas \(f&#8221;(x\_{i-1}) \) e \(f&#8221;(x\_i) \) . Estas segundas derivadas podem ser calculadas usando-se a condição de que as primeiras derivadas nos pontos amostrados são contínuas. Isto é:
-    
-
-
-<center>
-  <br /> \(f_i'(x_i) = f_{i+1}'(x_i) \)<br />
-</center>
-
-Derivando a equação de \(f_i(x) \) , encontramos uma expressão para a primeira derivada. Se isso for feito para os \(i-esimos \) e \((i-1)-esimos \) intervalos e se os dois resultados forem igualados de acordo com a essa função, obtemos a seguinte relação:
+Observe que esta equação possui apenas dois coeficientes indeterminados: as segundas derivadas $$f&#8221;(x\_{i-1}) $$ e $$f&#8221;(x\_i) $$ . Estas segundas derivadas podem ser calculadas usando-se a condição de que as primeiras derivadas nos pontos amostrados são contínuas. Isto é:
     
 
 
 <center>
-  <br /> \((x_i &#8211; x_{i-1}) f&#8221;(x_{i-1}) + 2(x_{i+1} &#8211; x_{i-1}) f&#8221;(x_i) + (x_{i+1} &#8211; x_i) f&#8221;(x_{i+1}) = \frac{6}{x_{i+1} &#8211; x_i} [f(x_{i+1}) &#8211; f(x_i)] + \frac{6}{x_i &#8211; x_{i-1}} [f(x_{i-1}) &#8211; f(x_i)] \)<br />
+  <br /> $$f_i'(x_i) = f_{i+1}'(x_i) $$<br />
 </center>
 
-Se esta última equação for escrita para todos os pontos interiores amostrados, temos \((n-1) \) equações simultâneas com \(n+1 \) segundas derivadas. Contudo, como esse é um spline cúbico, as segundas derivadas nos extremos são nulas e o problema se reduz a \((n-1) \) equações com \((n-1) \) incógnitas. Além disso, se observamos a relação entre as variáveis, temos apenas a relação entre \((i-1) \) , \(i \) e \((i+1) \) , o que caracteriza um sistema tridiagonal. Com isso, temos uma implementação extremamente simples e rápida de se resolver. 
+Derivando a equação de $$f_i(x) $$ , encontramos uma expressão para a primeira derivada. Se isso for feito para os $$i-esimos $$ e $$(i-1)-esimos $$ intervalos e se os dois resultados forem igualados de acordo com a essa função, obtemos a seguinte relação:
+    
+
+
+<center>
+  <br /> $$(x_i &#8211; x_{i-1}) f&#8221;(x_{i-1}) + 2(x_{i+1} &#8211; x_{i-1}) f&#8221;(x_i) + (x_{i+1} &#8211; x_i) f&#8221;(x_{i+1}) = \frac{6}{x_{i+1} &#8211; x_i} [f(x_{i+1}) &#8211; f(x_i)] + \frac{6}{x_i &#8211; x_{i-1} [f(x_{i-1}) &#8211; f(x_i)] $$<br />
+</center>
+
+Se esta última equação for escrita para todos os pontos interiores amostrados, temos $$(n-1) $$ equações simultâneas com $$n+1 $$ segundas derivadas. Contudo, como esse é um spline cúbico, as segundas derivadas nos extremos são nulas e o problema se reduz a $$(n-1) $$ equações com $$(n-1) $$ incógnitas. Além disso, se observamos a relação entre as variáveis, temos apenas a relação entre $$(i-1) $$ , $$i $$ e $$(i+1) $$ , o que caracteriza um sistema tridiagonal. Com isso, temos uma implementação extremamente simples e rápida de se resolver. 
 
 &nbsp;
 

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Embora o scipy. misc implemente esta função, fica aqui um exemplo simples de dimensionamento de imagens através de interpolação.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=919
-permalink: p=919
+permalink: /p=919
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:4450:"

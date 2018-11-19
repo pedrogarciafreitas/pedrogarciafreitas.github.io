@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: "Scala implementation of Fermat's factorization method, named after Pierre de Fermat, is based on the representation of an odd integer as the difference of two squares."
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1530
-permalink: p=1530
+permalink: /p=1530
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:7996:"

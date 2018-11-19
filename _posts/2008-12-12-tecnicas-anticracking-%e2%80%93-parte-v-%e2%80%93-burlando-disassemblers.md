@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Uma técnica sofisticada de enganar disassemblers consiste em usar um trecho do programa para alterar os bits das outras partes do programa, que desejamos proteger. A estratégia usada é deslocar os bits de um trecho do programa para que este pedaço pareça possuir outras instruções. Desta forma, o decompilador irá interpretar essas instruções e fornecer informações erradas ao atacante.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=214
-permalink: p=214
+permalink: /p=214
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:1113:"

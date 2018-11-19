@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Este artigo trata de uma classe de algoritmos de eliminação -- tais como da Eliminação de Gauss -- que utilizam decomposição de uma matriz para obtenção das incógnitas do sistema. A principal vantagem da decomposição LU é que ela otimiza o tempo gasto na eliminação, sendo adaptativo às situações nas quais o vetor dos termos independentes são calculados para um único conjunto de coeficientes do sistema. Além disso, este artigo desenvolve o método da decomposição LU como uma implementação da eliminação de Gauss.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=586
-permalink: p=586
+permalink: /p=586
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:20278:"
@@ -200,7 +200,7 @@ Um sistema linear do tipo
 
 
 <center>
-  <br /> \( a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \)<br />
+  <br /> $$ a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 $$<br />
 </center>
 
 
@@ -210,7 +210,7 @@ Um sistema linear do tipo
 
 
 <center>
-  <br /> \( a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \)<br />
+  <br /> $$ a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 $$<br />
 </center>
 
 
@@ -218,7 +218,7 @@ Um sistema linear do tipo
 
 
 <center>
-  \(\vdots \)
+  $$\vdots $$
 </center>
 
 
@@ -228,7 +228,7 @@ Um sistema linear do tipo
 
 
 <center>
-  <br /> \( a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n \)<br />
+  <br /> $$ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n $$<br />
 </center>
 
 
@@ -238,18 +238,18 @@ pode ser representado na seguinte forma matricial:
 
 
 <center>
-  <br /> \(AX = B \)<br />
+  <br /> $$AX = B $$<br />
 </center>
 
 
     
-onde \(A\) é a matriz formada pelos coeficientes \(a\_{11}, a\_{12}, \ldots, a\_{nn} \), \(X \) é o vetor formado pelas variáveis a serem determinadas \(x\_1, x\_2, \ldots, x\_n \) e \(B\) é o vetor dos termos independentes. 
+onde $$A$$ é a matriz formada pelos coeficientes $$a\_{11}, a\_{12}, \ldots, a\_{nn} $$, $$X $$ é o vetor formado pelas variáveis a serem determinadas $$x\_1, x\_2, \ldots, x\_n $$ e $$B$$ é o vetor dos termos independentes. 
 
 Para determinação das incógnitas, o método da eliminação de Gauss desenvolve duas fases: a primeira é a _eliminação progressiva_, onde reduz o número de variáveis ao longo da execução para, então, aplicar a segunda fase, chamada de _substituição regressiva_, onde utiliza o resultado da primeira para determinar a solução geral do sistema. 
 
 Dois dois passos descritos, o primeiro é o que consome mais tempo de cálculo, uma vez que é nesta fase que consiste o maior número de operações aritméticas e de trocas de dados. Por isso, encontrar um método que minimize esta fase crítica, implica em aumentar o desempenho para realizar a tarefa de resolução de sistemas lineares. 
 
-Os métodos de decomposição LU consistem em separar a fase de eliminação da matriz dos coeficientes \(A \) , que consomem maior tempo, das manipulações envolvidas com o vetor dos termos independentes, \(B \) . Portanto, devemos deixar claro que, ao contrário da eliminação de Gauss, uma decomposição de LU é uma estratégia de melhoria na resolução de sistemas lineares. Sendo assim, não existe &#8220;o método&#8221; de decomposição LU, mas sim algumas abordagens a serem tomadas que permitem decompor o sistema. Uma implicação interessante disso é que a própria eliminação de Gauss pode ser descrita como uma decomposição LU. Ralson e Rabinowitz utilizam essa abordagem ao tratar os métodos diretos em seu livro _A First Course in Numerical Analysis_[[rabinowitz]](#bibitemrabinowitz), desenvolvendo os principais algoritmos de decomposição &#8212; Crout, Doolittle e Cholesky &#8212; como técnicas de resolução direta de sistemas lineares. 
+Os métodos de decomposição LU consistem em separar a fase de eliminação da matriz dos coeficientes $$A $$ , que consomem maior tempo, das manipulações envolvidas com o vetor dos termos independentes, $$B $$ . Portanto, devemos deixar claro que, ao contrário da eliminação de Gauss, uma decomposição de LU é uma estratégia de melhoria na resolução de sistemas lineares. Sendo assim, não existe &#8220;o método&#8221; de decomposição LU, mas sim algumas abordagens a serem tomadas que permitem decompor o sistema. Uma implicação interessante disso é que a própria eliminação de Gauss pode ser descrita como uma decomposição LU. Ralson e Rabinowitz utilizam essa abordagem ao tratar os métodos diretos em seu livro _A First Course in Numerical Analysis_[[rabinowitz]](#bibitemrabinowitz), desenvolvendo os principais algoritmos de decomposição &#8212; Crout, Doolittle e Cholesky &#8212; como técnicas de resolução direta de sistemas lineares. 
 
 
 
@@ -262,7 +262,7 @@ A equação
 
 
 <center>
-  <br /> \( AX = B \)<br />
+  <br /> $$ AX = B $$<br />
 </center>
 
 
@@ -274,7 +274,7 @@ pode ser reescrita como
 
 
 <center>
-  <br /> \( AX &#8211; B = 0 \)<br />
+  <br /> $$ AX &#8211; B = 0 $$<br />
 </center>
 
 Aplicando a eliminação de Gauss, sabemos que este sistema pode ser reescrito como uma matriz triangular superior na forma:
@@ -282,7 +282,7 @@ Aplicando a eliminação de Gauss, sabemos que este sistema pode ser reescrito c
 
 
 <center>
-  <br /> \(\left[ \begin{array}{ccc} u_{11} & u_{12} & u_{13} \\ 0 & u_{22} & u_{23} \\ 0 & 0 & u_{33} \end{array} \right]\) \(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \) \(\left[ \begin{array}{c} d_1 \\ d_2 \\ d_3 \\ \end{array} \right]\)<br />
+  <br /> $$\left[ \begin{array}{ccc} u_{11} & u_{12} & u_{13} \\ 0 & u_{22} & u_{23} \\ 0 & 0 & u_{33} \end{array} \right]$$ $$\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = $$ $$\left[ \begin{array}{c} d_1 \\ d_2 \\ d_3 \\ \end{array} \right]$$<br />
 </center>
 
 
@@ -294,7 +294,7 @@ Esta notação matricial também pode ser usada da seguinte maneira:
 
 
 <center>
-  <br /> \( UX &#8211; D = 0 \)<br />
+  <br /> $$ UX &#8211; D = 0 $$<br />
 </center>
 
 Agora, vamos supor que existe uma matriz composta apenas pela formula triangular inferior, tal que
@@ -302,27 +302,27 @@ Agora, vamos supor que existe uma matriz composta apenas pela formula triangular
 
 
 <center>
-  <br /> \(L = \left[ \begin{array}{ccc} 1 & 0 & 0 \\ l_{21} & 1 & 0 \\ l_{31} & l_{32} & 1 \end{array} \right]\)<br />
+  <br /> $$L = \left[ \begin{array}{ccc} 1 & 0 & 0 \\ l_{21} & 1 & 0 \\ l_{31} & l_{32} & 1 \end{array} \right]$$<br />
 </center>
 
-O processo de decomposição LU consiste justamente de em decompor a matriz dos coeficientes \(A \) em duas matrizes, onde a primeira está na forma triangular inferior (_Low_), enquanto a outra está na forma triangula superior (_Upper_). Sendo assim, para \(L \) e \(U \) , comparadascom a Equação [5](#eq5), temos que
+O processo de decomposição LU consiste justamente de em decompor a matriz dos coeficientes $$A $$ em duas matrizes, onde a primeira está na forma triangular inferior (_Low_), enquanto a outra está na forma triangula superior (_Upper_). Sendo assim, para $$L $$ e $$U $$ , comparadascom a Equação [5](#eq5), temos que
     
 <a name="eq7">(eq7)</a>
       
 
 
 <center>
-  <br /> \( L[UX &#8211; D] = AX &#8211; B = 0 \)<br />
+  <br /> $$ L[UX &#8211; D] = AX &#8211; B = 0 $$<br />
 </center>
 
-Agora, isolamos os termos dependentes de \(X \) , temos que
+Agora, isolamos os termos dependentes de $$X $$ , temos que
     
 <a name="eq8">(eq8)</a>
       
 
 
 <center>
-  <br /> \( LU = A \)<br />
+  <br /> $$ LU = A $$<br />
 </center>
 
 
@@ -334,33 +334,33 @@ e
 
 
 <center>
-  <br /> \( LD = B \)<br />
+  <br /> $$ LD = B $$<br />
 </center>
 
 
     
-desta forma, isolamos a dependência dos termos independentes \(B \) da matriz dos coeficientes \(A \) . Desta forma, também livramos as operações efetuadas sobre \(A \) (agora \(LU \) ) de serem feitas em \(B \) , diminuindo a demanda de recursos para resolução deste sistema. 
+desta forma, isolamos a dependência dos termos independentes $$B $$ da matriz dos coeficientes $$A $$ . Desta forma, também livramos as operações efetuadas sobre $$A $$ (agora $$LU $$ ) de serem feitas em $$B $$ , diminuindo a demanda de recursos para resolução deste sistema. 
 
 
 
 ### 2.1. Eliminação de Gauss como uma Decomposição LU </p> 
 
-Como dito na seção anterior, a matriz \(U \) possui uma forma muito semelhante àquela gerada pelo processo de _eliminação progressiva_, estágio da eliminação de Gauss. Neste estágio, a matriz dos coeficientes \(A \) é reduzida para a forma
+Como dito na seção anterior, a matriz $$U $$ possui uma forma muito semelhante àquela gerada pelo processo de _eliminação progressiva_, estágio da eliminação de Gauss. Neste estágio, a matriz dos coeficientes $$A $$ é reduzida para a forma
     
 
 
 <center>
-  <br /> \(\left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ 0 & a&#8217;_{22} & a&#8217;_{23} \\ 0 & 0 & a&#8221;_{33} \end{array} \right]\)<br />
+  <br /> $$\left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ 0 & a&#8217;_{22} & a&#8217;_{23} \\ 0 & 0 & a&#8221;_{33} \end{array} \right]$$<br />
 </center>
 
 
     
-que é a forma triangular superior procurada. Desta forma, os termos retirados são aqueles que formam a matriz \(L \) . Podemos ver isso ao agruparmos em uma mesma matriz os elementos obtidos da eliminação progressiva, e os retirados pelo processo. Isto é, para o sistema original
+que é a forma triangular superior procurada. Desta forma, os termos retirados são aqueles que formam a matriz $$L $$ . Podemos ver isso ao agruparmos em uma mesma matriz os elementos obtidos da eliminação progressiva, e os retirados pelo processo. Isto é, para o sistema original
     
 
 
 <center>
-  <br /> \(\left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \\ \end{array} \right] \)<br />
+  <br /> $$\left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \\ \end{array} \right] $$<br />
 </center>
 
 
@@ -370,49 +370,49 @@ a primeira etapa na eliminação de Gauss é multiplicar a primeira linha pelo f
 
 
 <center>
-  <br /> \(\phi_{21} = \dfrac{a_{21}}{a_{11}} \)<br />
+  <br /> $$\phi_{21} = \dfrac{a_{21}{a_{11} $$<br />
 </center>
 
 
     
-e subtrair este resultado da próxima linha, a fim de eliminar o termo \(a_{21} \) . Da mesma forma, o próximo passo se dá em multiplicar a primeira linha por
+e subtrair este resultado da próxima linha, a fim de eliminar o termo $$a_{21} $$ . Da mesma forma, o próximo passo se dá em multiplicar a primeira linha por
     
 
 
 <center>
-  <br /> \(\phi_{31} = \dfrac{a_{31}}{a_{11}} \)<br />
+  <br /> $$\phi_{31} = \dfrac{a_{31}{a_{11} $$<br />
 </center>
 
 
     
-e o resultado é subtraído da terceira linha para eliminar \(a_{31} \) . Por fim, multiplicamos a segunda linha por
+e o resultado é subtraído da terceira linha para eliminar $$a_{31} $$ . Por fim, multiplicamos a segunda linha por
     
 
 
 <center>
-  <br /> \(\phi_{32} = \dfrac{a&#8217;_{31}}{a&#8217;_{22}} \)<br />
+  <br /> $$\phi_{32} = \dfrac{a&#8217;_{31}{a&#8217;_{22} $$<br />
 </center>
 
 
     
-e subtraímos o resultado da terceira linha para eliminarmos \(a&#8217;\_{32} \). Como a ideia neste processo é gerar zeros em \(a\_{21} \) , \(a\_{31} \) e \(a\_{32} \) . Assim, após a eliminação, \(A \) pode ser escrita na forma:
+e subtraímos o resultado da terceira linha para eliminarmos $$a&#8217;\_{32} $$. Como a ideia neste processo é gerar zeros em $$a\_{21} $$ , $$a\_{31} $$ e $$a\_{32} $$ . Assim, após a eliminação, $$A $$ pode ser escrita na forma:
     
 
 
 <center>
-  <br /> \(\left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ \phi_{21} & a&#8217;_{22} & a&#8217;_{23} \\ \phi_{31} & \phi_{32} & a&#8221;_{33} \end{array} \right]\)<br />
+  <br /> $$\left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ \phi_{21} & a&#8217;_{22} & a&#8217;_{23} \\ \phi_{31} & \phi_{32} & a&#8221;_{33} \end{array} \right]$$<br />
 </center>
 
 
     
-Essa matriz, de fato, representa uma decomposição \(LU \) de \(A \) :
+Essa matriz, de fato, representa uma decomposição $$LU $$ de $$A $$ :
     
 <a name="eq10">(eq10)</a>
       
 
 
 <center>
-  <br /> \( A = LU \)<br />
+  <br /> $$ A = LU $$<br />
 </center>
 
 
@@ -422,7 +422,7 @@ pois
 
 
 <center>
-  <br /> \(U = \left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ 0 & a&#8217;_{22} & a&#8217;_{23} \\ 0 & 0 & a&#8221;_{33} \end{array} \right]\)<br />
+  <br /> $$U = \left[ \begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ 0 & a&#8217;_{22} & a&#8217;_{23} \\ 0 & 0 & a&#8221;_{33} \end{array} \right]$$<br />
 </center>
 
 
@@ -432,74 +432,74 @@ e
 
 
 <center>
-  <br /> \(L = \left[ \begin{array}{ccc} 1 & 0 & 0 \\ \phi_{21} & 1 & 0 \\ \phi_{31} & \phi_{32} & 1 \end{array} \right]\)<br />
+  <br /> $$L = \left[ \begin{array}{ccc} 1 & 0 & 0 \\ \phi_{21} & 1 & 0 \\ \phi_{31} & \phi_{32} & 1 \end{array} \right]$$<br />
 </center>
 
 ### 2.2. O algoritmo de Crout 
 
-O algoritmo de Crout decompõe as matrizes \(U \) e \(L \) de forma não-singular da matriz quadrada \(A \) , sendo a fatoração de \(A \) nos produtos da matriz \(L \) (_Lower_) e \(U \) (_Upper_), cuja diagonal principal é formada por valores unitários. O processo de decomposição é feito a partir das seguintes fórmulas (Obtidas de Ralson e Rabinowitz _A First Course in Numerical Analysis_[[rabinowitz]](#bibitemrabinowitz), páginas 422 e 423):
+O algoritmo de Crout decompõe as matrizes $$U $$ e $$L $$ de forma não-singular da matriz quadrada $$A $$ , sendo a fatoração de $$A $$ nos produtos da matriz $$L $$ (_Lower_) e $$U $$ (_Upper_), cuja diagonal principal é formada por valores unitários. O processo de decomposição é feito a partir das seguintes fórmulas (Obtidas de Ralson e Rabinowitz _A First Course in Numerical Analysis_[[rabinowitz]](#bibitemrabinowitz), páginas 422 e 423):
     
 <a name="eq10">(eq10)</a>
       
 
 
 <center>
-  <br /> \( l_{i1} = a_{i1} \)<br />
+  <br /> $$ l_{i1} = a_{i1} $$<br />
 </center>
 
 
      
-para \(i = 1,2,\ldots, n \) .
+para $$i = 1,2,\ldots, n $$ .
     
 <a name="eq11">(eq11)</a>
       
 
 
 <center>
-  <br /> \( u_{1k} = \dfrac{a_{1k}}{l_{11}} \)<br />
+  <br /> $$ u_{1k} = \dfrac{a_{1k}{l_{11} $$<br />
 </center>
 
 
     
-para \(k = 2, 3, \ldots, n \). Para \(j = 2, 3, \ldots, n-1 \) , temos:
+para $$k = 2, 3, \ldots, n $$. Para $$j = 2, 3, \ldots, n-1 $$ , temos:
     
 <a name="eq12">(eq12)</a>
       
 
 
 <center>
-  <br /> \( l_{ij} = a_{ij} &#8211; \sum^{j-1}_{k=1} l_{ik}u_{kj} \)<br />
+  <br /> $$ l_{ij} = a_{ij} &#8211; \sum^{j-1}_{k=1} l_{ik}u_{kj} $$<br />
 </center>
 
 
     
-onde \(i = j, j+1, j+2, \ldots, n \) e também
+onde $$i = j, j+1, j+2, \ldots, n $$ e também
     
 <a name="eq13">(eq13)</a>
       
 
 
 <center>
-  <br /> \( u_{ji} = \dfrac{a_{ji} &#8211; \sum^{j-1}_{k=1} l_{jk}u_{ki}}{l_{ii}} \)<br />
+  <br /> $$ u_{ji} = \dfrac{a_{ji} &#8211; \sum^{j-1}_{k=1} l_{jk}u_{ki}{l_{ii} $$<br />
 </center>
 
 
     
-onde \(i = j + 1, j + 2, \ldots, n \) , e
+onde $$i = j + 1, j + 2, \ldots, n $$ , e
     
 <a name="eq14">(eq14)</a>
       
 
 
 <center>
-  <br /> \( l_{nn} = a_{nn} &#8211; \sum^{n-1}_{k=1} l_{nk}u_{kn} \)<br />
+  <br /> $$ l_{nn} = a_{nn} &#8211; \sum^{n-1}_{k=1} l_{nk}u_{kn} $$<br />
 </center>
 
 
 
 ## 3. Implementação </p> 
 
-Uma implementação eficiente para decomposição \(LU \) segue abaixo:
+Uma implementação eficiente para decomposição $$LU $$ segue abaixo:
 
 <div>
   <pre lang="python">def LU(A, b):

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Neste artigo, apresentaremos a implementação de uma função de iteração modificada do Método de Newton que permite aproximar uma raiz a uma taxa de convergência de quinta ordem.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=544
-permalink: p=544
+permalink: /p=544
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:5782:"
@@ -126,10 +126,10 @@ Pelo Método de Newton sabemos que uma raiz pode ser aproximada a partir da pró
 
 
 <center>
-  <br /> \( x_{n+1}=x_{n}-{\dfrac {f \left( x_{n} \right) }{\dfrac {d}{dx}f \left( x_{n} \right) } \)<br />
+  <br /> $$ x_{n+1}=x_{n}-{\dfrac {f \left( x_{n} \right) }{\dfrac {d}{dx}f \left( x_{n} \right) } $$<br />
 </center>
 
-Todavia, para facilitar a notação, vamos renomear as variáveis da Equação [1](#eq1) de tal forma que \(x\_{1}=x\_{n+1} \) e \(x\_{0}=x\_{n} \) ,
+Todavia, para facilitar a notação, vamos renomear as variáveis da Equação [1](#eq1) de tal forma que $$x\_{1}=x\_{n+1} $$ e $$x\_{0}=x\_{n} $$ ,
     
 implicando na expressão:
       
@@ -138,7 +138,7 @@ implicando na expressão:
 
 
 <center>
-  <br /> \( x_{1}=x_{0}-{\dfrac {f \left( x_{0} \right) }{\dfrac {d}{dx}f \left( x_{0} \right) } \)<br />
+  <br /> $$ x_{1}=x_{0}-{\dfrac {f \left( x_{0} \right) }{\dfrac {d}{dx}f \left( x_{0} \right) } $$<br />
 </center>
 
 Aplicando a Equação [2](#eq2) como primeira estimativa, dentro da mesma iteração podemos refinar a aproximação da raiz através da seguinte função:
@@ -148,17 +148,17 @@ Aplicando a Equação [2](#eq2) como primeira estimativa, dentro da mesma itera�
 
 
 <center>
-  <br /> \( x_{2}=x_{1}-{\dfrac { \left( 5\, \left( {\dfrac {d}{dx}f \left( x_{0} \right) \right) ^{2}+3\, \left( {\dfrac {d}{dx}f \left( x_{1} \right) \right) ^{2} \right) f \left( x_{1} \right) }{ \left( \left( {\dfrac {d}{dx}f \left( x_{0} \right) \right) ^{2}+7\, \left( {\dfrac {d}{dx}f \left( x_{1} \right) \right) ^{2} \right) {\dfrac {d}{dx}f \left( x_{0} \right) } \)<br />
+  <br /> $$ x_{2}=x_{1}-{\dfrac { \left( 5\, \left( {\dfrac {d}{dx}f \left( x_{0} \right) \right) ^{2}+3\, \left( {\dfrac {d}{dx}f \left( x_{1} \right) \right) ^{2} \right) f \left( x_{1} \right) }{ \left( \left( {\dfrac {d}{dx}f \left( x_{0} \right) \right) ^{2}+7\, \left( {\dfrac {d}{dx}f \left( x_{1} \right) \right) ^{2} \right) {\dfrac {d}{dx}f \left( x_{0} \right) } $$<br />
 </center>
 
-Para simplificar esta fórmula, adotamos \(df\_{k}={\dfrac {d}{dx}f \left( x\_{k} \right) \) e \(f\_{k}=f \left( x\_{k} \right) \), ou seja, \(df\_{0}={\dfrac {d}{dx}f \left( x\_{0} \right) \) , \(df\_{1}={\dfrac {d}{dx}f \left( x\_{1} \right) \) , \(f\_{0}=f \left( x\_{0} \right) \) , \(f\_{1}=f \left( x\_{1} \right) \) e \(x\_1=x\_0-{\dfrac {f\_{0}}{df\_{0}} \) , e substituímos na Equação [3](#eq3):
+Para simplificar esta fórmula, adotamos $$df\_{k}={\dfrac {d}{dx}f \left( x\_{k} \right) $$ e $$f\_{k}=f \left( x\_{k} \right) $$, ou seja, $$df\_{0}={\dfrac {d}{dx}f \left( x\_{0} \right) $$ , $$df\_{1}={\dfrac {d}{dx}f \left( x\_{1} \right) $$ , $$f\_{0}=f \left( x\_{0} \right) $$ , $$f\_{1}=f \left( x\_{1} \right) $$ e $$x\_1=x\_0-{\dfrac {f\_{0}}{df\_{0}} $$ , e substituímos na Equação [3](#eq3):
       
 <a name="eq4">(eq4)</a>
       
 
 
 <center>
-  <br /> \( x_2=x_1-{\dfrac { \left( 5\,{df_{0}}^{2}+3\,{df_{1}}^{2} \right) f_{1}}{ \left( {df_{0}}^{2}+7\,{df_{1}}^{2} \right) df_{0}}\)<br />
+  <br /> $$ x_2=x_1-{\dfrac { \left( 5\,{df_{0}}^{2}+3\,{df_{1}}^{2} \right) f_{1}}{ \left( {df_{0}}^{2}+7\,{df_{1}}^{2} \right) df_{0}}$$<br />
 </center>
 
 Esta função é de grande utilidade, uma vez que possui os mesmos requisitos do Método de Newton-Raphson &#8212; função e a sua primeira derivada &#8212; mas com eficiência superior. Sendo que a maioria dos métodos numéricos que buscam raízes são derivados a partir do Método de Newton, utilizando este recurso podemos aprimorar diversos algoritmos. 

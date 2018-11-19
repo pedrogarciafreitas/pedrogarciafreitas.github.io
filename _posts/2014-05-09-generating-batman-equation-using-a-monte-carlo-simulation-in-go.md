@@ -6,7 +6,7 @@ author: SAWP
 excerpt: The batman curve is a piecewise curve in the shape of the logo of the Batman superhero originally posted on reddit.com on Jul. 28, 2011. In this post, I present a little code, written in Go, to generate this funny plot.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2076
-permalink: p=2076
+permalink: /p=2076
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:18180:"

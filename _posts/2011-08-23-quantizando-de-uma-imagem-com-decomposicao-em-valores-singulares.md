@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: No contexto do processamento de imagens, a quantização é geralmente feita reduzindo-se a quantidade de níveis de cor (quantização espacial) ou reduzindo-se a quantidade de coeficientes no domínio da frequência (quantização do espaço transformado de Fourier, wavelets, etc). Por exemplo, no padrão JPEG, a quantização é feita sobre os coeficientes da transformada discreta de cosseno, eliminando-se aqueles menos significativos. Nest post, mostramos exemplos de quantização no espaço transformado pela decomposição em valores singulares.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1278
-permalink: p=1278
+permalink: /p=1278
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:8875:"
@@ -87,7 +87,7 @@ A compressão sem perdas consiste em reduzir o tamanho de um dado através da co
 
 No contexto do processamento de imagens, a quantização é geralmente feita reduzindo-se a quantidade de níveis de cor (quantização espacial) ou reduzindo-se a quantidade de coeficientes no domínio da frequência (quantização do espaço transformado de Fourier, wavelets, etc). Por exemplo, no padrão JPEG, a quantização é feita sobre os coeficientes da transformada discreta de cosseno, eliminando-se aqueles menos significativos. Nest post, mostramos exemplos de quantização no espaço transformado pela <a href="http://www.sawp.com.br/blog/?p=657" targe="_blank">decomposição SVD</a>. 
 
-Nas imagens abaixo, decompomos uma imagem \(I\) em três matrizes \(U\), \(S\) e \(V\). Tal decomposição distribui os coeficientes mais significantes da informação ao longo do vetor \(S\), de forma ordenada e decrescente em importância. Com esta decomposição reconstruímos a imagem \(I = U \times S \times V^T\) utilizando apenas uma fração dos coeficientes. A listagem mostra a imagem original (primeira) quantizada com 5, 20, 35, 50 e 65% dos coeficientes decompostos da imagem original. Sem seguida, as imagens são codificadas em JPEG, sendo novamente quantizadas, conforme especificações desse padrão. 
+Nas imagens abaixo, decompomos uma imagem $$I$$ em três matrizes $$U$$, $$S$$ e $$V$$. Tal decomposição distribui os coeficientes mais significantes da informação ao longo do vetor $$S$$, de forma ordenada e decrescente em importância. Com esta decomposição reconstruímos a imagem $$I = U \times S \times V^T$$ utilizando apenas uma fração dos coeficientes. A listagem mostra a imagem original (primeira) quantizada com 5, 20, 35, 50 e 65% dos coeficientes decompostos da imagem original. Sem seguida, as imagens são codificadas em JPEG, sendo novamente quantizadas, conforme especificações desse padrão. 
 
 <center>
   </p> 

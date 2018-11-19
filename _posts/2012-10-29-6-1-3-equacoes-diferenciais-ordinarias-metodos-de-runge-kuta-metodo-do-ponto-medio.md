@@ -6,7 +6,7 @@ author: SAWP
 excerpt: A modificação do método de Euler que substitui a inclinação f(x,y) pelo valor do centro do intervalo, ou seja, pela inclinação da reta tangente em f(x+h/2, y(x)). No caso, y(x) = (y1 + y0)/2, é o ponto médio.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1894
-permalink: p=1894
+permalink: /p=1894
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:5056:"
@@ -85,12 +85,12 @@ wp-syntax-cache-content:
 categories:
   - Computational Methods
 ---
-O _método do ponto médio_ é uma abordagem do tipo preditor-corretor, que utiliza o método de Euler para prever um valor \(y \) no ponto médio do intervalo. Isto é,
+O _método do ponto médio_ é uma abordagem do tipo preditor-corretor, que utiliza o método de Euler para prever um valor $$y $$ no ponto médio do intervalo. Isto é,
   
 
 
 <center>
-  \( y_{i+1/2} = y_i + f(x_i, y_i) \frac{h}{2} \)
+  $$ y_{i+1/2} = y_i + f(x_i, y_i) \frac{h}{2} $$
 </center>
 
 
@@ -100,17 +100,17 @@ O _método do ponto médio_ é uma abordagem do tipo preditor-corretor, que util
 
 
 <center>
-  \( y_{i+1/2}&#8217; = f(x_{i+1/2}, y_{i+1/2}) \)
+  $$ y_{i+1/2}&#8217; = f(x_{i+1/2}, y_{i+1/2}) $$
 </center>
 
 
   
-que é a aproximação da inclinação média para todo intervalo. Essa inclinação é então usada para extrapolar o novo valor de \(y\),
+que é a aproximação da inclinação média para todo intervalo. Essa inclinação é então usada para extrapolar o novo valor de $$y$$,
   
 
 
 <center>
-  \( y_{i+1} = y_i + f(x_{i+1/2}, y_{i+1/2}) h \)
+  $$ y_{i+1} = y_i + f(x_{i+1/2}, y_{i+1/2}) h $$
 </center>
 
 

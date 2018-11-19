@@ -7,7 +7,7 @@ excerpt: |
   Veremos aqui sobre a NestedVM, conversor de Assembly MIPS para bytecode JAVA, “cross-compilation” para compilarmos de C++ para ASM MIPS, permitindo assim, em conjunto com o NestedVM, converter todo um sistema para JAVA. E comentaremos sobre alguns métodos alternativos e mais populares para integração de sistemas já prontos com o JAVA, como o JNI, Jazillian, c2j etc. E porquê esses sistemas ficam aquém ao NestedVm.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=128
-permalink: p=128
+permalink: /p=128
 wp-syntax-cache-content:
   - |
     a:19:{i:1;s:703:"

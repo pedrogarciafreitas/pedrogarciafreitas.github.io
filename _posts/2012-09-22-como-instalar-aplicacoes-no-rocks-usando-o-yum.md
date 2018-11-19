@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Como instalar aplicações no Rocks usando gerenciador de pacotes o yum, usado no CentOS. Note que essas aplicações podem funcionar somente no frontend.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1787
-permalink: p=1787
+permalink: /p=1787
 categories:
   - Rocks Cluster for Nubis
 ---

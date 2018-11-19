@@ -7,7 +7,7 @@ excerpt: |
   This post is about Mp3ToTube. A script for converting an image and audio to a video. Using only bash commands, this script allows you to generate a single music or an entire album in a format acceptable by Youtube.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1937
-permalink: p=1937
+permalink: /p=1937
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:1276:"

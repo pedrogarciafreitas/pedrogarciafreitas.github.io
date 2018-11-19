@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O método de Heun é um melhoramento do método de Euler, que utiliza um processo preditor-corretor para resolver equações diferenciais ordinárias.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1875
-permalink: p=1875
+permalink: /p=1875
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:6282:"
@@ -104,7 +104,7 @@ Do método de Euler, tínhamos que
 
 
 <center>
-  \( y&#8217;_i = \dfrac{dy}{dx} = f(x_i, y_i) \)
+  $$ y&#8217;_i = \dfrac{dy}{dx} = f(x_i, y_i) $$
 </center>
 
 
@@ -114,10 +114,10 @@ era a inclinação do início do intervalo. Essa mesma equação pode ser usada 
 
 
 <center>
-  \( y_{i+1}^0 = y_i + f(x_i, y_i) h \)
+  $$ y_{i+1}^0 = y_i + f(x_i, y_i) h $$
 </center>
 
-No método de Euler, essa equação é a usada para solucionar o problema das EDOs. Contudo, no método de Heun, esta estimativa é usada como aproximação inicial do valor, chamado de &#8220;predita&#8221;. Assim, essa equação é chamada de _equação preditora_, pois ela fornece uma estimativa de \(y\_{i+1}\) que permite o cálculo da inclinação na extremidade final do intervalo. A figura abaixo mostra graficamente o valor predito (\(y\_{i+1}^0\)) e o corrigido (\(y_{i+1}\)). 
+No método de Euler, essa equação é a usada para solucionar o problema das EDOs. Contudo, no método de Heun, esta estimativa é usada como aproximação inicial do valor, chamado de &#8220;predita&#8221;. Assim, essa equação é chamada de _equação preditora_, pois ela fornece uma estimativa de $$y\_{i+1}$$ que permite o cálculo da inclinação na extremidade final do intervalo. A figura abaixo mostra graficamente o valor predito ($$y\_{i+1}^0$$) e o corrigido ($$y_{i+1}$$). 
 
 <a name="#fig1" href="http://www.sawp.com.br/blog/wp-content/uploads/2012/10/graph11.png"><img class="aligncenter size-full wp-image-416" title="" src="http://www.sawp.com.br/blog/wp-content/uploads/2012/10/graph11.png" alt="numerical" width="400" height="400" /></a> 
 
@@ -126,7 +126,7 @@ As duas inclinações podem ser combinadas para obter uma inclinação média do
 
 
 <center>
-  \( \bar{y}&#8217; = \dfrac{y_i&#8217; + y_{i+1}&#8217;}{2} = \dfrac{f(x_i, y_i) + f(x_{i+1}, y_{i+1}^0)}{2} \)
+  $$ \bar{y}&#8217; = \dfrac{y_i&#8217; + y_{i+1}&#8217;}{2} = \dfrac{f(x_i, y_i) + f(x_{i+1}, y_{i+1}^0)}{2} $$
 </center>
 
 
@@ -136,10 +136,10 @@ Essa inclinação média é então usada para extrapolar a fórmula de Euler:
 
 
 <center>
-  \( y_{i+1} = y_i + \dfrac{f(x_i, y_i) + f(x_{i+1}, y_{i+1}^0)}{2} h \)
+  $$ y_{i+1} = y_i + \dfrac{f(x_i, y_i) + f(x_{i+1}, y_{i+1}^0)}{2} h $$
 </center>
 
-Esta abordagem de Heun é chamada do tipo _preditor-corretor_. Todos os métodos de passo múltiplos são dessa categoria. Uma característica interessante dessa abordagem é a capacidade de se acelerar a convergência das aproximações sucessivas. A figura abaixo ilustra a redução do erro de acordo com o número de divisões do intervalo de integração. Note que para o mesmo \(n\), o método de Heun decai o erro mais velozmente. 
+Esta abordagem de Heun é chamada do tipo _preditor-corretor_. Todos os métodos de passo múltiplos são dessa categoria. Uma característica interessante dessa abordagem é a capacidade de se acelerar a convergência das aproximações sucessivas. A figura abaixo ilustra a redução do erro de acordo com o número de divisões do intervalo de integração. Note que para o mesmo $$n$$, o método de Heun decai o erro mais velozmente. 
 
 <a name="#fig2" href="http://www.sawp.com.br/blog/wp-content/uploads/2012/10/graph2.gif"><img class="aligncenter size-full wp-image-416" title="" src="http://www.sawp.com.br/blog/wp-content/uploads/2012/10/graph2.gif" alt="numerical" width="588" height="400" /></a> 
 

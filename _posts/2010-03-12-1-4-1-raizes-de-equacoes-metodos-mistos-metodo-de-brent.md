@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'O Método de Brent é uma combinação simples de diversos métodos computacionais para busca de raízes de função. Os métodos usados no algoritmo de Brent são: Método da Bisseção, da Secante e Interpolação Quadrática Inversa.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=558
-permalink: p=558
+permalink: /p=558
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:17078:"

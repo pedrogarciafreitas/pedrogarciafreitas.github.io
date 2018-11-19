@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Error on torch package installation.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2092
-permalink: p=2092
+permalink: /p=2092
 categories:
   - Quick Tips For Networking
 ---

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Neste e nos próximos posts, vamos considerar o problema de aproximar uma função cuja sequência de pontos foram obtidos de forma aproximada, sendo sujeitos à ruídos inerentes do processo de amostra. Assim, os arrendondamentos feitos pelos métodos de interpolação podem acumular erros muito maiores. Os métodos de regressão consistem em um conjunto de técnicas em que os erros funcionais podem ser usados para gerar uma aproximação suave da função.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1251
-permalink: p=1251
+permalink: /p=1251
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3797:"
@@ -124,16 +124,16 @@ Pelos gráficos, notamos que uma reta é a função que melhor caracteriza a seq
 A forma mais simples de aproximação por mínimos quadrados é o ajuste de uma reta na forma 
 
 <center>
-  <br /> \(y = \alpha_0 + \alpha_1 x + \epsilon \)<br />
+  <br /> $$y = \alpha_0 + \alpha_1 x + \epsilon $$<br />
 </center>
 
-a um conjunto de pontos amostrados \((x\_1, y\_1), (x\_2, y\_2), \ldots, (x\_n, y\_n) \) . Onde \(\alpha\_0 \) é o coeficiente linear, \(\alpha\_1 \) é o coeficiente angular da reta e \(\epsilon \) é o resíduo (erro de aproximação) entre o modelo e a amostra, que pode ser isolado da equação acima, tendo representação 
+a um conjunto de pontos amostrados $$(x\_1, y\_1), (x\_2, y\_2), \ldots, (x\_n, y\_n) $$ . Onde $$\alpha\_0 $$ é o coeficiente linear, $$\alpha\_1 $$ é o coeficiente angular da reta e $$\epsilon $$ é o resíduo (erro de aproximação) entre o modelo e a amostra, que pode ser isolado da equação acima, tendo representação 
 
 <center>
-  <br /> \(\epsilon = y &#8211; \alpha_0 &#8211; \alpha_1 x \)<br />
+  <br /> $$\epsilon = y &#8211; \alpha_0 &#8211; \alpha_1 x $$<br />
 </center>
 
-Assim, o erro de aproximação deve ser minimizado, a fim de que possamos ajustar os parâmetros \(\alpha\_0 \) e \(\alpha\_1 \) de forma que o modelo corresponda mais fielmente ao fenômeno observado. 
+Assim, o erro de aproximação deve ser minimizado, a fim de que possamos ajustar os parâmetros $$\alpha\_0 $$ e $$\alpha\_1 $$ de forma que o modelo corresponda mais fielmente ao fenômeno observado. 
 
 &nbsp;
 
@@ -142,17 +142,17 @@ Assim, o erro de aproximação deve ser minimizado, a fim de que possamos ajusta
 Para ajustarmos a reta que melhor aproximasse a todos os pontos, poderíamos utilizar como critério de erro a diferença absoluta entre o modelo e o valor amostrado. A estratégia de solução do ajuste consistiria em minimizar a soma dos erros residuais individuais, isto é 
 
 <center>
-  <br /> \( \sum_{i=1}^{n} | \epsilon_i | = \sum_{i=1}^{n} \left| y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i \right| \)<br />
+  <br /> $$ \sum_{i=1}^{n} | \epsilon_i | = \sum_{i=1}^{n} \left| y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i \right| $$<br />
 </center>
 
-onde \(n \) é o número total de pontos. Contudo, este critério é inadequado.
+onde $$n $$ é o número total de pontos. Contudo, este critério é inadequado.
 
-Como podemos ver, este problema consiste na minimização do erro \(\epsilon \) . Portanto, uma estratégia consistiria em utilizar o critério _minimax_. A ideia aqui é escolher a reta que minimize a distancia máxima que um ponto individual tenha da reta. Contudo, essa técnica possui um problema quando o conjunto de pontos amostrados possui um valor muito discrepante dos demais, ou seja, quando há uma grande variância no erro dos pontos. Geralmente, critério minimax é utilizado para reduzir uma função adequada à uma simples. 
+Como podemos ver, este problema consiste na minimização do erro $$\epsilon $$ . Portanto, uma estratégia consistiria em utilizar o critério _minimax_. A ideia aqui é escolher a reta que minimize a distancia máxima que um ponto individual tenha da reta. Contudo, essa técnica possui um problema quando o conjunto de pontos amostrados possui um valor muito discrepante dos demais, ou seja, quando há uma grande variância no erro dos pontos. Geralmente, critério minimax é utilizado para reduzir uma função adequada à uma simples. 
 
-A abordagem que contorna todas as deficiências acima consiste na minimização da soma dos quadrados dos resíduos entre o \(y \) medido e o \(y \) calculado a partir do modelo linear. Ou Seja, 
+A abordagem que contorna todas as deficiências acima consiste na minimização da soma dos quadrados dos resíduos entre o $$y $$ medido e o $$y $$ calculado a partir do modelo linear. Ou Seja, 
 
 <center>
-  <br /> \(S_r = \sum_{i=1}^{n} \epsilon_i^2 = \sum_{i=1}^{n} \left( y_{i,amostrado} &#8211; y_{i,modelo} \right)^2 = \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 -\alpha_1 x_i \right)^2 \)<br />
+  <br /> $$S_r = \sum_{i=1}^{n} \epsilon_i^2 = \sum_{i=1}^{n} \left( y_{i,amostrado} &#8211; y_{i,modelo} \right)^2 = \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 -\alpha_1 x_i \right)^2 $$<br />
 </center>
 
 A utilização desse critério possui a vantagem fornecer uma única reta para um dado conjunto de dados. 
@@ -161,64 +161,64 @@ A utilização desse critério possui a vantagem fornecer uma única reta para u
 
 ## 4. Ajuste dos Parâmetros por Mínimos Quadrados 
 
-Para determinar os valores de \(\alpha\_0 \) e \(\alpha\_1 \) , derivamos a última equação acima por cada coeficiente. Isto é 
+Para determinar os valores de $$\alpha\_0 $$ e $$\alpha\_1 $$ , derivamos a última equação acima por cada coeficiente. Isto é 
 
 <center>
-  <br /> \(\frac{\partial S_r}{\partial \alpha_0} = -2 \sum_{i=1}^{n} (y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i) \)<br />
+  <br /> $$\frac{\partial S_r}{\partial \alpha_0} = -2 \sum_{i=1}^{n} (y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i) $$<br />
 </center>
 
 e 
 
 <center>
-  <br /> \(\frac{\partial S_r}{\partial \alpha_1} = -2 \sum_{i=1}^{n} (y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i) x_i \)<br />
+  <br /> $$\frac{\partial S_r}{\partial \alpha_1} = -2 \sum_{i=1}^{n} (y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i) x_i $$<br />
 </center></p> 
 
-Como queremos minimizar ao máximo o erro, tomamos como a soma da derivada de \(\epsilon_i \) como sendo zero. Isto é 
+Como queremos minimizar ao máximo o erro, tomamos como a soma da derivada de $$\epsilon_i $$ como sendo zero. Isto é 
 
 <center>
-  <br /> \(\frac{\partial S_r}{\partial \alpha_0} = \sum_{i=1}^{n} \frac{\partial e_i^2}{\partial \alpha_0} = 0 \)<br />
+  <br /> $$\frac{\partial S_r}{\partial \alpha_0} = \sum_{i=1}^{n} \frac{\partial e_i^2}{\partial \alpha_0} = 0 $$<br />
 </center>
 
-Portanto, igualando as derivadas a zero, obtemos \(S_r \) mínimo. Assim, as equações podem ser expressas como 
+Portanto, igualando as derivadas a zero, obtemos $$S_r $$ mínimo. Assim, as equações podem ser expressas como 
 
 <center>
-  <br /> \(0 = \sum_{i=1}^{n} y_i &#8211; \sum_{i=1}^{n} \alpha_0 &#8211; \sum_{i=1}^{n} \alpha_1 x_i \)<br />
+  <br /> $$0 = \sum_{i=1}^{n} y_i &#8211; \sum_{i=1}^{n} \alpha_0 &#8211; \sum_{i=1}^{n} \alpha_1 x_i $$<br />
 </center>
 
 e 
 
 <center>
-  <br /> \(0 = \sum_{i=1}^{n} y_i x_i &#8211; \sum_{i=1}^{n} \alpha_0 x_i &#8211; \sum_{i=1}^{n} \alpha_1 x_i^2 \)<br />
+  <br /> $$0 = \sum_{i=1}^{n} y_i x_i &#8211; \sum_{i=1}^{n} \alpha_0 x_i &#8211; \sum_{i=1}^{n} \alpha_1 x_i^2 $$<br />
 </center>
 
 Agora, tomando 
 
 <center>
-  <br /> \(\sum_{i=1}^{n} \alpha_0 = n \alpha_0 \)<br />
+  <br /> $$\sum_{i=1}^{n} \alpha_0 = n \alpha_0 $$<br />
 </center>
 
-podemos expressar essas equações como um conjunto de duas equações lineares simultâneas em termos das variáveis \(\alpha\_0 \) e \(\alpha\_1 \) : </p> 
+podemos expressar essas equações como um conjunto de duas equações lineares simultâneas em termos das variáveis $$\alpha\_0 $$ e $$\alpha\_1 $$ : </p> 
 
 <center>
-  <br /> \(n \alpha_0 + \left( \sum_{i=1}^{n} x_i \right) \alpha_1 = \sum_{i=1}^{n} y_i \)<br />
-</center>
-
-e 
-
-<center>
-  <br /> \(\left( \sum_{i=1}^{n} x_i \right) \alpha_0 + \left( x_i^2 \right) \alpha_1 = \sum_{i=1}^{n} x_i y_i \)<br />
-</center>
-
-Dessas equações, podemos isolar \(\alpha\_0 \) e \(\alpha\_1 \) : 
-
-<center>
-  <br /> \(\alpha_1 = \dfrac{n \sum_{i=1}^{n} x_i y_i &#8211; \sum_{i=1}^{n} x_i \sum_{i=1}^{n} y_i}{n \sum_{i=1}^{n} x_i^2 &#8211; (\sum_{i=1}^{n} x_i)^2} \)<br />
+  <br /> $$n \alpha_0 + \left( \sum_{i=1}^{n} x_i \right) \alpha_1 = \sum_{i=1}^{n} y_i $$<br />
 </center>
 
 e 
 
 <center>
-  <br /> \(\alpha_0 = \dfrac{\sum_{i=1}^{n} y_i}{n} &#8211; \alpha_1 \dfrac{\sum_{i=1}^{n} x_i}{n} \)<br />
+  <br /> $$\left( \sum_{i=1}^{n} x_i \right) \alpha_0 + \left( x_i^2 \right) \alpha_1 = \sum_{i=1}^{n} x_i y_i $$<br />
+</center>
+
+Dessas equações, podemos isolar $$\alpha\_0 $$ e $$\alpha\_1 $$ : 
+
+<center>
+  <br /> $$\alpha_1 = \dfrac{n \sum_{i=1}^{n} x_i y_i &#8211; \sum_{i=1}^{n} x_i \sum_{i=1}^{n} y_i}{n \sum_{i=1}^{n} x_i^2 &#8211; (\sum_{i=1}^{n} x_i)^2} $$<br />
+</center>
+
+e 
+
+<center>
+  <br /> $$\alpha_0 = \dfrac{\sum_{i=1}^{n} y_i}{n} &#8211; \alpha_1 \dfrac{\sum_{i=1}^{n} x_i}{n} $$<br />
 </center></p> 
 
 &nbsp;

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: ' O polinômio interpolador de Lagrange é uma das formulas mais simples para obtenção do polinômio interpolador. Neste post apresentamos e discutimos o método, além de disponibilizar um código que ilustra o algoritmo.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=868
-permalink: p=868
+permalink: /p=868
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:6398:"
@@ -112,75 +112,75 @@ categories:
 Seja a função que desejamos aproximar
 
 <center>
-  \(f(x) = \sum_{j=1}^{n} l_j(x)f(a_j) + E(x) = y(x) + E(x) \)
+  $$f(x) = \sum_{j=1}^{n} l_j(x)f(a_j) + E(x) = y(x) + E(x) $$
 </center>
 
-tal que mantemos as restrições que mantém o erro dos pontos tabulares nulos e que seja independente de \(f(x) \) . Tomamos
+tal que mantemos as restrições que mantém o erro dos pontos tabulares nulos e que seja independente de $$f(x) $$ . Tomamos
 
 <center>
-  \(l_j(a_k) = \delta_{ij} \hspace{50pt} (j,k) = 1,\ldots,n \)
+  $$l_j(a_k) = \delta_{ij} \hspace{50pt} (j,k) = 1,\ldots,n $$
 </center>
 
-onde \(\delta\_{jk} \) é o Delta de Kronecker. Como \(l\_j(x) \) é um polinômio, isto implica que terá o fator
+onde $$\delta\_{jk} $$ é o Delta de Kronecker. Como $$l\_j(x) $$ é um polinômio, isto implica que terá o fator
 
 <center>
-  \((x &#8211; a_1)(x &#8211; a_2) \ldots (x &#8211; a_{j-1}) (x &#8211; a_{j+1}) \ldots (x &#8211; a_n) \)
+  $$(x &#8211; a_1)(x &#8211; a_2) \ldots (x &#8211; a_{j-1}) (x &#8211; a_{j+1}) \ldots (x &#8211; a_n) $$
 </center>
 
-e como \(l\_j(a\_j) = 1 \) , podemos escrever para os termos gerais:
+e como $$l\_j(a\_j) = 1 $$ , podemos escrever para os termos gerais:
 
 <center>
-  \(l_j(x) = \dfrac{(x-a_1)\ldots(x-a_{j-1})(x-a_{j+1})\ldots(x-a_n)}{(a_j-a1)\ldots(a_j-a_{j-1})(a_j-a_{j+1})\ldots(a_j-a_n)}\)
+  $$l_j(x) = \dfrac{(x-a_1)\ldots(x-a_{j-1})(x-a_{j+1})\ldots(x-a_n)}{(a_j-a1)\ldots(a_j-a_{j-1})(a_j-a_{j+1})\ldots(a_j-a_n)}$$
 </center>
 
-Note que há outras possíveis representações para o polinômio \(l\_j(x) \), mas apenas a equação acima será um polinômio de grau \(n-1 \) . Isto torna conveniente escrever \(l\_j(x) \) como
+Note que há outras possíveis representações para o polinômio $$l\_j(x) $$, mas apenas a equação acima será um polinômio de grau $$n-1 $$ . Isto torna conveniente escrever $$l\_j(x) $$ como
 
 <center>
-  \(l_j(x) = \dfrac{p_n(x)}{(x-a_j)p&#8217;_n(a_j)} \)
+  $$l_j(x) = \dfrac{p_n(x)}{(x-a_j)p&#8217;_n(a_j)} $$
 </center>
 
-onde \(p&#8217;\_n(x) = \frac{dp\_n}{dx} \) e \(p\_n(x) = \prod\_{i=1}^{n}(x-a_i) \). 
+onde $$p&#8217;\_n(x) = \frac{dp\_n}{dx} $$ e $$p\_n(x) = \prod\_{i=1}^{n}(x-a_i) $$. 
 
-Para fazermos uma análise do erro de aproximação associado, devemos obter expressão \(E(x) \) , considerando a função
+Para fazermos uma análise do erro de aproximação associado, devemos obter expressão $$E(x) $$ , considerando a função
 
 <center>
-  \(F(z) = f(z) &#8211; y(z) &#8211; [f(x) &#8211; y(x)]\frac{p_n(z)}{p_n(x)} \)
+  $$F(z) = f(z) &#8211; y(z) &#8211; [f(x) &#8211; y(x)]\frac{p_n(z)}{p_n(x)} $$
 </center>
 
-com \(y(x) \) sendo a função ajustada da original. A função \(F(z) \) como uma função de \(z \) com \(n+1 \) raízes nos pontos \(a\_0,a\_1,\ldots,a_n \) e assumindo \(x \) sempre diferente dos pontos tabulares. Assim, ao aplicarmos o teorema de Rolle \(n \) vezes, teremos que
+com $$y(x) $$ sendo a função ajustada da original. A função $$F(z) $$ como uma função de $$z $$ com $$n+1 $$ raízes nos pontos $$a\_0,a\_1,\ldots,a_n $$ e assumindo $$x $$ sempre diferente dos pontos tabulares. Assim, ao aplicarmos o teorema de Rolle $$n $$ vezes, teremos que
 
 <center>
-  \(F^{(n)}(z) = f^{(n)}(z) &#8211; y^{(n)}(z) &#8211; [f(x) &#8211; y(x)]\frac{n!}{p_n(x)} \)
+  $$F^{(n)}(z) = f^{(n)}(z) &#8211; y^{(n)}(z) &#8211; [f(x) &#8211; y(x)]\frac{n!}{p_n(x)} $$
 </center>
 
-terá ao menos um zero no intervalo determinado por \([a\_1,a\_n] \) . Chamando este zero de \(z = \xi \) e notando que \(y^{(n)}(z) = 0 \) , teremos
+terá ao menos um zero no intervalo determinado por $$[a\_1,a\_n] $$ . Chamando este zero de $$z = \xi $$ e notando que $$y^{(n)}(z) = 0 $$ , teremos
 
 <center>
-  \(0 = F^{(n)}(\xi) = f^{(n)}(\xi) &#8211; [f(x) &#8211; y(x)] \frac{n!}{p_n(x)} \)
+  $$0 = F^{(n)}(\xi) = f^{(n)}(\xi) &#8211; [f(x) &#8211; y(x)] \frac{n!}{p_n(x)} $$
 </center>
 
 que pode ser utilizado no cálculo do erro como
 
 <center>
-  \(E(x) = \frac{p_n(x)}{n!}f^{(n)}(\xi) \)
+  $$E(x) = \frac{p_n(x)}{n!}f^{(n)}(\xi) $$
 </center>
 
 Utilizando a equação
 
 <center>
-  \(f(x) = \sum_{j=1}^{n} l_j(x)f(a_j) + E(x) = y(x) + E(x) \)
+  $$f(x) = \sum_{j=1}^{n} l_j(x)f(a_j) + E(x) = y(x) + E(x) $$
 </center>
 
-e agora de posse das funções \(l_j(x) \) e \(E(x) \) , podemos obter a formula para a interpolação de Lagrange:
+e agora de posse das funções $$l_j(x) $$ e $$E(x) $$ , podemos obter a formula para a interpolação de Lagrange:
 
 <center>
-  \(y(x) = \sum_{j=0}^{n} P_j(x)f(x_j) \)
+  $$y(x) = \sum_{j=0}^{n} P_j(x)f(x_j) $$
 </center>
 
 onde
 
 <center>
-  \(P_j(x) = \prod_{i=0}^{n} \dfrac{x-x_i}{x_j-x_i} \)
+  $$P_j(x) = \prod_{i=0}^{n} \dfrac{x-x_i}{x_j-x_i} $$
 </center>
 
 Da expressão acima, podemos notar que diferentes graus de polinômios podem ser gerados. Por exemplo:
@@ -188,13 +188,13 @@ Da expressão acima, podemos notar que diferentes graus de polinômios podem ser
   * Polinômios de primeiro grau (interpolação linear):
            
     <center>
-      \(y(x) = f_1(x) = \frac{x-x_1}{x_0 &#8211; x_1}f(x_0) + \frac{x-x_0}{x_1-x_0}f(x_1) \)
+      $$y(x) = f_1(x) = \frac{x-x_1}{x_0 &#8211; x_1}f(x_0) + \frac{x-x_0}{x_1-x_0}f(x_1) $$
     </center>
 
   * Polinômios de segundo grau (interpolação quadrática):
             
     <center>
-      \(y(x) = f_2(x) = \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}f(x_0) + \frac{(x-x0)(x-x2)}{(x_1-x_0)(x_1-x_2)}f(x_1) + \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}f(x_2) \)
+      $$y(x) = f_2(x) = \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}f(x_0) + \frac{(x-x0)(x-x2)}{(x_1-x_0)(x_1-x_2)}f(x_1) + \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}f(x_2) $$
     </center>
 
 &nbsp;

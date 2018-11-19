@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: O algoritmo de pontilhado de Jarvis, Judice e Ninke difunde o erro com mais um passo de distância. É mais lento do que o método de Floyd-Steinberg, pois distribui os erros entre 12 pixels próximos, em vez de 4 pixels nas proximidades, como faz o primeiro.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1065
-permalink: p=1065
+permalink: /p=1065
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:13408:"
@@ -126,7 +126,7 @@ categories:
 Uma forma de obter uma imagem binária é usar a distribuição de erro de Jarvis. Semelhante à abordagem de Floyd-Steinberg, a difusão do erro é produzida através da seguinte máscara:
 
 <center>
-  <br /> \(<br /> \begin{array}{| c | c | c | c| c |}<br /> \hline<br /> 0 & 0 & 0 & 0 & 0 \\ \hline<br /> 0 & 0 & 0 & 0 & 0 \\ \hline<br /> 0 & 0 & f(x,y) & 7/48 & 5/48 \\ \hline<br /> 3/48 & 5/48 & 7/48 & 5/48 & 3/48 \\ \hline<br /> 1/48 & 3/48 & 5/48 & 5/48 & 1/48 \\ \hline<br /> \end{array}<br /> \)<br />
+  <br /> $$<br /> \begin{array}{| c | c | c | c| c |}<br /> \hline<br /> 0 & 0 & 0 & 0 & 0 \\ \hline<br /> 0 & 0 & 0 & 0 & 0 \\ \hline<br /> 0 & 0 & f(x,y) & 7/48 & 5/48 \\ \hline<br /> 3/48 & 5/48 & 7/48 & 5/48 & 3/48 \\ \hline<br /> 1/48 & 3/48 & 5/48 & 5/48 & 1/48 \\ \hline<br /> \end{array}<br /> $$<br />
 </center>
 
 O algoritmo de halftoning que utiliza a difusão de erro de Jarvis, Judice e Ninke é efetuado pela seguinte função:

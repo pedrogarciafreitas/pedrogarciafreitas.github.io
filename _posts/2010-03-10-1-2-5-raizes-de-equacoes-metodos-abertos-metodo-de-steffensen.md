@@ -11,7 +11,7 @@ excerpt: |
   Neste artigo, é apresentado a demonstração do Método de Steffensen, seguido de um comentário sobre o processo de Aitken e como isto é   implementado em um programa.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=497
-permalink: p=497
+permalink: /p=497
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:7537:"
@@ -153,19 +153,19 @@ Um processo iterativo que converge linearmente possui a seguinte forma:
 
 
 <center>
-  <br /> \(\alpha-x_{i+1}=C_{i} \left( \alpha-x_{i} \right) \)<br />
+  <br /> $$\alpha-x_{i+1}=C_{i} \left( \alpha-x_{i} \right) $$<br />
 </center>
 
 
     
-onde \(\alpha-x\_{i+1}=C\_{i} \left( \alpha-x\_{i} \right) \) . Contudo, quando \(\left| C\_{i} \right| =C \) temos que o erro assintótico é constante. Se neste processo a convergência se manter estável próximo à raiz, então a próxima iteração terá a mesma forma. Ou seja:
+onde $$\alpha-x\_{i+1}=C\_{i} \left( \alpha-x\_{i} \right) $$ . Contudo, quando $$\left| C\_{i} \right| =C $$ temos que o erro assintótico é constante. Se neste processo a convergência se manter estável próximo à raiz, então a próxima iteração terá a mesma forma. Ou seja:
    
 <a name="eq2">(eq2)</a>
       
 
 
 <center>
-  <br /> \( \alpha-x_{i+2}=C_{i} \left( \alpha-x_{i+1} \right) \)<br />
+  <br /> $$ \alpha-x_{i+2}=C_{i} \left( \alpha-x_{i+1} \right) $$<br />
 </center>
 
 
@@ -177,7 +177,7 @@ Tratando estas expressões como um sistema linear, temos que:
 
 
 <center>
-  <br /> \( \alpha-x_{i+2}=C \left( \alpha-x_{i+1} \right) \)<br />
+  <br /> $$ \alpha-x_{i+2}=C \left( \alpha-x_{i+1} \right) $$<br />
 </center>
 
 <a name="eq4">(eq4)</a>
@@ -185,7 +185,7 @@ Tratando estas expressões como um sistema linear, temos que:
 
 
 <center>
-  <br /> \( \alpha-x_{i+1}=C \left( \alpha-x_{i} \right) \)<br />
+  <br /> $$ \alpha-x_{i+1}=C \left( \alpha-x_{i} \right) $$<br />
 </center>
 
 
@@ -197,7 +197,7 @@ Substituindo uma expressão na outra, obteremos:
 
 
 <center>
-  <br /> \( {\dfrac {\alpha-x_{i+2}}{\alpha-x_{i+1}}={\dfrac {\alpha-x_{i+1}}{\alpha-x_{i}} \)<br />
+  <br /> $$ {\dfrac {\alpha-x_{i+2}}{\alpha-x_{i+1}}={\dfrac {\alpha-x_{i+1}}{\alpha-x_{i}} $$<br />
 </center>
 
 
@@ -209,21 +209,21 @@ logo, resolvendo alfa:
 
 
 <center>
-  <br /> \( \alpha={\dfrac {x_{i}x_{i+2}-{x_{i+1}}^{2}{x_{i+2}-2\,x_{i+1}+x_{i}}\)<br />
+  <br /> $$ \alpha={\dfrac {x_{i}x_{i+2}-{x_{i+1}}^{2}{x_{i+2}-2\,x_{i+1}+x_{i}}$$<br />
 </center>
 
-A expressão acima é conhecida como &#8220;Fórmula de Aitken&#8221; e é utilizada para acelerar a convergência da sequência linear dos elementos de \(x \) , e o processo de obtenção dela é conhecido como &#8220;processo delta-quadrado de Aitken&#8221;[[1]](#bibitem1). </p> 
+A expressão acima é conhecida como &#8220;Fórmula de Aitken&#8221; e é utilizada para acelerar a convergência da sequência linear dos elementos de $$x $$ , e o processo de obtenção dela é conhecido como &#8220;processo delta-quadrado de Aitken&#8221;[[1]](#bibitem1). </p> 
 
 ## 3. Desenvolvimento do Método de Laguerre <a name="sec3">(sec3)</a> 
 
-Como uma raiz \(x\_{n} \) de uma função \(f \) é um valor tal que \(f(x\_{n}) = 0 \) , para uma função com derivada contínua, vamos supor que ela satisfaça a seguinte condição:
+Como uma raiz $$x\_{n} $$ de uma função $$f $$ é um valor tal que $$f(x\_{n}) = 0 $$ , para uma função com derivada contínua, vamos supor que ela satisfaça a seguinte condição:
     
 <a name="eq7">(eq7)</a>
       
 
 
 <center>
-  <br /> \( -1 < {\dfrac {d}{dx}f \left( x \right) < 0 [/latex]
+  <br /> $$ -1 < {\dfrac {d}{dx}f \left( x \right) < 0 [/latex]
 </center>
 
 Note que esta suposição é pouco adequada, pois nem sempre é possível usarmos uma estimativa inicial próxima o suficiente da raiz para que a aproximação atinja a condição em é verdadeira. Sendo assim, poderia haver casos em que o método convergiria rápido, enquanto haveria outros casos em que ele demoraria demasiadamente. 
@@ -235,29 +235,29 @@ Sendo assim, vamos tomar a definição de derivada:
 
 
 <center>
-  <br /> [latex] {\dfrac {d}{dx}f \left( x \right) ={\dfrac {f \left( x+\Delta\,x \right) -f \left( x \right) }{\Delta\,x} \)<br />
+  <br /> [latex] {\dfrac {d}{dx}f \left( x \right) ={\dfrac {f \left( x+\Delta\,x \right) -f \left( x \right) }{\Delta\,x} $$<br />
 </center>
 
 
     
-por conveniência, tomamos \(\Delta\,x=h \) na Equação [8](#eq8),
+por conveniência, tomamos $$\Delta\,x=h $$ na Equação [8](#eq8),
     
 <a name="eq9">(eq9)</a>
       
 
 
 <center>
-  <br /> \( {\dfrac {d}{dx}f \left( x \right) ={\dfrac {f \left( x+h \right) -f \left( x \right) }{h} \)<br />
+  <br /> $$ {\dfrac {d}{dx}f \left( x \right) ={\dfrac {f \left( x+h \right) -f \left( x \right) }{h} $$<br />
 </center>
 
-Para atingirmos a condição requerida no começo desta seção, usamos o intervalo em \(x \) tal que
+Para atingirmos a condição requerida no começo desta seção, usamos o intervalo em $$x $$ tal que
     
 <a name="eq10">(eq10)</a>
       
 
 
 <center>
-  <br /> \( h=f \left( x \right) \)<br />
+  <br /> $$ h=f \left( x \right) $$<br />
 </center>
 
 
@@ -269,7 +269,7 @@ Note que esta aproximação é aplicada sucessivas vezes no processo iterativo �
 
 
 <center>
-  <br /> \( {\dfrac {d}{dx}f \left( x_{i} \right) ={\dfrac {f \left( x_{i}+h \right) -f \left( x_{i} \right) }{h} = {\dfrac {f \left( x_{i}+f \left( x_{i}\right) \right) -f \left( x_{i} \right) }{f \left( x_{i} \right) } \)<br />
+  <br /> $$ {\dfrac {d}{dx}f \left( x_{i} \right) ={\dfrac {f \left( x_{i}+h \right) -f \left( x_{i} \right) }{h} = {\dfrac {f \left( x_{i}+f \left( x_{i}\right) \right) -f \left( x_{i} \right) }{f \left( x_{i} \right) } $$<br />
 </center>
 
 Pelo método de Newton-Raphson, temos:
@@ -279,7 +279,7 @@ Pelo método de Newton-Raphson, temos:
 
 
 <center>
-  <br /> \( x_{i+1}=x_{i}-{\dfrac {f \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) }\)<br />
+  <br /> $$ x_{i+1}=x_{i}-{\dfrac {f \left( x_{i} \right) }{\dfrac {d}{dx}f \left( x_{i} \right) }$$<br />
 </center>
 
 
@@ -291,7 +291,7 @@ Aplicando a aproximação da derivada na expressão acima, obtemos:
 
 
 <center>
-  <br /> \( x_{i+1}=x_{i}-{\dfrac { \left( f \left( x_{i} \right) \right) ^{2}{f \left( x_{i}+f \left( x_{i} \right) \right) -f \left( x_{i} \right) }\)<br />
+  <br /> $$ x_{i+1}=x_{i}-{\dfrac { \left( f \left( x_{i} \right) \right) ^{2}{f \left( x_{i}+f \left( x_{i} \right) \right) -f \left( x_{i} \right) }$$<br />
 </center>
 
 <a name="eq14">(eq14)</a>
@@ -299,7 +299,7 @@ Aplicando a aproximação da derivada na expressão acima, obtemos:
 
 
 <center>
-  <br /> \( x_{i+2}=x_{i+1}-{\dfrac { \left( f \left( x_{i+1} \right) \right) ^{2}{f \left( x_{i+1}+f \left( x_{i+1} \right) \right) -f \left( x_{i+1}\right) } \)<br />
+  <br /> $$ x_{i+2}=x_{i+1}-{\dfrac { \left( f \left( x_{i+1} \right) \right) ^{2}{f \left( x_{i+1}+f \left( x_{i+1} \right) \right) -f \left( x_{i+1}\right) } $$<br />
 </center>
 
 
@@ -311,7 +311,7 @@ Para evitar o problema da convergência citado, usaremos o processo do Delta-qua
 
 
 <center>
-  <br /> \( \alpha={\dfrac {x_{i}x_{i+2}-{x_{i+1}}^{2}{x_{i+2}-2\,x_{i+1}+x_{i}} \)<br />
+  <br /> $$ \alpha={\dfrac {x_{i}x_{i+2}-{x_{i+1}}^{2}{x_{i+2}-2\,x_{i+1}+x_{i}} $$<br />
 </center>
 
 O processo de Aitken aplicado às Equações [13](#eq13) e [14](#eq14) nos fornece uma nova aproximação tal que
@@ -321,7 +321,7 @@ O processo de Aitken aplicado às Equações [13](#eq13) e [14](#eq14) nos forne
 
 
 <center>
-  <br /> \( x_{i+3} = \alpha={\dfrac {x_{i}x_{i+2}-{x_{i+1}}^{2}{x_{i+2}-2\,x_{i+1}+x_{i}} \)<br />
+  <br /> $$ x_{i+3} = \alpha={\dfrac {x_{i}x_{i+2}-{x_{i+1}}^{2}{x_{i+2}-2\,x_{i+1}+x_{i}} $$<br />
 </center></p> 
 
 ## 4. Implementação <a name="seq4"></a> 
@@ -410,7 +410,7 @@ O processo de Aitken aplicado às Equações [13](#eq13) e [14](#eq14) nos forne
   </p>
   
   <p>
-    Como visto, o Método de Steffensen utiliza uma aproximação numérica para a derivada e a aplica no método de Newton. O resultado disto é uma fórmula que também possui convergência quadrática, mas que não requer a função derivada, sendo uma opção muito mais abrangente ao ser programada. O ponto fraco deste método está na estimativa inicial. Assim como no método do Ponto Fixo, pode ocorrer da sequência não convergir ao longo da execução, devido à suposição de que \(h=f(x) \) . Para tentar evitar este comportamento, aplicamos a Fórmula de Aitken no programa. Contudo, para iterações onde a ordem de convergência é maior que um, ela não deveria ser usada, pois ela surge de uma suposição de que a sequência é linear.
+    Como visto, o Método de Steffensen utiliza uma aproximação numérica para a derivada e a aplica no método de Newton. O resultado disto é uma fórmula que também possui convergência quadrática, mas que não requer a função derivada, sendo uma opção muito mais abrangente ao ser programada. O ponto fraco deste método está na estimativa inicial. Assim como no método do Ponto Fixo, pode ocorrer da sequência não convergir ao longo da execução, devido à suposição de que $$h=f(x) $$ . Para tentar evitar este comportamento, aplicamos a Fórmula de Aitken no programa. Contudo, para iterações onde a ordem de convergência é maior que um, ela não deveria ser usada, pois ela surge de uma suposição de que a sequência é linear.
   </p>
   
   <p>

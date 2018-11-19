@@ -8,7 +8,7 @@ excerpt: |
   O que não foi discutido é a forma como o debugger atua: quando o usuário escolhe pontos de parada para conferir o andamento da execução do programa é comum o debugger substituir a(s) instrução(ões) por uma instrução própria, que só ele entenda.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=207
-permalink: p=207
+permalink: /p=207
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:2613:"

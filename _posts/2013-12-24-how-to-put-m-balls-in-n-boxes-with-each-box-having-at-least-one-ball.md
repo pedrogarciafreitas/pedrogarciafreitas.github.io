@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'If you have m balls and n boxes, with n<m, and you insert the balls into the boxes randomly, what is the probability that all the boxes have at least one ball in it?'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2071
-permalink: p=2071
+permalink: /p=2071
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:2396:"

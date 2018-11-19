@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Quadratura de Gauss é um método de integração numérica também chamado de quadratura gaussiana ou quadratura de Legendre.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1737
-permalink: p=1737
+permalink: /p=1737
 wp-syntax-cache-content:
   - |
     a:7:{i:1;s:3260:"
@@ -399,62 +399,62 @@ categories:
 
 
 
-Consideremos o problema de encontrar uma aproximação numérica \(I(f) \) para a integral da função linear \(f(x) \)
+Consideremos o problema de encontrar uma aproximação numérica $$I(f) $$ para a integral da função linear $$f(x) $$
   
 
 
 <center>
-  \( I(f) = \int_a^b f(x) dx \)
+  $$ I(f) = \int_a^b f(x) dx $$
 </center>
 
 
   
-onde \(-\infty \leq a \leq b \infty \) . Como \(I(f) \) é linear. É coerente aproximarmos isso por um funcional também linear,
+onde $$-\infty \leq a \leq b \infty $$ . Como $$I(f) $$ é linear. É coerente aproximarmos isso por um funcional também linear,
   
 
 
 <center>
-  \( Q(f) = \sum_{i=0}^m \sum_{j=1}^n A_{ij} f^{(i)}(a_{ij}) \)
+  $$ Q(f) = \sum_{i=0}^m \sum_{j=1}^n A_{ij} f^{(i)}(a_{ij}) $$
 </center>
 
 
   
-onde \(Q(f) \) é chamada de _problema da quadratura_. Isto é,
+onde $$Q(f) $$ é chamada de _problema da quadratura_. Isto é,
 
 <center>
-  \( I(f) = Q(f) + E \)
+  $$ I(f) = Q(f) + E $$
 </center>
 
 
   
-Note que quando \(E=0 \) , temos a aproximação da integral como uma combinação linear dos valores de \(f(x) \) e suas derivadas. O problema da quadratura numérica consiste em especificar \(A\_{ij} \) e \(a\_{ij} \) tais que esta aproximação obedeçam a certas propriedades, tais como convergência e acurácia. 
+Note que quando $$E=0 $$ , temos a aproximação da integral como uma combinação linear dos valores de $$f(x) $$ e suas derivadas. O problema da quadratura numérica consiste em especificar $$A\_{ij} $$ e $$a\_{ij} $$ tais que esta aproximação obedeçam a certas propriedades, tais como convergência e acurácia. 
 
-Nossa abordagem consiste em definir uma aproximação polinomial de \(f(x) \) de forma a escolher \(A\_{ij} \) e \(a\_{ij} \) tais que minimizem \(E \) para um aproximante de grau suficientemente baixo. Assim como fizemos com a regra do trapézio, representaremos a integral como uma combinação linear de valores funcionais
+Nossa abordagem consiste em definir uma aproximação polinomial de $$f(x) $$ de forma a escolher $$A\_{ij} $$ e $$a\_{ij} $$ tais que minimizem $$E $$ para um aproximante de grau suficientemente baixo. Assim como fizemos com a regra do trapézio, representaremos a integral como uma combinação linear de valores funcionais
   
 únicos. Ou seja, reescreveremos a integral como
   
 
 
 <center>
-  \( \int_a^b f(x) dx = \sum_{j=1}^{n} H_j f(a_j) + E \)
+  $$ \int_a^b f(x) dx = \sum_{j=1}^{n} H_j f(a_j) + E $$
 </center>
 
-Vamos assumir que os limites de integração \(a \) e \(b \) da equação acima são finitos. Se a equação acima é exata para polinômios de grau \(2n-1 \) ou menores, podemos utilizar um conjunto de \(2n \) equações para descobrir \(2n \) constantes ao substituir \(f(x) = x^k \) para \(k=0,1,\ldots,2n-1 \) na equação acima. Setando \(E=0 \) , temos que
+Vamos assumir que os limites de integração $$a $$ e $$b $$ da equação acima são finitos. Se a equação acima é exata para polinômios de grau $$2n-1 $$ ou menores, podemos utilizar um conjunto de $$2n $$ equações para descobrir $$2n $$ constantes ao substituir $$f(x) = x^k $$ para $$k=0,1,\ldots,2n-1 $$ na equação acima. Setando $$E=0 $$ , temos que
   
 
 
 <center>
-  \( \alpha_k = \sum_{j=1}^{n} H_j a_j^k \)
+  $$ \alpha_k = \sum_{j=1}^{n} H_j a_j^k $$
 </center>
 
 
   
-para \(k=0,1,\ldots,2n-1 \) , onde
+para $$k=0,1,\ldots,2n-1 $$ , onde
   
 
 
 <center>
-  \( \alpha_k = \int_a^b x^k dx = \frac{b^{k+1} &#8211; a^{k+1}}{k+1} \)
+  $$ \alpha_k = \int_a^b x^k dx = \frac{b^{k+1} &#8211; a^{k+1}{k+1} $$
 </center>
 
 Seja a fórmula de interpolação de Hermite:
@@ -462,17 +462,17 @@ Seja a fórmula de interpolação de Hermite:
 
 
 <center>
-  \( f(x) = \sum_{j=1}^n h_j f(a_j) + \sum_{j=1}^n \hat{h_j(x)} f'(a_j) + \frac{pn^2(x)}{(2n)!} f^{(2n)}(\xi) \)
+  $$ f(x) = \sum_{j=1}^n h_j f(a_j) + \sum_{j=1}^n \hat{h_j(x)} f'(a_j) + \frac{pn^2(x)}{(2n)!} f^{(2n)}(\xi) $$
 </center>
 
 
   
-que é exata para os polinômios de grau \(2n-1 \) ou menores. Integrando essa equação, temos
+que é exata para os polinômios de grau $$2n-1 $$ ou menores. Integrando essa equação, temos
   
 
 
 <center>
-  \( \int_a^b f(x) dx = \sum_{j=1}^n H_j f(a_j) + \sum_{j=1}^n \hat{H_j} f'(a_j) + E \)
+  $$ \int_a^b f(x) dx = \sum_{j=1}^n H_j f(a_j) + \sum_{j=1}^n \hat{H_j} f'(a_j) + E $$
 </center>
 
 
@@ -482,7 +482,7 @@ onde
 
 
 <center>
-  \( H_j = \sum_a^b h_j(x) dx \)
+  $$ H_j = \sum_a^b h_j(x) dx $$
 </center>
 
 
@@ -492,12 +492,12 @@ e
 
 
 <center>
-  \( \hat{H_j} = \int_a^b \hat{h_j}(x) dx \)
+  $$ \hat{H_j} = \int_a^b \hat{h_j}(x) dx $$
 </center>
 
 
   
-Como \(E \) é zero, se \(f(x) \) é um polinômio de grau \(2n-1 \) ou menor e se podemos escolher as abcissas tal que \(\hat{H_j} = 0 \) , então teremos as propriedades desejadas. 
+Como $$E $$ é zero, se $$f(x) $$ é um polinômio de grau $$2n-1 $$ ou menor e se podemos escolher as abcissas tal que $$\hat{H_j} = 0 $$ , então teremos as propriedades desejadas. 
 
 &nbsp;
 
@@ -505,20 +505,20 @@ Como \(E \) é zero, se \(f(x) \) é um polinômio de grau \(2n-1 \) ou menor e 
 
 
 
-A quadratura de Gauss-Legendre consiste em aproximar a integral \(I(f) \) utilizando \(n \) pontos
+A quadratura de Gauss-Legendre consiste em aproximar a integral $$I(f) $$ utilizando $$n $$ pontos
   
 
 
 <center>
-  \( I(f) = H_0 f(a_0) + H_1 f(a_1) + \cdots + H_{n-1} f(a_{n-1}) \)
+  $$ I(f) = H_0 f(a_0) + H_1 f(a_1) + \cdots + H_{n-1} f(a_{n-1}) $$
 </center>
 
 
   
-onde as abcissas \(a_j \) são as raízes do polinômio de Legendre e os pesos são obtidos por
+onde as abcissas $$a_j $$ são as raízes do polinômio de Legendre e os pesos são obtidos por
 
 <center>
-  \( H_j = \dfrac{-2}{(n+1) P_{n+1}(a_j)P&#8217;_n(a_j)} = \dfrac{2}{(1-a_j^2) P&#8217;_n(a_j)} \)
+  $$ H_j = \dfrac{-2}{(n+1) P_{n+1}(a_j)P&#8217;_n(a_j)} = \dfrac{2}{(1-a_j^2) P&#8217;_n(a_j)} $$
 </center>
 
 
@@ -527,12 +527,12 @@ onde as abcissas \(a_j \) são as raízes do polinômio de Legendre e os pesos s
 
 
 
-Como podemos notar das seções anteriores, a quadratura requer avaliar a função em pontos bem definidos utilizando pesos específicos. Como dito na última seção, os pontos a serem utilizados \(a\_j \) são as raízes do polinômio de Legendre. Além disso, podemos ver que os pesos também dependem dessas raízes \(a\_j \) . Sendo assim, o problema da quadratura de Gauss-Legendre é resolvido em resolver quatro grandes etapas:
+Como podemos notar das seções anteriores, a quadratura requer avaliar a função em pontos bem definidos utilizando pesos específicos. Como dito na última seção, os pontos a serem utilizados $$a\_j $$ são as raízes do polinômio de Legendre. Além disso, podemos ver que os pesos também dependem dessas raízes $$a\_j $$ . Sendo assim, o problema da quadratura de Gauss-Legendre é resolvido em resolver quatro grandes etapas:
 
-  1. Obter o polinômio de Legendre de ordem \(n \) , onde \(n \) é o número de pontos utilizados. 
-  2. Encontrar as \(n \) raízes do polinômio obtido. 
-  3. Encontrar a primeira derivada do n-ésimo polinômio, pois o peso é dependente desta função. Com isso podemos determinar os pesos \(H_j \) . 
-  4. Computar a quadratura gaussiana, utilizando os pesos \(H\_j \) e as raízes \(a\_j \) . 
+  1. Obter o polinômio de Legendre de ordem $$n $$ , onde $$n $$ é o número de pontos utilizados. 
+  2. Encontrar as $$n $$ raízes do polinômio obtido. 
+  3. Encontrar a primeira derivada do n-ésimo polinômio, pois o peso é dependente desta função. Com isso podemos determinar os pesos $$H_j $$ . 
+  4. Computar a quadratura gaussiana, utilizando os pesos $$H\_j $$ e as raízes $$a\_j $$ . 
 
 &nbsp;
 
@@ -543,7 +543,7 @@ O primeiro passo é encontrar os polinômios de Legendre para que possamos encon
 
 
 <center>
-  \( p(x) = 3x^4 + 2x^3 &#8211; x + 7 \)
+  $$ p(x) = 3x^4 + 2x^3 &#8211; x + 7 $$
 </center>
 
 
@@ -553,7 +553,7 @@ pode ser representado em forma de lista
 
 
 <center>
-  \( p(x) = [3, 2, 0, -1, 7] \)
+  $$ p(x) = [3, 2, 0, -1, 7] $$
 </center>
 
 
@@ -587,7 +587,7 @@ onde a ordem fica implícita na posição do vetor em ordem decrescente. Assim, 
     a.reverse()
     return a</pre></p> 
 
-Note que esta função requer o cálculo do binômio \(\binom{n}{k} \) . A função que faz esta computação é
+Note que esta função requer o cálculo do binômio $$\binom{n}{k} $$ . A função que faz esta computação é
 
 <pre lang="python">def binomial_coefficients(n, k):
     """
@@ -618,9 +618,9 @@ Note que esta função requer o cálculo do binômio \(\binom{n}{k} \) . A funç
 
 ### 3.2. Computando as Raízes do Polinômio de Legendre 
 
-O próximo passo é obter as raízes \(a_j \) do polinômio de Legendre. Para isso, precisamos de um algoritmo que calcule as \(n \) raízes de um polinômio de ordem \(n \) . Nesse caso, podemos utilizar qualquer método numérico que realize esta tarefa: Aberth, Bairstow, Laguerre, Jenkins-Traub, etc. 
+O próximo passo é obter as raízes $$a_j $$ do polinômio de Legendre. Para isso, precisamos de um algoritmo que calcule as $$n $$ raízes de um polinômio de ordem $$n $$ . Nesse caso, podemos utilizar qualquer método numérico que realize esta tarefa: Aberth, Bairstow, Laguerre, Jenkins-Traub, etc. 
 
-Como apresentado em outros posts, cada um desses métodos possui vantagens e desvantagens, tais como requerer ou não derivadas, complexidade, etc. Sabendo que todas as raízes do polinômio de Legendre estão definidas no intervalo \([-1,1] \) e sabendo os coeficientes do polinômio, o que nos permite derivá-lo, escolhemos o método de Aberth. Esse método possui uma convergência quadrática e requer a função (polinômio) e a sua derivada. Assim, podemos computar todas as raízes do polinômio utilizando a seguinte função:
+Como apresentado em outros posts, cada um desses métodos possui vantagens e desvantagens, tais como requerer ou não derivadas, complexidade, etc. Sabendo que todas as raízes do polinômio de Legendre estão definidas no intervalo $$[-1,1] $$ e sabendo os coeficientes do polinômio, o que nos permite derivá-lo, escolhemos o método de Aberth. Esse método possui uma convergência quadrática e requer a função (polinômio) e a sua derivada. Assim, podemos computar todas as raízes do polinômio utilizando a seguinte função:
 
 <pre lang="python">def compute_legendre_roots(n):
     """
@@ -704,7 +704,7 @@ A função _polynomial\_coeffs\_to_function_ converte uma representação em for
 
 ### 3.3. Computando os Pesos da Quadratura 
 
-Conforme a função apresentada, os \(n \) pesos obtidos a partir das \(n \) raízes são calculados pela seguinte função:
+Conforme a função apresentada, os $$n $$ pesos obtidos a partir das $$n $$ raízes são calculados pela seguinte função:
 
 <pre lang="python">def compute_quadrature_weights(n):
     """
@@ -784,7 +784,7 @@ O último passo é computar a integral da função escolhida utilizando a quadra
     integral = compute_quadrature()
     return integral</pre>
 
-Onde _convert_intervals_ realiza uma mudança de variáveis para converter um intervalo qualquer para o intervalo compatível com o da integral demonstrada no método, isto é, \([-1,1] \) . 
+Onde _convert_intervals_ realiza uma mudança de variáveis para converter um intervalo qualquer para o intervalo compatível com o da integral demonstrada no método, isto é, $$[-1,1] $$ . 
 
 Um exemplo de utilização dessas funções pode ser obtido em <a href="http://www.sawp.com.br/code/integral/integral_gauss_legendre_quadrature.py" target="_blank">http://www.sawp.com.br/code/integral/integral_gauss_legendre_quadrature.py</a>.
 

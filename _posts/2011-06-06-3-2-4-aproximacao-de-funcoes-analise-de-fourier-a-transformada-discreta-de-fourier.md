@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Um sinal natural raramente é caracterizado como uma função definida no contínuo, como aquelas descritas pela transformada contínua de Fourier. Em vez disso, os dados são amostrados em tempos discretos. Assim, a forma mais eficiente de conversão entre domínios de problemas reais se dá pela transformada discreta de Fourier.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1172
-permalink: p=1172
+permalink: /p=1172
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:4562:"
@@ -141,30 +141,30 @@ categories:
 
 Para problemas reais, tais como processamento de sinais, não precisamos conhecer todo o domínio transformado, obtido pela transformada contínua. Ao contrário, as funções podem ser representadas por conjuntos finitos de valores discretos. Em geral, queremos transformar apenas alguns pontos amostrados. 
 
-Seja o intervalo\([0,t]\) dividido em \(N\) subintervalos com largura \(\Delta t = \frac{T}{N}\) . Especificamos os dados em\(n=0,1,2,\ldots, N &#8211; 1\) . A transformada discreta de Fourier é definida como
+Seja o intervalo$$[0,t]$$ dividido em $$N$$ subintervalos com largura $$\Delta t = \frac{T}{N}$$ . Especificamos os dados em$$n=0,1,2,\ldots, N &#8211; 1$$ . A transformada discreta de Fourier é definida como
 
 <center>
-  \( F_k = \sum_{n=0}^{N-1} f_n e^{-i k \omega_0 n}\)
+  $$ F_k = \sum_{n=0}^{N-1} f_n e^{-i k \omega_0 n}$$
 </center>
 
-para \(k=0,1,2,\ldots, N &#8211; 1 \) . De forma análoga, a transformada inversa na forma discreta é
+para $$k=0,1,2,\ldots, N &#8211; 1 $$ . De forma análoga, a transformada inversa na forma discreta é
 
 <center>
-  \( f_n = \sum_{k=0}^{N-1} F_k e^{i k \omega_0 n}\)
+  $$ f_n = \sum_{k=0}^{N-1} F_k e^{i k \omega_0 n}$$
 </center>
 
-As duas equações acima podem ser utilizadas para calcular tanto a transformada de Fourier direta quando a inversa para dados discretos. Como temos um conjunto de transformações de \(n\) elementos no domínio transformado para os \(n\) pontos amostrados, a transformada de Fourier discreta requer \(N^2\) operações complexas. 
+As duas equações acima podem ser utilizadas para calcular tanto a transformada de Fourier direta quando a inversa para dados discretos. Como temos um conjunto de transformações de $$n$$ elementos no domínio transformado para os $$n$$ pontos amostrados, a transformada de Fourier discreta requer $$N^2$$ operações complexas. 
 
 Para facilitar a implementação computacional da TFD, utilizaremos a identidade de Euler para decompormos as fórmulas em funções trigonométricas 
 
 <center>
-  \( e^{\pm i a} = cos(a) \pm i sin(a)\)
+  $$ e^{\pm i a} = cos(a) \pm i sin(a)$$
 </center>
 
 para reescrevermos a transformada e a sua inversa como
 
 <center>
-  \( F_k = \frac{1}{N} \sum_{n=0}^{N} \left[ f_n cos(k \omega n) &#8211; i f_n sin(k \omega n) \right]\)
+  $$ F_k = \frac{1}{N} \sum_{n=0}^{N} \left[ f_n cos(k \omega n) &#8211; i f_n sin(k \omega n) \right]$$
 </center>
 
 
@@ -174,10 +174,10 @@ e
 
 
 <center>
-  \( f_n = \sum_{k=0}^{N} \left[ F_k cos(k \omega n) + i F_k sin(k \omega n) \right]\)
+  $$ f_n = \sum_{k=0}^{N} \left[ F_k cos(k \omega n) + i F_k sin(k \omega n) \right]$$
 </center>
 
-onde \(\omega = \frac{2 \pi}{N}\) . 
+onde $$\omega = \frac{2 \pi}{N}$$ . 
 
 &nbsp;
 

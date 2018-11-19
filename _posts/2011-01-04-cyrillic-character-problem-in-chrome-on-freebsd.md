@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: Fix bad character appearing in Google Chrome
 layout: post
 guid: http://www.sawp.com.br/blog/?p=896
-permalink: p=896
+permalink: /p=896
 categories:
   - FreeBSD
 ---

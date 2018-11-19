@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: "Exercises of the book 'Introduction to Objective Caml' solved in Scala."
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1393
-permalink: p=1393
+permalink: /p=1393
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:6433:"

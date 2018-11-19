@@ -6,7 +6,7 @@ author: SAWP
 excerpt: A integral de Fourier é a principal ferramenta para analisar funções de ondas não-periódicas através da modelagem trigonométrica das séries de Fourier. Neste post discutiremos a versão contínua da transformada de Fourier.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1163
-permalink: p=1163
+permalink: /p=1163
 categories:
   - Computational Methods
 ---
@@ -17,30 +17,30 @@ A série de Fourier &#8212; detalhada em outro post &#8212; é uma útil ferrame
 A integral de Fourier é o principal recurso para criar tal modelo. Ela pode ser deduzida a partir da versão complexa da série de Fourier.
 
 <center>
-  \( f(t) = \sum_{k=-\infty}^{\infty} c_k e^{i k \omega_0 t}\)
+  $$ f(t) = \sum_{k=-\infty}^{\infty} c_k e^{i k \omega_0 t}$$
 </center>
 
 onde
 
 <center>
-  \( c_k = \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-i k \omega_0 t} dt \)
+  $$ c_k = \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-i k \omega_0 t} dt $$
 </center>
 
-e onde \(\omega_0 = \frac{2 \pi}{T} \) e \(k=0,1,2,\ldots\) 
+e onde $$\omega_0 = \frac{2 \pi}{T} $$ e $$k=0,1,2,\ldots$$ 
 
-A transição de uma função periódica em outra não-periódica pode ser feita permitindo-se que o período tenda ao infinito. Isto é, quando \(T \) se torna infinitamente grande, a função não se repete, e, assim, torna-se não-periódica. Se isso ocorre, temos que a série de Fourier se reduz a
+A transição de uma função periódica em outra não-periódica pode ser feita permitindo-se que o período tenda ao infinito. Isto é, quando $$T $$ se torna infinitamente grande, a função não se repete, e, assim, torna-se não-periódica. Se isso ocorre, temos que a série de Fourier se reduz a
 
 <center>
-  \(f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} F(i \omega_0) e^{i \omega_0 t} d\omega_0 \)
+  $$f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} F(i \omega_0) e^{i \omega_0 t} d\omega_0 $$
 </center>
 
-e os coeficientes se tornam uma função no contínuo da variável de frequência \(\omega_0 \) ,
+e os coeficientes se tornam uma função no contínuo da variável de frequência $$\omega_0 $$ ,
 
 <center>
-  \(F(i \omega_0) = \int_{-\infty}^{\infty} f(t) e^{-i \omega_0 t} dt\)
+  $$F(i \omega_0) = \int_{-\infty}^{\infty} f(t) e^{-i \omega_0 t} dt$$
 </center>
 
-A função\(F(i \omega_0) \) , definida acima, é chamada de _transformada integral de Fourier_ de\(f(t) \) . A função\(f(t) \) , por outro lado, é chamada de _transformada inversa de Fourier_ de \(F(i \omega_0) \) . Esse par de funções nos permite transformarmos os espaços relativos aos domínios de tempo para o domínio de frequência e vice-versa. 
+A função$$F(i \omega_0) $$ , definida acima, é chamada de _transformada integral de Fourier_ de$$f(t) $$ . A função$$f(t) $$ , por outro lado, é chamada de _transformada inversa de Fourier_ de $$F(i \omega_0) $$ . Esse par de funções nos permite transformarmos os espaços relativos aos domínios de tempo para o domínio de frequência e vice-versa. 
 
 A diferença entre a transformada e a série de Fourier reside na classe de funções em que elas são aplicadas. Enquanto a série de Fourier modela bem funções periódicas, a transformada modela as formas de funções não-periódicas. Além disso, ambas se diferem na forma como se movimentam pelos espaços de tempo e frequência. A série converte uma função definida no contínuo, periódica no domínio do tempo, para **amplitudes** no domínio da frequência em **frequências discretas**. Por outro lado, a transformada de Fourier converte uma função no contínuo no domínio do tempo em uma função no domínio da frequência. Desta forma, **o espectro de frequência discreto gerado pela série de Fourier é análogo ao espectro contínuo gerado pela transformada de Fourier**. 
 

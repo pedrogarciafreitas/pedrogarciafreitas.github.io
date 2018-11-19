@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Os compiladores costumam gerar informações simbólicas – para representar as lincagens – quando convertem as relações de importação e exportação de tabelas e extensões. Um programa com grande uso de DLLs, onde cada uma exporta uma grande quantidade de funções, necessitará de uma lista relacionando onde estão as funções exportadas, normalmente indicando o que elas fazem, o que é de grande serventia para os crackers. Neste artigo, apresento algumas das informações que podem ser usadas como pontos de referência para engenharia reversa.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=148
-permalink: p=148
+permalink: /p=148
 wp-syntax-cache-content:
   - |
     a:5:{i:1;s:6371:"

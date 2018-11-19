@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Este artigo demonstra uma aplicação direta do Método de Newton, que é a expressão para obtenção da enésima raiz de  "fi" através de uma implementação computacional.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=570
-permalink: p=570
+permalink: /p=570
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3781:"
@@ -81,56 +81,56 @@ categories:
 ---
 ## 1. Desenvolvimento do Método </p> 
 
-Para obtermos uma função que retorne a raiz arbitrária de um número qualquer \(\phi \) , podemos supor que \(phi \) é uma constante que se relacione com o parâmetro de entrada \(x \) da seguinte forma:
+Para obtermos uma função que retorne a raiz arbitrária de um número qualquer $$\phi $$ , podemos supor que $$phi $$ é uma constante que se relacione com o parâmetro de entrada $$x $$ da seguinte forma:
     
 <a name="eq1">(eq1)</a>
       
 
 
 <center>
-  <br /> \( x^n = \phi \)<br />
+  <br /> $$ x^n = \phi $$<br />
 </center>
 
 
     
-onde \(n \) é um inteiro qualquer e \(\phi \) é um valor real positivo, isto é:
+onde $$n $$ é um inteiro qualquer e $$\phi $$ é um valor real positivo, isto é:
       
 
 
 <center>
-  <br /> \(\phi > 0 \)<br />
+  <br /> $$\phi > 0 $$<br />
 </center>
 
-Através desta expressão, vamos supor uma função \(f(x) \) tal que
+Através desta expressão, vamos supor uma função $$f(x) $$ tal que
     
 <a name="eq2">(eq2)</a>
       
 
 
 <center>
-  <br /> \( f(x) = x^n &#8211; \phi \)<br />
+  <br /> $$ f(x) = x^n &#8211; \phi $$<br />
 </center>
 
-A função \(f(x) \) possui algumas propriedades interessantes. A primeira delas é que sabemos que \(f(x) = 0 \) sempre, pois a Equação [1](#eq1) é verdadeira. Além disso, \(f(x) \) pode ser facilmente derivada:
+A função $$f(x) $$ possui algumas propriedades interessantes. A primeira delas é que sabemos que $$f(x) = 0 $$ sempre, pois a Equação [1](#eq1) é verdadeira. Além disso, $$f(x) $$ pode ser facilmente derivada:
     
 <a name="eq3">(eq3)</a>
       
 
 
 <center>
-  <br /> \( \dfrac{d}{dx}f(x) = nx^{n-1} \)<br />
+  <br /> $$ \dfrac{d}{dx}f(x) = nx^{n-1} $$<br />
 </center>
 
 
     
-Desta forma, o problema de retirar a raiz \(n \) de \(\phi \) se reduz a um problema de busca do zero da função \(f(x) \) . Como temos \(f(x) \) e sua derivada, podemos utilizar o Método de Newton para encontrarmos esta raiz:
+Desta forma, o problema de retirar a raiz $$n $$ de $$\phi $$ se reduz a um problema de busca do zero da função $$f(x) $$ . Como temos $$f(x) $$ e sua derivada, podemos utilizar o Método de Newton para encontrarmos esta raiz:
     
 <a name="eq4">(eq4)</a>
       
 
 
 <center>
-  <br /> \( x_{k+1} = x_k &#8211; \dfrac{f(x)}{\frac{d}{dx}f(x)} \)<br />
+  <br /> $$ x_{k+1} = x_k &#8211; \dfrac{f(x)}{\frac{d}{dx}f(x)} $$<br />
 </center>
 
 
@@ -140,7 +140,7 @@ Assim,
 
 
 <center>
-  <br /> \(x_{k+1} = x_k &#8211; \dfrac{x_k^n &#8211; \phi}{nx_k^{n-1}} \) \\<br /> \(x_{k+1} = x_k &#8211; \dfrac{x_k}{n} + \dfrac{\phi}{x_k^{n-1}} \)<br />
+  <br /> $$x_{k+1} = x_k &#8211; \dfrac{x_k^n &#8211; \phi}{nx_k^{n-1} $$ \\<br /> $$x_{k+1} = x_k &#8211; \dfrac{x_k}{n} + \dfrac{\phi}{x_k^{n-1} $$<br />
 </center>
 
 Simplificando a última equação, obtemos o algoritmo da enésima raiz:
@@ -150,7 +150,7 @@ Simplificando a última equação, obtemos o algoritmo da enésima raiz:
 
 
 <center>
-  <br /> \( x_{k+1} = \dfrac{1}{n} \left[ (n-1)x_k + \dfrac{\phi}{x_k^{n-1}} \right] \)<br />
+  <br /> $$ x_{k+1} = \dfrac{1}{n} \left[ (n-1)x_k + \dfrac{\phi}{x_k^{n-1} \right] $$<br />
 </center>
 
 ## 2. Implementação 

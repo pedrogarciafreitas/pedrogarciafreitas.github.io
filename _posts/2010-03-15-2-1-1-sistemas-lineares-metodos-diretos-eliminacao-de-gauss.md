@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O método conhecido como "Eliminação de Gauss" consiste em combinar as equações de forma ir eliminando as variáveis até convergir à uma solução. Embora este seja um dos métodos mais antigos, e também um dos menos eficientes, serve como fundamento para compreendermos as demais técnicas relativas à resolução de sistemas lineares.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=577
-permalink: p=577
+permalink: /p=577
 wp-syntax-cache-content:
   - |
     a:4:{i:1;s:8447:"
@@ -283,14 +283,14 @@ Em um sistema linear formado por um par de equações, o processo para obtençã
 
 Para um sistema maior, podemos estender a abordagem para um número maior de equações através do algoritmo conhecido como &#8220;Eliminação de Gauss&#8221;, que basicamente manipula algumas variáveis, a fim de gerar uma eliminação ao longo da execução, ao tempo que vai substituindo regressivamente nas equações originais, a fim de obter a solução final. 
 
-Sendo assim, o sistema geral que iremos estudar é formado por um conjunto arbitrário de \(n \) equações tais que:
+Sendo assim, o sistema geral que iremos estudar é formado por um conjunto arbitrário de $$n $$ equações tais que:
        
 <a name="eq1">(eq1)</a>
       
 
 
 <center>
-  <br /> \( a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \)<br />
+  <br /> $$ a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 $$<br />
 </center>
 
 
@@ -300,7 +300,7 @@ Sendo assim, o sistema geral que iremos estudar é formado por um conjunto arbit
 
 
 <center>
-  <br /> \( a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \)<br />
+  <br /> $$ a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 $$<br />
 </center>
 
 
@@ -308,7 +308,7 @@ Sendo assim, o sistema geral que iremos estudar é formado por um conjunto arbit
 
 
 <center>
-  \(\vdots \) \(\vdots \)
+  $$\vdots $$ $$\vdots $$
 </center>
 
 
@@ -318,19 +318,19 @@ Sendo assim, o sistema geral que iremos estudar é formado por um conjunto arbit
 
 
 <center>
-  <br /> \( a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n \)<br />
+  <br /> $$ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n $$<br />
 </center>
 
-Entre os métodos computacionais temos que o processo de diagonalização de matrizes é uma técnica-chave para solução de sistemas lineares. Sendo assim, a primeira fase da eliminação de Gauss está em reduzir a matriz dos coeficientes para uma matriz triangular-superior, eliminando da primeira variável em todas as equações diferentes de \(1 \) . 
+Entre os métodos computacionais temos que o processo de diagonalização de matrizes é uma técnica-chave para solução de sistemas lineares. Sendo assim, a primeira fase da eliminação de Gauss está em reduzir a matriz dos coeficientes para uma matriz triangular-superior, eliminando da primeira variável em todas as equações diferentes de $$1 $$ . 
 
-Para isso, vamos multiplicar a Equação [1](#eq1) por \(\frac{a\_{21}}{a\_{11}} \) . Com isso, obtemos
+Para isso, vamos multiplicar a Equação [1](#eq1) por $$\frac{a\_{21}{a\_{11} $$ . Com isso, obtemos
     
 <a name="eq4">(eq4)</a>
       
 
 
 <center>
-  <br /> \( a_{21}x_1 + \dfrac{a_{21}}{a_{11}}a_{12}x_2 + \cdots + \dfrac{a_{21}}{a_{11}}a_{1n}x_n = \dfrac{a_{21}}{a_{11}}b_{1} \)<br />
+  <br /> $$ a_{21}x_1 + \dfrac{a_{21}{a_{11}a_{12}x_2 + \cdots + \dfrac{a_{21}{a_{11}a_{1n}x_n = \dfrac{a_{21}{a_{11}b_{1} $$<br />
 </center>
 
 Agora, subtraímos a Equação [4](#eq4) da Equação [2](#eq2), o que nos permite obter
@@ -340,28 +340,28 @@ Agora, subtraímos a Equação [4](#eq4) da Equação [2](#eq2), o que nos permi
 
 
 <center>
-  <br /> \( \left(a_{22} &#8211; \dfrac{a_{21}}{a_{11}}a_{12}\right)x_2 + \cdots + \left(a_{2n} &#8211; \dfrac{a_{21}}{a_{11}}a_{1n}\right)x_n = b_2 &#8211; \dfrac{a_{21}}{a_{11}}b_1 \)<br />
+  <br /> $$ \left(a_{22} &#8211; \dfrac{a_{21}{a_{11}a_{12}\right)x_2 + \cdots + \left(a_{2n} &#8211; \dfrac{a_{21}{a_{11}a_{1n}\right)x_n = b_2 &#8211; \dfrac{a_{21}{a_{11}b_1 $$<br />
 </center>
 
 
     
-substituindo cada termo dentro dos parênteses por um novo \(a&#8217;_{2i} \) , onde \(i=2 \ldots n \) , temos que a Equação [5](#eq5) pode ser escrita como
+substituindo cada termo dentro dos parênteses por um novo $$a&#8217;_{2i} $$ , onde $$i=2 \ldots n $$ , temos que a Equação [5](#eq5) pode ser escrita como
      
 <a name="eq6">(eq6)</a>
       
 
 
 <center>
-  <br /> \( a&#8217;_{22}x_2 + \cdots + a&#8217;_{2n}x_n = b&#8217;_2 \)<br />
+  <br /> $$ a&#8217;_{22}x_2 + \cdots + a&#8217;_{2n}x_n = b&#8217;_2 $$<br />
 </center>
 
 
     
-onde \(a&#8217;\_{2i} = \left( a\_{2i} &#8211; \dfrac{a\_{21}}{a\_{11}}a_{1n} \right) \) . 
+onde $$a&#8217;\_{2i} = \left( a\_{2i} &#8211; \dfrac{a\_{21}{a\_{11}a_{1n} \right) $$ . 
 
-Assim como fizemos com a segunda linha do sistema, repetimos o processo para as demais \(n \) equações. Ou seja, multiplicamos \(\frac{a\_{31}}{a\_{11}} \) pela Equação [1](#eq1) e subtraímos o resultado da equação [3](#eq3), e continuamos o processo até a última equação. 
+Assim como fizemos com a segunda linha do sistema, repetimos o processo para as demais $$n $$ equações. Ou seja, multiplicamos $$\frac{a\_{31}{a\_{11} $$ pela Equação [1](#eq1) e subtraímos o resultado da equação [3](#eq3), e continuamos o processo até a última equação. 
 
-No processo de eliminação, o termo \(a\_{11} \) é conhecido como &#8220;pivô&#8221;, e a multiplicação de cada linha pelo elemento \(\frac{a\_{2i}}{a_{11}} \) é denominada &#8220;normalização&#8221;. Portanto, podemos notar que o pivô nulo é um problema no processo de normalização, já que provoca uma divisão por zero. Por isso, em implementações reais, devemos utilizar algumas técnicas de &#8220;re-normalização&#8221; para eliminarmos o pivô nulo do processo. 
+No processo de eliminação, o termo $$a\_{11} $$ é conhecido como &#8220;pivô&#8221;, e a multiplicação de cada linha pelo elemento $$\frac{a\_{2i}{a_{11} $$ é denominada &#8220;normalização&#8221;. Portanto, podemos notar que o pivô nulo é um problema no processo de normalização, já que provoca uma divisão por zero. Por isso, em implementações reais, devemos utilizar algumas técnicas de &#8220;re-normalização&#8221; para eliminarmos o pivô nulo do processo. 
 
 Após a primeira eliminação, a qual estamos descrevendo até aqui, o sistema linear modificado ficará:
      
@@ -370,7 +370,7 @@ Após a primeira eliminação, a qual estamos descrevendo até aqui, o sistema l
 
 
 <center>
-  <br /> \( a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \)<br />
+  <br /> $$ a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 $$<br />
 </center>
 
 
@@ -380,7 +380,7 @@ Após a primeira eliminação, a qual estamos descrevendo até aqui, o sistema l
 
 
 <center>
-  <br /> \( \hspace{35pt} a&#8217;_{22}x_2 + \cdots + a&#8217;_{2n}x_n = b&#8217;_2 \)<br />
+  <br /> $$ \hspace{35pt} a&#8217;_{22}x_2 + \cdots + a&#8217;_{2n}x_n = b&#8217;_2 $$<br />
 </center>
 
 
@@ -388,7 +388,7 @@ Após a primeira eliminação, a qual estamos descrevendo até aqui, o sistema l
 
 
 <center>
-  \(\vdots \) \(\vdots \)
+  $$\vdots $$ $$\vdots $$
 </center>
 
 
@@ -398,19 +398,19 @@ Após a primeira eliminação, a qual estamos descrevendo até aqui, o sistema l
 
 
 <center>
-  <br /> \( \hspace{35pt} a&#8217;_{n2}x_2 + \cdots + a&#8217;_{nn}x_n = b&#8217;_n \)<br />
+  <br /> $$ \hspace{35pt} a&#8217;_{n2}x_2 + \cdots + a&#8217;_{nn}x_n = b&#8217;_n $$<br />
 </center>
 
 
     
-agora, repetimos o mesmo processo de eliminação, mas tomando como coeficiente de normalização como sendo \(\dfrac{a&#8217;\_{32}}{a&#8217;\_{22}} \) , aplicando-o à todas equações a partir da terceira. Este processo deve continuar usando os pivôs obtidos nas equações remanescentes. Ou seja, repetimos o pivotamento e normalização descritas para até a equação \((n-1) \) , eliminando até o termo \(x_{n-1} \) da \(n-esima \) equação. Com isso, obteremos o sistema triangular a seguir:
+agora, repetimos o mesmo processo de eliminação, mas tomando como coeficiente de normalização como sendo $$\dfrac{a&#8217;\_{32}{a&#8217;\_{22} $$ , aplicando-o à todas equações a partir da terceira. Este processo deve continuar usando os pivôs obtidos nas equações remanescentes. Ou seja, repetimos o pivotamento e normalização descritas para até a equação $$(n-1) $$ , eliminando até o termo $$x_{n-1} $$ da $$n-esima $$ equação. Com isso, obteremos o sistema triangular a seguir:
      
 <a name="eq10">(eq10)</a>
       
 
 
 <center>
-  <br /> \( a_{11}x_1 + a_{12}x_2 + a_{13}x_3 + \cdots + a_{1n}x_n = b_1 \)<br />
+  <br /> $$ a_{11}x_1 + a_{12}x_2 + a_{13}x_3 + \cdots + a_{1n}x_n = b_1 $$<br />
 </center>
 
 
@@ -420,7 +420,7 @@ agora, repetimos o mesmo processo de eliminação, mas tomando como coeficiente 
 
 
 <center>
-  <br /> \( \hspace{35pt} a&#8217;_{22}x_2 + a&#8217;_{23}x_3 + \cdots + a&#8217;_{2n}x_n = b&#8217;_2 \)<br />
+  <br /> $$ \hspace{35pt} a&#8217;_{22}x_2 + a&#8217;_{23}x_3 + \cdots + a&#8217;_{2n}x_n = b&#8217;_2 $$<br />
 </center>
 
 
@@ -430,7 +430,7 @@ agora, repetimos o mesmo processo de eliminação, mas tomando como coeficiente 
 
 
 <center>
-  <br /> \( \hspace{70pt} a&#8221;_{33}x_3 + \cdots + a&#8221;_{3n}x_n = b&#8221;_3 \)<br />
+  <br /> $$ \hspace{70pt} a&#8221;_{33}x_3 + \cdots + a&#8221;_{3n}x_n = b&#8221;_3 $$<br />
 </center>
 
 
@@ -438,7 +438,7 @@ agora, repetimos o mesmo processo de eliminação, mas tomando como coeficiente 
 
 
 <center>
-  \(\hspace{50pt} \vdots \)
+  $$\hspace{50pt} \vdots $$
 </center>
 
 
@@ -448,34 +448,34 @@ agora, repetimos o mesmo processo de eliminação, mas tomando como coeficiente 
 
 
 <center>
-  <br /> \( \hspace{110pt} a^{(n-1)}_{nn}x_n = b^{(n-1)}_n \)<br />
+  <br /> $$ \hspace{110pt} a^{(n-1)}_{nn}x_n = b^{(n-1)}_n $$<br />
 </center>
 
-A partir do sistema triangular, a solução é facilmente obtida, a começar por \(x_n \) :
+A partir do sistema triangular, a solução é facilmente obtida, a começar por $$x_n $$ :
       
 <a name="eq14">(eq14)</a>
       
 
 
 <center>
-  <br /> \( x_n = \dfrac{b^{n-1}_n}{a^{n-1}_{nn}} \)<br />
+  <br /> $$ x_n = \dfrac{b^{n-1}_n}{a^{n-1}_{nn} $$<br />
 </center>
 
 
     
-substituindo esse resultado na equação anterior, isto é, na equação \((n-1) \), cuja dependência está apenas nas variáveis \(x\_{n-1} \) e \(x\_n\), podemos determinar também \(x_{n-1}\). Esse processo de ir substituindo as incógnitas já encontradas nas equações anteriores chamaremos de _backtrack_. A partir dele, encontramos todos \(x_i\) pela da fórmula:
+substituindo esse resultado na equação anterior, isto é, na equação $$(n-1) $$, cuja dependência está apenas nas variáveis $$x\_{n-1} $$ e $$x\_n$$, podemos determinar também $$x_{n-1}$$. Esse processo de ir substituindo as incógnitas já encontradas nas equações anteriores chamaremos de _backtrack_. A partir dele, encontramos todos $$x_i$$ pela da fórmula:
     
 <a name="eq15">(eq15)</a>
       
 
 
 <center>
-  <br /> \( x_i = \dfrac{ b^{(i-1)}_{i} &#8211; \sum^{n}_{j=i+1} a^{(i-1)}_{ij}x_j }{a^{i-1}_{ii}} \)<br />
+  <br /> $$ x_i = \dfrac{ b^{(i-1)}_{i} &#8211; \sum^{n}_{j=i+1} a^{(i-1)}_{ij}x_j }{a^{i-1}_{ii} $$<br />
 </center>
 
 
     
-para \(i = (n-1), (n-2), \ldots, 1 \) 
+para $$i = (n-1), (n-2), \ldots, 1 $$ 
 
 
 
@@ -571,7 +571,7 @@ Ainda que muitos sistemas de equações possam ser resolvidos com a última impl
 
 Sendo assim, com o intuito de contornar esses erros, intrínsecos à precisão computacional, as técnicas para tornar o nosso programa mais robusto são:
 
-  * **Aumentar o número de algarismos significativos:** Com mais casas disponíveis para manipulação dos dados, os problemas do mal condicionamento e da propagação do erro são minimizados ao longo de uma série muito grande de cálculos. Por isso, o ideal é sempre usarmos a maior palavra disponível para manipulação de ponto flutuante disponível para nosso sistema (em geral, sempre que precisarmos de valores de até \(16 \) casas de precisão (equivalente ao tipo _float_ em C), devemos prefirir usar o tipo _double_. As arquiteturas mais atuais possuem tecnologias avançadas de tratamento de ponto flutuante, tais como _SSE_, que contém registradores de até \(128 \) _bits_, o que permite uma precisão muito superior, e que deve ser explorada). 
+  * **Aumentar o número de algarismos significativos:** Com mais casas disponíveis para manipulação dos dados, os problemas do mal condicionamento e da propagação do erro são minimizados ao longo de uma série muito grande de cálculos. Por isso, o ideal é sempre usarmos a maior palavra disponível para manipulação de ponto flutuante disponível para nosso sistema (em geral, sempre que precisarmos de valores de até $$16 $$ casas de precisão (equivalente ao tipo _float_ em C), devemos prefirir usar o tipo _double_. As arquiteturas mais atuais possuem tecnologias avançadas de tratamento de ponto flutuante, tais como _SSE_, que contém registradores de até $$128 $$ _bits_, o que permite uma precisão muito superior, e que deve ser explorada). 
       * **Pivoteamento:** Para solucionar o problema do pivô nulo (ou muito menor que o elemento da normalização), podemos balancear o sistema, a fim de gerar uma pré-normalização, a fim de evitar uma disparidade muito grande entre os operandos. 
         Assim, antes que cada linha seja normalizada, o programa deve determinar o maior coeficiente disponível na coluna logo abaixo do pivô. Em seguida, as linhas devem ser trocadas para que o maior elemento dado seja o pivô. Após este re-pivotamento parcial, buscamos o maior elemento nas colunas, a fim de encontrar também o maior elemento dentre as colunas, refinando assim o melhor pivô a ser usado. 
         
@@ -595,9 +595,9 @@ Sendo assim, com o intuito de contornar esses erros, intrínsecos à precisão c
         (b[p], b[k]) = (b[k], b[p])</pre>
         </div>
         
-        Este função é projetada para ser chamada antes de cada nova normalização do sistema. Isso é, como cada eliminação progressiva é feita em cada linha, \((n-1) \) pivôs serão gerados, como já discutimos anteriormente. Sendo assim, para cada um deles, devemos chamar a função _pivot_ para permitir o balanceamento do sistema. 
+        Este função é projetada para ser chamada antes de cada nova normalização do sistema. Isso é, como cada eliminação progressiva é feita em cada linha, $$(n-1) $$ pivôs serão gerados, como já discutimos anteriormente. Sendo assim, para cada um deles, devemos chamar a função _pivot_ para permitir o balanceamento do sistema. 
         
-        Da função _pivot_, temos que a linha \(3 \) captura inicialmente a posição do primeiro pivô, enquanto que a linha \(4 \) coloca na variável _bigger_, o seu valor. O laço de repetição definido da linha \(5 \) à \(9 \) é que realiza a busca na matriz dos coeficientes. Caso haja um valor maior que o pivô inicial, seu valor e posição são atualizados nas variáveis _bigger_ e _p_. As linhas que seguem servem para verificar se a posição do maior pivô foi alterado. Caso isso tenha ocorrido, o sistema é rearranjado para a forma pivotada, conforme descrevemos anteriormente. 
+        Da função _pivot_, temos que a linha $$3 $$ captura inicialmente a posição do primeiro pivô, enquanto que a linha $$4 $$ coloca na variável _bigger_, o seu valor. O laço de repetição definido da linha $$5 $$ à $$9 $$ é que realiza a busca na matriz dos coeficientes. Caso haja um valor maior que o pivô inicial, seu valor e posição são atualizados nas variáveis _bigger_ e _p_. As linhas que seguem servem para verificar se a posição do maior pivô foi alterado. Caso isso tenha ocorrido, o sistema é rearranjado para a forma pivotada, conforme descrevemos anteriormente. 
 
 ## 4. Implementação da Eliminação de Gauss </p> 
 

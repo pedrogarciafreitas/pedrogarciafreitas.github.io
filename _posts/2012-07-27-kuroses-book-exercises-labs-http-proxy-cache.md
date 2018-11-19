@@ -6,7 +6,7 @@ author: SAWP
 excerpt: A caching proxy server accelerates service requests by retrieving content saved from a previous request made by the same client or even other clients. Caching proxies keep local copies of frequently requested resources, allowing large organizations to significantly reduce their upstream bandwidth usage and costs, while significantly increasing performance. In this post we shows a Proxy Cache implemented in Scala language.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1689
-permalink: p=1689
+permalink: /p=1689
 wp-syntax-cache-content:
   - |
     a:5:{i:1;s:11020:"

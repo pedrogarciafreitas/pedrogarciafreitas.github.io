@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Quadratura de tanh-sinh  é um método para a integração numérica introduzido por Hidetosi Takahasi e Mori Masatake em 1974.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1745
-permalink: p=1745
+permalink: /p=1745
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:8754:"
@@ -111,22 +111,22 @@ wp-syntax-cache-content:
 categories:
   - Computational Methods
 ---
-A quadratura _tanh-sinh_ é um método de integração numérica que utiliza a seguinte mudança de variáveis para transformar uma integral definida no intervalo \([-1,1] \) em um somatório infinito:
+A quadratura _tanh-sinh_ é um método de integração numérica que utiliza a seguinte mudança de variáveis para transformar uma integral definida no intervalo $$[-1,1] $$ em um somatório infinito:
   
 
 
 <center>
-  \( x = tanh \left(\frac{1}{2}~\pi~sinh~t \right) \)
+  $$ x = tanh \left(\frac{1}{2}~\pi~sinh~t \right) $$
 </center>
 
 
   
-Após essa transformação, os integrandos decaem com uma proporção exponencial. Para um dado passo de tamanho \(h \) , a integral pode ser aproximada por
+Após essa transformação, os integrandos decaem com uma proporção exponencial. Para um dado passo de tamanho $$h $$ , a integral pode ser aproximada por
   
 
 
 <center>
-  \( \int_{-1}^1 f(x) dx \approx \sum_{k=-\infty}^{\infty} H_k f(a_k) \)
+  $$ \int_{-1}^1 f(x) dx \approx \sum_{k=-\infty}^{\infty} H_k f(a_k) $$
 </center>
 
 
@@ -136,7 +136,7 @@ com as abcissas
 
 
 <center>
-  \( a_k = tanh\left(\frac{1}{2} \pi ~ sinh(k h) \right) \)
+  $$ a_k = tanh\left(\frac{1}{2} \pi ~ sinh(k h) \right) $$
 </center>
 
 
@@ -146,21 +146,21 @@ e pesos
 
 
 <center>
-  \( H_k = \dfrac{\frac{1}{2} h \pi ~ cosh(k h)}{cosh^2 \left(\frac{1}{2} \pi ~ sinh(k h) \right)} \)
+  $$ H_k = \dfrac{\frac{1}{2} h \pi ~ cosh(k h)}{cosh^2 \left(\frac{1}{2} \pi ~ sinh(k h) \right)} $$
 </center>
 
-Assim como na quadratura gaussiana, a quadratura _tanh-sinh_ é adequada para integração de funções quaisquer. A convergência dessa fórmula é exponencial em base dois (em relação ao número de divisões). Ou seja, duplicando-se \(n \) temos que o número de dígitos corretos dobra também, sendo o método de quadratura que possui a maior velocidade de convergência conhecido. 
+Assim como na quadratura gaussiana, a quadratura _tanh-sinh_ é adequada para integração de funções quaisquer. A convergência dessa fórmula é exponencial em base dois (em relação ao número de divisões). Ou seja, duplicando-se $$n $$ temos que o número de dígitos corretos dobra também, sendo o método de quadratura que possui a maior velocidade de convergência conhecido. 
 
 &nbsp;
 
 ### Escolha do tamanho do passo de discretização (h) 
 
-Há uma relação entre o número de pontos usados na soma ( \(n \) ) e o tamanho do passo que deve ser preservada. O \(h \) deve ser escolhido da seguinte forma
+Há uma relação entre o número de pontos usados na soma ( $$n $$ ) e o tamanho do passo que deve ser preservada. O $$h $$ deve ser escolhido da seguinte forma
   
 
 
 <center>
-  \( h = \frac{4}{2^n} \)
+  $$ h = \frac{4}{2^n} $$
 </center>
 
 &nbsp;

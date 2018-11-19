@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Calculating square using sums.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1505
-permalink: p=1505
+permalink: /p=1505
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3357:"
@@ -41,12 +41,12 @@ wp-syntax-cache-content:
 categories:
   - Scala Notes
 ---
-The square \(n*n\) can be computed using the following sequence:
+The square $$n*n$$ can be computed using the following sequence:
   
 
 
 <center>
-  <br /> \( n^2 = n + 2 \sum_{i=0}^{n-1} i\)<br />
+  <br /> $$ n^2 = n + 2 \sum_{i=0}^{n-1} i$$<br />
 </center>
 
 In scala:

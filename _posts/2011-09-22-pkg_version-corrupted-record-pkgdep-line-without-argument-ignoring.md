@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: 'Fixing "pkg_version: corrupted record (pkgdep line without argument), ignoring" error on FreeBSD ports.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1338
-permalink: p=1338
+permalink: /p=1338
 categories:
   - FreeBSD
 ---

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Nos dois últimos posts apresentamos o desenvolvimento para ajustar dados em uma equação da reta através de mínimos quadrados. Contudo, existem muitos eventos em que o modelo obedece à um comportamento polinomial. Para tais modelos é necessário adaptar o ajuste para uma função polinomial de grau superior.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1350
-permalink: p=1350
+permalink: /p=1350
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:9188:"
@@ -122,7 +122,7 @@ A regressão polinomial pode ser vista como uma generalização da regressão li
 
 
 <center>
-  <br /> \(y = \alpha_0 + \alpha_1 x + \epsilon \)<br />
+  <br /> $$y = \alpha_0 + \alpha_1 x + \epsilon $$<br />
 </center>
 
 
@@ -132,17 +132,17 @@ utilizamos
 
 
 <center>
-  <br /> \(y = \alpha_0 + \alpha_1 x + \alpha_2 x^2 + \cdots + \alpha_m x ^m + \epsilon \)<br />
+  <br /> $$y = \alpha_0 + \alpha_1 x + \alpha_2 x^2 + \cdots + \alpha_m x ^m + \epsilon $$<br />
 </center>
 
 
     
-Para ajustarmos os parâmetros dessa função, basta que resolvamos um sistema de \(m + 1 \) equações lineares simultâneas, similarmente ao desenvolvimento da regressão linear múltipla. Assim, no caso da regressão polinomial, o erro padrão pode ser formulado como
+Para ajustarmos os parâmetros dessa função, basta que resolvamos um sistema de $$m + 1 $$ equações lineares simultâneas, similarmente ao desenvolvimento da regressão linear múltipla. Assim, no caso da regressão polinomial, o erro padrão pode ser formulado como
     
 
 
 <center>
-  <br /> \(s = \sqrt{\dfrac{S_r}{n &#8211; (m + 1)}}\)<br />
+  <br /> $$s = \sqrt{\dfrac{S_r}{n &#8211; (m + 1)}$$<br />
 </center>. 
 
 Como exemplo, vamos tomar o ajuste dos dados apresentados no gráfico do início desse texto. Desta figura, podemos notar que o comportamento dos pontos segue uma função parabólica, o que sugere que devemos ajustar um polinômio de segundo grau:
@@ -150,7 +150,7 @@ Como exemplo, vamos tomar o ajuste dos dados apresentados no gráfico do início
 
 
 <center>
-  <br /> \(y = \alpha_0 + \alpha_1 x + \alpha_2 x^2 + \epsilon \)<br />
+  <br /> $$y = \alpha_0 + \alpha_1 x + \alpha_2 x^2 + \epsilon $$<br />
 </center>
 
 
@@ -160,7 +160,7 @@ Nesse caso, a soma dos quadrados dos resíduos é
 
 
 <center>
-  <br /> \(S_r = \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_{i}^2 \right)^2 \)<br />
+  <br /> $$S_r = \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_{i}^2 \right)^2 $$<br />
 </center>
 
 Assim como fizemos para regressão linear, tomamos a derivada da equação acima com relação à cada um dos coeficientes desconhecidos do polinômio:
@@ -168,7 +168,7 @@ Assim como fizemos para regressão linear, tomamos a derivada da equação acima
 
 
 <center>
-  <br /> \(\dfrac{dS_r}{d \alpha_0} = -2 \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_i^2 \right) \) <br /> \(\dfrac{dS_r}{d \alpha_1} = -2 \sum_{i=1}^{n} x_i \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_i^2 \right) \) <br /> \(\dfrac{dS_r}{d \alpha_2} = -2 \sum_{i=1}^{n} x_i^2 \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_i^2 \right) \) <br />
+  <br /> $$\dfrac{dS_r}{d \alpha_0} = -2 \sum_{i=1}^{n} \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_i^2 \right) $$ <br /> $$\dfrac{dS_r}{d \alpha_1} = -2 \sum_{i=1}^{n} x_i \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_i^2 \right) $$ <br /> $$\dfrac{dS_r}{d \alpha_2} = -2 \sum_{i=1}^{n} x_i^2 \left( y_i &#8211; \alpha_0 &#8211; \alpha_1 x_i &#8211; \alpha_2 x_i^2 \right) $$ <br />
 </center>
 
 
@@ -178,16 +178,16 @@ Igualando estas equações à zero e obtemos o seguinte conjunto de equações:
 
 
 <center>
-  <br /> \(n \alpha_0 + \alpha_1 \sum_{i=1}^{n} x_i + \alpha_2 \sum_{i=1}^{n} x_i^2 = \sum_{i=1}^{n} y_i \) <br /> \(\alpha_0 \sum_{i=1}^{n} x_i + \alpha_1 \sum_{i=1}^{n} x_i^2 + \alpha_2 \sum_{i=1}^{n} x_i^3 = \sum_{i=1}^{n} y_i x_i \) <br /> \(\alpha_0 \sum_{i=1}^{n} x_i^2 + \alpha_1 \sum_{i=1}^{n} x_i^3 + \alpha_2 \sum_{i=1}^{n} x_i^4 = \sum_{i=1}^{n} y_i x_i^2 \) <br />
+  <br /> $$n \alpha_0 + \alpha_1 \sum_{i=1}^{n} x_i + \alpha_2 \sum_{i=1}^{n} x_i^2 = \sum_{i=1}^{n} y_i $$ <br /> $$\alpha_0 \sum_{i=1}^{n} x_i + \alpha_1 \sum_{i=1}^{n} x_i^2 + \alpha_2 \sum_{i=1}^{n} x_i^3 = \sum_{i=1}^{n} y_i x_i $$ <br /> $$\alpha_0 \sum_{i=1}^{n} x_i^2 + \alpha_1 \sum_{i=1}^{n} x_i^3 + \alpha_2 \sum_{i=1}^{n} x_i^4 = \sum_{i=1}^{n} y_i x_i^2 $$ <br />
 </center>
 
-Dessas três últimas equações lineares, temos apenas três incógnitas: \(\alpha\_0 \) , \(\alpha\_1 \) e \(\alpha_2 \) . Assim, resolvendo essas equações, temos os parâmetros ajustados. 
+Dessas três últimas equações lineares, temos apenas três incógnitas: $$\alpha\_0 $$ , $$\alpha\_1 $$ e $$\alpha_2 $$ . Assim, resolvendo essas equações, temos os parâmetros ajustados. 
 
 &nbsp;
 
 ## 3. Implementação 
 
-Como podemos notar, para um conjunto de \(n = m + 1 \) pontos amostrados, é possível ajustar um polinômio de grau \(m \) ou menor. Na implementação abaixo utilizamos um ajuste automático do grau polinomial, escolhendo o valor de \(m \) que minimize o erro padrão. 
+Como podemos notar, para um conjunto de $$n = m + 1 $$ pontos amostrados, é possível ajustar um polinômio de grau $$m $$ ou menor. Na implementação abaixo utilizamos um ajuste automático do grau polinomial, escolhendo o valor de $$m $$ que minimize o erro padrão. 
 
 Note que na função abaixo, utilizamos o método de Cholesky para resolução do sistema linear. Poderíamos utilizar qualquer outro método, não sendo esse escolhido obrigatório para o ajuste correto dos dados. 
 

@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: 'Fixing FreeBSD ports www/libxul: nsHtml5ElementName.cpp nsHtml5StateSnapshot.cpp and how to get through the compile error'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=892
-permalink: p=892
+permalink: /p=892
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:2180:"

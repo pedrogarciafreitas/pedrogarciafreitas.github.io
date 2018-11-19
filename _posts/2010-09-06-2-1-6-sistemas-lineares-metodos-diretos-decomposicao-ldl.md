@@ -6,7 +6,7 @@ author: SAWP
 excerpt: ' Um aspecto da decomposição de Cholesky que insere um custo adicional na computação das matrizes decompostas está na necessidade de calcular a raiz quadrada durante a resolução do problema. Contudo, o cálculo da raiz quadrada é um processo caro, sujeito à propagações de erros maiores do que aqueles obtidos com a utilização de operações simples de ponto flutuante, tais como adição e multiplicação. Neste artigo mostraremos uma modificação na decomposição de Cholesky que elimina necessidade do cálculo da raiz quadrada, sendo mais eficiente e propagando menos erros.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=704
-permalink: p=704
+permalink: /p=704
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:27156:"
@@ -257,56 +257,56 @@ categories:
 ---
 ## 1. A Fatoração LDL 
 
-A Fatoração de Cholesky expressa uma matriz simétrica \(A \) como o produto de uma matriz triangular \(L \) (chamada de Fator de Cholesky) pela sua transposta \(L^T \) , na forma:
+A Fatoração de Cholesky expressa uma matriz simétrica $$A $$ como o produto de uma matriz triangular $$L $$ (chamada de Fator de Cholesky) pela sua transposta $$L^T $$ , na forma:
     
  <a name="eq1">(eq1)</a>
 
 <center>
-  \( A = LL^T \)
+  $$ A = LL^T $$
 </center>
 
 
     
-onde \(L \) será triangular superior. 
+onde $$L $$ será triangular superior. 
 
-Uma vez que se identifica que uma matriz \(A \) é hermitiana, podemos utilizar a Equação [1](#eq1) para gerar \(L \) e \(L^T \) a partir de \(A \) . Ou seja, ao multiplicarmos e igualarmos seus termos, obtemos as seguintes relações:
+Uma vez que se identifica que uma matriz $$A $$ é hermitiana, podemos utilizar a Equação [1](#eq1) para gerar $$L $$ e $$L^T $$ a partir de $$A $$ . Ou seja, ao multiplicarmos e igualarmos seus termos, obtemos as seguintes relações:
     
 <a name="eq2">(eq2)</a>
 
 <center>
-  <br /> \( l_{ki} = \frac{ a_{ki} &#8211; \sum_{j=1}^{i-1} l_{ij}~l_{kj} }{ l_{ii} } \)<br />
+  <br /> $$ l_{ki} = \frac{ a_{ki} &#8211; \sum_{j=1}^{i-1} l_{ij}~l_{kj} }{ l_{ii} } $$<br />
 </center>
 
 
     
-onde \(i = 1, 2, \ldots, k-1 \) . Além disso, o elemento da diagonal será
+onde $$i = 1, 2, \ldots, k-1 $$ . Além disso, o elemento da diagonal será
     
 obtido por
     
 <a name="eq3">(eq3)</a>
 
 <center>
-  <br /> \( l_{kk} = \sqrt{a_{kk} &#8211; \sum_{k-1}^{j=1} l_{kj}^{2} } \)<br />
+  <br /> $$ l_{kk} = \sqrt{a_{kk} &#8211; \sum_{k-1}^{j=1} l_{kj}^{2} } $$<br />
 </center>
 
-Todavia, podemos evitar o cálculo da raiz quadrada na última expressão, caso encontremos uma decomposição \(A = L D L^T \) tal que
+Todavia, podemos evitar o cálculo da raiz quadrada na última expressão, caso encontremos uma decomposição $$A = L D L^T $$ tal que
     
 
 
 <center>
-  <br /> \( A = \left[<br /> \begin{array}{cc}<br /> \alpha & v^T \\<br /> v & C<br /> \end{array}<br /> \right] =<br /> \left[<br /> \begin{array}{cc}<br /> 1 & 0 \\<br /> \frac{v}{\alpha} & I<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{cc}<br /> \alpha & 0 \\<br /> 0 & C &#8211; \frac{v v^T}{\alpha}<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{cc}<br /> 1 & \frac{v^T}{\alpha} \\<br /> 0 & I<br /> \end{array}<br /> \right] \)<br />
+  <br /> $$ A = \left[<br /> \begin{array}{cc}<br /> \alpha & v^T \\<br /> v & C<br /> \end{array}<br /> \right] =<br /> \left[<br /> \begin{array}{cc}<br /> 1 & 0 \\<br /> \frac{v}{\alpha} & I<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{cc}<br /> \alpha & 0 \\<br /> 0 & C &#8211; \frac{v v^T}{\alpha}<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{cc}<br /> 1 & \frac{v^T}{\alpha} \\<br /> 0 & I<br /> \end{array}<br /> \right] $$<br />
 </center>
 
 
     
-Por exemplo, a expressão acima para um problema \(3 \times 3 \)
+Por exemplo, a expressão acima para um problema $$3 \times 3 $$
     
 
     
 
 
 <center>
-  \(\tiny A = \left[<br /> \begin{array}{ccc}<br /> 1 & 0 & 0 \\<br /> L_{21} & 1 & 0 \\<br /> L_{31} & L_{32} & 1<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{ccc}<br /> D_1 & 0 & 0 \\<br /> 0 & D_2 & 0 \\<br /> 0 & 0 & D_3<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{ccc}<br /> 1 & L_{21} & L_{31}\\<br /> 0 & 1 & L_{32} \\<br /> 0 & 0 & 1<br /> \end{array}<br /> \right] =<br /> \left[<br /> \begin{array}{ccc}<br /> D_1 & ~ & ~ \\<br /> L_{21} D_1 & L_{21}^{2}D_1 + D_2 & ~ \\<br /> L_{31} D_1 & L_{31} L_{21} D_1 + L_{32} D_2 & L_{31}^2 D_1 + L_{32}^{2} D_2 + D_3<br /> \end{array}<br /> \right] \)<br />
+  $$\tiny A = \left[<br /> \begin{array}{ccc}<br /> 1 & 0 & 0 \\<br /> L_{21} & 1 & 0 \\<br /> L_{31} & L_{32} & 1<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{ccc}<br /> D_1 & 0 & 0 \\<br /> 0 & D_2 & 0 \\<br /> 0 & 0 & D_3<br /> \end{array}<br /> \right]<br /> \left[<br /> \begin{array}{ccc}<br /> 1 & L_{21} & L_{31}\\<br /> 0 & 1 & L_{32} \\<br /> 0 & 0 & 1<br /> \end{array}<br /> \right] =<br /> \left[<br /> \begin{array}{ccc}<br /> D_1 & ~ & ~ \\<br /> L_{21} D_1 & L_{21}^{2}D_1 + D_2 & ~ \\<br /> L_{31} D_1 & L_{31} L_{21} D_1 + L_{32} D_2 & L_{31}^2 D_1 + L_{32}^{2} D_2 + D_3<br /> \end{array}<br /> \right] $$<br />
 </center>
 
 Portanto, podemos fazer a decomposição de Cholesky sem a necessidade da raiz quadrada através das relações
@@ -314,7 +314,7 @@ Portanto, podemos fazer a decomposição de Cholesky sem a necessidade da raiz q
 
 
 <center>
-  <br /> \( l_{ij} = \dfrac{\left( a_{ij} &#8211; \sum_{k=1}^{j-1} l_{ik} l_{jk} d_k \right)}{d_j} \)<br />
+  <br /> $$ l_{ij} = \dfrac{\left( a_{ij} &#8211; \sum_{k=1}^{j-1} l_{ik} l_{jk} d_k \right)}{d_j} $$<br />
 </center>
 
 
@@ -324,12 +324,12 @@ e
 
 
 <center>
-  <br /> \( d_i = a_{ii} &#8211; \sum_{k=1}^{i-1} l_{ik}^2 d_k \)<br />
+  <br /> $$ d_i = a_{ii} &#8211; \sum_{k=1}^{i-1} l_{ik}^2 d_k $$<br />
 </center>
 
 
     
-A partir destas funções, teremos as matrizes decompostas \(L = L \) e \(U = L^T \), que podem ser resolvidas por substituição regressiva os demais passos utilizados para resolução via decomposições LU. 
+A partir destas funções, teremos as matrizes decompostas $$L = L $$ e $$U = L^T $$, que podem ser resolvidas por substituição regressiva os demais passos utilizados para resolução via decomposições LU. 
 
 &nbsp;
 

@@ -11,7 +11,7 @@ excerpt: |
   Este artigo apresenta uma breve introdução aos métodos de busca de zeros de polinômios e dispõe uma adaptação do Método de Newton para suportar raízes complexas -- tipo de solução quase sempre presente para este tipo de função.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=457
-permalink: p=457
+permalink: /p=457
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:9188:"

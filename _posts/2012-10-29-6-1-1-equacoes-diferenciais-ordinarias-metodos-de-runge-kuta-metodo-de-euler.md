@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O método de Euler é o método mais básico de método explícito para integração numérica para equações diferenciais ordinárias.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1859
-permalink: p=1859
+permalink: /p=1859
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:4625:"
@@ -88,39 +88,39 @@ O método de Euler é um algoritmo destinado à solução de equações diferenc
 
 
 <center>
-  \( \dfrac{dy}{dx} = f(x,y) \)
+  $$ \dfrac{dy}{dx} = f(x,y) $$
 </center>
 
 
   
-onde \(y = y(x) \) . A solução analítica da equação diferencial ordinária (EDO) é justamente encontrar a equação que expressa \(y(x) \) . Por outro lado, quando utilizamos uma abordagem numérica, a solução retorna \(y(x) \) avaliado em \(x\). 
+onde $$y = y(x) $$ . A solução analítica da equação diferencial ordinária (EDO) é justamente encontrar a equação que expressa $$y(x) $$ . Por outro lado, quando utilizamos uma abordagem numérica, a solução retorna $$y(x) $$ avaliado em $$x$$. 
 
-Os métodos de Runge-Kuta são iterativos sobre a estimativa das variáveis e buscam aproximar a solução \(y = y(x) \) através de sucessivos passos. Temos que
+Os métodos de Runge-Kuta são iterativos sobre a estimativa das variáveis e buscam aproximar a solução $$y = y(x) $$ através de sucessivos passos. Temos que
   
 
 
 <center>
-  \( y_i = y_{i-1} + \phi h \)
+  $$ y_i = y_{i-1} + \phi h $$
 </center>
 
 
   
-onde \(\phi \) é a estimativa da inclinação (derivada), usada como estimadora dos novos valores (\(y\_i \)) a partir de valores prévios (\(y\_{i-1} \)) em uma distância \(h\) (extrapolada). A figura abaixo mostra esta extrapolação. 
+onde $$\phi $$ é a estimativa da inclinação (derivada), usada como estimadora dos novos valores ($$y\_i $$) a partir de valores prévios ($$y\_{i-1} $$) em uma distância $$h$$ (extrapolada). A figura abaixo mostra esta extrapolação. 
 
 <a name="#fig1" href="http://www.sawp.com.br/blog/wp-content/uploads/2012/10/graph1-300x300.png"><img class="aligncenter size-full wp-image-416" title="" src="http://www.sawp.com.br/blog/wp-content/uploads/2012/10/graph1-300x300.png" alt="numerical" width="400" height="400" /></a> 
 
-Todos os métodos de passo único possuem esta abordagem, sendo que se diferenciam pela forma em que \(\phi \) é estimado. Assim, a forma mais ingênua consiste em utilizar a própria equação diferencial (com o \(y&#8217; \) isolado) como inclinação da reta. Isto é, a inclinação no início do intervalo é tomada como uma inclinação média de todo intervalo. Tal abordagem simplista é utilizada no _método de Euler_. Outras abordagem são conhecidas como métodos de Runge-Kuta de ordens superior. 
+Todos os métodos de passo único possuem esta abordagem, sendo que se diferenciam pela forma em que $$\phi $$ é estimado. Assim, a forma mais ingênua consiste em utilizar a própria equação diferencial (com o $$y&#8217; $$ isolado) como inclinação da reta. Isto é, a inclinação no início do intervalo é tomada como uma inclinação média de todo intervalo. Tal abordagem simplista é utilizada no _método de Euler_. Outras abordagem são conhecidas como métodos de Runge-Kuta de ordens superior. 
 
 &nbsp;
 
 ## 2. Método de Euler 
 
-Conforme comentamos na seção anterior, o método de Euler utiliza a primeira derivada como estimativa direta da inclinação em \(x_i \) . Isto é,
+Conforme comentamos na seção anterior, o método de Euler utiliza a primeira derivada como estimativa direta da inclinação em $$x_i $$ . Isto é,
   
 
 
 <center>
-  \( \phi = \dfrac{dy}{dx} = f(x,y) \)
+  $$ \phi = \dfrac{dy}{dx} = f(x,y) $$
 </center>
 
 
@@ -130,7 +130,7 @@ Assim, a solução será dada por
 
 
 <center>
-  \( y_i = y_{i-1} + f(x_{i-1}, y_{i-1}) h \)
+  $$ y_i = y_{i-1} + f(x_{i-1}, y_{i-1}) h $$
 </center>
 
 &nbsp;
@@ -142,7 +142,7 @@ Supondo que precisamos resolver a seguinte equação:
 
 
 <center>
-  \( \dfrac{dy}{dx} = x + y \)
+  $$ \dfrac{dy}{dx} = x + y $$
 </center>
 
 
@@ -152,7 +152,7 @@ Sabemos que esta equação está na forma
 
 
 <center>
-  \( \dfrac{dy}{dx} &#8211; ay = g(x) \)
+  $$ \dfrac{dy}{dx} &#8211; ay = g(x) $$
 </center>
 
 
@@ -162,42 +162,42 @@ que possui solução
 
 
 <center>
-  \( y = e^{-ax} \int_{x_0}^{x} e^{as} g(s) ds + c e^{-at} \)
+  $$ y = e^{-ax} \int_{x_0}^{x} e^{as} g(s) ds + c e^{-at} $$
 </center>
 
 
   
-onde \(a=-1 \) e \(g(x)=x \) . Para \(x_0 = 0 \) , temos que a solução analítica da EDO em questão será
+onde $$a=-1 $$ e $$g(x)=x $$ . Para $$x_0 = 0 $$ , temos que a solução analítica da EDO em questão será
   
 
 
 <center>
-  \( y(x) = -1 -x + c e^x \)
+  $$ y(x) = -1 -x + c e^x $$
 </center>
 
 
   
-Ou seja, a solução é sempre integral, por isso o método de Euler soluciona em um intervalo de integração. Assim, supondo que queremos integrar \(f(x,y)\) no intervalo \(x \in [0,1] \) com condições iniciais \(x=0 \), \(y(x=0)=-1-0+ce^0=0 \) e passo de tamanho 0.5, temos que
+Ou seja, a solução é sempre integral, por isso o método de Euler soluciona em um intervalo de integração. Assim, supondo que queremos integrar $$f(x,y)$$ no intervalo $$x \in [0,1] $$ com condições iniciais $$x=0 $$, $$y(x=0)=-1-0+ce^0=0 $$ e passo de tamanho 0.5, temos que
   
 
 
 <center>
-  \( y(0.5) = y(0) + f(0, 1) 0.5 \)
+  $$ y(0.5) = y(0) + f(0, 1) 0.5 $$
 </center>
 
 
   
-onde \(y=1 \) , então \(f(0.1) = 0 + 1 = 1 \) . Portanto, a aproximação no primeiro passo será
+onde $$y=1 $$ , então $$f(0.1) = 0 + 1 = 1 $$ . Portanto, a aproximação no primeiro passo será
   
 
 
 <center>
-  \( y(0.5) = 1 + 1 * 0.5 = 1.5 \)
+  $$ y(0.5) = 1 + 1 * 0.5 = 1.5 $$
 </center>
 
 
   
-Novamente repetimos este processo, seguindo para \(y(0.5 + h) = y(1)\), refinando a aproximação. Como esse processo é repetitivo e monótono, utilizamos ele no exemplo de implementação. 
+Novamente repetimos este processo, seguindo para $$y(0.5 + h) = y(1)$$, refinando a aproximação. Como esse processo é repetitivo e monótono, utilizamos ele no exemplo de implementação. 
 
 &nbsp;
 

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Derivação numérica é a técnica de obter valores aproximados para a derivada de uma função usando valores da função em um conjunto de pontos e propriedades conhecidas da função. '
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1607
-permalink: p=1607
+permalink: /p=1607
 wp-syntax-cache-content:
   - |
     a:4:{i:1;s:2707:"
@@ -252,75 +252,75 @@ Quando uma função é representada por uma tabela de valores, a abordagem mais 
 
 
 <center>
-  \( f^{(k)}(x) = \sum_{j=1}^{n} l_{j}^{(k)}(x) f(a_j) + \frac{d^k}{dx^k} \left[ \frac{p_n(x)}{n!} f^{(n)}(\xi) \right] = y^{(k)}(x) + \frac{d^k}{dx^k} \left[ E(x) \right] \)
+  $$ f^{(k)}(x) = \sum_{j=1}^{n} l_{j}^{(k)}(x) f(a_j) + \frac{d^k}{dx^k} \left[ \frac{p_n(x)}{n!} f^{(n)}(\xi) \right] = y^{(k)}(x) + \frac{d^k}{dx^k} \left[ E(x) \right] $$
 </center>
 
 
   
-Em particular, para \(k=1 \) , temos
+Em particular, para $$k=1 $$ , temos
   
 
 
 <center>
-  \( f'(x) = \sum_{j=1}^{n} l&#8217;_j(x) f(a_k) + \frac{d}{dx} \left[ \frac{p_n(x)}{n!} f^{(n)}(\xi) \right] \)
+  $$ f'(x) = \sum_{j=1}^{n} l&#8217;_j(x) f(a_k) + \frac{d}{dx} \left[ \frac{p_n(x)}{n!} f^{(n)}(\xi) \right] $$
 </center>
 
 
   
-onde a derivada \(l_j(x) \) pode ser facilmente obtida pela interpolação de Lagrange, conforme mostramos no post 3.1.3. A determinação do erro \(E(x)\) é obtida por
+onde a derivada $$l_j(x) $$ pode ser facilmente obtida pela interpolação de Lagrange, conforme mostramos no post 3.1.3. A determinação do erro $$E(x)$$ é obtida por
   
 
 
 <center>
-  \( \frac{d^k}{dx^k} \left[ E(x) \right] = \frac{f^{(n)}(\xi)}{(n &#8211; k)!} \prod_{j=1}^{n-k} (x &#8211; \eta_j) \)
+  $$ \frac{d^k}{dx^k} \left[ E(x) \right] = \frac{f^{(n)}(\xi)}{(n &#8211; k)!} \prod_{j=1}^{n-k} (x &#8211; \eta_j) $$
 </center>
 
 
   
-onde os \(n-k \) pontos distintos \(\eta_j \) são independentes de \(x\) e são conhecidos nos intervalos
+onde os $$n-k $$ pontos distintos $$\eta_j $$ são independentes de $$x$$ e são conhecidos nos intervalos
   
 
 
 <center>
-  \( a_j < \eta_j < a_{j+k} \)
+  $$ a_j < \eta_j < a_{j+k} $$
 </center>
 
 
   
-em \(j=1,\ldots,n-k \) , \(\xi \) é o menos intervalo \(I \) que contém \(x \) e \(\eta\_j\). Se, no caso dos valores da função serem dados nos pontos de dados, são dados os valores das funções derivadas em alguns pontos. Assim, podemos derivar os coeficientes \(w\_{ij}^{(k)}(x)\) pela fórmula
+em $$j=1,\ldots,n-k $$ , $$\xi $$ é o menos intervalo $$I $$ que contém $$x $$ e $$\eta\_j$$. Se, no caso dos valores da função serem dados nos pontos de dados, são dados os valores das funções derivadas em alguns pontos. Assim, podemos derivar os coeficientes $$w\_{ij}^{(k)}(x)$$ pela fórmula
   
 
 
 <center>
-  \( f^{(k)}(x) \approx \sum_{j=1}^{n} \sum_{i=0}^{m_j} w_{ij}^{(k)}(x) f^{(i)}(a_j) \)
+  $$ f^{(k)}(x) \approx \sum_{j=1}^{n} \sum_{i=0}^{m_j} w_{ij}^{(k)}(x) f^{(i)}(a_j) $$
 </center>
 
-Uma abordagem alternativa para determinar a diferenciação numérica de dados para aproximação da primeira e segunda derivada é computar a interpolação spline cúbica e diferenciá-la. Para qualquer valor de \(x \) , nós podemos determinar dois nós \(a\_j \) e \(a\_{j+1} \) tal que \(a\_j < x < a\_{j+1} \) . Assim, \(y'(x) \approx S&#8217;\_j(x) \) e \(y&#8221; \approx S&#8221;\_j(x) \) , onde \(S\_j(x) \) é o pedaço da spline interpoladora &#8212; um polinômio de terceiro grau definido em \([a\_j, a_{j+1}] \) . A partir do que foi demonstrado no post 3.1.7, assumimos que, assintóticamente, temos \(h \) , a distância máxima entre dois nós da spline,
+Uma abordagem alternativa para determinar a diferenciação numérica de dados para aproximação da primeira e segunda derivada é computar a interpolação spline cúbica e diferenciá-la. Para qualquer valor de $$x $$ , nós podemos determinar dois nós $$a\_j $$ e $$a\_{j+1} $$ tal que $$a\_j < x < a\_{j+1} $$ . Assim, $$y'(x) \approx S&#8217;\_j(x) $$ e $$y&#8221; \approx S&#8221;\_j(x) $$ , onde $$S\_j(x) $$ é o pedaço da spline interpoladora &#8212; um polinômio de terceiro grau definido em $$[a\_j, a_{j+1}] $$ . A partir do que foi demonstrado no post 3.1.7, assumimos que, assintóticamente, temos $$h $$ , a distância máxima entre dois nós da spline,
   
 
 
 <center>
-  \( max |f^{(k)}(x) &#8211; S^k(x) | = O(h^{4-k}) \)
-</center>
-
-
-  
-para \(k=1,2 \) . Isso indica que a primeira e a segunda derivada da spline interpoladora é aproximadamente a derivada da função. Podemos ver isso mais claramente quando assumimos que os espaços são igualmente espaçados nos pontos amostrados. Temos, então, que
-  
-
-
-<center>
-  \( y^{(k)}(x) = \frac{1}{h^k} \sum_{j=1}^{n} l_j^{(k)}(m) f(a_i) \)
+  $$ max |f^{(k)}(x) &#8211; S^k(x) | = O(h^{4-k}) $$
 </center>
 
 
   
-onde \(x=a\_0 + h m \) , a diferenciação de \(l\_j(m) \) em relação à \(m \) vem do fato de que
+para $$k=1,2 $$ . Isso indica que a primeira e a segunda derivada da spline interpoladora é aproximadamente a derivada da função. Podemos ver isso mais claramente quando assumimos que os espaços são igualmente espaçados nos pontos amostrados. Temos, então, que
   
 
 
 <center>
-  \( \frac{dy}{dx} = \frac{dy}{dm} \frac{dm}{dx} = \frac{1}{m} \frac{dy}{dm} \)
+  $$ y^{(k)}(x) = \frac{1}{h^k} \sum_{j=1}^{n} l_j^{(k)}(m) f(a_i) $$
+</center>
+
+
+  
+onde $$x=a\_0 + h m $$ , a diferenciação de $$l\_j(m) $$ em relação à $$m $$ vem do fato de que
+  
+
+
+<center>
+  $$ \frac{dy}{dx} = \frac{dy}{dm} \frac{dm}{dx} = \frac{1}{m} \frac{dy}{dm} $$
 </center>
 
 De formula similar, podemos derivar outras fórmulas de interpolação e obter a derivada como a diferença dos valores interpolados. Por exemplo, quando usamos a fórmula de Newton, temos que
@@ -328,23 +328,23 @@ De formula similar, podemos derivar outras fórmulas de interpolação e obter a
 
 
 <center>
-  \( \frac{d^k}{dx^k} y(a_0 + hm) = \frac{1}{h^k} \frac{d^k}{dm^k} y(a_0 + hm) = \frac{1}{h^k} \sum_{j=0}^{n} \frac{d^k}{dm^k} \binom{m}{j} \Delta^j f_0 = \frac{1}{h^k} \sum_{j=k}^{n} \frac{d^k}{dm^k} \binom{m}{j} \Delta^j f_0 \)
+  $$ \frac{d^k}{dx^k} y(a_0 + hm) = \frac{1}{h^k} \frac{d^k}{dm^k} y(a_0 + hm) = \frac{1}{h^k} \sum_{j=0}^{n} \frac{d^k}{dm^k} \binom{m}{j} \Delta^j f_0 = \frac{1}{h^k} \sum_{j=k}^{n} \frac{d^k}{dm^k} \binom{m}{j} \Delta^j f_0 $$
 </center>
 
 
   
-O aparecimento do fator \(\frac{1}{h^k} \) torna explícito o fato de que a diferenciação numérica consiste na aproximação da função derivada por divisão de pequenos intervalos. Portanto, \(h \) deve ser um valor pequeno o suficiente para, considerando um erro de aproximação tolerado &#8212; lembrando que na solução analítica temos \(h \rightarrow 0 \) . 
+O aparecimento do fator $$\frac{1}{h^k} $$ torna explícito o fato de que a diferenciação numérica consiste na aproximação da função derivada por divisão de pequenos intervalos. Portanto, $$h $$ deve ser um valor pequeno o suficiente para, considerando um erro de aproximação tolerado &#8212; lembrando que na solução analítica temos $$h \rightarrow 0 $$ . 
 
 &nbsp;
 
 ## 3. Derivação Numérica de Funções 
 
-Quando precisamos computar a derivada da uma função que pode ser avaliada em qualquer ponto em um dado intervalo \(I \) , podemos construir os pontos utilizados na interpolação dessa função derivada. Se \(x + h \) e \(x &#8211; h \) estão contidos em \(I \) , utilizamos a expansão da série de Taylor:
+Quando precisamos computar a derivada da uma função que pode ser avaliada em qualquer ponto em um dado intervalo $$I $$ , podemos construir os pontos utilizados na interpolação dessa função derivada. Se $$x + h $$ e $$x &#8211; h $$ estão contidos em $$I $$ , utilizamos a expansão da série de Taylor:
   
 
 
 <center>
-  \( f(x+h) = f(x) + h f'(x) + \frac{h^2}{2} f&#8221;(x) + \cdots \)
+  $$ f(x+h) = f(x) + h f'(x) + \frac{h^2}{2} f&#8221;(x) + \cdots $$
 </center>
 
 
@@ -354,37 +354,37 @@ e
 
 
 <center>
-  \( f(x-h) = f(x) &#8211; h f'(x) + \frac{h^2}{2} f&#8221;(x) &#8211; \cdots \)
+  $$ f(x-h) = f(x) &#8211; h f'(x) + \frac{h^2}{2} f&#8221;(x) &#8211; \cdots $$
 </center>
 
 
   
-Subtraindo essas duas equações e dividindo por \(2h \) , os temos restantes são
+Subtraindo essas duas equações e dividindo por $$2h $$ , os temos restantes são
   
 
 
 <center>
-  \( f'(x) = \frac{f(x+h) &#8211; f(x-h)}{2h} + \sum_{i=1}^{\infty} \frac{f^{(2i+1)}(x)}{(2i+1)!} h^{2i} \)
+  $$ f'(x) = \frac{f(x+h) &#8211; f(x-h)}{2h} + \sum_{i=1}^{\infty} \frac{f^{(2i+1)}(x)}{(2i+1)!} h^{2i} $$
 </center>
 
 
   
-substituindo esse \(f'(x) \) na série de Taylor e isolando \(f&#8221;(x)\) , temos uma aproximação para a segunda derivada
+substituindo esse $$f'(x) $$ na série de Taylor e isolando $$f&#8221;(x)$$ , temos uma aproximação para a segunda derivada
   
 
 
 <center>
-  \( f&#8221;(x) = \frac{f(x+h) &#8211; 2f(x) + f(x-h)}{h^2} + \sum_{i=1}^{\infty} \frac{2 f^{(2i+2)}(x)}{(2i+2)!} h^{2i} \)
+  $$ f&#8221;(x) = \frac{f(x+h) &#8211; 2f(x) + f(x-h)}{h^2} + \sum_{i=1}^{\infty} \frac{2 f^{(2i+2)}(x)}{(2i+2)!} h^{2i} $$
 </center>
 
 
   
-Portanto, para um \(h \) suficiente pequeno, temos que o somatório de valores muito pequenos consiste de um resíduo, o que nos permite aproximar a primeira e a segunda derivada por
+Portanto, para um $$h $$ suficiente pequeno, temos que o somatório de valores muito pequenos consiste de um resíduo, o que nos permite aproximar a primeira e a segunda derivada por
   
 
 
 <center>
-  \( f'(x) \approx \frac{f(x+h) &#8211; f(x-h)}{2h} \)
+  $$ f'(x) \approx \frac{f(x+h) &#8211; f(x-h)}{2h} $$
 </center>
 
 
@@ -394,19 +394,19 @@ e
 
 
 <center>
-  \( f&#8221;(x) \approx \frac{f(x+h) &#8211; 2f(x) + f(x-h)}{h^2} \)
+  $$ f&#8221;(x) \approx \frac{f(x+h) &#8211; 2f(x) + f(x-h)}{h^2} $$
 </center>
 
 
   
-Assim, nossa estratégia consiste em avaliar as funções no ponto \(x \) a partir de um valor \(h \) suficientemente pequeno para o problema dado. 
+Assim, nossa estratégia consiste em avaliar as funções no ponto $$x $$ a partir de um valor $$h $$ suficientemente pequeno para o problema dado. 
 
-Note que podemos substituir \(f'(x)\) e \(f&#8221;(x)\) na série de Taylor para obter \(f&#8221;'(x)\), que por sua vez pode ser utilizada para obter \(f&#8221;&#8221;(x)\) e assim sucessivamente até obtermos a \(n\) derivada desejada. Note também que o resultado truncado da primeira e segunda derivada possui erro \(O(h)\). Contudo, utilizando mais pontos, podemos ter uma aproximação mais acurada, com erro \(O(h^2)\). Isto é, em vez de utilizarmos
+Note que podemos substituir $$f'(x)$$ e $$f&#8221;(x)$$ na série de Taylor para obter $$f&#8221;'(x)$$, que por sua vez pode ser utilizada para obter $$f&#8221;&#8221;(x)$$ e assim sucessivamente até obtermos a $$n$$ derivada desejada. Note também que o resultado truncado da primeira e segunda derivada possui erro $$O(h)$$. Contudo, utilizando mais pontos, podemos ter uma aproximação mais acurada, com erro $$O(h^2)$$. Isto é, em vez de utilizarmos
   
 
 
 <center>
-  \( f'(x) = \frac{f(x+h) &#8211; f(x-h)}{2h} + O(h) \)
+  $$ f'(x) = \frac{f(x+h) &#8211; f(x-h)}{2h} + O(h) $$
 </center>
 
 
@@ -416,69 +416,69 @@ podemos utilizar a expressão
 
 
 <center>
-  \( f'(x) = \frac{-f(x+2h) + 4f(x+h) &#8211; 3f(x)}{2h} + O(h^2) \)
+  $$ f'(x) = \frac{-f(x+2h) + 4f(x+h) &#8211; 3f(x)}{2h} + O(h^2) $$
 </center>
 
-Observe que na equação acima utilizamos 3 pontos para obter a primeira derivada. Esse segundo termo vêm da utilização de \(f&#8221;(x)\) na fórmula de Taylor, isolando-se \(f'(x) \) . Além disso, utilizamos os pontos \(x \) , \(x+h \) e \(x+2h \) . A utilização de pontos sucessivos ao ponto de avaliação é chamada de _diferenças divididas finitas progressivas_. Contudo, podemos utilizar os pontos anteriores (_regressiva_) ou ambos (_centrada_). Quanto mais próximo do ponto de avaliação, mais precisa é a aproximação. Por isso, as _diferenças divididas finitas centradas_ possuem maior acurácia. 
+Observe que na equação acima utilizamos 3 pontos para obter a primeira derivada. Esse segundo termo vêm da utilização de $$f&#8221;(x)$$ na fórmula de Taylor, isolando-se $$f'(x) $$ . Além disso, utilizamos os pontos $$x $$ , $$x+h $$ e $$x+2h $$ . A utilização de pontos sucessivos ao ponto de avaliação é chamada de _diferenças divididas finitas progressivas_. Contudo, podemos utilizar os pontos anteriores (_regressiva_) ou ambos (_centrada_). Quanto mais próximo do ponto de avaliação, mais precisa é a aproximação. Por isso, as _diferenças divididas finitas centradas_ possuem maior acurácia. 
 
-Nas próximas subseções, listamos as fórmulas das primeiras quadro derivadas numéricas utilizando as três escolhas de pontos. Para facilitar a notação, definimos como \(x\_{i+h} = x + ih \) e \(x\_{i-h} = x &#8211; ih \) . 
+Nas próximas subseções, listamos as fórmulas das primeiras quadro derivadas numéricas utilizando as três escolhas de pontos. Para facilitar a notação, definimos como $$x\_{i+h} = x + ih $$ e $$x\_{i-h} = x &#8211; ih $$ . 
 
 &nbsp;
 
 ### 3.1. Diferença Dividida Finita Progressiva 
 
   * Primeira derivada: 
-      * \(O(h)\) : \(f'(x) = \frac{f(x\_{i+1}) &#8211; f(x\_i)}{h} \) 
-      * \(O(h^2) \) : \(f'(x) = \frac{-f(x\_{i+2}) + 4f(x\_{i+1}) &#8211; 3f(x_i)}{2h} \) 
+      * $$O(h)$$ : $$f'(x) = \frac{f(x\_{i+1}) &#8211; f(x\_i)}{h} $$ 
+      * $$O(h^2) $$ : $$f'(x) = \frac{-f(x\_{i+2}) + 4f(x\_{i+1}) &#8211; 3f(x_i)}{2h} $$ 
   * Segunda derivada: 
-      * \(O(h)\) : \(f&#8221;(x) = \frac{f(x\_{i+2}) + 2f(x\_{i+1}) + f(x_i)}{h^2} \) 
-      * \(O(h^2)\) : \(f&#8221;(x) = \frac{-f(x\_{i+3}) + 4f(x\_{i+2}) &#8211; 5f(x\_{i+1}) + 2f(x\_i)}{h^2}\) 
+      * $$O(h)$$ : $$f&#8221;(x) = \frac{f(x\_{i+2}) + 2f(x\_{i+1}) + f(x_i)}{h^2} $$ 
+      * $$O(h^2)$$ : $$f&#8221;(x) = \frac{-f(x\_{i+3}) + 4f(x\_{i+2}) &#8211; 5f(x\_{i+1}) + 2f(x\_i)}{h^2}$$ 
   * Terceira derivada: 
-      * \(O(h)\) : \(f&#8221;'(x) = \frac{f(x\_{i+3}) &#8211; 3f(x\_{i+2}) + 3f(x\_{i+1}) -f(x\_i)}{h^3} \) 
-      * \(O(h^2) \) : \(f&#8221;'(x) = \frac{-3f(x\_{i+4}) + 14f(x\_{i+3}) &#8211; 24f(x\_{i+2}) + 18f(x\_{i+1}) &#8211; 5f(x_i)}{2h^3}\) 
+      * $$O(h)$$ : $$f&#8221;'(x) = \frac{f(x\_{i+3}) &#8211; 3f(x\_{i+2}) + 3f(x\_{i+1}) -f(x\_i)}{h^3} $$ 
+      * $$O(h^2) $$ : $$f&#8221;'(x) = \frac{-3f(x\_{i+4}) + 14f(x\_{i+3}) &#8211; 24f(x\_{i+2}) + 18f(x\_{i+1}) &#8211; 5f(x_i)}{2h^3}$$ 
   * Quarta derivada: 
-      * \(O(h) \) : \(f&#8221;&#8221;(x) = \frac{f(x\_{i+4}) &#8211; 4f(x\_{i+3}) +6f(x\_{i+2}) &#8211; 4f(x\_{i+1}) + f(x_i)}{h^4}\) 
-      * \(O(h^2) \) : \(f&#8221;&#8221;(x) = \frac{-2f(x\_{i+5}) + 11f(x\_{i+4}) &#8211; 24f(x\_{i+3}) + 26f(x\_{i+2}) &#8211; 14f(x\_{i+1}) + 3f(x\_i)}{h^4}\) 
+      * $$O(h) $$ : $$f&#8221;&#8221;(x) = \frac{f(x\_{i+4}) &#8211; 4f(x\_{i+3}) +6f(x\_{i+2}) &#8211; 4f(x\_{i+1}) + f(x_i)}{h^4}$$ 
+      * $$O(h^2) $$ : $$f&#8221;&#8221;(x) = \frac{-2f(x\_{i+5}) + 11f(x\_{i+4}) &#8211; 24f(x\_{i+3}) + 26f(x\_{i+2}) &#8211; 14f(x\_{i+1}) + 3f(x\_i)}{h^4}$$ 
 
 &nbsp;
 
 ### 3.2. Diferença Dividida Finita Regressiva 
 
   * Primeira derivada: 
-      * \(O(h) \) : \(f'(x) = \frac{-f(x\_{i-1}) + f(x\_i)}{h} \) 
-      * \(O(h^2) \) : \(f'(x) = \frac{f(x\_{i-2}) &#8211; 4f(x\_{i-1}) + 3f(x_i)}{2h} \) 
+      * $$O(h) $$ : $$f'(x) = \frac{-f(x\_{i-1}) + f(x\_i)}{h} $$ 
+      * $$O(h^2) $$ : $$f'(x) = \frac{f(x\_{i-2}) &#8211; 4f(x\_{i-1}) + 3f(x_i)}{2h} $$ 
   * Segunda derivada: 
-      * \(O(h) \) : \(f&#8221;(x) = \frac{f(x\_{i-2}) &#8211; 2f(x\_{i-1}) + f(x_i)}{h^2} \) 
-      * \(O(h^2) \) : \(f&#8221;(x) = \frac{-f(x\_{i-3}) + 4f(x\_{i-2}) &#8211; 5f(x\_{i-1}) + 2f(x\_i)}{h^2}\) 
+      * $$O(h) $$ : $$f&#8221;(x) = \frac{f(x\_{i-2}) &#8211; 2f(x\_{i-1}) + f(x_i)}{h^2} $$ 
+      * $$O(h^2) $$ : $$f&#8221;(x) = \frac{-f(x\_{i-3}) + 4f(x\_{i-2}) &#8211; 5f(x\_{i-1}) + 2f(x\_i)}{h^2}$$ 
   * Terceira derivada: 
-      * \(O(h) \) : \(f&#8221;'(x) = \frac{-f(x\_{i-3}) + 3f(x\_{i-2}) &#8211; 3f(x\_{i-1}) + f(x\_i)}{h^3}\) 
-      * \(O(h^2) \) : \(f&#8221;'(x) = \frac{3f(x\_{i-4}) &#8211; 14f(x\_{i-3}) + 24f(x\_{i-2}) &#8211; 18f(x\_{i-1}) + 5f(x_i)}{2h^3}\) 
+      * $$O(h) $$ : $$f&#8221;'(x) = \frac{-f(x\_{i-3}) + 3f(x\_{i-2}) &#8211; 3f(x\_{i-1}) + f(x\_i)}{h^3}$$ 
+      * $$O(h^2) $$ : $$f&#8221;'(x) = \frac{3f(x\_{i-4}) &#8211; 14f(x\_{i-3}) + 24f(x\_{i-2}) &#8211; 18f(x\_{i-1}) + 5f(x_i)}{2h^3}$$ 
   * Quarta derivada: 
-      * \(O(h)\) : \(f&#8221;&#8221;(x) = \frac{f(x\_{i-4}) &#8211; 4f(x\_{i-3}) + 6f(x\_{i-2}) &#8211; 4f(x\_{i-1}) + f(x_i)}{h^4}\) 
-      * \(O(h^2)\) : \(f&#8221;&#8221;(x) = \frac{-2f(x\_{i-5}) + 11f(x\_{i-4}) -24f(x\_{i-3}) + 26f(x\_{i-2}) &#8211; 14f(x\_{i-1}) + 3f(x\_i)}{h^4}\) 
+      * $$O(h)$$ : $$f&#8221;&#8221;(x) = \frac{f(x\_{i-4}) &#8211; 4f(x\_{i-3}) + 6f(x\_{i-2}) &#8211; 4f(x\_{i-1}) + f(x_i)}{h^4}$$ 
+      * $$O(h^2)$$ : $$f&#8221;&#8221;(x) = \frac{-2f(x\_{i-5}) + 11f(x\_{i-4}) -24f(x\_{i-3}) + 26f(x\_{i-2}) &#8211; 14f(x\_{i-1}) + 3f(x\_i)}{h^4}$$ 
 
 &nbsp;
 
 ### 3.3. Diferença Dividida Finita Centrada 
 
   * Primeira derivada: 
-      * \(O(h^2)\): \(f'(x) = \frac{f(x\_{i+1}) &#8211; f(x\_{i-1})}{2h} \) 
-      * \(O(h^4)\): \(f'(x) = \frac{-f(x\_{i+2}) + 8f(x\_{i+1}) -8f(x\_{i-1}) + f(x\_{i-2})}{12h}\) 
+      * $$O(h^2)$$: $$f'(x) = \frac{f(x\_{i+1}) &#8211; f(x\_{i-1})}{2h} $$ 
+      * $$O(h^4)$$: $$f'(x) = \frac{-f(x\_{i+2}) + 8f(x\_{i+1}) -8f(x\_{i-1}) + f(x\_{i-2})}{12h}$$ 
   * Segunda derivada: 
-      * \(O(h^2)\): \(f&#8221;(x) = \frac{f(x\_{i+1}) &#8211; 2f(x\_i) + f(x_{i-1})}{h^2} \) 
-      * \(O(h^4)\): \(f&#8221;(x) = \frac{-f(x\_{i+2}) + 16f(x\_{i+1}) &#8211; 30f(x\_i) + 16f(x\_{i-1}) &#8211; f(x_{i-2})}{12h^2}\) 
+      * $$O(h^2)$$: $$f&#8221;(x) = \frac{f(x\_{i+1}) &#8211; 2f(x\_i) + f(x_{i-1})}{h^2} $$ 
+      * $$O(h^4)$$: $$f&#8221;(x) = \frac{-f(x\_{i+2}) + 16f(x\_{i+1}) &#8211; 30f(x\_i) + 16f(x\_{i-1}) &#8211; f(x_{i-2})}{12h^2}$$ 
   * Terceira derivada: 
-      * \(O(h^2)\): \(f&#8221;'(x) = \frac{f(x\_{i+2}) &#8211; 2f(x\_{i+1}) + 2f(x\_{i-1}) &#8211; f(x\_{i-2})}{2h^3}\) 
-      * \(O(h^4)\): \(f&#8221;'(x) = \frac{-f(x\_{i+3}) + 8f(x\_{i+2}) &#8211; 13f(x\_{i+1}) + 13f(x\_{i-1}) &#8211; 8f(x\_{i-2}) + f(x\_{i-3})}{8h^3}\) 
+      * $$O(h^2)$$: $$f&#8221;'(x) = \frac{f(x\_{i+2}) &#8211; 2f(x\_{i+1}) + 2f(x\_{i-1}) &#8211; f(x\_{i-2})}{2h^3}$$ 
+      * $$O(h^4)$$: $$f&#8221;'(x) = \frac{-f(x\_{i+3}) + 8f(x\_{i+2}) &#8211; 13f(x\_{i+1}) + 13f(x\_{i-1}) &#8211; 8f(x\_{i-2}) + f(x\_{i-3})}{8h^3}$$ 
   * Quarta derivada: 
-      * \(O(h^2)\): \(f&#8221;&#8221;(x) = \frac{f(x\_{i+2}) &#8211; 4f(x\_{i+1}) + 6f(x\_i) &#8211; 4f(x\_{i-1}) + f(x_{i-2})}{h^4}\) 
-      * \(O(h^4)\): \(f&#8221;&#8221;(x) = \frac{-f(x\_{i+3}) + 12f(x\_{i+2}) + 39f(x\_{i+1}) + 56f(x\_i) &#8211; 39f(x\_{i-1}) + 12f(x\_{i-2}) + f(x_{i-3})}{6h^4}\) 
+      * $$O(h^2)$$: $$f&#8221;&#8221;(x) = \frac{f(x\_{i+2}) &#8211; 4f(x\_{i+1}) + 6f(x\_i) &#8211; 4f(x\_{i-1}) + f(x_{i-2})}{h^4}$$ 
+      * $$O(h^4)$$: $$f&#8221;&#8221;(x) = \frac{-f(x\_{i+3}) + 12f(x\_{i+2}) + 39f(x\_{i+1}) + 56f(x\_i) &#8211; 39f(x\_{i-1}) + 12f(x\_{i-2}) + f(x_{i-3})}{6h^4}$$ 
 
 &nbsp;
 
 ## 4. Implementação 
 
-Conforme demonstrado, as diferenças finitas centradas produzem fórmulas mais acuradas. Sendo assim, o ideal é sempre implementarmos essas fórmulas. Portanto, seguem abaixo a implementação das funções _diff1_, _diff2_, _diff3_ e _diff4_, responsáveis por calcular a primeira, segunda, terceira e quarta derivada, respectivamente. No exemplo de utilização, que pode ser encontrado em <a href="http://www.sawp.com.br/code/derivatives/numerical_derivatives.py" target="_blank">http://www.sawp.com.br/code/derivatives/numerical_derivatives.py</a>, observamos um caso em que a escolha de \(h \) repercurte num problema as vezes comum na utilização de métodos numéricos: o problema do truncamento de ponto flutuante. No caso, vemos que a derivada de quarta ordem produz um erro muito grande, à limitação da precisão computacional. Assim, nos post seguinte demonstramos como esse problema pode ser minimizado.
+Conforme demonstrado, as diferenças finitas centradas produzem fórmulas mais acuradas. Sendo assim, o ideal é sempre implementarmos essas fórmulas. Portanto, seguem abaixo a implementação das funções _diff1_, _diff2_, _diff3_ e _diff4_, responsáveis por calcular a primeira, segunda, terceira e quarta derivada, respectivamente. No exemplo de utilização, que pode ser encontrado em <a href="http://www.sawp.com.br/code/derivatives/numerical_derivatives.py" target="_blank">http://www.sawp.com.br/code/derivatives/numerical_derivatives.py</a>, observamos um caso em que a escolha de $$h $$ repercurte num problema as vezes comum na utilização de métodos numéricos: o problema do truncamento de ponto flutuante. No caso, vemos que a derivada de quarta ordem produz um erro muito grande, à limitação da precisão computacional. Assim, nos post seguinte demonstramos como esse problema pode ser minimizado.
 
 <pre lang="python">def diff1(f, x, h=0.0001):
     """

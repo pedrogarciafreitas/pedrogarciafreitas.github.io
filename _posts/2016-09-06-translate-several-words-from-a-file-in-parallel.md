@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Translate several words from a file in parallel using google-translator-cli in BASH.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2096
-permalink: p=2096
+permalink: /p=2096
 categories:
   - Miscellaneous
 ---

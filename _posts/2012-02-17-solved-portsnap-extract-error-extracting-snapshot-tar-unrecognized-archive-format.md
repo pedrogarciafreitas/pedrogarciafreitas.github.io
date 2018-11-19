@@ -5,7 +5,7 @@ date: 2012-02-17T16:53:27+00:00
 author: CKPYT
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1492
-permalink: p=1492
+permalink: /p=1492
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:23097:"

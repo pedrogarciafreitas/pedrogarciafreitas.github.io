@@ -6,7 +6,7 @@ author: SAWP
 excerpt: "Kurose's Mail Client Lab."
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1707
-permalink: p=1707
+permalink: /p=1707
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:4498:"

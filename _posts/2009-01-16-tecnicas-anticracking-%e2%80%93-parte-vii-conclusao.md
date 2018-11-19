@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O programa ficará mais lento quão maior for o descuido na implantação dessas técnicas devido aos efeitos adversos, tais como o uso excessivo da CPU com instruções que não tem funcionalidade nenhuma para o usuário, o aumento significativo do código e a perda de desempenho no sistema. Todavia, ao implementar este tipo de proteção devemos usar as técnicas de forma que as reações colaterais sejam minimizadas. Neste artigo, discutimos quais são os custos ao se implementar uma técnica que desfavoreça a engenharia reversa, o nível de proteção máximo que se pode ser obtido e qual preço desta segurança.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=225
-permalink: p=225
+permalink: /p=225
 categories:
   - Programming Internals
 tags:

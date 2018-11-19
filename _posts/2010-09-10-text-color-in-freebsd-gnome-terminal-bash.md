@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Text color in FreeBSD terminal...
 layout: post
 guid: http://www.sawp.com.br/blog/?p=725
-permalink: p=725
+permalink: /p=725
 categories:
   - FreeBSD
 ---

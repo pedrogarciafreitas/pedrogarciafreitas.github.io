@@ -6,7 +6,7 @@ author: SAWP
 excerpt: How to install Eclipse.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=620
-permalink: p=620
+permalink: /p=620
 wp-syntax-cache-content:
   - |
     a:4:{i:1;s:786:"

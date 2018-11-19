@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Implementação do método de Runge-Kutta de terceira ordem utilizando os coeficientes de Ralston.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1909
-permalink: p=1909
+permalink: /p=1909
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:1962:"
@@ -30,25 +30,25 @@ categories:
 Conforme mostrado no post do método de Runge-Kuta de segunda ordem, a EDO é resolvida pela fórmula iterativa:
 
 <center>
-  \( y_{i+1} = y_i + \phi (x_i, y_i, h) h \)
+  $$ y_{i+1} = y_i + \phi (x_i, y_i, h) h $$
 </center>
 
 
   
-onde \(\phi \) é a função incremento, que quanto mais elementos possuir, mais acurada é a aproximação:
+onde $$\phi $$ é a função incremento, que quanto mais elementos possuir, mais acurada é a aproximação:
 
 <center>
-  \( \phi = a_1 k1 + a_2 k_2 + \cdots + a_n k_n \)
+  $$ \phi = a_1 k1 + a_2 k_2 + \cdots + a_n k_n $$
 </center>
 
 
   
-onde os \(a\_i \) são constantes a serem determinadas e os termos \(k\_i \) são combinações lineares da função diferencial a ser resolvida. Como visto naquele mesmo post, o número \(n \) de \(k \) &#8216;s escolhidos determina o grau do método de Runge-Kuta. 
+onde os $$a\_i $$ são constantes a serem determinadas e os termos $$k\_i $$ são combinações lineares da função diferencial a ser resolvida. Como visto naquele mesmo post, o número $$n $$ de $$k $$ &#8216;s escolhidos determina o grau do método de Runge-Kuta. 
 
-Quando \(n=3 \) , a dedução segue parecida com a dos métodos de segunda ordem, aumentando apenas o número de incógnitas e equações. Mais especificamente, enquanto nos métodos de ordem dois tínhamos que determinar apenas uma incógnita \(a_2 \) , na terceira ordem temos de especificar valores para duas das oito incógnitas. Ralston e Rabinowitz[[1]](#bibitem1) fornecem os valores das incógnitas para que o erro de truncamento tenha limitante mínimo. Para isso, resolvemos iterativamente o problema com a fórmula
+Quando $$n=3 $$ , a dedução segue parecida com a dos métodos de segunda ordem, aumentando apenas o número de incógnitas e equações. Mais especificamente, enquanto nos métodos de ordem dois tínhamos que determinar apenas uma incógnita $$a_2 $$ , na terceira ordem temos de especificar valores para duas das oito incógnitas. Ralston e Rabinowitz[[1]](#bibitem1) fornecem os valores das incógnitas para que o erro de truncamento tenha limitante mínimo. Para isso, resolvemos iterativamente o problema com a fórmula
 
 <center>
-  \( y_{i+1} = y_i + \dfrac{1}{6} (k_1 + 4 k_2 + k_3) h \)
+  $$ y_{i+1} = y_i + \dfrac{1}{6} (k_1 + 4 k_2 + k_3) h $$
 </center>
 
 
@@ -56,11 +56,11 @@ Quando \(n=3 \) , a dedução segue parecida com a dos métodos de segunda ordem
 onde
 
 <center>
-  \( k_1 = f(x_i, y_i) \)
+  $$ k_1 = f(x_i, y_i) $$
 </center>
 
 <center>
-  \( k_2 = f(x_i + \frac{1}{2} h, y_i + \frac{1}{2} k_1 h) \)
+  $$ k_2 = f(x_i + \frac{1}{2} h, y_i + \frac{1}{2} k_1 h) $$
 </center>
 
 
@@ -68,7 +68,7 @@ onde
 e
 
 <center>
-  \( k_3 = f(x_i + h, y_i &#8211; k_1 h + 2 k_2 h) \)
+  $$ k_3 = f(x_i + h, y_i &#8211; k_1 h + 2 k_2 h) $$
 </center>
 
 &nbsp;

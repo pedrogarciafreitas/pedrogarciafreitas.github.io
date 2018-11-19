@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: "Exercises of the book 'Introduction to Objective Caml' solved in Scala."
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1359
-permalink: p=1359
+permalink: /p=1359
 wp-syntax-cache-content:
   - |
     a:9:{i:1;s:3756:"
@@ -239,12 +239,12 @@ wp-syntax-cache-content:
 categories:
   - Scala Notes
 ---
-**Exercise 1.1:** Write a function sum that, given two integer bounds \(n\) and \(m\) and a function \(f\), computes a summation.
+**Exercise 1.1:** Write a function sum that, given two integer bounds $$n$$ and $$m$$ and a function $$f$$, computes a summation.
   
 
 
 <center>
-  <br /> \( sum ~ n ~ m ~ f = \sum_{i=n}^{m} f(i) \)<br />
+  <br /> $$ sum ~ n ~ m ~ f = \sum_{i=n}^{m} f(i) $$<br />
 </center>
 
 <pre lang="scala">def sum(n: Int, m: Int, f: Int => Int): Int = 
@@ -306,7 +306,7 @@ println("GCD 4 and 8: " + 8 %% 4)</pre>
 
 &nbsp;
 
-**Exercise 1.3:** Suppose you have a function on integers \(f : int -> int\) that is monotonically increasing over some range of arguments from \(0\) up to \(n\). That is, \(f (i) < f (i + 1)[/latex] for any [latex]0 \leq i < n[/latex]. In addition [latex]f(0) < 0[/latex] and [latex]f(n) > 0\). Write a function search \(f\) \(n\) that finds the smallest argument \(i\) where \(f(i) \geq 0\).
+**Exercise 1.3:** Suppose you have a function on integers $$f : int -> int$$ that is monotonically increasing over some range of arguments from $$0$$ up to $$n$$. That is, $$f (i) < f (i + 1)[/latex] for any [latex]0 \leq i < n[/latex]. In addition [latex]f(0) < 0[/latex] and [latex]f(n) > 0$$. Write a function search $$f$$ $$n$$ that finds the smallest argument $$i$$ where $$f(i) \geq 0$$.
 
 <pre lang="scala">// A simple O(n) tail-recursive implementation
 def search (n: Int) (f: Int => Int): Int = {
@@ -339,9 +339,9 @@ println("Search Log(n): " + search2 (10) (x => x - 1))</pre>
   *  `add   : dictionary -> key -> value -> dictionary` 
   *  `find  : dictionary -> key -> value` 
 
-The value empty is an empty dictionary; the expression add dict key value takes an existing dictionary dict and augments it with a new binding \(key -> value;\) and the expression find dict key fetches the value in the dictionary dict associated with the key.
+The value empty is an empty dictionary; the expression add dict key value takes an existing dictionary dict and augments it with a new binding $$key -> value;$$ and the expression find dict key fetches the value in the dictionary dict associated with the key.
 
-One way to implement a dictionary is to represent it as a function from keys to values. Let&#8217;s assume we are building a dictionary where the key type is string, the value type is int, and the empty dictionary maps every key to zero. This dictionary can be implemented abstractly as follows, where we write \(->\) for the map from keys to values.
+One way to implement a dictionary is to represent it as a function from keys to values. Let&#8217;s assume we are building a dictionary where the key type is string, the value type is int, and the empty dictionary maps every key to zero. This dictionary can be implemented abstractly as follows, where we write $$->$$ for the map from keys to values.
 
 <pre lang="ocaml">empty = key -> 0
 add(dict, key, v) = key' -> if (key' = key) v else dict(key)
@@ -382,15 +382,15 @@ println("dict4['y'] = " + dict4("y"))</pre>
 
 &nbsp;
 
-**Exercise 1.5:** Partial application is sometimes used to improve the performance of a multi-argument function when the function is to be called repeatedly with one or more of its arguments fixed. Consider a function \(f(x, y)\) that is to be called multiple times with \(x\) fixed. First, the function must be written in a form \(f(x, y) = h(g(x), y)\) from some functions \(g\) and \(h\), where \(g\) represents the part of the computation that uses only the value \(x\). We then write it in OCaml as follows.
+**Exercise 1.5:** Partial application is sometimes used to improve the performance of a multi-argument function when the function is to be called repeatedly with one or more of its arguments fixed. Consider a function $$f(x, y)$$ that is to be called multiple times with $$x$$ fixed. First, the function must be written in a form $$f(x, y) = h(g(x), y)$$ from some functions $$g$$ and $$h$$, where $$g$$ represents the part of the computation that uses only the value $$x$$. We then write it in OCaml as follows.
 
 <pre lang="ocaml">let f x =
       let z = g(x) in
         fun y -> h(z, y)</pre>
 
-Calling f on its first argument computes \(g(x)\) and returns a function that uses the value (without re-computing it).
+Calling f on its first argument computes $$g(x)$$ and returns a function that uses the value (without re-computing it).
 
-Consider one root of a quadratic equation \(ax^2 + bx + c = 0\) specified by the by the quadratic formula \(r(a, b, c) = \frac{-b + \sqrt{b^2 &#8211; 4ac}}{2a}\). Suppose we wish to to evaluate the quadratic formula for multiple values of \(a\) with \(b\) and \(c\) fixed. Write a function to compute the formula efficiently.
+Consider one root of a quadratic equation $$ax^2 + bx + c = 0$$ specified by the by the quadratic formula $$r(a, b, c) = \frac{-b + \sqrt{b^2 &#8211; 4ac}{2a}$$. Suppose we wish to to evaluate the quadratic formula for multiple values of $$a$$ with $$b$$ and $$c$$ fixed. Write a function to compute the formula efficiently.
 
 <pre lang="scala">def r(b: Double, c: Double): (Double => (Double, Double)) = {
   val bMinus = -b

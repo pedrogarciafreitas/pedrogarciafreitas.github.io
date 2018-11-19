@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Continuando o Post anterior, neste texto apresentamos a formulação por trás da geração das máscaras de pixels nos métodos de halftone via pontilhado ordenado.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1001
-permalink: p=1001
+permalink: /p=1001
 wp-syntax-cache-content:
   - |
     a:4:{i:1;s:4675:"
@@ -225,7 +225,7 @@ wp-syntax-cache-content:
 categories:
   - Digital Image Processing Using Python
 ---
-No artigo anterior &#8220;_[Dithering &#8212; Parte I &#8212; Halftone via Pontilhado Ordenado](http://www.sawp.com.br/blog/?p=940)_&#8220;, apresentamos uma máscara \(3 \times 3 \) que utilizamos para substituir dez tons de cinza para gerar uma imagem binária. Contudo, padrões utilizando máscaras de tamanho \(2 \times 2 \) ou de tamanhos superiores podem ser utilizados para criar um número maior de níveis de cinza.
+No artigo anterior &#8220;_[Dithering &#8212; Parte I &#8212; Halftone via Pontilhado Ordenado](http://www.sawp.com.br/blog/?p=940)_&#8220;, apresentamos uma máscara $$3 \times 3 $$ que utilizamos para substituir dez tons de cinza para gerar uma imagem binária. Contudo, padrões utilizando máscaras de tamanho $$2 \times 2 $$ ou de tamanhos superiores podem ser utilizados para criar um número maior de níveis de cinza.
 
 Os padrões de máscaras com os tamanhos mencionados são ilustrados nas figuras abaixo
 
@@ -243,14 +243,14 @@ Os padrões de máscaras com os tamanhos mencionados são ilustrados nas figuras
   <br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/padroesdepontos_3.jpg"><img src="http://www.sawp.com.br/blog/wp-content/uploads/2011/01/padroesdepontos_3.jpg" alt="" title="padroesdepontos_3" width="700" height="320" class="aligncenter size-full wp-image-1004" /></a><br />
 </center>
 
-Devemos observar que quanto menor a máscara, menor serão a quantidade de pontos gerados por padrão. Isso terá consequência direta na qualidade da imagem binária, pois ela terá menos padrões para diferenciar os diferentes níveis de cinza da imagem original. Além disso, devemos observar que os pontos devem ser dispostos de maneira a minimizar efeitos indesejáveis na imagem resultante, por exemplo, a ocorrência de linhas horizontais ou verticais em uma parte da imagem. Outra consideração importante é que, se um pixel for preto no padrão \(i \), ele também será preto em todos os padrões \(j > i \), reduzindo a ocorrência de falsos contornos na imagem.
+Devemos observar que quanto menor a máscara, menor serão a quantidade de pontos gerados por padrão. Isso terá consequência direta na qualidade da imagem binária, pois ela terá menos padrões para diferenciar os diferentes níveis de cinza da imagem original. Além disso, devemos observar que os pontos devem ser dispostos de maneira a minimizar efeitos indesejáveis na imagem resultante, por exemplo, a ocorrência de linhas horizontais ou verticais em uma parte da imagem. Outra consideração importante é que, se um pixel for preto no padrão $$i $$, ele também será preto em todos os padrões $$j > i $$, reduzindo a ocorrência de falsos contornos na imagem.
 
-O uso de padrões de \(3 \times 3 \) pixels limita a resolução espacial para um terço em cada dimensão da imagem, entretanto, fornece dez níveis de cinza. Certamente, a escolha da relação entre a resolução espacial e a profundidade da imagem dependem de maior perspicácia visual e da distância da qual a imagem é observada. 
+O uso de padrões de $$3 \times 3 $$ pixels limita a resolução espacial para um terço em cada dimensão da imagem, entretanto, fornece dez níveis de cinza. Certamente, a escolha da relação entre a resolução espacial e a profundidade da imagem dependem de maior perspicácia visual e da distância da qual a imagem é observada. 
 
-Padrões maiores podem ser usados para criar um número maior de níveis de cinza. Padrões de tamanho \(n \times m \) geram \(nm + 1 \) arranjos distintos. Tal conjunto de padrões pode ser ilustrado por meios das matrizes abaixo, tal que um determinado padrão \(i \) é formado pela ativação dos elementos da matriz cujos valores são menores do que \(i \).
+Padrões maiores podem ser usados para criar um número maior de níveis de cinza. Padrões de tamanho $$n \times m $$ geram $$nm + 1 $$ arranjos distintos. Tal conjunto de padrões pode ser ilustrado por meios das matrizes abaixo, tal que um determinado padrão $$i $$ é formado pela ativação dos elementos da matriz cujos valores são menores do que $$i $$.
 
 <center>
-  <br /> \( \begin{array}{| c | c | c | }<br /> \hline<br /> 0 & 2 \\ \hline<br /> 3 & 1 \\<br /> \hline<br /> \end{array} \)<br />
+  <br /> $$ \begin{array}{| c | c | c | }<br /> \hline<br /> 0 & 2 \\ \hline<br /> 3 & 1 \\<br /> \hline<br /> \end{array} $$<br />
 </center>
 
 
@@ -258,7 +258,7 @@ Padrões maiores podem ser usados para criar um número maior de níveis de cinz
 
 
 <center>
-  <br /> \( \begin{array}{| c | c | c | }<br /> \hline<br /> 6 & 8 & 4 \\ \hline<br /> 1 & 0 & 3 \\ \hline<br /> 5 & 2 & 7 \\<br /> \hline<br /> \end{array} \)<br />
+  <br /> $$ \begin{array}{| c | c | c | }<br /> \hline<br /> 6 & 8 & 4 \\ \hline<br /> 1 & 0 & 3 \\ \hline<br /> 5 & 2 & 7 \\<br /> \hline<br /> \end{array} $$<br />
 </center>
 
 
@@ -266,22 +266,22 @@ Padrões maiores podem ser usados para criar um número maior de níveis de cinz
 
 
 <center>
-  <br /> \( \begin{array}{| c | c | c | }<br /> \hline<br /> 3 & 0 & 4 \\ \hline<br /> 5 & 2 & 1 \\<br /> \hline<br /> \end{array} \)<br />
+  <br /> $$ \begin{array}{| c | c | c | }<br /> \hline<br /> 3 & 0 & 4 \\ \hline<br /> 5 & 2 & 1 \\<br /> \hline<br /> \end{array} $$<br />
 </center>
 
-Máscaras quadras maiores que três podem ser gerados a partir de matrizes de ordem \(2^n \times 2^n \), conforme a seguinte definição recursiva:
+Máscaras quadras maiores que três podem ser gerados a partir de matrizes de ordem $$2^n \times 2^n $$, conforme a seguinte definição recursiva:
 
 <center>
-  <br /> \(<br /> D_n = \left[ \begin{array}{cc} 4 D_{n/2} + 2 U_{n/2} & 4 D_{n/2} \\ 4 D_{n/2} + U_{n/2} & D_{n/2} + U_{n/2} \\ \end{array} \right]<br /> \hspace{80px}<br /> n \ge 4<br /> \)<br />
+  <br /> $$<br /> D_n = \left[ \begin{array}{cc} 4 D_{n/2} + 2 U_{n/2} & 4 D_{n/2} \\ 4 D_{n/2} + U_{n/2} & D_{n/2} + U_{n/2} \\ \end{array} \right]<br /> \hspace{80px}<br /> n \ge 4<br /> $$<br />
 </center>
 
-onde \(D_2 \) é a seguinte matriz de ordem \(2 \times 2 \) :
+onde $$D_2 $$ é a seguinte matriz de ordem $$2 \times 2 $$ :
 
 <center>
-  <br /> \(<br /> \begin{array}{| c | c | c | }<br /> \hline<br /> 0 & 2 \\ \hline<br /> 3 & 1 \\<br /> \hline<br /> \end{array}<br /> \)<br />
+  <br /> $$<br /> \begin{array}{| c | c | c | }<br /> \hline<br /> 0 & 2 \\ \hline<br /> 3 & 1 \\<br /> \hline<br /> \end{array}<br /> $$<br />
 </center>
 
-e \(U_n \) é uma matriz \(n \times n\), cujos elementos são todos unitários.
+e $$U_n $$ é uma matriz $$n \times n$$, cujos elementos são todos unitários.
 
 ## Código
 

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Do you need to find a free IP in a address range?
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1752
-permalink: p=1752
+permalink: /p=1752
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:440:"

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: A regra de Simpson adaptativa é um algoritmo recursivo de integração numérica que usa uma estimativa do erro para calcular uma integral definida através de múltiplas aplicações do método de Simpson. Como em muitas abordagens numéricas, se o erro estimado ultrapassa um erro tolerado, o algoritmo divide o intervalo de integração em dois sub-intervalos e reaplica o método de Simpson nesses intervalos de forma independente, somando os resultados. Essa técnica acaba por ser mais eficiente que outros métodos de integração por convergir quadraticamente ao resultado.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1673
-permalink: p=1673
+permalink: /p=1673
 wp-syntax-cache-content:
   - |
     a:3:{i:1;s:3419:"
@@ -239,12 +239,12 @@ No post sobre a integração de Romberg, vimos que este método utiliza uma estr
 
 ## 2. O Método 
 
-Seja \(S(a,b) \) o resultado da aproximação da integral utilizando o método de Romberg no intervalo \([a,b] \) . Assim, o resultado da integral será
+Seja $$S(a,b) $$ o resultado da aproximação da integral utilizando o método de Romberg no intervalo $$[a,b] $$ . Assim, o resultado da integral será
   
 
 
 <center>
-  \( I = S(a,b) = \int_a^b f(x) dx \)
+  $$ I = S(a,b) = \int_a^b f(x) dx $$
 </center>
 
 

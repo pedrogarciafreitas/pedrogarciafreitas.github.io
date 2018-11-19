@@ -6,7 +6,7 @@ author: SAWP
 excerpt: ' O Método de Monte Carlo é uma técnica heurística para avaliação ou estimação de problemas (geralmente intratáveis) usando simulação probabilística e amostragem.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1758
-permalink: p=1758
+permalink: /p=1758
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:3616:"
@@ -80,7 +80,7 @@ O Método de Monte Carlo é uma técnica heurística para avaliação ou estima�
 
 
 <center>
-  \( I = \int_a^b f(x) dx \)
+  $$ I = \int_a^b f(x) dx $$
 </center>
 
 
@@ -90,12 +90,12 @@ pode ser aproximada por
 
 
 <center>
-  \( \hat{I} = \dfrac{b &#8211; a}{n} \sum_{i=1}^N f(x_i) \)
+  $$ \hat{I} = \dfrac{b &#8211; a}{n} \sum_{i=1}^N f(x_i) $$
 </center>
 
 
   
-onde todas \(x_i \) são observações independentes de uma distribuição uniforme no intervalo \([a,b] \). Assim, como a esperança \(E(\hat{I}) = I \), temos que a precisão aumenta com o aumento no número de amostras \(n \). 
+onde todas $$x_i $$ são observações independentes de uma distribuição uniforme no intervalo $$[a,b] $$. Assim, como a esperança $$E(\hat{I}) = I $$, temos que a precisão aumenta com o aumento no número de amostras $$n $$. 
 
 &nbsp;
 

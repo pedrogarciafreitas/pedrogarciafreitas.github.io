@@ -11,7 +11,7 @@ excerpt: |
   Decomposições baseadas na de Cholesky estão presentes em criptografia, geração de hashes, verificação de dados e em uma diversidade de aplicações práticas.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=604
-permalink: p=604
+permalink: /p=604
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:19916:"
@@ -208,38 +208,38 @@ categories:
 ---
 ## 1. A Fatoração de Cholesky </p> 
 
-A Fatoração de Cholesky expressa uma matriz simétrica \(A \) como o produto,de uma matriz triangular \(L \) (chamada de Fator de Cholesky) pela sua transposta \(L* \) , na forma:
+A Fatoração de Cholesky expressa uma matriz simétrica $$A $$ como o produto,de uma matriz triangular $$L $$ (chamada de Fator de Cholesky) pela sua transposta $$L* $$ , na forma:
     
 <a name="eq1">(eq1)</a>
   
 
 
 <center>
-  <br /> \( A = LL* \)<br />
+  <br /> $$ A = LL* $$<br />
 </center>
 
-onde \(L \) será triangular superior. 
+onde $$L $$ será triangular superior. 
 
-Sabendo-se que \(A \) é simétrica quando seus elementos obedecem à uma formação \(a\_{ij} = a\_{ji} \) para toda linha \(i \) e coluna \(j \) . Desta forma, a matriz \(A \) será idêntica à sua transposta: \(A = A^{T} \) . Matrizes com este tipo de formação fornece algumas vantagens computacionais, pois favorecem a eficiência na solução de sistemas lineares, quando usados métodos adequados. Além disso, essa identidade permite a criação de algoritmos simples de criptografia e verificação de dados. 
+Sabendo-se que $$A $$ é simétrica quando seus elementos obedecem à uma formação $$a\_{ij} = a\_{ji} $$ para toda linha $$i $$ e coluna $$j $$ . Desta forma, a matriz $$A $$ será idêntica à sua transposta: $$A = A^{T} $$ . Matrizes com este tipo de formação fornece algumas vantagens computacionais, pois favorecem a eficiência na solução de sistemas lineares, quando usados métodos adequados. Além disso, essa identidade permite a criação de algoritmos simples de criptografia e verificação de dados. 
 
-Uma vez que se identifica que uma matriz \(A \) é simétrica, podemos utilizar a Equação [1](#eq1) para gerar \(L \) e \(L* \) a partir de \(A \) . Ou seja, ao multiplicarmos e igualarmos seus termos, obtemos as seguintes relações:
+Uma vez que se identifica que uma matriz $$A $$ é simétrica, podemos utilizar a Equação [1](#eq1) para gerar $$L $$ e $$L* $$ a partir de $$A $$ . Ou seja, ao multiplicarmos e igualarmos seus termos, obtemos as seguintes relações:
     
 <a name="eq2">(eq2)</a>
   
 
 
 <center>
-  <br /> \( l_{ki} = \frac{ a_{ki} &#8211; \sum_{j=1}^{i-1} l_{ij}~l_{kj} }{ l_{ii} } \)<br />
+  <br /> $$ l_{ki} = \frac{ a_{ki} &#8211; \sum_{j=1}^{i-1} l_{ij}~l_{kj} }{ l_{ii} } $$<br />
 </center>
 
-onde \(i = 1, 2, \ldots, k-1 \) . Além disso, o elemento da diagonal será obtido por
+onde $$i = 1, 2, \ldots, k-1 $$ . Além disso, o elemento da diagonal será obtido por
     
 <a name="eq3">(eq3)</a>
   
 
 
 <center>
-  <br /> \( l_{kk} = \sqrt{a_{kk} &#8211; \sum_{k-1}^{j=1} l_{kj}^{2} } \)<br />
+  <br /> $$ l_{kk} = \sqrt{a_{kk} &#8211; \sum_{k-1}^{j=1} l_{kj}^{2} } $$<br />
 </center>
 
 As expressões acima são obtidas como uma especificação da decomposição LU para o caso da matriz decomposta ser simétrica. Tais equações são desenvolvidas em _A First Course in Numerical Analysis_ [[1]](#bibitem1). </p> 
@@ -343,7 +343,7 @@ As expressões acima são obtidas como uma especificação da decomposição LU 
         return False</pre>
 </div></p> 
 
-A partir deste código, podemos verificar que a única diferença que ele possui em relação ao algoritmo apresentado no artigo sobre decomposição LU está em utilizar a função _cholesky_decomposition_ ao invés do método de Crout. Isto porque a fatoração de Cholesky, assim como muitos algoritmos de solução direta, é um método de decomposição LU. Ainda pelo código, é possível notar que o fator de Cholesky é a própria matriz \(L \), enquanto que sua transposta é \(U \). 
+A partir deste código, podemos verificar que a única diferença que ele possui em relação ao algoritmo apresentado no artigo sobre decomposição LU está em utilizar a função _cholesky_decomposition_ ao invés do método de Crout. Isto porque a fatoração de Cholesky, assim como muitos algoritmos de solução direta, é um método de decomposição LU. Ainda pelo código, é possível notar que o fator de Cholesky é a própria matriz $$L $$, enquanto que sua transposta é $$U $$. 
 
 Esta função está disponível em <a href="http://www.sawp.com.br/code/linear/cholesky.py" target="_blank">http://www.sawp.com.br/code/linear/cholesky.py</a>, assim como um exemplo de como utilizá-la. </p> </p> 
 

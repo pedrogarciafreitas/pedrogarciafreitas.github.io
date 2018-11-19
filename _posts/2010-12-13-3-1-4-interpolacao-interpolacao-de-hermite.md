@@ -6,7 +6,7 @@ author: SAWP
 excerpt: A interpolação de Hermite é um método que utiliza tanto amostras da função quanto da sua derivada para ajustá-la em uma curva. Neste artigo, demonstramos a formulação desse método e um exemplo de como implementá-lo
 layout: post
 guid: http://www.sawp.com.br/blog/?p=880
-permalink: p=880
+permalink: /p=880
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:9395:"
@@ -142,35 +142,27 @@ categories:
 Seja a fórmula geral da interpolação
 
 <center>
-  \( f(x) = \sum_{j=1}^{n} \sum_{i=0}^{m_j} A_{ij}(x) \frac{d^{(i)} f(a_j)}{d x^{(i)}} + E(x) \)
+  $$ f(x) = \sum_{j=1}^{n} \sum_{i=0}^{m_j} A_{ij}(x) \frac{d^{(i)} f(a_j)}{d x^{(i)} + E(x) $$
 </center>
 
-consideramos \(m_j = 1 \) para \(j = 1, \ldots, r \) , isto é, supomos que a primeira derivada também é uma função conhecida em \(r \) dos \(n \) pontos tabulares. Ou seja, a fórmula acima, quando desenvolvida até a primeira derivada, terá a forma
+consideramos $$m_j = 1 $$ para $$j = 1, \ldots, r $$ , isto é, supomos que a primeira derivada também é uma função conhecida em $$r $$ dos $$n $$ pontos tabulares. Ou seja, a fórmula acima, quando desenvolvida até a primeira derivada, terá a forma
 
 <center>
-  \( f(x) = \sum_{j=1}^{n} h_j(x) f(a_j) + \sum_{j=1}^{r} h_j'(x) f'(a_j) + E(x) \)
+  $$ f(x) = \sum_{j=1}^{n} h_j(x) f(a_j) + \sum_{j=1}^{r} h_j'(x) f'(a_j) + E(x) $$
 </center>
 
-portanto, desprezando o erro da aproximação, temos \(y(x) \) interpolada por
+portanto, desprezando o erro da aproximação, temos $$y(x) $$ interpolada por
 
 <center>
-  \( y(x) = \sum_{j=1}^{n} h_{j_\alpha}(x) f(a_j) + \sum_{j=1}^{r} h_{j_\beta}(x) f'(a_j) \)
+  $$ y(x) = \sum_{j=1}^{n} h_{j_\alpha}(x) f(a_j) + \sum_{j=1}^{r} h_{j_\beta}(x) f'(a_j) $$
 </center>
 
-onde \(h\_{j\_\alpha}(x) \) e \(h\_{j\_\beta}(x) \) são polinômios. Novamente, usando o critério da aproximação exata, queremos minimizar o erro \(E(x) \) tal que \(E(a\_j) = 0 \). Utilizando a interpolação de Lagrange, podemos utilizar as seguintes condições para satisfazerem \(h\_{j\_\alpha}(x) \) e \(h\_{j_\beta}(x) \) :
+onde $$h\_{j\_\alpha}(x) $$ e $$h\_{j\_\beta}(x) $$ são polinômios. Novamente, usando o critério da aproximação exata, queremos minimizar o erro $$E(x) $$ tal que $$E(a\_j) = 0 $$. Utilizando a interpolação de Lagrange, podemos utilizar as seguintes condições para satisfazerem $$h\_{j\_\alpha}(x) $$ e $$h\_{j_\beta}(x) $$ :
     
 
 
 <center>
-  \(p_n(x) = (x &#8211; a_1) \cdots (x &#8211; a_n) \)
-</center>
-
-
-    
-
-
-<center>
-  \(p_r(x) = (x &#8211; a_1) \cdots (x &#8211; a_r) \)
+  $$p_n(x) = (x &#8211; a_1) \cdots (x &#8211; a_n) $$
 </center>
 
 
@@ -178,7 +170,7 @@ onde \(h\_{j\_\alpha}(x) \) e \(h\_{j\_\beta}(x) \) são polinômios. Novamente,
 
 
 <center>
-  \(l_{jn}(x) = \frac{p_n(x)}{ (x-a_j) p_n'(a_j)} \)
+  $$p_r(x) = (x &#8211; a_1) \cdots (x &#8211; a_r) $$
 </center>
 
 
@@ -186,41 +178,49 @@ onde \(h\_{j\_\alpha}(x) \) e \(h\_{j\_\beta}(x) \) são polinômios. Novamente,
 
 
 <center>
-  \( l_{jr}(x) = \frac{p_r(x)}{(x-a_j) p_r'(a_j)} \)
+  $$l_{jn}(x) = \frac{p_n(x)}{ (x-a_j) p_n'(a_j)} $$
 </center>
 
 
     
-nestas condições, temos que \(h_j(x) \) é
-    
 
 
 <center>
-  \(<br /> h_{j_\alpha}(x) = \left\{<br /> \begin{array}{lcl}<br /> t_j(x) l_{jn}(x) l_{jr}(x) & ~ & j = 1,\ldots ,r \\<br /> l_{jn}(x) \frac{p_r(x)}{p_r(a_j)} & ~ & j = r + 1, \ldots, n<br /> \end{array}<br /> \right.<br /> \)
+  $$ l_{jr}(x) = \frac{p_r(x)}{(x-a_j) p_r'(a_j)} $$
 </center>
 
 
     
-onde \(t\_j(x) \) é um polinômio de primeiro grau tal que \(h\_{j\_\alpha}(x) \) é de grau \(n+r-1 \) . Para satisfazer as condições de convergência, precisamos ter \(t\_j(a\_j) = 1 \) e \(t\_j'(a\_j) + l\_{jn}'(a\_j) + l\_{jr}'(a_j) = 0 \) . 
-
-De maneira semelhante, fazemos para \(h\_{j\_\beta}(x) \) :
+nestas condições, temos que $$h_j(x) $$ é
     
 
 
 <center>
-  \(h_{j_\beta}(x) = s_j(x) l_{jr}(x) l_{jn}(x) \)
+  $$<br /> h_{j_\alpha}(x) = \left\{<br /> \begin{array}{lcl}<br /> t_j(x) l_{jn}(x) l_{jr}(x) & ~ & j = 1,\ldots ,r \\<br /> l_{jn}(x) \frac{p_r(x)}{p_r(a_j)} & ~ & j = r + 1, \ldots, n<br /> \end{array}<br /> \right.<br /> $$
 </center>
 
 
     
-onde \(s\_j(x) \) é um polinômio de primeiro grau com \(s\_j(a\_j) = 0 \) e \(s\_j'(a_j) = 1 \) . 
+onde $$t\_j(x) $$ é um polinômio de primeiro grau tal que $$h\_{j\_\alpha}(x) $$ é de grau $$n+r-1 $$ . Para satisfazer as condições de convergência, precisamos ter $$t\_j(a\_j) = 1 $$ e $$t\_j'(a\_j) + l\_{jn}'(a\_j) + l\_{jr}'(a_j) = 0 $$ . 
 
-Tomando \(t\_j(x) = 1 &#8211; (x &#8211; a\_j)[l\_{jn}'(a\_j) + l\_{jr}'(a\_j)] \) e \(s\_j(x) = x &#8211; a\_j \) , temos que
+De maneira semelhante, fazemos para $$h\_{j\_\beta}(x) $$ :
     
 
 
 <center>
-  \( h_{j_\alpha}(x) = \left\{<br /> \begin{array}{lcl}<br /> \left[ 1 &#8211; (x &#8211; a_j)[l_{jn}'(a_j) + l_{jr}'(a_j)] \right] l_{jn}(x)l_{jr}(x) & ~ & j = 1,\ldots ,r \\<br /> l_{jn}(x) \frac{p_r(x)}{p_r(a_j)} & ~ & j = r + 1, \ldots, n<br /> \end{array} \right| \)
+  $$h_{j_\beta}(x) = s_j(x) l_{jr}(x) l_{jn}(x) $$
+</center>
+
+
+    
+onde $$s\_j(x) $$ é um polinômio de primeiro grau com $$s\_j(a\_j) = 0 $$ e $$s\_j'(a_j) = 1 $$ . 
+
+Tomando $$t\_j(x) = 1 &#8211; (x &#8211; a\_j)[l\_{jn}'(a\_j) + l\_{jr}'(a\_j)] $$ e $$s\_j(x) = x &#8211; a\_j $$ , temos que
+    
+
+
+<center>
+  $$ h_{j_\alpha}(x) = \left\{<br /> \begin{array}{lcl}<br /> \left[ 1 &#8211; (x &#8211; a_j)[l_{jn}'(a_j) + l_{jr}'(a_j)] \right] l_{jn}(x)l_{jr}(x) & ~ & j = 1,\ldots ,r \\<br /> l_{jn}(x) \frac{p_r(x)}{p_r(a_j)} & ~ & j = r + 1, \ldots, n<br /> \end{array} \right| $$
 </center>
 
 
@@ -230,18 +230,18 @@ e
 
 
 <center>
-  \( h_{j_\beta}(x) = (x &#8211; a_j) l_{jr}(x) l_{jn}(x) \)
+  $$ h_{j_\beta}(x) = (x &#8211; a_j) l_{jr}(x) l_{jn}(x) $$
 </center>
 
 Ou seja, a _Fórmula Interpoladora de Hermite_ é 
 
 <center>
-  \( f(x) = \sum_{j=1}^{n} h_{j_\alpha}(x) f(a_j) +<br /> \sum_{j=1}^{n} h_{j_\beta}(x) f'(a_j)<br /> \)
+  $$ f(x) = \sum_{j=1}^{n} h_{j_\alpha}(x) f(a_j) +<br /> \sum_{j=1}^{n} h_{j_\beta}(x) f'(a_j)<br /> $$
 </center>
 
 
       
-com \(h\_{j\_\alpha}(x) = \left[1 &#8211; 2 (x &#8211; a\_j) l\_j'(a\_j)\right] l\_j^2(x) \) e \(h\_{j\_\beta}(x) = (x &#8211; a\_j) l\_j^2(x) \) . 
+com $$h\_{j\_\alpha}(x) = \left[1 &#8211; 2 (x &#8211; a\_j) l\_j'(a\_j)\right] l\_j^2(x) $$ e $$h\_{j\_\beta}(x) = (x &#8211; a\_j) l\_j^2(x) $$ . 
 
 &nbsp; 
 

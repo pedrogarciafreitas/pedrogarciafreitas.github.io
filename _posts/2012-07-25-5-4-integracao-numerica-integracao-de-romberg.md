@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O método de Romberg é uma técnica de integração numérica que utiliza refinamentos da regra do trapézio estendida para aumentar a acurácia da aproximação.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1665
-permalink: p=1665
+permalink: /p=1665
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:8043:"
@@ -201,20 +201,20 @@ A integração de Romberg é um método proposto em 1955, e é utilizado para ca
 
 ## 2. Extrapolação de Richardson 
 
-Assim como apresentado anteriormente no post sobre a extrapolação de Richardson, onde mostramos como acelerar a convergência de derivadas numéricas, da mesma forma podemos utilizar esse método para aumentar a acurácia das funções de integração numérica. Desta maneira, a estimativa da integral \(I \) e o erro associado \(E \) com a aplicação múltipla da regra do trapézio podem ser representados de um modo geral por
+Assim como apresentado anteriormente no post sobre a extrapolação de Richardson, onde mostramos como acelerar a convergência de derivadas numéricas, da mesma forma podemos utilizar esse método para aumentar a acurácia das funções de integração numérica. Desta maneira, a estimativa da integral $$I $$ e o erro associado $$E $$ com a aplicação múltipla da regra do trapézio podem ser representados de um modo geral por
   
 
 
 <center>
-  \( I = I(h) + E(h) \)
+  $$ I = I(h) + E(h) $$
 </center>
 
 
   
-onde \(I \) é o valor exato da integral, \(I(h) \) é a aproximação a partir da aplicação da regra do trapézio (em função do passo \(h \) ) e \(E(h) \) é o erro de truncamento. Se fizermos duas estimativas independentes usando passos distintos \(h\_1 \) e \(h\_2 \) , temos que 
+onde $$I $$ é o valor exato da integral, $$I(h) $$ é a aproximação a partir da aplicação da regra do trapézio (em função do passo $$h $$ ) e $$E(h) $$ é o erro de truncamento. Se fizermos duas estimativas independentes usando passos distintos $$h\_1 $$ e $$h\_2 $$ , temos que 
 
 <center>
-  \( I(h_1) + E(h_1) = I(h_2) + E(h_2) \)
+  $$ I(h_1) + E(h_1) = I(h_2) + E(h_2) $$
 </center>
 
 
@@ -224,15 +224,15 @@ Como o erro da aplicação da regra do trapézio é
 
 
 <center>
-  \( E \approx &#8211; \dfrac{b-a}{12} h^2 \bar{f}&#8221; \)
+  $$ E \approx &#8211; \dfrac{b-a}{12} h^2 \bar{f}&#8221; $$
 </center>
 
 
   
-onde \(\bar{f}&#8221; \) é a derivada média da função nos pontos avaliados. Supondo que \(\bar{f}&#8221; \) é constante, independente do tamanho do passo, a equação acima pode ser usada para determinar a razão entre os erros:
+onde $$\bar{f}&#8221; $$ é a derivada média da função nos pontos avaliados. Supondo que $$\bar{f}&#8221; $$ é constante, independente do tamanho do passo, a equação acima pode ser usada para determinar a razão entre os erros:
 
 <center>
-  \( \dfrac{E(h_1)}{E(h_2)} \approx \dfrac{h_1^2}{h_2^2} \)
+  $$ \dfrac{E(h_1)}{E(h_2)} \approx \dfrac{h_1^2}{h_2^2} $$
 </center>
 
 
@@ -242,7 +242,7 @@ ou melhor
 
 
 <center>
-  \( E(h_1) \approx E(h_2) \left( \dfrac{h_1}{h_2} \right)^2 \)
+  $$ E(h_1) \approx E(h_2) \left( \dfrac{h_1}{h_2} \right)^2 $$
 </center>
 
 
@@ -252,17 +252,17 @@ que pode ser substituida na equação das integrais:
 
 
 <center>
-  \( I(h_1) + E(h_2) \left( \dfrac{h_1}{h_2} \right)^2 \approx I(h_2) + E(h_2) \)
+  $$ I(h_1) + E(h_2) \left( \dfrac{h_1}{h_2} \right)^2 \approx I(h_2) + E(h_2) $$
 </center>
 
 
   
-isolando \(E(h_2) \) , temos
+isolando $$E(h_2) $$ , temos
   
 
 
 <center>
-  \( E(h_2) \approx \dfrac{I(h_1) &#8211; I(h_2)}{1 &#8211; (h_1 / h_2)^2} \)
+  $$ E(h_2) \approx \dfrac{I(h_1) &#8211; I(h_2)}{1 &#8211; (h_1 / h_2)^2} $$
 </center>
 
 
@@ -272,7 +272,7 @@ Logo, obteremos uma estimativa do erro de truncamento em termos das estimativas 
 
 
 <center>
-  \( I = I(h_2) + E(h_2) \)
+  $$ I = I(h_2) + E(h_2) $$
 </center>
 
 
@@ -282,17 +282,17 @@ para fornecer uma estimativa mais acurada
 
 
 <center>
-  \( I \approx I(h_2) + \dfrac{1}{(h_1/h_2)^2 &#8211; 1} \left[ I(h_2) &#8211; I(h_1) \right] \)
+  $$ I \approx I(h_2) + \dfrac{1}{(h_1/h_2)^2 &#8211; 1} \left[ I(h_2) &#8211; I(h_1) \right] $$
 </center>
 
 
   
-Para o caso em que \(h\_2 = h\_1/2 \) , temos que
+Para o caso em que $$h\_2 = h\_1/2 $$ , temos que
   
 
 
 <center>
-  \( I \approx \dfrac{4}{3} I(h_2) &#8211; \dfrac{1}{3} I(h_1) \)
+  $$ I \approx \dfrac{4}{3} I(h_2) &#8211; \dfrac{1}{3} I(h_1) $$
 </center>
 
 &nbsp;
@@ -304,18 +304,18 @@ Observe que na última equação acima, os coeficientes somam 1. Isso equivale �
 
 
 <center>
-  \( I_{j, k} = \dfrac{4^{k-1} I_{j+1, k-1} &#8211; I_{j, k-1}}{4^{k-1}-1} \)
+  $$ I_{j, k} = \dfrac{4^{k-1} I_{j+1, k-1} &#8211; I_{j, k-1}{4^{k-1}-1} $$
 </center>
 
 
   
-onde \(I\_{j+1,k-1} \) e \(I\_{j, k-1} \) são as integrais mais e menos acuradas, respectivamente, e \(I_{j, k} \) é a integral melhorada. O índice \(k\) representa a respectiva fórmula de Newton-Cotes, isto é, para \(k=1 \) temos a regra do trapézio, para \(k=2 \) temos a regra de Simpson, e assim por diante. O índice \(j \) serve para indicar a estimativa mais acurada da menos acurada (quanto maior \(j \) , mais acurada). Assim, o método pode ser definido indutivamente da seguinte forma
+onde $$I\_{j+1,k-1} $$ e $$I\_{j, k-1} $$ são as integrais mais e menos acuradas, respectivamente, e $$I_{j, k} $$ é a integral melhorada. O índice $$k$$ representa a respectiva fórmula de Newton-Cotes, isto é, para $$k=1 $$ temos a regra do trapézio, para $$k=2 $$ temos a regra de Simpson, e assim por diante. O índice $$j $$ serve para indicar a estimativa mais acurada da menos acurada (quanto maior $$j $$ , mais acurada). Assim, o método pode ser definido indutivamente da seguinte forma
 
-  * \(R(0,0) = \dfrac{1}{2} \left( b-a \right) \left( f(a) + f(b) \right)\) 
-  * \(R(n,0) = \dfrac{1}{2} R(n-1, 0) + h\_n \sum\_{k=1}^{2^{n-1}} f(a + h_n (2k-1))\) 
-  * \(R(n,m) = \dfrac{1}{4^m &#8211; 1} \left( 4^m R(n,m-1) &#8211; R(n-1, m-1) \right)\) 
+  * $$R(0,0) = \dfrac{1}{2} \left( b-a \right) \left( f(a) + f(b) \right)$$ 
+  * $$R(n,0) = \dfrac{1}{2} R(n-1, 0) + h\_n \sum\_{k=1}^{2^{n-1} f(a + h_n (2k-1))$$ 
+  * $$R(n,m) = \dfrac{1}{4^m &#8211; 1} \left( 4^m R(n,m-1) &#8211; R(n-1, m-1) \right)$$ 
 
-onde \(a \) e \(b \) são os limites do intervalo de integração, \(n \geq 1 \) , $m \geq 1 \( e \) h_n = \dfrac{b-1}{2^n}$. 
+onde $$a $$ e $$b $$ são os limites do intervalo de integração, $$n \geq 1 $$ , $m \geq 1 $$ e $$ h_n = \dfrac{b-1}{2^n}$. 
 
 &nbsp;
 
@@ -373,7 +373,7 @@ A implementação utilizando as fórmulas indutivas é
     return R(ni, mi)</pre>
 </div>
 
-Contudo, essa implementação ingênua pode ser muito custosa para muitos \(n \) ou ordens de integração ( \(m \) ) muito grandes. Assim, uma versão mais eficiente do método de Romberg é listada abaixo: 
+Contudo, essa implementação ingênua pode ser muito custosa para muitos $$n $$ ou ordens de integração ( $$m $$ ) muito grandes. Assim, uma versão mais eficiente do método de Romberg é listada abaixo: 
 
 <div>
   <pre lang="python">def romberg_fast(f, xi, xe, n=20):

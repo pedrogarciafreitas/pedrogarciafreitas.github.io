@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'As vezes precisamos que nosso programa se comporte de forma diferente quando rodar em uma máquina virtual. Principalmente quando queremos dificultar o processo de engenharia reversa do nosso programa, antecipando o ambiente em que o cracker trabalhará, ou ainda, queremos restringir algumas funcionalidades que teriam a segurança reduzida, se rodasse numa MV.	'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=101
-permalink: p=101
+permalink: /p=101
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:2333:"

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: As regras de Simpson correspondem à segunda e terceira fórmulas de Newton-Cotes. Essas regras consistem em um método de aproximação de integrais definidas a partir de funções quadráticas e cúbicas.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1638
-permalink: p=1638
+permalink: /p=1638
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:4644:"
@@ -139,20 +139,20 @@ Os erros de arrendondamento podem limitar nossa habilidade de determinar integra
 
 ## 2. Regra 1/3 de Simpson 
 
-A regra 1/3 de Simpson é obtida quando um polinômio interpolador de segundo grau é utilizado. Isto é, \(f\_n(x) = f\_2(x)\):
+A regra 1/3 de Simpson é obtida quando um polinômio interpolador de segundo grau é utilizado. Isto é, $$f\_n(x) = f\_2(x)$$:
   
 
 
 <center>
-  \( I = \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_2(x) dx \)
+  $$ I = \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_2(x) dx $$
 </center>
 
-Se \(a \) e \(b \) forem designados por \(x\_0 \) e \(x\_2 \) e se \(f_2(x) \) for representado por um polinômio de Lagrange, temos que a integral acima é
+Se $$a $$ e $$b $$ forem designados por $$x\_0 $$ e $$x\_2 $$ e se $$f_2(x) $$ for representado por um polinômio de Lagrange, temos que a integral acima é
   
 
 
 <center>
-  \( I = \int_{x_0}^{x_2} \left[ \dfrac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)} f(x_0) + \dfrac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} f(x_1) + \dfrac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)} f(x_2) \right] ~ dx \)
+  $$ I = \int_{x_0}^{x_2} \left[ \dfrac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)} f(x_0) + \dfrac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} f(x_1) + \dfrac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)} f(x_2) \right] ~ dx $$
 </center>
 
 
@@ -162,43 +162,43 @@ Essa integral simplificada resulta em
 
 
 <center>
-  \( I = \dfrac{h}{3} \left[ f(x_0) + 4 f(x_1) + f(x_2) \right] \)
+  $$ I = \dfrac{h}{3} \left[ f(x_0) + 4 f(x_1) + f(x_2) \right] $$
 </center>
 
 
   
-onde \(h=\dfrac{b-a}{2} = \dfrac{x\_2-x\_0}{2} \) . Essa equação é conhecida como a regra 1/3 de Simpson, sendo a segunda fórmula de Newton-Cotes. 
+onde $$h=\dfrac{b-a}{2} = \dfrac{x\_2-x\_0}{2} $$ . Essa equação é conhecida como a regra 1/3 de Simpson, sendo a segunda fórmula de Newton-Cotes. 
 
 &nbsp;
 
 ### 2.1. Regra 1/3 em múltiplos intervalos 
 
-Assim como fizemos com a regra do trapézio, dividindo o intervalo de integração em diversos subintervalos, fazemos com a regra de Simpson para melhorarmos a estimativa da integral. Assim, ao dividirmos o intervalo \([a.b] \) em \(n \) segmentos, temos
+Assim como fizemos com a regra do trapézio, dividindo o intervalo de integração em diversos subintervalos, fazemos com a regra de Simpson para melhorarmos a estimativa da integral. Assim, ao dividirmos o intervalo $$[a.b] $$ em $$n $$ segmentos, temos
   
 
 
 <center>
-  \( h = \dfrac{b-a}{n} \)
+  $$ h = \dfrac{b-a}{n} $$
 </center>
 
 
   
-Tomando \(b=x\_n \) e \(a=x\_0 \) , a integral é representada como
+Tomando $$b=x\_n $$ e $$a=x\_0 $$ , a integral é representada como
   
 
 
 <center>
-  \( I = \int_{x_0}^{x_2} f(x) dx + \int_{x_2}^{x_4} f(x) dx + \cdots + \int_{x_{n-2}}^{x_n} f(x) dx \)
+  $$ I = \int_{x_0}^{x_2} f(x) dx + \int_{x_2}^{x_4} f(x) dx + \cdots + \int_{x_{n-2}^{x_n} f(x) dx $$
 </center>
 
 
   
-onde \(f(x) \) é substituído em cada parte dessa integral por
+onde $$f(x) $$ é substituído em cada parte dessa integral por
   
 
 
 <center>
-  \( f(x) = \dfrac{(x-x_{i+1})(x-x_{i+2})}{(x_i-x_{i+1})(x_{i}-x_{i+2})} f(x_i) + \dfrac{(x-x_i)(x-x_{i+2})}{(x_{i+1}-x_i)(x_{i+1}-x_{i+2})} f(x_{i+1}) + \dfrac{(x-x_i)(x-x_{i+1})}{(x_{i+2}-x_i)(x_{i+2}-x_{i+1})} f(x_{i+2}) \)
+  $$ f(x) = \dfrac{(x-x_{i+1})(x-x_{i+2})}{(x_i-x_{i+1})(x_{i}-x_{i+2})} f(x_i) + \dfrac{(x-x_i)(x-x_{i+2})}{(x_{i+1}-x_i)(x_{i+1}-x_{i+2})} f(x_{i+1}) + \dfrac{(x-x_i)(x-x_{i+1})}{(x_{i+2}-x_i)(x_{i+2}-x_{i+1})} f(x_{i+2}) $$
 </center>
 
 
@@ -208,7 +208,7 @@ Assim, ao substituirmos a equação acima em cada integral individual, temos que
 
 
 <center>
-  \( I \approx 2h \dfrac{f(x_0)+ 4 f(x_1)+f(x_2)}{6} + 2h \dfrac{f(x_2) + 4 f(x_3) + f(x_4)}{6} + \cdots 2h \dfrac{f(x_{n-2}) + 4 f(x_{n-1}) + f(x_n)}{6} \)
+  $$ I \approx 2h \dfrac{f(x_0)+ 4 f(x_1)+f(x_2)}{6} + 2h \dfrac{f(x_2) + 4 f(x_3) + f(x_4)}{6} + \cdots 2h \dfrac{f(x_{n-2}) + 4 f(x_{n-1}) + f(x_n)}{6} $$
 </center>
 
 
@@ -218,19 +218,19 @@ que pode ser expressa de uma forma mais simplificada:
 
 
 <center>
-  \( I \approx \dfrac{(b-a)}{3n} \left[ f(x_0) + 4 \sum_{i=1,3,5}^{n-1} f(x_i) + 2 \sum_{j=2,4,6}^{n-2} f(x_j) + f(x_n) \right] \)
+  $$ I \approx \dfrac{(b-a)}{3n} \left[ f(x_0) + 4 \sum_{i=1,3,5}^{n-1} f(x_i) + 2 \sum_{j=2,4,6}^{n-2} f(x_j) + f(x_n) \right] $$
 </center>
 
 &nbsp;
 
 ## 3. Regra 3/8 de Simpson 
 
-De forma análoga à regra 1/3 e à regra do trapézio, a regra 3/8 consiste em tomar um polinômio aproximador. Nesse caso, tomamos a terceira fórmula de Newton-Cotes, \(f\_n(x) = f\_3(x)\):
+De forma análoga à regra 1/3 e à regra do trapézio, a regra 3/8 consiste em tomar um polinômio aproximador. Nesse caso, tomamos a terceira fórmula de Newton-Cotes, $$f\_n(x) = f\_3(x)$$:
   
 
 
 <center>
-  \( I \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_3(x) dx \)
+  $$ I \int_{a}^{b} f(x) dx \approx \int_{a}^{b} f_3(x) dx $$
 </center>
 
 
@@ -240,10 +240,10 @@ que fornece a seguinte fórmula da regra 3/8 de Simpson
 
 
 <center>
-  \( I \approx \dfrac{3h}{8} \left[ f(x_0) + 3 f(x_1) + 3 f(x_2) + f(x_3) \right] \)
+  $$ I \approx \dfrac{3h}{8} \left[ f(x_0) + 3 f(x_1) + 3 f(x_2) + f(x_3) \right] $$
 </center>
 
-A figura abaixo demonstra a diferença da utilização dos métodos do trapézio (esquerda), regra de Simpson 1/3 (meio) e Simpson 3/8 (direita) para a função \(f(x) = x^x &#8211; x!\) utilizando 2 partições. Como podemos ver, a escolha do método de interpolação tem grande implicação na acurácia da aproximação. 
+A figura abaixo demonstra a diferença da utilização dos métodos do trapézio (esquerda), regra de Simpson 1/3 (meio) e Simpson 3/8 (direita) para a função $$f(x) = x^x &#8211; x!$$ utilizando 2 partições. Como podemos ver, a escolha do método de interpolação tem grande implicação na acurácia da aproximação. 
 
 <center>
   <br /> <a name="#fig1"></a><br /> <a href="http://www.sawp.com.br/blog/wp-content/uploads/2012/07/graphics.png"><img class="aligncenter size-full wp-image-416" title="Aproximação da raiz por uma reta." src="http://www.sawp.com.br/blog/wp-content/uploads/2012/07/graphics.png" alt="numerical" width="800" height="266" /></a><br />

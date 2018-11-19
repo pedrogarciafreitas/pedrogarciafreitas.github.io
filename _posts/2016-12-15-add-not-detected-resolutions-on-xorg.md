@@ -5,7 +5,7 @@ date: 2016-12-15T09:13:03+00:00
 author: SAWP
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2100
-permalink: p=2100
+permalink: /p=2100
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:4256:"

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Fix the fsck error on FreeBSD.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2064
-permalink: p=2064
+permalink: /p=2064
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:829:"

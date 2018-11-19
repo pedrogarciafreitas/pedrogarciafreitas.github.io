@@ -9,7 +9,7 @@ excerpt: |
   ifort: error #10273: Fatal error in /opt/intel/Compiler/11.1/069/bin/intel64/fortcom, terminated by 0x7f
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1853
-permalink: p=1853
+permalink: /p=1853
 wp-syntax-cache-content:
   - |
     a:2:{i:1;s:400:"

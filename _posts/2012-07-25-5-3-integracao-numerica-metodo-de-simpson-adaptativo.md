@@ -6,7 +6,7 @@ author: SAWP
 excerpt: ' A regra de Simpson adaptativa é um algoritmo recursivo de integração numérica que usa uma estimativa do erro para calcular uma integral definida através de múltiplas aplicações do método de Simpson. Como em muitas abordagens numéricas, se o erro estimado ultrapassa um erro tolerado, o algoritmo divide o intervalo de integração em dois sub-intervalos e reaplica o método de Simpson nesses intervalos de forma independente, somando os resultados. Essa técnica acaba por ser mais eficiente que outros métodos de integração por convergir quadraticamente ao resultado.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1658
-permalink: p=1658
+permalink: /p=1658
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:8090:"
@@ -113,12 +113,12 @@ A regra de Simpson adaptativa é um algoritmo recursivo de integração numéric
 
 ## 2. O Método 
 
-Seja \(S(a,b) \) o resultado da aproximação da integral utilizando a regra de Simpson &#8212; \(1/3 \) ou \(3/4 \) &#8212; no intervalo \([a,b] \) . Assim,
+Seja $$S(a,b) $$ o resultado da aproximação da integral utilizando a regra de Simpson &#8212; $$1/3 $$ ou $$3/4 $$ &#8212; no intervalo $$[a,b] $$ . Assim,
   
 
 
 <center>
-  \( I = S(a,b) = \int_{a}^{b} f(x) dx \approx \int_a^b f_2(x) dx \)
+  $$ I = S(a,b) = \int_{a}^{b} f(x) dx \approx \int_a^b f_2(x) dx $$
 </center>
 
 
@@ -126,7 +126,7 @@ Seja \(S(a,b) \) o resultado da aproximação da integral utilizando a regra de 
 O critério de parada da sub-divisão dos intervalos é calculado pela seguinte equação 
 
 <center>
-  \( \dfrac{S(a,m) + S(m, b) &#8211; S(a,b)}{15} < \epsilon [/latex]
+  $$ \dfrac{S(a,m) + S(m, b) &#8211; S(a,b)}{15} < \epsilon [/latex]
 </center>
 
 
@@ -136,12 +136,12 @@ com
 </center>
 
 <center>
-  [latex] m = \dfrac{b-a}{2} \)
+  [latex] m = \dfrac{b-a}{2} $$
 </center>
 
 
   
-onde \(m \) é o ponto médio do intervalo \([a,b]\) e \(\epsilon\) é o erro tolerado para o intervalo. 
+onde $$m $$ é o ponto médio do intervalo $$[a,b]$$ e $$\epsilon$$ é o erro tolerado para o intervalo. 
 
 &nbsp;
 

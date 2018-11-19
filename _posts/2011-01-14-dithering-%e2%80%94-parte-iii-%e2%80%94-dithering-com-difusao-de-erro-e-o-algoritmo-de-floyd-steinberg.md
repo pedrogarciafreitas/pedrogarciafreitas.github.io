@@ -6,7 +6,7 @@ author: SAWP
 excerpt: Dithering (pontilhado) com difusão de erro é uma técnica de halftone que procura distribuir a diferença entre o valor exato de cada pixel e seu valor aproximado a um conjunto de pixels adjacentes. Diversas técnicas foram desenvolvidas com esta proposta, sendo o algoritmo de Floyd-Steinberg o primeiro desenvolvido utilizando esta abordagem.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=1041
-permalink: p=1041
+permalink: /p=1041
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:15470:"
@@ -203,7 +203,7 @@ Devemos notar que os valores multiplicados ao erro são pesos que formam a distr
 
 
 <center>
-  <br /> \(<br /> \begin{array}{| c | c | c | }<br /> \hline<br /> 0 & 0 & 0 \\ \hline<br /> 0 & f(x,y) & 7/16 \\ \hline<br /> 3/16 & 5/16 & 1/16 \\<br /> \hline<br /> \end{array}<br /> \)<br />
+  <br /> $$<br /> \begin{array}{| c | c | c | }<br /> \hline<br /> 0 & 0 & 0 \\ \hline<br /> 0 & f(x,y) & 7/16 \\ \hline<br /> 3/16 & 5/16 & 1/16 \\<br /> \hline<br /> \end{array}<br /> $$<br />
 </center>
 
 O resultado da aplicação desta técnica de pontilhado pode ser vista nas imagens abaixo:

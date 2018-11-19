@@ -6,7 +6,7 @@ author: SAWP
 excerpt: O Método de Jenkins-Traub é um algoritmo para busca dos zeros de uma função polinomial que utiliza três estágios de estimativas para aproximar as raízes.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=573
-permalink: p=573
+permalink: /p=573
 categories:
   - Computational Methods
 ---
@@ -29,19 +29,19 @@ Considere o polinômio
 
 
 <center>
-  <br /> \( P(z) = z^n + a_{n-1}z^{n-1} + \cdots + a_1z + a_0 = \prod_{j=1}^p (z = \alpha_j)^{m_j} \)<br />
+  <br /> $$ P(z) = z^n + a_{n-1}z^{n-1} + \cdots + a_1z + a_0 = \prod_{j=1}^p (z = \alpha_j)^{m_j} $$<br />
 </center>
 
 
     
-onde os termos \(a\_i \) são números complexos com \(a\_0 \neq 0 \) e onde a raiz \(\alpha\_j \) de \(P(z) \) têm multiplicidade \(m\_j \) , com \(j=1,\ldots, p \) , então temos que \(\sum_{j=1}^p = n \) . Assim, teremos que
+onde os termos $$a\_i $$ são números complexos com $$a\_0 \neq 0 $$ e onde a raiz $$\alpha\_j $$ de $$P(z) $$ têm multiplicidade $$m\_j $$ , com $$j=1,\ldots, p $$ , então temos que $$\sum_{j=1}^p = n $$ . Assim, teremos que
     
 <a name="eq2">(eq2)</a>
       
 
 
 <center>
-  <br /> \( P'(z) = \sum_{j=1}^{p} m_j P_j(z) \)<br />
+  <br /> $$ P'(z) = \sum_{j=1}^{p} m_j P_j(z) $$<br />
 </center>
 
 
@@ -53,86 +53,86 @@ onde
 
 
 <center>
-  <br /> \( P_j(z) = \dfrac{P(z)}{z-\alpha_j} \)<br />
+  <br /> $$ P_j(z) = \dfrac{P(z)}{z-\alpha_j} $$<br />
 </center>
 
 
     
-onde \(j \) , sabemos que itera sobre o intervalo \([1,p] \) . 
+onde $$j $$ , sabemos que itera sobre o intervalo $$[1,p] $$ . 
 
-O algoritmo de Jenkins-Traub gera uma sequência de polinômios \(H^{(\lambda)}(z) \) iniciando com \(H^{(0)}(z) = P'(z) \) , onde cada outro polinômio para \(\lambda > 0 \) , tendo a forma
+O algoritmo de Jenkins-Traub gera uma sequência de polinômios $$H^{(\lambda)}(z) $$ iniciando com $$H^{(0)}(z) = P'(z) $$ , onde cada outro polinômio para $$\lambda > 0 $$ , tendo a forma
     
 <a name="eq4">(eq4)</a>
       
 
 
 <center>
-  <br /> \( H^{(\lambda)}(z) = \sum_{j=1}^{p} c_j^{(\lambda)} P_j(z) \)<br />
+  <br /> $$ H^{(\lambda)}(z) = \sum_{j=1}^{p} c_j^{(\lambda)} P_j(z) $$<br />
 </center>
 
 
     
-com \(c\_j^{(0)} = m\_j \) . Se escolhermos uma sequência tal que \(H^{(\lambda)}(z) \rightarrow c\_1^{\lambda} P\_1(z) \) , isto é, que possua as taxas
+com $$c\_j^{(0)} = m\_j $$ . Se escolhermos uma sequência tal que $$H^{(\lambda)}(z) \rightarrow c\_1^{\lambda} P\_1(z) $$ , isto é, que possua as taxas
     
 <a name="eq5">(eq5)</a>
       
 
 
 <center>
-  <br /> \( d_j^{(\lambda)} = \dfrac{c_j^{(\lambda)}}{c_1^{(\lambda)}} \)<br />
+  <br /> $$ d_j^{(\lambda)} = \dfrac{c_j^{(\lambda)}{c_1^{(\lambda)} $$<br />
 </center>
 
 
     
-com \(j=2,\ldots,p \) , então poderemos encontrar a sequência \(t\_{\lambda} \) das aproximações de \(\alpha\_1 \) , utilizando a fórmula
+com $$j=2,\ldots,p $$ , então poderemos encontrar a sequência $$t\_{\lambda} $$ das aproximações de $$\alpha\_1 $$ , utilizando a fórmula
     
 <a name="eq6">(eq6)</a>
       
 
 
 <center>
-  <br /> \( t_{\lambda + 1} = s_{\lambda} &#8211; \dfrac{P(s_{\lambda})}{U^{(\lambda+1)}(s_{\lambda}} \)<br />
+  <br /> $$ t_{\lambda + 1} = s_{\lambda} &#8211; \dfrac{P(s_{\lambda})}{U^{(\lambda+1)}(s_{\lambda} $$<br />
 </center>
 
 
     
-onde \(U \) é uma normalização de \(H \) do tipo
+onde $$U $$ é uma normalização de $$H $$ do tipo
     
 <a name="eq7">(eq7)</a>
       
 
 
 <center>
-  <br /> \( U^{(\lambda)} = \dfrac{H^{(\lambda)}(z)}{\sum_{j=1}^{p}c_j^{(\lambda)}} \)<br />
+  <br /> $$ U^{(\lambda)} = \dfrac{H^{(\lambda)}(z)}{\sum_{j=1}^{p}c_j^{(\lambda)} $$<br />
 </center>
 
 A partir dessas funções, o algoritmo utiliza três estágios de aproximação de novos polinômios para aplicar à interação de Newton. </p> 
 
 ### 2.1. Primeiro estágio: processo sem deslocamento 
 
-Para \(\lambda &#8211; 0, 1, \ldots, M-1 \) , utilizamos \(s_{\lambda} = 0 \) . No caso, \(M \) é uma variável escolhida como um polinômio de grau de aproximação
+Para $$\lambda &#8211; 0, 1, \ldots, M-1 $$ , utilizamos $$s_{\lambda} = 0 $$ . No caso, $$M $$ é uma variável escolhida como um polinômio de grau de aproximação
     
 razoável. 
 
 ### 2.2. Segundo estágio: processo com deslocamento fixo 
 
-Esta etapa da execução que determina as aproximações gerais das menores raízes dos polinômios. Isto é é feito, estimando-se \(s \) aleatoriamente dentro de um círculo com centro no zero do plano complexo. Ou seja,
+Esta etapa da execução que determina as aproximações gerais das menores raízes dos polinômios. Isto é é feito, estimando-se $$s $$ aleatoriamente dentro de um círculo com centro no zero do plano complexo. Ou seja,
     
 <a name="eq8">(eq8)</a>
       
 
 
 <center>
-  <br /> \( s = e^{i\theta}\beta \)<br />
+  <br /> $$ s = e^{i\theta}\beta $$<br />
 </center>
 
 
     
-onde \(\beta \) é o raio que espera-se conter as menores raízes do polinômio. Esta etapa, normalmente é escolhida entre para o intervalo \(M, \ldots, L &#8211; 1 \) . </p> 
+onde $$\beta $$ é o raio que espera-se conter as menores raízes do polinômio. Esta etapa, normalmente é escolhida entre para o intervalo $$M, \ldots, L &#8211; 1 $$ . </p> 
 
 ### 2.3. Terceiro estágio: processo com deslocamento variável (adaptativo) 
 
-O polinômio \(H^{(\lambda + 1)}(x) \) agora é gerado utilizando-se a variável de deslocamento \(s_{\lambda} \) para os demais polinômios e será obtido utilizando-se a Equação [6](#eq6). </p> 
+O polinômio $$H^{(\lambda + 1)}(x) $$ agora é gerado utilizando-se a variável de deslocamento $$s_{\lambda} $$ para os demais polinômios e será obtido utilizando-se a Equação [6](#eq6). </p> 
 
 ## 3. Implementação 
 

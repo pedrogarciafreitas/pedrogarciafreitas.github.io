@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    O Método de Muller é uma técnica modificada do Método da Secante, mas que ao contrário dessa, não estima a raiz de uma função prolongando uma reta através de dois pontos -- fazendo com que esta reta seja secante à curva da função --, e sim utiliza-se de uma parábola através de três pontos para aproximação da derivada.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=463
-permalink: p=463
+permalink: /p=463
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:12092:"
@@ -185,17 +185,17 @@ Pelo fato do Método de Muller aproximar uma parábola, é conveniente descrever
 
 <p align="center">
   <center>
-    \( f_{i} = a \left( x &#8211; x_{i} \right)^2 + b \left( x &#8211; x_{i} \right) + c \)
+    $$ f_{i} = a \left( x &#8211; x_{i} \right)^2 + b \left( x &#8211; x_{i} \right) + c $$
   </center>
 </p>
 
-Escolhendo três pontos interceptantes à função: \(\left( x0, f(x0) \right) \), \(\left( x1, f(x1) \right) \) e \(\left( x2, f(x2) \right) \) para substituí-los na Equação [1](#eq1) , geramos o conjunto de equações:
+Escolhendo três pontos interceptantes à função: $$\left( x0, f(x0) \right) $$, $$\left( x1, f(x1) \right) $$ e $$\left( x2, f(x2) \right) $$ para substituí-los na Equação [1](#eq1) , geramos o conjunto de equações:
     
 <a name="eq2">(eq2)</a>
 
 <p align="center">
   <center>
-    \(f_{0} = a \left( x &#8211; x_{0} \right)^2 + b \left( x &#8211; x_{0} \right) + c \)
+    $$f_{0} = a \left( x &#8211; x_{0} \right)^2 + b \left( x &#8211; x_{0} \right) + c $$
   </center>
 </p>
 
@@ -203,7 +203,7 @@ Escolhendo três pontos interceptantes à função: \(\left( x0, f(x0) \right) \
 
 <p align="center">
   <center>
-    \( f_{1} = a \left( x &#8211; x_{1} \right)^2 + b \left( x &#8211; x_{1} \right) + c \)
+    $$ f_{1} = a \left( x &#8211; x_{1} \right)^2 + b \left( x &#8211; x_{1} \right) + c $$
   </center>
 </p>
 
@@ -211,11 +211,11 @@ Escolhendo três pontos interceptantes à função: \(\left( x0, f(x0) \right) \
 
 <p align="center">
   <center>
-    \( f_{2} = a \left( x &#8211; x_{2} \right)^2 + b \left( x &#8211; x_{2} \right) + c \)
+    $$ f_{2} = a \left( x &#8211; x_{2} \right)^2 + b \left( x &#8211; x_{2} \right) + c $$
   </center>
 </p>
 
-Para simplificar a função \(f \) , tomaremos \(x = 2x\_i &#8211; x\_2 \) , o que nos leva a
+Para simplificar a função $$f $$ , tomaremos $$x = 2x\_i &#8211; x\_2 $$ , o que nos leva a
     
 obter o conjunto de equações:
     
@@ -223,7 +223,7 @@ obter o conjunto de equações:
 
 <p align="center">
   <center>
-    \( f_{0} = a \left( x_{0} &#8211; x_{2} \right)^2 + b \left( x_{0} &#8211; x_{2} \right) + c \)
+    $$ f_{0} = a \left( x_{0} &#8211; x_{2} \right)^2 + b \left( x_{0} &#8211; x_{2} \right) + c $$
   </center>
 </p>
 
@@ -231,7 +231,7 @@ obter o conjunto de equações:
 
 <p align="center">
   <center>
-    \( f_{1} = a \left( x_{1} &#8211; x_{2} \right)^2 + b \left( x_{1} &#8211; x_{2} \right) + c \)
+    $$ f_{1} = a \left( x_{1} &#8211; x_{2} \right)^2 + b \left( x_{1} &#8211; x_{2} \right) + c $$
   </center>
 </p>
 
@@ -239,17 +239,17 @@ obter o conjunto de equações:
 
 <p align="center">
   <center>
-    \( f_{2} = a \left( x_{2} &#8211; x_{2} \right)^2 + b \left( x_{2} &#8211; x_{2} \right) + c = c \)
+    $$ f_{2} = a \left( x_{2} &#8211; x_{2} \right)^2 + b \left( x_{2} &#8211; x_{2} \right) + c = c $$
   </center>
 </p>
 
-A partir destas três equações, podemos determinar as três incógnitas: \(a \) , \(b \) e \(c \) . Como dado pela última equação, \(c=f(x_2) \) , que é o valor da função avaliada na terceira aproximação. Ao sobstituirmos este coeficiente nas outras equações, obtemos:
+A partir destas três equações, podemos determinar as três incógnitas: $$a $$ , $$b $$ e $$c $$ . Como dado pela última equação, $$c=f(x_2) $$ , que é o valor da função avaliada na terceira aproximação. Ao sobstituirmos este coeficiente nas outras equações, obtemos:
     
 <a name="eq8">(eq8)</a>
 
 <p align="center">
   <center>
-    \( f(x_{0}) &#8211; f(x_{2}) = a \left( x_{0} &#8211; x_{2} \right) ^2 + b \left( x_{0} &#8211; x_{2} \right) \)
+    $$ f(x_{0}) &#8211; f(x_{2}) = a \left( x_{0} &#8211; x_{2} \right) ^2 + b \left( x_{0} &#8211; x_{2} \right) $$
   </center>
 </p>
 
@@ -257,7 +257,7 @@ A partir destas três equações, podemos determinar as três incógnitas: \(a \
 
 <p align="center">
   <center>
-    \( f(x_{1}) &#8211; f(x_{2}) = a \left( x_{1} &#8211; x_{2} \right) ^2 + b \left( x_{1} &#8211; x_{2} \right) \)
+    $$ f(x_{1}) &#8211; f(x_{2}) = a \left( x_{1} &#8211; x_{2} \right) ^2 + b \left( x_{1} &#8211; x_{2} \right) $$
   </center>
 </p>
 
@@ -267,7 +267,7 @@ Para simplificar esta demonstração e uma possível codificação, definimos as
 
 <p align="center">
   <center>
-    \( h_{0} = x_{1} &#8211; x_{0} \)
+    $$ h_{0} = x_{1} &#8211; x_{0} $$
   </center>
 </p>
 
@@ -275,7 +275,7 @@ Para simplificar esta demonstração e uma possível codificação, definimos as
 
 <p align="center">
   <center>
-    \( h_{1} = x_{2} &#8211; x_{1} \)
+    $$ h_{1} = x_{2} &#8211; x_{1} $$
   </center>
 </p>
 
@@ -283,7 +283,7 @@ Para simplificar esta demonstração e uma possível codificação, definimos as
 
 <p align="center">
   <center>
-    \( d_{0} = \dfrac{ f(x_{1}) &#8211; f(x_{0}) }{ x_{1} &#8211; x_{0} } \)
+    $$ d_{0} = \dfrac{ f(x_{1}) &#8211; f(x_{0}) }{ x_{1} &#8211; x_{0} } $$
   </center>
 </p>
 
@@ -291,7 +291,7 @@ Para simplificar esta demonstração e uma possível codificação, definimos as
 
 <p align="center">
   <center>
-    \( d_{1} = \dfrac{ f(x_{2}) &#8211; f(x_{1}) }{ x_{2} &#8211; x_{1} } \)
+    $$ d_{1} = \dfrac{ f(x_{2}) &#8211; f(x_{1}) }{ x_{2} &#8211; x_{1} } $$
   </center>
 </p>
 
@@ -301,7 +301,7 @@ Com essas transformações, as Equações [8](#eq8) e [9](#eq9) podem ser escrit
 
 <p align="center">
   <center>
-    \( b \left( h_{0} + h_{1} \right) &#8211; a \left( h_{0} + h_{1} \right) ^2 = h_{0}d_{0} + h_{1}d_{1} \)
+    $$ b \left( h_{0} + h_{1} \right) &#8211; a \left( h_{0} + h_{1} \right) ^2 = h_{0}d_{0} + h_{1}d_{1} $$
   </center>
 </p>
 
@@ -309,7 +309,7 @@ Com essas transformações, as Equações [8](#eq8) e [9](#eq9) podem ser escrit
 
 <p align="center">
   <center>
-    \( h_{1} b &#8211; a h_{1}^2 = h_{1}d_{1} \)
+    $$ h_{1} b &#8211; a h_{1}^2 = h_{1}d_{1} $$
   </center>
 </p>
 
@@ -319,7 +319,7 @@ isolando os coeficientes a, b e c,
 
 <p align="center">
   <center>
-    \( a = \dfrac{ d_{1} &#8211; d_{0} }{ h_{1} &#8211; h_{0} } \)
+    $$ a = \dfrac{ d_{1} &#8211; d_{0} }{ h_{1} &#8211; h_{0} } $$
   </center>
 </p>
 
@@ -327,7 +327,7 @@ isolando os coeficientes a, b e c,
 
 <p align="center">
   <center>
-    \( b = a h_{1} + d_{1} \)
+    $$ b = a h_{1} + d_{1} $$
   </center>
 </p>
 
@@ -335,41 +335,41 @@ isolando os coeficientes a, b e c,
 
 <p align="center">
   <center>
-    \( c = f(x_{2}) \)
+    $$ c = f(x_{2}) $$
   </center>
 </p>
 
-Para encontrarmos a raiz, aplicamos a fórmula quadrática na próxima iteração. Como temos \(x\_{0} \) , \(x\_{1} \) e \(x\_{2} \) , podemos encontrar \(x\_{3} \) da seguinte maneira:
+Para encontrarmos a raiz, aplicamos a fórmula quadrática na próxima iteração. Como temos $$x\_{0} $$ , $$x\_{1} $$ e $$x\_{2} $$ , podemos encontrar $$x\_{3} $$ da seguinte maneira:
     
 <a name="eq19">(eq19)</a> 
 
 <p align="center">
   <center>
-    \( x_{3} &#8211; x_{2} = &#8211; \dfrac{2 c}{b \pm \sqrt{b^2 &#8211; 4 a c} } \)
+    $$ x_{3} &#8211; x_{2} = &#8211; \dfrac{2 c}{b \pm \sqrt{b^2 &#8211; 4 a c} } $$
   </center>
 </p>
 
-isolando \(x_{3} \),
+isolando $$x_{3} $$,
     
 <a name="eq20">(eq20)</a>
 
 <p align="center">
   <center>
-    \( x_{3} = x_{2} &#8211; \dfrac{2 c}{b \pm \sqrt{b^2 &#8211; 4 a c}} \)
+    $$ x_{3} = x_{2} &#8211; \dfrac{2 c}{b \pm \sqrt{b^2 &#8211; 4 a c} $$
   </center>
 </p>
 
-Em um programa, os passos acima são repetidos até quando a aproximação estiver com um erro tolerável. Sendo assim, em uma generalização, \(x\_0 = x\_{i-3} \) , \(x\_1 = x\_{i-2} \) , \(x\_2 = x\_{i-1} \) e \(x\_3 = x\_{i} \) e o erro relativo é calculado como:
+Em um programa, os passos acima são repetidos até quando a aproximação estiver com um erro tolerável. Sendo assim, em uma generalização, $$x\_0 = x\_{i-3} $$ , $$x\_1 = x\_{i-2} $$ , $$x\_2 = x\_{i-1} $$ e $$x\_3 = x\_{i} $$ e o erro relativo é calculado como:
     
 <a name="eq21">(eq21)</a> 
 
 <p align="center">
   <center>
-    \( errno = \dfrac{ x_{3} &#8211; x_{2} }{ x_{3} } \)
+    $$ errno = \dfrac{ x_{3} &#8211; x_{2} }{ x_{3} } $$
   </center>
 </p>
 
-Dos passos acima é possível ver que a equação que estima \(x_{3} \) fornece duas raízes. No método de Muller, a estratégia é escolher o sinal de \(b \) que majore o denominador, aumentando a velocidade de convergência. 
+Dos passos acima é possível ver que a equação que estima $$x_{3} $$ fornece duas raízes. No método de Muller, a estratégia é escolher o sinal de $$b $$ que majore o denominador, aumentando a velocidade de convergência. 
 
 Embora este algoritmo esteja sendo apresentado na busca de raízes de polinômios, ele pode ser utilizado para encontrar raízes de outras classes de funções, da mesma forma que o Método de Newton-Raphson. 
 
@@ -485,7 +485,7 @@ onde _s_ é o passo que delimitará os outros pontos de avaliação. Veja que ta
 
 
     
-onde \(s \neq k \) . 
+onde $$s \neq k $$ . 
 
 Este código pode ser encontrado em <a href="http://www.sawp.com.br/code/rootfind/muller.f90" target="_blank">http://www.sawp.com.br/code/rootfind/muller.f90</a> </p> 
 

@@ -6,7 +6,7 @@ author: SAWP
 excerpt: A unificação é uma operação lógica que produz uma substituição de um termo em outro, identificando os termos ou fazendo a igualdade de condições utilizando alguma teoria equacional (no caso da unificação semântica). Neste post apresentamos e descrevemos uma implementação em OCaml do algoritmo de unificação de Robson.
 layout: post
 guid: http://www.sawp.com.br/blog/?p=795
-permalink: p=795
+permalink: /p=795
 wp-syntax-cache-content:
   - |
     a:8:{i:1;s:1446:"
@@ -253,23 +253,23 @@ categories:
 ---
 ## Introdução 
 
-Unificação é um processo utilizado em lógica que consiste em atribuir valores para variáveis de diferentes expressões para testar se uma expressão pode ser substituída em outra. Isto é, se existe uma substituição \(\sigma \) atuando em um conjunto finito de termos \(S \) tal que \( S \overrightarrow{\sigma} U \) , onde \(U \) é um conjunto unitário. 
+Unificação é um processo utilizado em lógica que consiste em atribuir valores para variáveis de diferentes expressões para testar se uma expressão pode ser substituída em outra. Isto é, se existe uma substituição $$\sigma $$ atuando em um conjunto finito de termos $$S $$ tal que $$ S \overrightarrow{\sigma} U $$ , onde $$U $$ é um conjunto unitário. 
 
-Em uma expressão unificável $P$ existe duas expressões \(Y \) e \(f(X) \), tal que exista \(P(f(X)) \) e \(P(Y) \) que possuam equivalência. Por exemplo, para unificarmos as expressões \(f(g(X),Y) \) e \(f(g(a),X) \), precisamos de \(X = a \) e \(Y = a \) . Desta maneira, ambos termos são \(f(g(a),a) \) , sendo esta última expressão a forma mais reduzida, uma vez que impossível de se unificar \(g(a) \) e \(a \). 
+Em uma expressão unificável $P$ existe duas expressões $$Y $$ e $$f(X) $$, tal que exista $$P(f(X)) $$ e $$P(Y) $$ que possuam equivalência. Por exemplo, para unificarmos as expressões $$f(g(X),Y) $$ e $$f(g(a),X) $$, precisamos de $$X = a $$ e $$Y = a $$ . Desta maneira, ambos termos são $$f(g(a),a) $$ , sendo esta última expressão a forma mais reduzida, uma vez que impossível de se unificar $$g(a) $$ e $$a $$. 
 
 Para verificar se uma expressão é unificável, nosso programa verifica a relação de tipos entre sub-expressões, obedecendo as seguintes definições:
 
   1. Termos são expressões construídas a partir de constantes, variáveis e símbolos funcionais de aridade finita:
           
     <center>
-      <tt>\(t ::= c~|~x~|~f(t_1, t_2, \ldots,t_n) \)</tt>
+      <tt>$$t ::= c~|~x~|~f(t_1, t_2, \ldots,t_n) $$</tt>
     </center>
 
-  2. Uma substituição \(\sigma \) é um conjunto \({v\_1/t\_1, v\_2/t\_2, \ldots, v\_n/t\_n} \) , onde cada variável \(v\_i \) é distinta das outras e cada \(t\_i \) é um termo distinto de \(v\_i \) . Chamamos de ligação da substituição \(v\_i/t_i \). 
+  2. Uma substituição $$\sigma $$ é um conjunto $${v\_1/t\_1, v\_2/t\_2, \ldots, v\_n/t\_n} $$ , onde cada variável $$v\_i $$ é distinta das outras e cada $$t\_i $$ é um termo distinto de $$v\_i $$ . Chamamos de ligação da substituição $$v\_i/t_i $$. 
   3. Para dois conjuntos distintos de substituições
           
     <center>
-      \(\theta = \{u_1/s_1, \ldots, u_m/s_m\} \)
+      $$\theta = \{u_1/s_1, \ldots, u_m/s_m\} $$
     </center>
     
     
@@ -277,15 +277,15 @@ Para verificar se uma expressão é unificável, nosso programa verifica a rela�
     e
           
     <center>
-      \(\sigma = \{v_1/t_1, \ldots, v_n/t_n\} \)
+      $$\sigma = \{v_1/t_1, \ldots, v_n/t_n\} $$
     </center>
     
     
   
-    uma composição \(\theta\sigma \) é a substituição obtida do conjunto \(\{u\_1/s\_1\sigma, \ldots, u\_m/s\_m\sigma, v\_1/t\_1, \ldots, v\_n/t\_n\} \) eliminando qualquer ligação \(u\_i/s\_i\sigma \) , para qual \(u\_i = s\_i\sigma \) e qualquer ligação \(v\_j/t\_j \) para qual \(v\_j \in \{u\_1, \ldots, u_m\} \) . 
-  4. Seja \(S \) um conjunto finito de termos. Uma substituição \(\theta \) é denominada um unificador de \(S \) se \(S\theta \) for um **conjunto unitário**. 
-  5. Um unificador \(\theta \) para um conjunto finito \(S \) de termos é denominado um **unificador mais geral** de \(S \) se \(\forall \) unificador de \(\sigma \) de \(S \) \(\exists \) uma substituição \(\gamma \) tal que \(\sigma = \theta\gamma \) . 
-  6. Seja \(S \) um conjunto finito de termos. O conjunto de conflitos de \(S \) consiste dos sub-termos mais a esquerda dos termos de \(S \) que se diferenciam. 
+    uma composição $$\theta\sigma $$ é a substituição obtida do conjunto $$\{u\_1/s\_1\sigma, \ldots, u\_m/s\_m\sigma, v\_1/t\_1, \ldots, v\_n/t\_n\} $$ eliminando qualquer ligação $$u\_i/s\_i\sigma $$ , para qual $$u\_i = s\_i\sigma $$ e qualquer ligação $$v\_j/t\_j $$ para qual $$v\_j \in \{u\_1, \ldots, u_m\} $$ . 
+  4. Seja $$S $$ um conjunto finito de termos. Uma substituição $$\theta $$ é denominada um unificador de $$S $$ se $$S\theta $$ for um **conjunto unitário**. 
+  5. Um unificador $$\theta $$ para um conjunto finito $$S $$ de termos é denominado um **unificador mais geral** de $$S $$ se $$\forall $$ unificador de $$\sigma $$ de $$S $$ $$\exists $$ uma substituição $$\gamma $$ tal que $$\sigma = \theta\gamma $$ . 
+  6. Seja $$S $$ um conjunto finito de termos. O conjunto de conflitos de $$S $$ consiste dos sub-termos mais a esquerda dos termos de $$S $$ que se diferenciam. 
 
 &nbsp;
 
@@ -295,25 +295,25 @@ A existência das definições anteriores são verificadas pelo seguinte algorit
 
 **Inicio**
 
-> > \(k := 0 \)
+> > $$k := 0 $$
     
-> > \(\sigma_k = \varepsilon \)
+> > $$\sigma_k = \varepsilon $$
     
-> > **Enquanto** \(S ~ \sigma_k ~ nao ~ unitario \) **repita:**
+> > **Enquanto** $$S ~ \sigma_k ~ nao ~ unitario $$ **repita:**
 > > 
-> > > Seja \(D \) o conjunto de conflitos de \(S \sigma_k \)
+> > > Seja $$D $$ o conjunto de conflitos de $$S \sigma_k $$
       
-> > > **Se** \(\exists ~ v,t \in D \) com \(v \) variavel, \(t \) termos sem ocorrencias de \(v \) **Entao**
+> > > **Se** $$\exists ~ v,t \in D $$ com $$v $$ variavel, $$t $$ termos sem ocorrencias de $$v $$ **Entao**
 > > > 
-> > > > \(\sigma\_{k+1} := \sigma\_k{v/t} \) 
+> > > > $$\sigma\_{k+1} := \sigma\_k{v/t} $$ 
 > > > 
 > > > **Senão**
 > > > 
-> > > > reporte que \(S \) não unificável e saia 
+> > > > reporte que $$S $$ não unificável e saia 
 > > 
-> > \(k := k + 1 \) 
+> > $$k := k + 1 $$ 
 > 
-> retorna \(\sigma_k \), o unificador de \(S \) 
+> retorna $$\sigma_k $$, o unificador de $$S $$ 
 
 **Fim**
 
@@ -335,12 +335,12 @@ onde
     
 
 
-  * \(id\) é o tipo fundamental da menor sub-expressão possível. Este tipo pode ser visto como valores de variáveis. 
-  * \(term&#8217;\) é o tipo que representa uma expressão. No caso, este expressão pode ser uma variável</p> 
-      * \(Var&#8217;\) é associado com valores do tipo &#8220;id&#8221;, ou então uma sub-expressão composta por dois sub-termos deste tipo. 
-  * \(term\) é um tipo que foi definido apenas para receber uma entrada de expressões contendo a interface proposta para este trabalho. 
+  * $$id$$ é o tipo fundamental da menor sub-expressão possível. Este tipo pode ser visto como valores de variáveis. 
+  * $$term&#8217;$$ é o tipo que representa uma expressão. No caso, este expressão pode ser uma variável</p> 
+      * $$Var&#8217;$$ é associado com valores do tipo &#8220;id&#8221;, ou então uma sub-expressão composta por dois sub-termos deste tipo. 
+  * $$term$$ é um tipo que foi definido apenas para receber uma entrada de expressões contendo a interface proposta para este trabalho. 
 
-Podemos notar que o tipo \(term&#8217; \) é definido recursivamente e gerará uma _árvore binária_ com nós não-marcados. Isso serve para o programa armazenar nas folhas os termos mais simples, que serão as variáveis. Desta maneira, podemos comparar em cada sub-árvore as regras necessárias para haver unificação. 
+Podemos notar que o tipo $$term&#8217; $$ é definido recursivamente e gerará uma _árvore binária_ com nós não-marcados. Isso serve para o programa armazenar nas folhas os termos mais simples, que serão as variáveis. Desta maneira, podemos comparar em cada sub-árvore as regras necessárias para haver unificação. 
 
 &nbsp;
 
@@ -367,7 +367,7 @@ Para este trabalho, foi proposto que a entrada de uma expressão deveria ser com
 
 
 <center>
-  <br /> \(Term(&#8220;f&#8221;, [Var &#8220;x&#8221;; Term(&#8220;g&#8221;, [Var &#8220;y&#8221;])])\)<br />
+  <br /> $$Term(&#8220;f&#8221;, [Var &#8220;x&#8221;; Term(&#8220;g&#8221;, [Var &#8220;y&#8221;])])$$<br />
 </center>
 
 Embora esta notação seja simples, ela não pode ser utilizada diretamente em nossa implementação, uma vez que a abordagem escolhida para avaliação consiste em comparar sub-expressões de tipo iguais. Sendo assim, a expressão válida para as funções do nosso programa precisariam ser escritas da forma
@@ -375,7 +375,7 @@ Embora esta notação seja simples, ela não pode ser utilizada diretamente em n
 
 
 <center>
-  <br /> \(Term'(Var&#8217; &#8220;f&#8221;, Term'(Var&#8217; &#8220;x&#8221;, Term'(Var&#8217; &#8220;g&#8221;, Term'(Var&#8217; &#8220;y&#8221;))))\)<br />
+  <br /> $$Term'(Var&#8217; &#8220;f&#8221;, Term'(Var&#8217; &#8220;x&#8221;, Term'(Var&#8217; &#8220;g&#8221;, Term'(Var&#8217; &#8220;y&#8221;))))$$<br />
 </center>
 
 
@@ -396,7 +396,7 @@ Sendo assim, segue abaixo a função que faz a conversão da primeira forma para
 
 Nesta função podemos notar que o tipo básico de ambos os casos (variáveis) possuem equivalência em qualquer uma das formas. 
 
-Além disso, as constantes &#8212; denotadas por \(Term(x, [])\) &#8212; são tratadas como variáveis pelas funções relacionadas à unificação. 
+Além disso, as constantes &#8212; denotadas por $$Term(x, [])$$ &#8212; são tratadas como variáveis pelas funções relacionadas à unificação. 
 
 Os demais termos são definidos e convertidos recursivamente ou geram um erro se forem expressões mal-formadas. 
 
@@ -404,9 +404,9 @@ Os demais termos são definidos e convertidos recursivamente ou geram um erro se
 
 ### Busca de ocorrências 
 
-Antes de reavaliar uma unificação de sub-termos, nosso programa verifica se ocorre situações de conflitos entre elas. O primeiro destes conflitos ocorre quando termos uma expressão \(X \) e outra expressão \(f(X) \) . A substituição \(X=f(X) \) não é unificável por gerar um conflito conhecido como dependência cíclica ou circularidade. 
+Antes de reavaliar uma unificação de sub-termos, nosso programa verifica se ocorre situações de conflitos entre elas. O primeiro destes conflitos ocorre quando termos uma expressão $$X $$ e outra expressão $$f(X) $$ . A substituição $$X=f(X) $$ não é unificável por gerar um conflito conhecido como dependência cíclica ou circularidade. 
 
-Assim, para uma variável \(a \) e uma expressão qualquer \(v \) , o programa busca se esta variável ocorre em alguma sub-expressão de \(v \) através da seguinte função: 
+Assim, para uma variável $$a $$ e uma expressão qualquer $$v $$ , o programa busca se esta variável ocorre em alguma sub-expressão de $$v $$ através da seguinte função: 
 
 <div>
   <pre lang="ocaml">let rec occurrences a v =
@@ -415,7 +415,7 @@ Assim, para uma variável \(a \) e uma expressão qualquer \(v \) , o programa b
     | Term'(f, subexpr) -> (occurrences a f) || (occurrences a subexpr);;</pre>
 </div>
 
-A expressão \(v \) é sempre formada por uma variável ou por composições de &#8212; \(f \) e \(subexpr \) . Assim, a chamada recursiva presente na última linha garante que todos sub-termos da expressão original serão verificados. Ainda nessa linha, observamos que a operação lógica _ou_ retornará _verdadeiro_ se houver ao menos uma ocorrência da variável testada. Assim, a função retorna _verdadeiro_ sempre que houver uma condição de dependência circular nas expressões unificadas. 
+A expressão $$v $$ é sempre formada por uma variável ou por composições de &#8212; $$f $$ e $$subexpr $$ . Assim, a chamada recursiva presente na última linha garante que todos sub-termos da expressão original serão verificados. Ainda nessa linha, observamos que a operação lógica _ou_ retornará _verdadeiro_ se houver ao menos uma ocorrência da variável testada. Assim, a função retorna _verdadeiro_ sempre que houver uma condição de dependência circular nas expressões unificadas. 
 
 &nbsp;
 
@@ -423,7 +423,7 @@ A expressão \(v \) é sempre formada por uma variável ou por composições de 
 
 A função de substituição procura a ocorrência de um termo na expressão e troca este termo por outro. Como o unificador só existe se houver uma substituição que transforme o conjunto de termos, esta função é fundamental para o funcionamento do programa. 
 
-A substituição é implementada de forma a procurar a ocorrência da variável \(a \) em uma sub-expressão \(tm1 \) . Para isso, utilizamos a função \(List.assoc \), que retorna o valor associado à chave \(a \) em uma lista associativa. Caso não haja ocorrência desta variável na expressão, ela é retornada pela função. Tal função é apresentada abaixo:
+A substituição é implementada de forma a procurar a ocorrência da variável $$a $$ em uma sub-expressão $$tm1 $$ . Para isso, utilizamos a função $$List.assoc $$, que retorna o valor associado à chave $$a $$ em uma lista associativa. Caso não haja ocorrência desta variável na expressão, ela é retornada pela função. Tal função é apresentada abaixo:
 
 <div>
   <pre lang="ocaml">let rec substitute tm1 tm2 =
@@ -438,11 +438,11 @@ O comportamento explicado anteriormente é repetido recursivamente, substituindo
 
 ### Acoplamento
 
-A primeira parte do algoritmo de unificação é implementada na função chamada \(coupling \). Este função recebe uma dupla de expressões e faz os seguintes testes:
+A primeira parte do algoritmo de unificação é implementada na função chamada $$coupling $$. Este função recebe uma dupla de expressões e faz os seguintes testes:
 
   1. Verifica se duas expressões são idênticas. Caso sejam, retorna uma lista vazia, uma vez que não há unificação de uma expressão por ela mesmo. 
-  2. Verifica ocorrências de uma variável \(a \) em uma expressão \(exp \) . Se este caso aparece, então ocorre _circularidade_ e não ocorre unificação (primeiro \(UnificationError\)). 
-  3. Se os casos acima não ocorrerem, então ambas expressões são formadas por termos compostos por mais de uma simples variável. Para esta situação, a função \(coupling \) tenta substituir a primeira na segunda e fazer as verificações anteriores recursivamente. 
+  2. Verifica ocorrências de uma variável $$a $$ em uma expressão $$exp $$ . Se este caso aparece, então ocorre _circularidade_ e não ocorre unificação (primeiro $$UnificationError$$). 
+  3. Se os casos acima não ocorrerem, então ambas expressões são formadas por termos compostos por mais de uma simples variável. Para esta situação, a função $$coupling $$ tenta substituir a primeira na segunda e fazer as verificações anteriores recursivamente. 
 
 Segue a implementação dos passos descritos:
 
@@ -467,12 +467,12 @@ Segue a implementação dos passos descritos:
 
 ### Unificação 
 
-A função \(unif\) consiste apenas em:
+A função $$unif$$ consiste apenas em:
 
-  1. receber duas expressões distintas \(e1 \) e \(e2 \) , 
+  1. receber duas expressões distintas $$e1 $$ e $$e2 $$ , 
   2. convertê-las para o formato utilizado pelas outras funções, 
   3. verificar o resultado do acoplamento entre elas, 
-  4. e decidir se há uma substituição possível de uma expressão em outra. Caso isso não ocorra, então a unificação não é possível (segundo \(UnificationError\)). 
+  4. e decidir se há uma substituição possível de uma expressão em outra. Caso isso não ocorra, então a unificação não é possível (segundo $$UnificationError$$). 
 
 Esta função é implementada como
 

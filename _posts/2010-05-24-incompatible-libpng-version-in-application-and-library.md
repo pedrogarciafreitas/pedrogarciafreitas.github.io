@@ -6,7 +6,7 @@ author: SAWP
 excerpt: 'Fixing Fatal error in PNG image file: Incompatible libpng version in application and library'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=628
-permalink: p=628
+permalink: /p=628
 categories:
   - FreeBSD
 ---

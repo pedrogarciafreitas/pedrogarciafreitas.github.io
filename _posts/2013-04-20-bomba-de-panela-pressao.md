@@ -6,7 +6,7 @@ author: CKPYT
 excerpt: 'Esse pequeno tutorial foi publicado originalmente na revista "Inspire",  revista é distribuída pela Al-Qaeda na Península Arábica, na edição Summer 1431/2010, sob autoria de A.Q. Chef. Originalmente, este conteúdo foi publicado como "um manual de recurso para aqueles que detestam os tiranos". Esse "open source Jihad" inclui as técnicas para a fabricação das bombas, medidas de segurança, treinamento de armas e outras atividades necessárias para "O Empenho". O objetivo do manual, segundo o autor, é permitir aos Mujahids a fabricação e treinamento em terras estrangeiras, permitindo a redução de custos e riscos das viagens para o Oriente Médio. '
 layout: post
 guid: http://www.sawp.com.br/blog/?p=2014
-permalink: p=2014
+permalink: /p=2014
 categories:
   - Miscellaneous
 ---

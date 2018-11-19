@@ -6,7 +6,7 @@ author: SAWP
 excerpt: '    Neste artigo discutiremos o Método de Gauss-Siedel, que é um algoritmo    iterativo para aproximação de soluções de sistemas lineares. Em problemas que empregam métodos computacionais, o método de Gauss-Siedel é muito útil, uma vez que gera soluções satisfatórias para sistemas de equações muito grandes. Todavia, como é comum de ocorrer em métodos iterativos, esta técnica é sujeita a erros de arrendondamento. Por isso, há certos casos em que o método não convergirá à uma solução. Portanto, apresentaremos neste trabalho uma digressão sobre as vantagens e os contras da utilização de métodos iterativos e do algoritmo de Gauss-Siedel.'
 layout: post
 guid: http://www.sawp.com.br/blog/?p=762
-permalink: p=762
+permalink: /p=762
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:10059:"
@@ -140,35 +140,35 @@ Como trata-se de um sistema linear de equações, o método de Gauss-Siedel reso
 
 
 <center>
-  \( Ax = b \)
+  $$ Ax = b $$
 </center>
 
-Primeiramente, suponhamos um sistema de três equações, gerando uma matriz de coeficientes \(3 \times 3 \) . Se a diagonal é formada apenas por elementos não-nulos, podemos isolar \(x\_1 \) na primeira equação, \(x\_2 \) na segunda e \(x_3 \) na terceira. Assim, obteremos
+Primeiramente, suponhamos um sistema de três equações, gerando uma matriz de coeficientes $$3 \times 3 $$ . Se a diagonal é formada apenas por elementos não-nulos, podemos isolar $$x\_1 $$ na primeira equação, $$x\_2 $$ na segunda e $$x_3 $$ na terceira. Assim, obteremos
       
 
 
 <center>
-  \( x_1 = \dfrac{b_1 &#8211; a_{12}x_2 &#8211; a_{13}x_3}{a_{11}},<br /> x_2 = \dfrac{b_2 &#8211; a_{21}x_1 &#8211; a_{23}x_3}{a_{22}},<br /> x_3 = \dfrac{b_3 &#8211; a_{31}x_1 &#8211; a_{32}x_2}{a_{33}} \)
+  $$ x_1 = \dfrac{b_1 &#8211; a_{12}x_2 &#8211; a_{13}x_3}{a_{11},<br /> x_2 = \dfrac{b_2 &#8211; a_{21}x_1 &#8211; a_{23}x_3}{a_{22},<br /> x_3 = \dfrac{b_3 &#8211; a_{31}x_1 &#8211; a_{32}x_2}{a_{33} $$
 </center>
 
-Pelas equações acima notamos que para estimar \(x\_1 \) , inicialmente precisamos de \(x\_2 \) e \(x_3 \) . A ideia do método consiste em escolher um valor inicial para estas variáveis e, em seguida, fazer sucessivas substituições até que os valores de \(x \) estejam se aproximando de uma solução. Por esta razão, o método de Gauss-Siedel é conhecido como _método das substituições sucessivas_. 
+Pelas equações acima notamos que para estimar $$x\_1 $$ , inicialmente precisamos de $$x\_2 $$ e $$x_3 $$ . A ideia do método consiste em escolher um valor inicial para estas variáveis e, em seguida, fazer sucessivas substituições até que os valores de $$x $$ estejam se aproximando de uma solução. Por esta razão, o método de Gauss-Siedel é conhecido como _método das substituições sucessivas_. 
 
-Para generalizar a ideia do parágrafo anterior, denotaremos o método através de duas variáveis \(j \) e \(i \) , onde \(j \) é a componente do vetor de incógnitas e \(i \) é a iteração. Desta maneira, uma variável qualquer é expressa como \(x_{i}^{j} \) . Considerando o sistema de \(n \) equações e \(n \) incógnitas, começamos por calcular a primeira variável
+Para generalizar a ideia do parágrafo anterior, denotaremos o método através de duas variáveis $$j $$ e $$i $$ , onde $$j $$ é a componente do vetor de incógnitas e $$i $$ é a iteração. Desta maneira, uma variável qualquer é expressa como $$x_{i}^{j} $$ . Considerando o sistema de $$n $$ equações e $$n $$ incógnitas, começamos por calcular a primeira variável
       
 
 
 <center>
-  \( x_{i+1}^{(1)} = &#8211; \dfrac{1}{a_{11}}<br /> \left( \sum_{j=2}^{n} a_{1j}x_{i}^{(j)} -b_1 \right) \)
+  $$ x_{i+1}^{(1)} = &#8211; \dfrac{1}{a_{11}<br /> \left( \sum_{j=2}^{n} a_{1j}x_{i}^{(j)} -b_1 \right) $$
 </center>
 
 
       
-Para próxima componente \(j=2 \) , utilizamos a segunda equação, já substituindo \(x_{i+1}^{(j)} \) pelo valor calculado anteriormente
+Para próxima componente $$j=2 $$ , utilizamos a segunda equação, já substituindo $$x_{i+1}^{(j)} $$ pelo valor calculado anteriormente
       
 
 
 <center>
-  \( x_{i+1}^{(2)} = &#8211; \dfrac{1}{a_{22}}<br /> \left( a_{21}x_{i+1}^{(1)} +<br /> \sum_{j=3}^{n} a_{2j}x_{i}^{(j)} &#8211; b_2 \right) \)
+  $$ x_{i+1}^{(2)} = &#8211; \dfrac{1}{a_{22}<br /> \left( a_{21}x_{i+1}^{(1)} +<br /> \sum_{j=3}^{n} a_{2j}x_{i}^{(j)} &#8211; b_2 \right) $$
 </center>
 
 
@@ -178,12 +178,12 @@ a partir destas duas últimas equações, podemos facilmente observar a relaçã
 
 
 <center>
-  \( x_{i+1}^{(r)} = &#8211; \dfrac{1}{a_{rr}}<br /> \left( \sum_{j=1}^{r-1} a_{rj}x_{i+1}^{(j)} +<br /> \sum_{j=r+1}^{n} a_{rj}x_{i}^{(j)} &#8211; b_r \right) \)
+  $$ x_{i+1}^{(r)} = &#8211; \dfrac{1}{a_{rr}<br /> \left( \sum_{j=1}^{r-1} a_{rj}x_{i+1}^{(j)} +<br /> \sum_{j=r+1}^{n} a_{rj}x_{i}^{(j)} &#8211; b_r \right) $$
 </center>
 
 
       
-onde \(r = 1, 2, \ldots, n \) . 
+onde $$r = 1, 2, \ldots, n $$ . 
 
 &nbsp;
 
@@ -194,12 +194,12 @@ Assim como todo método de busca de raízes iterativo, o algoritmo de Gauss-Sied
   1. casos onde não há convergência 
   2. casos onde a convergência é muito lenta 
 
-Para ambas situações, observamos que os valores do sistema que condicionam os casos problemáticos. Para verificar quais casos são estes, deduzimos os critérios de convergência a partir de duas equações não-lineares \(u(x\_1, x\_2) \) e \(v(x\_1, x\_2) \) tal que
+Para ambas situações, observamos que os valores do sistema que condicionam os casos problemáticos. Para verificar quais casos são estes, deduzimos os critérios de convergência a partir de duas equações não-lineares $$u(x\_1, x\_2) $$ e $$v(x\_1, x\_2) $$ tal que
     
 
 
 <center>
-  \(<br /> \left| \dfrac{\partial u}{\partial x_1} \right| +<br /> \left| \dfrac{\partial u}{\partial x_2} \right| < 1 [/latex]
+  $$<br /> \left| \dfrac{\partial u}{\partial x_1} \right| +<br /> \left| \dfrac{\partial u}{\partial x_2} \right| < 1 [/latex]
 </center>
 
 
@@ -214,12 +214,12 @@ e
 
 
     
-Supondo [latex]u \) e \(v \) como sendo duas funções lineares pertencente à um sistema com apenas duas variáveis, temos que tais funções são expressas como
+Supondo [latex]u $$ e $$v $$ como sendo duas funções lineares pertencente à um sistema com apenas duas variáveis, temos que tais funções são expressas como
     
 </center>
 
 <center>
-  \(<br /> u(x_1, x_2) = \frac{b_1}{a_{11}} &#8211; \frac{a_{12}}{a_{11}} x_2<br /> \)
+  $$<br /> u(x_1, x_2) = \frac{b_1}{a_{11} &#8211; \frac{a_{12}{a_{11} x_2<br /> $$
 </center>
 
 
@@ -229,7 +229,7 @@ e
 
 
 <center>
-  \(<br /> v(x_1, x_2) = \frac{b_2}{a_{22}} &#8211; \frac{a_{21}}{a_{22}} x_1<br /> \)
+  $$<br /> v(x_1, x_2) = \frac{b_2}{a_{22} &#8211; \frac{a_{21}{a_{22} x_1<br /> $$
 </center>
 
 
@@ -239,7 +239,7 @@ Para sistemas lineares, as derivadas parciais eliminam todas as componentes que 
 
 
 <center>
-  <br /> \(<br /> \frac{\partial u}{\partial x_1} = 0 \text{~,~}<br /> \frac{\partial u}{\partial x_2} = &#8211; \frac{a_{12}}{a_{11}}<br /> \)
+  <br /> $$<br /> \frac{\partial u}{\partial x_1} = 0 \text{~,~}<br /> \frac{\partial u}{\partial x_2} = &#8211; \frac{a_{12}{a_{11}<br /> $$
 </center>
 
 
@@ -249,17 +249,17 @@ e
 
 
 <center>
-  <br /> \(<br /> \frac{\partial v}{\partial x_1} = &#8211; \frac{a_{21}}{a_{22}}<br /> \text{~,~} \frac{\partial v}{\partial x_2} = 0<br /> \)
+  <br /> $$<br /> \frac{\partial v}{\partial x_1} = &#8211; \frac{a_{21}{a_{22}<br /> \text{~,~} \frac{\partial v}{\partial x_2} = 0<br /> $$
 </center>
 
 
     
-Utilizando os critérios das funções \(u \) e \(v \) , podemos reescrever as condições como
+Utilizando os critérios das funções $$u $$ e $$v $$ , podemos reescrever as condições como
     
 
 
 <center>
-  <br /> \(<br /> \left| \frac{a_{12}}{a_{11}} \right| < 1 \text{~e~} \left| \frac{a_{21}}{a_{22}} \right| < 1 [/latex]
+  <br /> $$<br /> \left| \frac{a_{12}{a_{11} \right| < 1 \text{~e~} \left| \frac{a_{21}{a_{22} \right| < 1 [/latex]
 </center>
 
 
@@ -269,88 +269,88 @@ Isso significa que para haver convergência, o sistema precisa ter os maiores co
 </center>
 
 <center>
-  <br /> [latex]<br /> |a_{ii}| = \sum_{j=1 and j \ne i}^{n} |a_{ij}|<br /> \)
+  <br /> [latex]<br /> |a_{ii}| = \sum_{j=1 and j \ne i}^{n} |a_{ij}|<br /> $$
 </center>
 
 &nbsp;
 
 ## 3. Aceleração de Processos Iterativos Estacionários 
 
-A taxa de convergência de um processo iterativo estacionário depende do raio espectral do vetor de elementos independentes. Assim, qualquer qualquer modificação no vetor \(b \) implica em uma modificação na taxa de convergência. Isto é, a redução do raio espectral de \(b \) irá aumentar a taxa de convergência. Considerando que queremos acelerar a convergência às raízes no processo iterativo, adotaremos um método conhecido como _relaxação sucessiva_. 
+A taxa de convergência de um processo iterativo estacionário depende do raio espectral do vetor de elementos independentes. Assim, qualquer qualquer modificação no vetor $$b $$ implica em uma modificação na taxa de convergência. Isto é, a redução do raio espectral de $$b $$ irá aumentar a taxa de convergência. Considerando que queremos acelerar a convergência às raízes no processo iterativo, adotaremos um método conhecido como _relaxação sucessiva_. 
 
-Primeiramente, rearranjamos o sistema linear para uma forma onde todos elementos da diagonal são unitários, ou seja, \(a_{rr}=1 \) . Isso pode ser feito dividindo-se toda a linha pelo elemento da diagonal pertencente à ela. 
+Primeiramente, rearranjamos o sistema linear para uma forma onde todos elementos da diagonal são unitários, ou seja, $$a_{rr}=1 $$ . Isso pode ser feito dividindo-se toda a linha pelo elemento da diagonal pertencente à ela. 
 
 Pelo método de Gauss-Siedel, sabemos que
     
 
 
 <center>
-  \( x_{i+1}^{(r)} = &#8211; \sum_{j=1}^{r-1} a_{rj} x_{i+1}^{(j)} &#8211;<br /> \sum_{j=r+1}^{n} a_{rj} x_{i}^{(j)} + b_r<br /> = x_{i}^{(r)}<br /> &#8211; \sum_{j=1}^{r-1} a_{rj} x_{i+1}^{(j)} &#8211;<br /> \sum_{j=r+1}^{n} a_{rj} x_{i}^{(j)} + b_r \)
+  $$ x_{i+1}^{(r)} = &#8211; \sum_{j=1}^{r-1} a_{rj} x_{i+1}^{(j)} &#8211;<br /> \sum_{j=r+1}^{n} a_{rj} x_{i}^{(j)} + b_r<br /> = x_{i}^{(r)}<br /> &#8211; \sum_{j=1}^{r-1} a_{rj} x_{i+1}^{(j)} &#8211;<br /> \sum_{j=r+1}^{n} a_{rj} x_{i}^{(j)} + b_r $$
 </center>
 
 
     
-para \(a_{rr} = 1 \) . Assim, podemos melhorar a formula acima reescrevendo-a como
+para $$a_{rr} = 1 $$ . Assim, podemos melhorar a formula acima reescrevendo-a como
     
 <a name="eqrelaxada">(eqrelaxada)</a> 
 
 <center>
-  \(<br /> x_{i+1}^{(r)} = x_{i}^{(r)} &#8211; \omega \left(<br /> \sum_{j=1}^{r-1} a_{rj} x_{i+1}^{(j)} &#8211;<br /> \sum_{j=r+1}^{n} a_{rj} x_{i}^{(j)} + b_r \right)<br /> \)
+  $$<br /> x_{i+1}^{(r)} = x_{i}^{(r)} &#8211; \omega \left(<br /> \sum_{j=1}^{r-1} a_{rj} x_{i+1}^{(j)} &#8211;<br /> \sum_{j=r+1}^{n} a_{rj} x_{i}^{(j)} + b_r \right)<br /> $$
 </center>
 
 
     
-onde \(\omega \) é o _fator de relaxação_ do processo iterativo. 
+onde $$\omega $$ é o _fator de relaxação_ do processo iterativo. 
 
 Para facilitar a visualização deste processo, imagine que a matriz de coeficientes é decomposta e escrita na forma
     
 
 
 <center>
-  \( A = D + L + U \)
+  $$ A = D + L + U $$
 </center>
 
 
     
-onde \(D \) é uma matriz diagonal, \(L \) é triangular inferior e \(U \) é triangular superior. Assim, podemos escrever o método de Gauss-Siedel como
+onde $$D $$ é uma matriz diagonal, $$L $$ é triangular inferior e $$U $$ é triangular superior. Assim, podemos escrever o método de Gauss-Siedel como
     
 
 
 <center>
-  \( x_{i+1} = B_{\omega} x_i + C_{\omega} b \)
+  $$ x_{i+1} = B_{\omega} x_i + C_{\omega} b $$
 </center>
 
 
     
-onde \(B\_{\omega} = \dfrac{(1 &#8211; \omega)I &#8211; \omega U}{I + \omega L} \) e \(c\_{\omega} = \dfrac{\omega}{I + \omega L} \) . 
+onde $$B\_{\omega} = \dfrac{(1 &#8211; \omega)I &#8211; \omega U}{I + \omega L} $$ e $$c\_{\omega} = \dfrac{\omega}{I + \omega L} $$ . 
 
 Tal processo pode ser interpretado como uma seleção baseada em uma média ponderada dos resultados da iteração anterior e da iteração corrente:
     
 
 
 <center>
-  \(<br /> x_{i+1}^{(j)} = \omega x_{i+1}^{(j)} + (1 &#8211; \omega) x_{i}^{(j)}<br /> \)
+  $$<br /> x_{i+1}^{(j)} = \omega x_{i+1}^{(j)} + (1 &#8211; \omega) x_{i}^{(j)}<br /> $$
 </center>
 
 
     
-onde \(\omega \) deve ser escolhido como um valor entre \(0 \) e \(2 \) . 
+onde $$\omega $$ deve ser escolhido como um valor entre $$0 $$ e $$2 $$ . 
 
 &nbsp;
 
-### 3.1. Interpretações para \(\omega \) </p> 
+### 3.1. Interpretações para $$\omega $$ </p> 
 
-Para \(\omega = 1 \) , temos que \(\omega &#8211; 1 = 0 \) e o resultado não é modificado. Contudo, se \(\omega \) estiver no intervalo entre \(0 \) e \(1 \) , o resultado é uma média ponderada do resultado atual e do anterior. Neste último caso, temos uma _sub-relaxação_, que é usada para forçar o sistema a convergir, mesmo que ele seja não-convergente. 
+Para $$\omega = 1 $$ , temos que $$\omega &#8211; 1 = 0 $$ e o resultado não é modificado. Contudo, se $$\omega $$ estiver no intervalo entre $$0 $$ e $$1 $$ , o resultado é uma média ponderada do resultado atual e do anterior. Neste último caso, temos uma _sub-relaxação_, que é usada para forçar o sistema a convergir, mesmo que ele seja não-convergente. 
 
-Para \(\omega \) no intervalo entre \(1 \) e \(2 \) , supomos que o condicionamento do sistema é certamente convergente, mas converge muito lentamente. Neste caso, \(\omega \) atua como um fator de peso que favorece a convergência entre duas iterações. Assim, dizemos que esta abordagem é uma _super-relaxação_, também conhecida como _sucessive overrelaxation_ &#8212; **SOR**. 
+Para $$\omega $$ no intervalo entre $$1 $$ e $$2 $$ , supomos que o condicionamento do sistema é certamente convergente, mas converge muito lentamente. Neste caso, $$\omega $$ atua como um fator de peso que favorece a convergência entre duas iterações. Assim, dizemos que esta abordagem é uma _super-relaxação_, também conhecida como _sucessive overrelaxation_ &#8212; **SOR**. 
 
 &nbsp;
 
 ### 3.2. Análise de SOR </p> 
 
-A escolha de \(\omega \) requer um certo cuidado, uma vez que este valor é fortemente ligado aos dados do sistema, sendo dependente do problema e determinado de maneira empírica. Para exemplificar a utilização de um fator de relaxação, a seguir apresentamos o comportamento do método de Gauss-Siedel para um sistema em relação à diferentes valores de \(\omega \) . 
+A escolha de $$\omega $$ requer um certo cuidado, uma vez que este valor é fortemente ligado aos dados do sistema, sendo dependente do problema e determinado de maneira empírica. Para exemplificar a utilização de um fator de relaxação, a seguir apresentamos o comportamento do método de Gauss-Siedel para um sistema em relação à diferentes valores de $$\omega $$ . 
 
-O primeiro procedimento para análise consiste em resolver um sistema linear na forma \(Ax = b \) diversas vezes, variando apenas a variável de relaxação no intervalo \([0,2] \) com um passo de \(0.05 \) e verificando o comportamento das iterações necessárias para resolução do problema. Tal procedimento nos permite gerar o gráfico da Figura [sor1](#figsor1). 
+O primeiro procedimento para análise consiste em resolver um sistema linear na forma $$Ax = b $$ diversas vezes, variando apenas a variável de relaxação no intervalo $$[0,2] $$ com um passo de $$0.05 $$ e verificando o comportamento das iterações necessárias para resolução do problema. Tal procedimento nos permite gerar o gráfico da Figura [sor1](#figsor1). 
 
 <center>
   <br /> 
@@ -366,7 +366,7 @@ O primeiro procedimento para análise consiste em resolver um sistema linear na 
   <br />
 </center>
 
-Como podemos observar da Figura [sor1](#figsor1), o ponto ótimo para resolução desse sistema consiste em utilizar um valor para o fator de relaxação próximo ao ponto \(1.8 \) . Sendo assim, repetimos o experimento para o subintervalo \([1.7,1.9] \) e observamos o comportamento ilustrado na
+Como podemos observar da Figura [sor1](#figsor1), o ponto ótimo para resolução desse sistema consiste em utilizar um valor para o fator de relaxação próximo ao ponto $$1.8 $$ . Sendo assim, repetimos o experimento para o subintervalo $$[1.7,1.9] $$ e observamos o comportamento ilustrado na
      
 Figura [sor2](#figsor2). 
 
@@ -384,11 +384,11 @@ Figura [sor2](#figsor2).
   <br />
 </center>
 
-Desta última figura podemos concluir que o valor que minimiza o tempo de resolução do sistema linear consiste em um \(\omega = 1.772 \) , sendo notável a diferença no desempenho proporcionada por por este valor: menos de \(3500 \) iterações ante as \(1000000 \) iterações do pior caso, significando uma melhoria de quase \(286\% \) . 
+Desta última figura podemos concluir que o valor que minimiza o tempo de resolução do sistema linear consiste em um $$\omega = 1.772 $$ , sendo notável a diferença no desempenho proporcionada por por este valor: menos de $$3500 $$ iterações ante as $$1000000 $$ iterações do pior caso, significando uma melhoria de quase $$286\% $$ . 
 
 A Figura [sor2](#figsor2) também nos fornece informações para avaliação da necessidade de escolha empírica do valor do parâmetro de relaxação. Se notarmos o comportamento do gráfico após o valor ótimo, notamos que o crescimento é contínuo, mas com uma pequena oscilação. Este tipo de comportamento gera diversos pontos de mínimo, o que torna o problema de encontrar o valor ótimo um problema difícil de se automatizar com eficiência. Geralmente, problemas como estes são resolvidos com heurísticas &#8212; tais como algoritmos genéticos &#8212; e costumam ser muito mais caros de se resolver do que problemas de resolução de sistemas lineares, o que torna injustificável a utilização da busca pelo valor ótimo do fator de relaxação. 
 
-Portanto, para definir um \(\omega \) adequado para algum problema, é preferível que façamos alguns testes com instâncias menores do problema geral para conseguirmos obter um valor próximo ao ideal. 
+Portanto, para definir um $$\omega $$ adequado para algum problema, é preferível que façamos alguns testes com instâncias menores do problema geral para conseguirmos obter um valor próximo ao ideal. 
 
 &nbsp;
 
