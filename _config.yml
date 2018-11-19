@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Pedro Garcia Freitas
-description: Pedro's Personal Website
+title: Pedro Garcia
+description: Personal Website
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: CKPYT
@@ -27,14 +27,11 @@ theme: minima
 plugins:
   - jekyll-feed
 
-categories-order:
- - getting started
- - tutorials
- - advanced
+
 
 
 # Custom settings
-highlighter: true
+highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
